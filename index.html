@@ -1,21 +1,1398 @@
-<!DOCTYPE html>
+// Apple-style scroll effects for images
+            const parallaxImages = document.querySelectorAll('.image-parallax');
+            const stickyImage = document.getElementById('sticky-image1');    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            // Umlaute direkt im HTML korrekt darstellen durch korrektes Encoding
+            // Diese Lösung ist robuster als die vorherige
+            const encodingFix = () => {
+                try {
+                    // Prüfen, ob das Encoding der Seite korrekt ist
+                    const charsetMeta = document.querySelector('meta[charset]');
+                    if (charsetMeta && charsetMeta.getAttribute('charset').toLowerCase() !== 'utf-8') {
+                        charsetMeta.setAttribute('charset', 'utf-8');
+                    }
+                    
+                    // Manchmal hilft es, das Dokument explizit mit UTF-8 zu rendern
+                    const contentTypeMeta = document.querySelector('meta[http-equiv="Content-Type"]');
+                    if (contentTypeMeta) {
+                        contentTypeMeta.setAttribute('content', 'text/html; charset=utf-8');
+                    }
+                    
+                    document.querySelectorAll('p, h1, h2, h3, a, span, button, label, input, textarea').forEach(element => {
+                        if (!element.textContent) return;
+                        
+                        // Text bereits im DOM korrekt rendern, falls er durch HTML-Entities kodiert ist
+                        // Dies ist eine Notlösung, da die Daten eigentlich schon korrekt kodiert sein sollten
+                        const decoder = document.createElement('textarea');
+                        decoder.innerHTML = element.innerHTML;
+                        const decodedText = decoder.value;
+                        
+                        if (decodedText !== element.innerHTML) {
+                            element.innerHTML = decodedText;
+                        }
+                    });
+                } catch (e) {
+                    console.error('Fehler bei der Kodierungskorrektur:', e);
+                }
+            };
+            
+            // Encoding-Fix mehrfach ausführen, um sicherzustellen, dass dynamische Inhalte auch verarbeitet werden
+            encodingFix();
+            setTimeout(encodingFix, 500);
+            setTimeout(encodingFix, 1500);
+            
+            // Sticky header behavior
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.backgroundColor = 'rgba(30, 30, 32, 0.95)';
+                    header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+                } else {
+                    header.style.backgroundColor = 'rgba(30, 30, 32, 0.8)';
+                    header.style.boxShadow = 'none';
+                }
+            });
+            
+            // Fade out glass circles when scrolling away from hero
+            window.addEventListener('scroll', () => {
+                const heroHeight = document.querySelector('.hero').offsetHeight;
+                const glassCircles = document.querySelectorAll('.glass-circle');
+                const lightRays = document.querySelector('.light-rays');
+                
+                // Calculate fade ratio based on scroll position
+                const fadeRatio = Math.max(0, 1 - (window.scrollY / heroHeight));
+                
+                // Apply fading to glass circles and light rays
+                glassCircles.forEach(circle => {
+                    circle.style.opacity = 0.8 * fadeRatio;
+                });
+                
+                if (lightRays) {
+                    lightRays.style.opacity = 0.6 * fadeRatio;
+                }
+            });
+            
+            // Logo-Farbe je nach Scrollposition ändern
+            const logo = document.querySelector('.logo');
+            const languageToggle = document.getElementById('language-toggle');
+            const sections = [
+                { id: 'about', class: 'about-section' },
+                { id: 'services', class: 'services-section' },
+                { id: 'info', class: 'info-section' },
+                { id: 'contact', class: 'contact-section' }
+            ];
+            
+            // Initialisiere mit einer leeren Klasse
+            let currentSectionClass = '';
+            
+            // Throttle-Funktion für bessere Performance
+            function throttle(callback, delay) {
+                let lastCall = 0;
+                return function() {
+                    const now = new Date().getTime();
+                    if (now - lastCall < delay) {
+                        return;
+                    }
+                    lastCall = now;
+                    return callback.apply(this, arguments);
+                };
+            }
+            
+            // Scroll-Handler
+            const handleScroll = throttle(() => {
+                const scrollPos = window.scrollY + 60; // +60 für Offset des Headers
+                
+                // Bestimme den aktuellen Abschnitt
+                let newSectionClass = '';
+                
+                // Wenn ganz oben, keine spezielle Farbe
+                if (scrollPos < 200) {
+                    newSectionClass = '';
+                } else {
+                    // Finde den aktuellen Abschnitt
+                    for (let i = sections.length - 1; i >= 0; i--) {
+                        const section = document.getElementById(sections[i].id);
+                        if (!section) continue;
+                        
+                        const sectionTop = section.offsetTop - 100;
+                        
+                        if (scrollPos >= sectionTop) {
+                            newSectionClass = sections[i].class;
+                            break;
+                        }
+                    }
+                }
+                
+                // Nur ändern, wenn sich die Klasse ändert
+                if (newSectionClass !== currentSectionClass) {
+                    // Entferne alle Klassen
+                    logo.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
+                    languageToggle.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
+                    
+                    // Hinzufügen der neuen Klasse, wenn vorhanden
+                    if (newSectionClass) {
+                        logo.classList.add(newSectionClass);
+                        languageToggle.classList.add(newSectionClass);
+                    }
+                    
+                    currentSectionClass = newSectionClass;
+                }
+            }, 100); // Throttle auf 100ms
+            
+            // Event-Listener für das Scrollen
+            window.addEventListener('scroll', handleScroll);
+            
+            window.addEventListener('scroll', () => {
+                // Handle all parallax images
+                parallaxImages.forEach(image => {
+                    const container = image.closest('[data-parallax-intensity]');
+                    if (!container) return;
+                    
+                    const intensity = parseFloat(container.dataset.parallaxIntensity) / 10;
+                    const rect = container.getBoundingClientRect();
+                    const viewportHeight = window.innerHeight;
+                    
+                    // Only apply effect when in viewport
+                    if (rect.top < viewportHeight && rect.bottom > 0) {
+                        // Calculate how far through the container we've scrolled (0 to 1)
+                        const scrollProgress = 1 - (rect.top + rect.height / 2) / (viewportHeight + rect.height);
+                        
+                        // Apply scale effect
+                        const scale = 1 + (scrollProgress * 0.1);
+                        image.style.transform = `scale(${Math.min(1.1, scale)})`;
+                    }
+                });
+                
+                // Handle Apple-style sticky image
+                if (stickyImage) {
+                    const stickyContainer = stickyImage.closest('.sticky-container');
+                    const containerTop = stickyContainer.offsetTop;
+                    const containerHeight = stickyContainer.offsetHeight;
+                    
+                    // Calculate how far we've scrolled through the container
+                    const scrollPosition = window.scrollY - containerTop;
+                    const scrollRatio = Math.min(1, Math.max(0, scrollPosition / containerHeight));
+                    
+                    // Apply scale and opacity transformations
+                    const scale = 1 - (scrollRatio * 0.3);
+                    const opacity = 1 - (scrollRatio * 0.7);
+                    
+                    stickyImage.style.transform = `translateY(-50%) scale(${scale})`;
+                    stickyImage.style.opacity = opacity;
+                }
+            });
+            
+            // Initialize scrolling animations
+            initScrollAnimations();
+            
+            // Language switcher
+            initLanguageSwitcher();
+            
+            // Contact form handling
+            initContactForm();
+        });
+        
+        // Initialize animations for sections as they scroll into view
+        function initScrollAnimations() {
+            const sections = document.querySelectorAll('section:not(.hero)');
+            const animatedElements = document.querySelectorAll('.service-item, .about-content, .about-image, .info-content');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => observer.observe(section));
+            animatedElements.forEach(element => observer.observe(element));
+        }
+        
+        // Initialize language switcher
+        function initLanguageSwitcher() {
+            const languageToggle = document.getElementById('language-toggle');
+            let currentLanguage = 'de';
+            
+            // Simple translations
+            const translations = {
+                de: {
+                    'nav-home': 'Home',
+                    'nav-about': 'Euer Tag',
+                    'nav-services': 'Leistungen',
+                    'nav-info': 'Infos',
+                    'nav-contact': 'Kontakt',
+                    'lang-switch': 'EN',
+                    'hero-text': 'Heiraten mit Stil. Und STEEL.',
+                    'cta-button': 'Anfrage senden',
+                    'about-title': 'Euer Tag rückt näher. Und jetzt?',
+                    'services-title': 'Eure Hochzeitsfeier',
+                    'info-title': 'Das solltet ihr noch wissen.',
+                    'contact-title': 'Passt? Prima.',
+                    'form-name': 'Name',
+                    'form-email': 'E-Mail',
+                    'form-phone': 'Telefon/Handy',
+                    'form-date': 'Hochzeitsdatum',
+                    'form-location': 'Ort',
+                    'form-details': 'Details',
+                    'submit-btn': 'Anfrage senden',
+                    'footer-contact': 'Kontakt',
+                    'footer-legal': 'Rechtliches',
+                    'copyright': '© 2025 STEELweddings. Alle Rechte vorbehalten.'
+                },
+                en: {
+                    'nav-home': 'Home',
+                    'nav-about': 'Your Day',
+                    'nav-services': 'Services',
+                    'nav-info': 'Info',
+                    'nav-contact': 'Contact',
+                    'lang-switch': 'DE',
+                    'hero-text': 'Weddings with style. And STEEL.',
+                    'cta-button': 'Send inquiry',
+                    'about-title': 'Your big day is approaching. What now?',
+                    'services-title': 'Your Wedding Party',
+                    'info-title': 'What you should know.',
+                    'contact-title': 'Sounds good?',
+                    'form-name': 'Name',
+                    'form-email': 'Email',
+                    'form-phone': 'Phone',
+                    'form-date': 'Wedding date',
+                    'form-location': 'Location',
+                    'form-details': 'Details',
+                    'submit-btn': 'Send inquiry',
+                    'footer-contact': 'Contact',
+                    'footer-legal': 'Legal',
+                    'copyright': '© 2025 STEELweddings. All rights reserved.'
+                }
+            };
+            
+            // English versions of longer text content
+            const englishTexts = {
+                'about-p1': 'Your wedding is <strong>exciting</strong> – especially for you. But your loved ones are also getting dressed up and ready to celebrate. That\'s where I come in. I believe you shouldn\'t <em>have to worry about the music</em>. I\'ll make sure your party is a complete success!',
+                'about-p2': 'The guests at your wedding are both young and old. To appeal to them, music should play that everyone knows (<strong>hits only!</strong>). Sometimes it\'s something from the 60s for twisting, another time from the 90s for thrashing. Current charts and <strong>electronic beats</strong> are also essential. All wrapped in a mix that doesn\'t scare anyone but still feels like you\'re in a club.',
+                'about-p3': 'Songs that connect you and your guests also play an important role here. <strong>#BachelorParty</strong>',
+                'service1-title': 'Finally, it\'s starting.',
+                'service1-p1': 'To open the dance floor, you are asked: Whether a <strong>Viennese Waltz</strong> or a <strong>Disco Fox</strong>, sometimes just a cozy swinging: Your song selection starts the party and an unforgettable night. Choose wisely – I\'m happy to support you.',
+                'service1-p2': 'You don\'t want a <strong>first dance</strong>? No problem. It\'s your wedding, and we\'ll design it the way you want it.',
+                'service2-title': 'Let\'s party.',
+                'service2-p1': 'Once the party is in full swing, there\'s no stopping. <strong>Live Mashups</strong> transport your guests to a different sound world – far away from the usual radio noise. I\'m happy to incorporate music requests at the right place in the mix.',
+                'service2-p2': 'At the latest when <strong>Beyoncé</strong> invites the next lucky ones to catch the bridal bouquet with her Single Ladies, the dance floor is safe from no hit (and guest)!',
+                'service3-title': 'Great technology.',
+                'service3-p1': 'Have you ever heard of <strong>Fohhn</strong>? Since 1993, the German company has been producing premium sound systems – all made in Germany. Depending on the location, my Fohhn system is sufficient for up to 200 people and more. So when I DJ, not only is the music selection right, but also the sound quality.',
+                'service3-p2': '<strong>Lighting</strong> is often undervalued in my opinion. Yet controllable lights create an epic atmosphere during the party and great photos afterward. With ambient spots, I can accurately set the scene at your location and create a cozy basic mood just with light as soon as it gets dark outside.',
+                'service3-p3': 'For even more <strong>club atmosphere</strong>, I have fog on request to really bring out the light beams in the room.',
+                'info-p1': 'I originally come from the <strong>club scene</strong> and still regularly DJ in discotheques today. Transitions and mixing are therefore very important to me. Above all, I make sure that consecutive songs fit together. I incorporate music requests at the point where they fit in. I basically don\'t play genres criss-cross – I\'m not a jukebox. If you want to experience me live: On <a href="https://instagram.com/steelofficial" target="_blank">Instagram</a>, I regularly announce when and where I\'m performing.',
+                'info-p2': 'Musically, I\'m an <strong>all-rounder</strong> (open format). I\'m also very knowledgeable about electronic music (<a href="https://linktr.ee/STEELofficial" target="_blank">and as STEEL, I also release such music myself</a>). I\'m definitely not the right person for weddings with a high proportion of German folk or après-ski music. There are other DJs for that.',
+                'info-p3': 'I\'m a <strong>DJ, not an entertainer or animator</strong>. I therefore focus on DJing and only rarely use the microphone when it fits well.',
+                'info-p4': 'By the way: I\'m a member of the <strong><a href="https://lovecrew-ruhrpott.de" target="_blank">Lovecrew Ruhrpott</a></strong>. This is an association of the best wedding service providers in the Ruhr area. If you\'re just starting your wedding planning, be sure to check it out!',
+                'contact-p1': 'Are you already getting excited about your wedding celebration? Very cool! Just ask, maybe I still have a date available. To be on the safe side, you should contact me about a year before your wedding. But I\'m sometimes available spontaneously too.',
+                'contact-p2': 'My prices start at <span class="highlight">1500,- €</span> (incl. VAT) for 7 hours and depend on what time I should start. I always play until at least 3 am. Open end on request!'
+            };
+            
+            // Form placeholders in English
+            const englishPlaceholders = {
+                'name': 'Who\'s getting married? :)',
+                'email': 'dreamcouple@email.com',
+                'phone': 'I call you maybe',
+                'location': 'Where will the party take place?',
+                'message': 'e.g. schedule, start time, number of guests, music'
+            };
+            
+            // Function to switch language
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
+                    document.documentElement.lang = currentLanguage;
+                    
+                    // Update basic UI elements
+                    document.querySelector('.nav-links li:nth-child(1) a').textContent = translations[currentLanguage]['nav-home'];
+                    document.querySelector('.nav-links li:nth-child(2) a').textContent = translations[currentLanguage]['nav-about'];
+                    document.querySelector('.nav-links li:nth-child(3) a').textContent = translations[currentLanguage]['nav-services'];
+                    document.querySelector('.nav-links li:nth-child(4) a').textContent = translations[currentLanguage]['nav-info'];
+                    document.querySelector('.nav-links li:nth-child(5) a').textContent = translations[currentLanguage]['nav-contact'];
+                    this.textContent = translations[currentLanguage]['lang-switch'];
+                    
+                    // Update section headers and hero
+                    document.querySelector('.hero p').textContent = translations[currentLanguage]['hero-text'];
+                    document.querySelector('.cta-button').textContent = translations[currentLanguage]['cta-button'];
+                    document.querySelector('.about-title').textContent = translations[currentLanguage]['about-title'];
+                    document.querySelector('.services-title').textContent = translations[currentLanguage]['services-title'];
+                    document.querySelector('.info-title').textContent = translations[currentLanguage]['info-title'];
+                    document.querySelector('.contact-title').textContent = translations[currentLanguage]['contact-title'];
+                    
+                    // Update form elements
+                    document.querySelector('label[for="name"]').textContent = translations[currentLanguage]['form-name'];
+                    document.querySelector('label[for="email"]').textContent = translations[currentLanguage]['form-email'];
+                    document.querySelector('label[for="phone"]').textContent = translations[currentLanguage]['form-phone'];
+                    document.querySelector('label[for="date"]').textContent = translations[currentLanguage]['form-date'];
+                    document.querySelector('label[for="location"]').textContent = translations[currentLanguage]['form-location'];
+                    document.querySelector('label[for="message"]').textContent = translations[currentLanguage]['form-details'];
+                    document.querySelector('.submit-btn').textContent = translations[currentLanguage]['submit-btn'];
+                    
+                    // Update footer elements
+                    document.querySelector('.footer-section:nth-child(2) h3').textContent = translations[currentLanguage]['footer-contact'];
+                    document.querySelector('.footer-section:nth-child(3) h3').textContent = translations[currentLanguage]['footer-legal'];
+                    document.querySelector('.copyright p').textContent = translations[currentLanguage]['copyright'];
+                    
+                    // Update content paragraphs when switching to English
+                    if (currentLanguage === 'en') {
+                        // Update paragraphs with English content
+                        for (const [id, content] of Object.entries(englishTexts)) {
+                            const element = document.getElementById(id);
+                            if (element) element.innerHTML = content;
+                        }
+                        
+                        // Update form placeholders
+                        for (const [id, placeholder] of Object.entries(englishPlaceholders)) {
+                            const element = document.getElementById(id);
+                            if (element) element.placeholder = placeholder;
+                        }
+                    } else {
+                        // Reset German content - we'll just reload the page for simplicity
+                        location.reload();
+                    }
+                });
+            }
+        }
+        
+        // Initialize contact form
+        function initContactForm() {
+            const contactForm = document.querySelector('.contact-form');
+            const formStatus = document.getElementById('form-status');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Basic validation
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const date = document.getElementById('date').value;
+                    const location = document.getElementById('location').value;
+                    const message = document.getElementById('message').value;
+                    
+                    if (!name || !email || !date || !location || !message) {
+                        formStatus.textContent = document.documentElement.lang === 'de' ? 
+                            'Bitte fülle alle Pflichtfelder aus.' : 
+                            'Please fill in all required fields.';
+                        formStatus.className = 'form-status error';
+                        formStatus.style.display = 'block';
+                        return;
+                    }
+                    
+                    // Simulate form submission
+                    formStatus.textContent = document.documentElement.lang === 'de' ? 
+                        'Vielen Dank für deine Anfrage! Wir melden uns in Kürze bei dir.' : 
+                        'Thank you for your inquiry! We will get back to you soon.';
+                    formStatus.className = 'form-status success';
+                    formStatus.style.display = 'block';
+                    contactForm.reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                    }, 5000);
+                });
+            }
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>STEELweddings</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEELweddings | Hochzeits-DJ im Ruhrgebiet</title>
+    <title>STEELweddings | Hochzeits-DJ im Ruhrgebiet</title>
+    <style>
+        :root {
+            --primary-color: #a044ff;
+            --secondary-color: #6441a5;
+            --contact-color: #f857a6;
+            --contact-highlight: #ff5858;
+            --about-color: #ff6b6b;
+            --service-color: #4facfe;
+            --info-color: #43e97b;
+            --light-bg: #1e1e20;
+            --dark-bg: #121214;
+            --dark-text: #f5f5f7;
+            --light-text: #f5f5f7;
+            --text-secondary: #bbbbbb;
+            --transition: all 0.4s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+            color: var(--light-text);
+            background-color: var(--dark-bg);
+        }
+        
+        strong {
+            font-weight: 600;
+        }
+        
+        /* Farbige fettungen je nach Bereich */
+        .about-content strong {
+            color: var(--about-color);
+        }
+        
+        .service-item strong {
+            color: var(--service-color);
+        }
+        
+        .info-content strong {
+            color: var(--info-color);
+        }
+        
+        .contact-intro strong {
+            color: var(--contact-color);
+        }
+        
+        em {
+            font-style: normal;
+            font-weight: 500;
+        }
+        
+        .about-content em {
+            color: var(--about-color);
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: var(--contact-color);
+        }
+        
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            letter-spacing: 0.01rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Links in den jeweiligen Bereichen */
+        .about-content a {
+            color: var(--about-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--about-color);
+            transition: var(--transition);
+        }
+        
+        .about-content a:hover {
+            border-bottom: 1px solid var(--about-color);
+        }
+        
+        .service-content a {
+            color: var(--service-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--service-color);
+            transition: var(--transition);
+        }
+        
+        .service-content a:hover {
+            border-bottom: 1px solid var(--service-color);
+        }
+        
+        .info-content a {
+            color: var(--info-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--info-color);
+            transition: var(--transition);
+        }
+        
+        .info-content a:hover {
+            border-bottom: 1px solid var(--info-color);
+        }
+        
+        .logo {
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, var(--primary-color), #6441a5);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.8s ease;
+            height: 1.8rem; /* Feste Höhe für das Logo */
+            line-height: 1.8rem; /* Vertikale Zentrierung des Textes */
+        }
+        
+        .logo.about-section {
+            background: linear-gradient(90deg, var(--about-color), #ff9e7d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo.services-section {
+            background: linear-gradient(90deg, var(--service-color), #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo.info-section {
+            background: linear-gradient(90deg, var(--info-color), #38f9d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo.contact-section {
+            background: linear-gradient(90deg, var(--contact-color), var(--contact-highlight));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(30, 30, 32, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 60px; /* Feste Höhe für die Navigation */
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center; /* Elemente vertikal zentrieren */
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+            font-size: 0.9rem; /* Einheitliche Schriftgröße */
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light-text);
+            transition: var(--transition);
+            font-size: 0.9rem; /* Explizit definierte Schriftgröße für alle Links */
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .language-switch {
+            margin-left: 1rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            padding-left: 1rem;
+        }
+        
+        .language-switch a {
+            background-color: rgba(160, 68, 255, 0.2);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid rgba(160, 68, 255, 0.3);
+            cursor: pointer;
+        }
+        
+        /* Farbwechsel für den Sprachschalter */
+        .language-switch a.about-section {
+            background-color: rgba(255, 107, 107, 0.2);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+        
+        .language-switch a.services-section {
+            background-color: rgba(79, 172, 254, 0.2);
+            border-color: rgba(79, 172, 254, 0.3);
+        }
+        
+        .language-switch a.info-section {
+            background-color: rgba(67, 233, 123, 0.2);
+            border-color: rgba(67, 233, 123, 0.3);
+        }
+        
+        .language-switch a.contact-section {
+            background-color: rgba(248, 87, 166, 0.2);
+            border-color: rgba(248, 87, 166, 0.3);
+        }
+        
+        .language-switch a:hover {
+            background-color: rgba(160, 68, 255, 0.4);
+            border-color: rgba(160, 68, 255, 0.6);
+        }
+        
+        .language-switch a.about-section:hover {
+            background-color: rgba(255, 107, 107, 0.4);
+            border-color: rgba(255, 107, 107, 0.6);
+        }
+        
+        .language-switch a.services-section:hover {
+            background-color: rgba(79, 172, 254, 0.4);
+            border-color: rgba(79, 172, 254, 0.6);
+        }
+        
+        .language-switch a.info-section:hover {
+            background-color: rgba(67, 233, 123, 0.4);
+            border-color: rgba(67, 233, 123, 0.6);
+        }
+        
+        .language-switch a.contact-section:hover {
+            background-color: rgba(248, 87, 166, 0.4);
+            border-color: rgba(248, 87, 166, 0.6);
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            padding-top: 80px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Modern Apple-style gradient background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(ellipse at center, rgba(50, 50, 70, 0.5) 0%, rgba(30, 30, 40, 0.5) 40%, rgba(10, 10, 20, 0.8) 80%);
+            z-index: 1;
+        }
+        
+        /* Modern Apple-style hero background */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .glass-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .glass-circle:nth-child(1) {
+            width: 700px;
+            height: 700px;
+            left: -150px;
+            top: -150px;
+            opacity: 0.8;
+            background: linear-gradient(45deg, rgba(160, 68, 255, 0.2), rgba(100, 65, 165, 0.1));
+        }
+        
+        .glass-circle:nth-child(2) {
+            width: 500px;
+            height: 500px;
+            right: -100px;
+            top: 20%;
+            opacity: 0.7;
+            background: linear-gradient(45deg, rgba(100, 65, 165, 0.2), rgba(160, 68, 255, 0.1));
+        }
+        
+        .glass-circle:nth-child(3) {
+            width: 600px;
+            height: 600px;
+            left: 20%;
+            bottom: -150px;
+            opacity: 0.6;
+            background: linear-gradient(45deg, rgba(79, 172, 254, 0.2), rgba(160, 68, 255, 0.1));
+        }
+        
+        .light-rays {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, 
+                rgba(160, 68, 255, 0.2) 0%, 
+                rgba(160, 68, 255, 0) 50%, 
+                rgba(100, 65, 165, 0.2) 100%);
+            z-index: 1;
+            animation: lightShift 15s ease-in-out infinite alternate;
+        }
+        
+        @keyframes lightShift {
+            0% {
+                opacity: 0.4;
+                background-position: 0% 0%;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0.4;
+                background-position: 100% 100%;
+            }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+            position: relative;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary-color), #6c13d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.5;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: 0px 4px 12px rgba(160, 68, 255, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 15px rgba(160, 68, 255, 0.4);
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 4rem auto 0;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* About */
+        .about {
+            padding: 6rem 2rem;
+            background-color: var(--light-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #ff6b6b, #ff9e7d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Services */
+        .services {
+            padding: 6rem 2rem;
+            background-color: var(--dark-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .services-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .services-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            margin-bottom: 4rem; /* Increased margin for Apple-style spacing */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-content {
+            flex: 2;
+        }
+        
+        .service-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--service-color);
+        }
+        
+        .service-image {
+            flex: 1;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .service-image img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1), scale 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        /* Apple-style image effects */
+        .image-parallax {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            will-change: transform;
+        }
+        
+        .image-parallax:hover {
+            transform: scale(1.03);
+        }
+        
+        .service-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, 
+                rgba(79, 172, 254, 0.1),
+                rgba(0, 242, 254, 0.05));
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-image:hover::after {
+            opacity: 1;
+        }
+        
+        /* Info Section */
+        .info-section {
+            padding: 6rem 2rem;
+            background-color: var(--light-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .info-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .info-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(90deg, #43e97b, #38f9d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .info-content {
+            background-color: rgba(30, 30, 32, 0.7);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 6rem 2rem;
+            background-color: var(--dark-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .contact-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, #f857a6, #ff5858);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-intro {
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-form {
+            background-color: rgba(30, 30, 32, 0.7);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-group label::after {
+            content: '*';
+            color: var(--contact-color);
+            margin-left: 2px;
+        }
+        
+        .form-group:nth-child(3) label::after {
+            content: '';
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.2);
+            color: var(--light-text);
+            font-size: 16px;
+        }
+        
+        .form-group ::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(90deg, #f857a6, #ff5858);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(90deg, #ff5858, #f857a6);
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 15px rgba(248, 87, 166, 0.4);
+        }
+        
+        .form-status {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .form-status.success {
+            background-color: rgba(67, 233, 123, 0.2);
+            color: #43e97b;
+        }
+        
+        .form-status.error {
+            background-color: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0c0c0e;
+            padding: 3rem 2rem 1rem;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-section a:hover {
+            color: var(--light-text);
+        }
+        
+        .copyright {
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-container,
+            .service-item {
+                flex-direction: column;
+            }
+        }
+        
+        /* Set hero content to be visible from the start */
+        .hero-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        section:not(.hero) {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 1s ease;
+        }
+        section.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-item, .about-content, .about-image, .info-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 1s ease;
+            transition-delay: 0.2s;
+        }
+        
+        .service-item.in-view, .about-content.in-view, .about-image.in-view, .info-content.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Apple-style sticky scroll for images */
+        .sticky-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .sticky-image {
+            position: sticky;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        @media (prefers-reduced-motion) {
+            section, .service-item, .about-content, .about-image, .info-content {
+                transition: none;
+                transform: none;
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <a href="#" class="logo">
-            <span class="logo-steel">STEEL</span><span class="logo-weddings">weddings</span>
-        </a>
-        <p class="claim">Heiraten mit Stil. Und STEEL.</p>
+        <div class="nav-container">
+            <a href="#" class="logo"><span style="font-weight: 300;">STEEL</span><span style="font-weight: 600;">weddings</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Euer Tag</a></li>
+                <li><a href="#services">Leistungen</a></li>
+                <li><a href="#info">Infos</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li class="language-switch">
+                    <a href="#" id="language-toggle">EN</a>
+                </li>
+            </ul>
+        </div>
     </header>
-    <main>
-        <h1>Euer Tag rückt näher. Und jetzt?</h1>
-        <p class="highlight">Eure Hochzeit ist <strong>aufregend</strong> – vor allem für euch selbst.</p>
-    </main>
-</body>
-</html>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="glass-circle"></div>
+            <div class="glass-circle"></div>
+            <div class="glass-circle"></div>
+            <div class="light-rays"></div>
+        </div>
+        <div class="hero-content">
+            <h1><span style="font-weight: 300; font-size: 3.8rem;">STEEL</span><span style="font-weight: 600;">weddings</span></h1>
+            <p>Heiraten mit Stil. Und STEEL.</p>
+            <a href="#contact" class="cta-button">Anfrage senden</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-image" data-parallax-intensity="20">
+                <img src="/api/placeholder/400/400" alt="DJ bei einer Hochzeit" class="image-parallax">
+            </div>
+            <div class="about-content">
+                <h2 class="about-title">Euer Tag rückt näher. Und jetzt?</h2>
+                <p id="about-p1">Eure Hochzeit ist <strong>aufregend</strong> – vor allem für euch selbst. Aber auch eure Liebsten machen sich schick und haben Lust, es so richtig krachen zu lassen. Hier komme ich ins Spiel. Denn ich finde: Ihr solltet euch <em>nicht den Kopf über die Musik zerbrechen</em> müssen. Ich kümmere mich darum, dass eure Party ein voller Erfolg wird!</p>
+                <p id="about-p2">Die Gäste auf eurer Hochzeit sind jung und alt. Um sie anzusprechen, sollte Musik laufen, die alle kennen (<strong>Hits only!</strong>). Mal ist es was aus den 60ern zum Twisten, ein anderes Mal aus den 90ern zum Trashen. Aktuelle Charts und <strong>elektronische Beats</strong> dürfen natürlich nicht fehlen. Alles in einem Mix verpackt, der niemanden erschrecken lässt und sich trotzdem so anfühlt, als wärt ihr gerade im Club.</p>
+                <p id="about-p3">Hier spielen auch Songs eine wichtige Rolle, die euch und eure Gäste verbinden. <strong>#JGA</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="services-title">Eure Hochzeitsfeier</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <div class="service-content">
+                    <h3 id="service1-title">Endlich geht es los.</h3>
+                    <p id="service1-p1">Zum Eröffnen der Tanzfläche seid ihr gefragt: Ob ein <strong>Wiener Walzer</strong> oder ein <strong>Discofox</strong>, manchmal auch einfach nur ein gemütliches Schunkeln: Durch eure Songauswahl beginnt die Party und eine unvergessliche Nacht. Wählt weise – gerne mit meinem Support.</p>
+                    <p id="service1-p2">Ihr wollt <strong>keinen Eröffnungstanz</strong>? Kein Problem. Es ist eure Hochzeit und die gestalten wir so, wie ihr es wollt.</p>
+                </div>
+                <div class="service-image" data-parallax-intensity="10">
+                    <img src="/api/placeholder/400/300" alt="Hochzeitspaar tanzt" class="image-parallax">
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-content">
+                    <h3 id="service2-title">Let's party.</h3>
+                    <p id="service2-p1">Ist die Party dann voll im Gange, gibt es kein Halten mehr. <strong>Live Mashups</strong> transportieren eure Gäste in eine andere Klangwelt – weit weg vom üblichem Gedudel aus dem Radio. Musikwünsche baue ich gerne an passender Stelle in den Mix ein.</p>
+                    <p id="service2-p2">Spätestens wenn <strong>Beyoncé</strong> mit ihren Single Ladies die Nächstglücklichen zum Brautstraußfangen bittet, ist die Tanzfläche vor keinem Hit (und Gast) mehr sicher!</p>
+                </div>
+                <div class="service-image" data-parallax-intensity="10">
+                    <img src="/api/placeholder/400/300" alt="Hochzeitsfeier" class="image-parallax">
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-content">
+                    <h3 id="service3-title">Tolle Technik.</h3>
+                    <p id="service3-p1">Habt ihr schon mal von <strong>Fohhn</strong> gehört? Seit 1993 stellt die deutsche Firma Premium-Soundsysteme her – alles made in Germany. Je nach Location reicht meine Fohhn-Anlage für bis zu 200 Personen und mehr. Wenn ich auflege, stimmt also nicht nur die Musikauswahl, sondern auch die Klangqualität.</p>
+                    <p id="service3-p2"><strong>Licht</strong> wird meiner Meinung nach häufig unterbewertet. Dabei sorgen steuerbare Lichter für eine epische Stimmung während der Party und für tolle Fotos im Nachhinein. Mit Ambientespots kann ich eure Location akkurat in Szene setzen und so nur mithilfe von Licht eine gemütliche Grundstimmung erzeugen, sobald es draußen dämmert.</p>
+                    <p id="service3-p3">Für noch mehr <strong>Club-Atmosphäre</strong> habe ich auf Wunsch Nebel dabei, um die Lichtstrahlen im Raum so richtig zum Vorschein zu bringen.</p>
+                </div>
+                <div class="service-image" data-parallax-intensity="10">
+                    <img src="/api/placeholder/400/300" alt="DJ-Equipment" class="image-parallax">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apple-Style Sticky Scroll Image Gallery -->
+    <section class="sticky-container">
+        <img src="/api/placeholder/1200/800" alt="DJ in Action" class="sticky-image" id="sticky-image1">
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section" id="info">
+        <div class="info-container">
+            <h2 class="info-title">Das solltet ihr noch wissen.</h2>
+            <div class="info-content">
+                <p id="info-p1">Ich komme ursprünglich aus der <strong>Clubszene</strong> und lege auch heute noch regelmäßig in Discotheken auf. Übergänge und das Mixing sind mir daher sehr wichtig. Vor allem achte ich darauf, dass aufeinanderfolgende Songs zueinander passen. Musikwünsche binde ich an der Stelle ein, wo sie reinpassen. Ich spiele grundsätzlich keine Genres kreuz und quer – ich bin nun mal keine Jukebox. Falls ihr mich mal live erleben wollt: Bei <a href="https://instagram.com/steelofficial" target="_blank">Instagram</a> verkünde ich regelmäßig, wann und wo ich auflege.</p>
+                <p id="info-p2">Musikalisch bin ich ein <strong>Allrounder</strong> (Open Format). Außerdem kenne ich mich sehr gut mit elektronischer Musik aus (<a href="https://linktr.ee/STEELofficial" target="_blank">und als STEEL selbst auch solche Musik heraus</a>). Ich bin definitiv nicht der Richtige, wenn es um Hochzeiten mit hohem Schlager- oder Après-Ski-Anteil geht. Da gibt es andere DJs für.</p>
+                <p id="info-p3">Ich bin <strong>DJ, kein Entertainer oder Animateur</strong>. Ich konzentriere mich daher aufs Auflegen und benutze das Mikrofon nur selten, wenn es gerade gut reinpasst.</p>
+                <p id="info-p4">Übrigens: Ich bin Mitglied der <strong><a href="https://lovecrew-ruhrpott.de" target="_blank">Lovecrew Ruhrpott</a></strong>. Das ist ein Zusammenschluss der besten Hochzeitsdienstleister*innen im Ruhrgebiet. Wenn ihr noch am Anfang eurer Hochzeitsplanung steckt, schaut unbedingt mal vorbei!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="contact-title">Passt? Prima.</h2>
+        <div class="contact-container">
+            <div class="contact-intro">
+                <p id="contact-p1">Ihr bekommt jetzt schon Lust auf eure Hochzeitsfeier? Sehr cool! Fragt doch einfach nach, vielleicht habe ich noch einen Termin frei. Um auf Nummer sicher zu gehen, solltet ihr mich ungefähr ein Jahr vor eurer Hochzeit anfragen. Aber auch spontan bin ich manchmal noch verfügbar.</p>
+                <p id="contact-p2">Meine Preise starten für 7 Stunden bei <span class="highlight">1500,- €</span> (inkl. MwSt.) und sind davon abhängig, um wie viel Uhr ich loslegen soll. Ich spiele immer bis mindestens 3 Uhr. Auf Wunsch auch open end!</p>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Wer heiratet? :)" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" placeholder="traumpaar@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefon/Handy</label>
+                    <input type="tel" id="phone" placeholder="I call you maybe">
+                </div>
+                <div class="form-group">
+                    <label for="date">Hochzeitsdatum</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Ort</label>
+                    <input type="text" id="location" placeholder="Wo steigt die Party?" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Details</label>
+                    <textarea id="message" rows="5" placeholder="z. B. Ablauf, Beginn, Gästeanzahl, Musik" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Anfrage senden</button>
+                <div id="form-status" class="form-status" style="display: none;"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><span style="font-weight: 300;">STEEL</span><span style="font-weight: 600;">weddings</span></h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Euer Tag</a></li>
+                    <li><a href="#services">Leistungen</a></li>
+                    <li><a href="#info">Infos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontakt</h3>
+                <ul>
+                    <li><a href="tel:+491234567890">+49 123 456 7890</a></li>
+                    <li><a href="mailto:info@steelweddings.net">info@steelweddings.net</a></li>
+                    <li>Ruhrgebiet & Umgebung</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Rechtliches</h3>
+                <ul>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href="#">Datenschutz</a></li>
+                    <li><a href="#">AGB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 STEELweddings. Alle Rechte vorbehalten.</p>
+            <span class="footer-hint"></span>
+        </div>
+    </footer>
