@@ -1640,18 +1640,35 @@ function updateMobileMenuActiveState() {
 // Füge diese Funktionen zum DOMContentLoaded-Event hinzu
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile-Menü-Toggle-Button
-    document.getElementById('mobile-menu-toggle').addEventListener('click', function(e) {
-        e.preventDefault();
-        toggleMobileMenu();
-    });
-    // Menüpunkte schließen das Menü beim Klick
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleMobileMenu();
+        });
+    }
+    
+    // Menüpunkte schließen das Menü beim Klick, auch der Sprachumschalter
     const menuItems = document.querySelectorAll('#mobile-menu a');
     menuItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Das Sprachumschalter-Element sollte das Menü nicht schließen
-            if (this.id !== 'mobile-language-toggle') {
-                toggleMobileMenu();
+        item.addEventListener('click', function(e) {
+            // Für den Sprachumschalter nur einmal umschalten, dann Menü schließen
+            if (this.id === 'mobile-language-toggle') {
+                e.preventDefault(); // Verhindern, dass der Link navigiert
+                
+                // Sprachumschaltung durchführen
+                const currentLanguage = document.documentElement.lang === 'de' ? 'en' : 'de';
+                document.documentElement.lang = currentLanguage;
+                
+                // Sprachtexte anpassen (hier würde deine bestehende Sprachumschaltungs-Logik aufgerufen)
+                // switchLanguage finden und aufrufen, falls vorhanden
+                if (typeof switchLanguage === 'function') {
+                    switchLanguage(e);
+                }
             }
+            
+            // Menü in jedem Fall schließen
+            toggleMobileMenu();
         });
     });
     
