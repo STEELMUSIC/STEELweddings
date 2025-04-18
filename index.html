@@ -1571,13 +1571,20 @@
     
     <!-- Inline-JavaScript für mobiles Menü -->
     <script>
-        // Verbessertess mobiles Menü mit Apple-Stil
-function toggleMobileMenu() {
+// Verbessertess mobiles Menü mit Apple-Stil
+let menuOpen = false; // Globale Variable, um den Zustand des Menüs zu speichern
+
+function toggleMobileMenu(event) {
+    if (event) {
+        event.stopPropagation(); // Verhindert, dass das Event weitergeleitet wird
+    }
+    
     const menu = document.getElementById('mobile-menu');
     const toggle = document.getElementById('mobile-menu-toggle');
     
-    if (menu.style.display === 'block') {
+    if (menuOpen) {
         // Menü schließen
+        menuOpen = false;
         toggle.classList.remove('active');
         
         // Animation zum Ausblenden
@@ -1593,10 +1600,11 @@ function toggleMobileMenu() {
         }, 300);
     } else {
         // Menü öffnen
+        menuOpen = true;
         menu.style.display = 'block';
         toggle.classList.add('active');
         
-        // Animation zum Einblenden (wird über CSS-Transition automatisch ausgelöst)
+        // Animation zum Einblenden
         setTimeout(() => {
             const menuItems = menu.querySelectorAll('li');
             menuItems.forEach(item => {
@@ -1647,6 +1655,17 @@ function updateMobileMenuActiveState() {
     }
 }
 
+// Verhindern, dass Klicks außerhalb des Menüs es nicht schließen
+document.addEventListener('click', function(event) {
+    const menu = document.getElementById('mobile-menu');
+    const toggle = document.getElementById('mobile-menu-toggle');
+    
+    // Wenn das Menü offen ist und der Klick nicht auf das Menü oder den Toggle war
+    if (menuOpen && menu && !menu.contains(event.target) && !toggle.contains(event.target)) {
+        toggleMobileMenu();
+    }
+});
+
 // Füge diese Funktionen zum DOMContentLoaded-Event hinzu
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile-Menü-Toggle-Button
@@ -1654,31 +1673,30 @@ document.addEventListener('DOMContentLoaded', function() {
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function(e) {
             e.preventDefault();
-            toggleMobileMenu();
+            e.stopPropagation(); // Das ist wichtig, um Bubblingeffekte zu verhindern
+            toggleMobileMenu(e);
         });
     }
     
-    // Menüpunkte schließen das Menü beim Klick, auch der Sprachumschalter
+    // Menüpunkte schließen das Menü beim Klick
     const menuItems = document.querySelectorAll('#mobile-menu a');
     menuItems.forEach(item => {
         item.addEventListener('click', function(e) {
-            // Für den Sprachumschalter nur einmal umschalten, dann Menü schließen
+            // Falls es sich um den Sprachumschalter handelt
             if (this.id === 'mobile-language-toggle') {
-                e.preventDefault(); // Verhindern, dass der Link navigiert
+                e.preventDefault();
                 
                 // Sprachumschaltung durchführen
-                const currentLanguage = document.documentElement.lang === 'de' ? 'en' : 'de';
-                document.documentElement.lang = currentLanguage;
-                
-                // Sprachtexte anpassen (hier würde deine bestehende Sprachumschaltungs-Logik aufgerufen)
-                // switchLanguage finden und aufrufen, falls vorhanden
-                if (typeof switchLanguage === 'function') {
-                    switchLanguage(e);
+                const languageToggleFn = window.switchLanguage;
+                if (typeof languageToggleFn === 'function') {
+                    languageToggleFn(e);
                 }
             }
             
-            // Menü in jedem Fall schließen
-            toggleMobileMenu();
+            // Menü in jedem Fall schließen mit kurzer Verzögerung
+            setTimeout(() => {
+                toggleMobileMenu();
+            }, 100);
         });
     });
     
