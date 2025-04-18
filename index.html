@@ -1514,19 +1514,106 @@
     
     <!-- Inline-JavaScript für mobiles Menü -->
     <script>
-        // Globale Funktionen für mobiles Menü
-        function toggleMobileMenu() {
-            var menu = document.getElementById('mobile-menu');
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        }
+        // Verbessertess mobiles Menü mit Apple-Stil
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const toggle = document.getElementById('mobile-menu-toggle');
+    
+    if (menu.style.display === 'block') {
+        // Menü schließen
+        toggle.classList.remove('active');
         
-        function closeMobileMenu() {
-            document.getElementById('mobile-menu').style.display = 'none';
+        // Animation zum Ausblenden
+        const menuItems = menu.querySelectorAll('li');
+        menuItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(-10px)';
+        });
+        
+        // Kurz warten und dann ausblenden
+        setTimeout(() => {
+            menu.style.display = 'none';
+        }, 300);
+    } else {
+        // Menü öffnen
+        menu.style.display = 'block';
+        toggle.classList.add('active');
+        
+        // Animation zum Einblenden (wird über CSS-Transition automatisch ausgelöst)
+        setTimeout(() => {
+            const menuItems = menu.querySelectorAll('li');
+            menuItems.forEach(item => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            });
+        }, 10);
+    }
+}
+
+// Diese Funktion aktualisiert die aktive Klasse im mobilen Menü
+function updateMobileMenuActiveState() {
+    const scrollPos = window.scrollY + 60; // +60 für Offset des Headers
+    const sections = [
+        { id: 'home', navId: 'mobile-nav-home', class: 'active' },
+        { id: 'about', navId: 'mobile-nav-about', class: 'about-active' },
+        { id: 'services', navId: 'mobile-nav-services', class: 'services-active' },
+        { id: 'info', navId: 'mobile-nav-info', class: 'info-active' },
+        { id: 'contact', navId: 'mobile-nav-contact', class: 'contact-active' }
+    ];
+    
+    // Entferne alle aktiven Klassen
+    sections.forEach(section => {
+        const navItem = document.getElementById(section.navId);
+        if (navItem) {
+            navItem.classList.remove('active', 'about-active', 'services-active', 'info-active', 'contact-active');
         }
+    });
+    
+    // Setze die aktive Klasse für den aktuellen Abschnitt
+    let currentSection = 'home'; // Standard
+    
+    for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i].id);
+        if (section && scrollPos >= section.offsetTop - 100) {
+            currentSection = sections[i].id;
+            break;
+        }
+    }
+    
+    // Aktiven Abschnitt hervorheben
+    const activeSection = sections.find(s => s.id === currentSection);
+    if (activeSection) {
+        const navItem = document.getElementById(activeSection.navId);
+        if (navItem) {
+            navItem.classList.add(activeSection.class);
+        }
+    }
+}
+
+// Füge diese Funktionen zum DOMContentLoaded-Event hinzu
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile-Menü-Toggle-Button
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleMobileMenu();
+    });
+    // Menüpunkte schließen das Menü beim Klick
+    const menuItems = document.querySelectorAll('#mobile-menu a');
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Das Sprachumschalter-Element sollte das Menü nicht schließen
+            if (this.id !== 'mobile-language-toggle') {
+                toggleMobileMenu();
+            }
+        });
+    });
+    
+    // Aktualisiere den aktiven Menüpunkt beim Scrollen
+    window.addEventListener('scroll', updateMobileMenuActiveState);
+    
+    // Initialisiere den aktiven Menüpunkt
+    updateMobileMenuActiveState();
+});
     </script>
 </body>
 </html>
