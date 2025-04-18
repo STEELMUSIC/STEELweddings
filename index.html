@@ -766,21 +766,50 @@
         .mobile-menu-toggle {
             display: none;
             cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--light-text);
-            background: none;
-            border: none;
-            z-index: 1001;
+            z-index: 9999;
             position: relative;
+            margin-right: 10px;
+            width: 30px;
+            height: 25px;
         }
         
         .mobile-menu-toggle span {
             display: block;
-            width: 25px;
+            position: absolute;
             height: 3px;
-            background-color: var(--light-text);
-            margin: 5px 0;
-            transition: var(--transition);
+            width: 100%;
+            background: white;
+            border-radius: 3px;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .mobile-menu-toggle span:nth-child(1) {
+            top: 0px;
+        }
+        
+        .mobile-menu-toggle span:nth-child(2) {
+            top: 10px;
+        }
+        
+        .mobile-menu-toggle span:nth-child(3) {
+            top: 20px;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(1) {
+            top: 10px;
+            transform: rotate(135deg);
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+        
+        .mobile-menu-toggle.active span:nth-child(3) {
+            top: 10px;
+            transform: rotate(-135deg);
         }
         
         .mobile-menu {
@@ -788,20 +817,39 @@
             position: fixed;
             top: 0;
             left: 0;
+            right: 0;
+            bottom: 0;
             width: 100%;
-            height: 100vh;
-            background-color: rgba(18, 18, 20, 0.98);
-            z-index: 1000;
+            height: 100%;
+            background-color: rgba(18, 18, 20, 0.95);
+            z-index: 9998;
             padding-top: 80px;
             text-align: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
         
         .mobile-menu.active {
-            opacity: 1;
-            visibility: visible;
+            display: block;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .mobile-menu li {
+            margin: 30px 0;
+        }
+        
+        .mobile-menu a {
+            font-size: 1.5rem;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu a:hover {
+            color: var(--primary-color);
         }
         
         .mobile-menu ul {
@@ -837,10 +885,6 @@
                 justify-content: center;
             }
             
-            .mobile-menu {
-                display: block;
-            }
-            
             .about-container,
             .service-item {
                 flex-direction: column;
@@ -854,26 +898,13 @@
         }
         
         section:not(.hero) {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 1s ease;
-        }
-        
-        section.in-view {
             opacity: 1;
-            transform: translateY(0);
+            transform: none;
         }
         
         .service-item, .about-content, .about-image, .info-content {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 1s ease;
-            transition-delay: 0.2s;
-        }
-        
-        .service-item.in-view, .about-content.in-view, .about-image.in-view, .info-content.in-view {
             opacity: 1;
-            transform: translateY(0);
+            transform: none;
         }
         
         /* Apple-style sticky scroll for images */
@@ -907,6 +938,7 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo"><span style="font-weight: 300;">STEEL</span><span style="font-weight: 600;">weddings</span></a>
+            
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Euer Tag</a></li>
@@ -917,24 +949,26 @@
                     <a href="#" id="language-toggle">EN</a>
                 </li>
             </ul>
+            
             <div class="mobile-menu-toggle" id="mobile-menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
-        
-        <div class="mobile-menu" id="mobile-menu">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Euer Tag</a></li>
-                <li><a href="#services">Leistungen</a></li>
-                <li><a href="#info">Infos</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-                <li><a href="#" id="mobile-language-toggle">EN</a></li>
-            </ul>
-        </div>
     </header>
+    
+    <!-- Mobile Menu (außerhalb vom Header) -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Euer Tag</a></li>
+            <li><a href="#services">Leistungen</a></li>
+            <li><a href="#info">Infos</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><a href="#" id="mobile-language-toggle">EN</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1102,6 +1136,17 @@
             const parallaxImages = document.querySelectorAll('.image-parallax');
             const stickyImage = document.querySelector('.sticky-image');
             
+            // Simple solution to ensure all content is visible
+            const allSections = document.querySelectorAll('section');
+            for (let i = 0; i < allSections.length; i++) {
+                allSections[i].style.opacity = "1";
+            }
+            
+            const allElements = document.querySelectorAll('.service-item, .about-content, .about-image, .info-content');
+            for (let i = 0; i < allElements.length; i++) {
+                allElements[i].style.opacity = "1";
+            }
+            
             // Umlaute direkt im HTML korrekt darstellen durch korrektes Encoding
             // Diese Lösung ist robuster als die vorherige
             const encodingFix = () => {
@@ -1172,75 +1217,43 @@
                 }
             });
             
-            // Logo-Farbe je nach Scrollposition ändern
+        // Logo-Farbe je nach Scrollposition ändern (vereinfacht)
+        window.addEventListener('scroll', function() {
             const logo = document.querySelector('.logo');
             const languageToggle = document.getElementById('language-toggle');
-            const sections = [
-                { id: 'about', class: 'about-section' },
-                { id: 'services', class: 'services-section' },
-                { id: 'info', class: 'info-section' },
-                { id: 'contact', class: 'contact-section' }
-            ];
             
-            // Initialisiere mit einer leeren Klasse
-            let currentSectionClass = '';
+            if (!logo || !languageToggle) return;
             
-            // Throttle-Funktion für bessere Performance
-            function throttle(callback, delay) {
-                let lastCall = 0;
-                return function() {
-                    const now = new Date().getTime();
-                    if (now - lastCall < delay) {
-                        return;
-                    }
-                    lastCall = now;
-                    return callback.apply(this, arguments);
-                };
+            const scrollPos = window.scrollY + 60;
+            
+            // Farbe aus ursprünglicher Sektion entfernen
+            logo.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
+            languageToggle.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
+            
+            // Finde aktuelle Sektion und setze ihre Farbe
+            if (document.getElementById('about') && scrollPos >= document.getElementById('about').offsetTop - 100) {
+                logo.classList.add('about-section');
+                languageToggle.classList.add('about-section');
+            } 
+            if (document.getElementById('services') && scrollPos >= document.getElementById('services').offsetTop - 100) {
+                logo.classList.remove('about-section');
+                languageToggle.classList.remove('about-section');
+                logo.classList.add('services-section');
+                languageToggle.classList.add('services-section');
             }
-            
-            // Scroll-Handler
-            const handleScroll = throttle(() => {
-                const scrollPos = window.scrollY + 60; // +60 für Offset des Headers
-                
-                // Bestimme den aktuellen Abschnitt
-                let newSectionClass = '';
-                
-                // Wenn ganz oben, keine spezielle Farbe
-                if (scrollPos < 200) {
-                    newSectionClass = '';
-                } else {
-                    // Finde den aktuellen Abschnitt
-                    for (let i = sections.length - 1; i >= 0; i--) {
-                        const section = document.getElementById(sections[i].id);
-                        if (!section) continue;
-                        
-                        const sectionTop = section.offsetTop - 100;
-                        
-                        if (scrollPos >= sectionTop) {
-                            newSectionClass = sections[i].class;
-                            break;
-                        }
-                    }
-                }
-                
-                // Nur ändern, wenn sich die Klasse ändert
-                if (newSectionClass !== currentSectionClass) {
-                    // Entferne alle Klassen
-                    logo.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
-                    languageToggle.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
-                    
-                    // Hinzufügen der neuen Klasse, wenn vorhanden
-                    if (newSectionClass) {
-                        logo.classList.add(newSectionClass);
-                        languageToggle.classList.add(newSectionClass);
-                    }
-                    
-                    currentSectionClass = newSectionClass;
-                }
-            }, 100); // Throttle auf 100ms
-            
-            // Event-Listener für das Scrollen
-            window.addEventListener('scroll', handleScroll);
+            if (document.getElementById('info') && scrollPos >= document.getElementById('info').offsetTop - 100) {
+                logo.classList.remove('services-section');
+                languageToggle.classList.remove('services-section');
+                logo.classList.add('info-section');
+                languageToggle.classList.add('info-section');
+            }
+            if (document.getElementById('contact') && scrollPos >= document.getElementById('contact').offsetTop - 100) {
+                logo.classList.remove('info-section');
+                languageToggle.classList.remove('info-section');
+                logo.classList.add('contact-section');
+                languageToggle.classList.add('contact-section');
+            }
+        });
             
             window.addEventListener('scroll', () => {
                 // Handle all parallax images
@@ -1281,9 +1294,6 @@
                     stickyImage.style.opacity = opacity;
                 }
             });
-            
-            // Initialize scrolling animations
-            initScrollAnimations();
             
             // Language switcher
             initLanguageSwitcher();
@@ -1520,38 +1530,29 @@
             }
         }
         
-        // Initialize mobile menu
+        // Initialize mobile menu with a completely different approach
         function initMobileMenu() {
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
+            var toggleButton = document.getElementById('mobile-menu-toggle');
+            var mobileMenu = document.getElementById('mobile-menu');
+            var menuLinks = document.querySelectorAll('#mobile-menu a');
             
-            if (!mobileMenuToggle || !mobileMenu) {
-                console.error('Mobile menu elements not found');
-                return;
-            }
+            // Make sure elements exist
+            if (!toggleButton || !mobileMenu) return;
             
-            mobileMenuToggle.addEventListener('click', function(e) {
+            // Toggle menu when clicking the button
+            toggleButton.onclick = function(e) {
                 e.preventDefault();
-                e.stopPropagation();
+                this.classList.toggle('active');
                 mobileMenu.classList.toggle('active');
-            });
+            };
             
             // Close menu when clicking on links
-            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', function() {
+            for (var i = 0; i < menuLinks.length; i++) {
+                menuLinks[i].onclick = function() {
+                    toggleButton.classList.remove('active');
                     mobileMenu.classList.remove('active');
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (mobileMenu.classList.contains('active') && 
-                    !mobileMenu.contains(event.target) && 
-                    !mobileMenuToggle.contains(event.target)) {
-                    mobileMenu.classList.remove('active');
-                }
-            });
+                };
+            }
         }
     </script>
 </body>
