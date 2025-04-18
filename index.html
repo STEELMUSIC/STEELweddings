@@ -123,10 +123,12 @@
             transition: background 0.8s ease;
             height: 1.8rem; /* Feste Höhe für das Logo */
             line-height: 1.8rem; /* Vertikale Zentrierung des Textes */
-            width: auto; /* Verhindert Größenänderungen */
+            width: 188px; /* Feste Breite, um Verrutschen zu verhindern */
             position: relative; /* Für bessere Positionierung */
-            text-align: left; /* Konsistente Textausrichtung */
-            padding-right: 0.2rem; /* Etwas Platz rechts */
+        }
+        
+        .logo span {
+            display: inline-block; /* Verhindert Verschiebung */
         }
         
         .logo.about-section {
@@ -148,7 +150,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            transform: translateX(0); /* Verhindert Verschiebung */
         }
         
         .logo.contact-section {
@@ -385,6 +386,16 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h1 span:first-child {
+                font-size: 2.8rem;
+            }
         }
         
         .hero p {
@@ -751,9 +762,78 @@
         }
         
         /* Responsive */
+        /* Mobile Menu Styles */
+        .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--light-text);
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--light-text);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(18, 18, 20, 0.98);
+            z-index: 1000;
+            padding-top: 80px;
+            text-align: center;
+            transform: translateY(-100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateY(0);
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+        }
+        
+        .mobile-menu li {
+            margin: 20px 0;
+        }
+        
+        .mobile-menu a {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .mobile-menu a:hover {
+            color: var(--primary-color);
+        }
+        
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .mobile-menu {
+                display: block;
             }
             
             .about-container,
@@ -831,6 +911,22 @@
                     <a href="#" id="language-toggle">EN</a>
                 </li>
             </ul>
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="mobile-menu" id="mobile-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Euer Tag</a></li>
+                    <li><a href="#services">Leistungen</a></li>
+                    <li><a href="#info">Infos</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                    <li><a href="#" id="mobile-language-toggle">EN</a></li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -1188,6 +1284,9 @@
             
             // Contact form handling
             initContactForm();
+            
+            // Mobile menu
+            initMobileMenu();
         });
         
         // Initialize animations for sections as they scroll into view
@@ -1206,6 +1305,19 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add('in-view');
                     }
+                };
+            
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchLanguage(e);
+                });
+            }
+            
+            if (mobileLanguageToggle) {
+                mobileLanguageToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchLanguage(e);
                 });
             }, observerOptions);
             
@@ -1216,6 +1328,7 @@
         // Initialize language switcher
         function initLanguageSwitcher() {
             const languageToggle = document.getElementById('language-toggle');
+            const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
             let currentLanguage = 'de';
             
             // Simple translations
@@ -1303,8 +1416,7 @@
             };
             
             // Function to switch language
-            if (languageToggle) {
-                languageToggle.addEventListener('click', function(e) {
+            const switchLanguage = function(e) {
                     e.preventDefault();
                     
                     currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
@@ -1398,6 +1510,28 @@
                     setTimeout(() => {
                         formStatus.style.display = 'none';
                     }, 5000);
+                });
+            }
+        }
+        
+        // Initialize mobile menu
+        function initMobileMenu() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('active');
+                    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                });
+                
+                // Close menu when clicking on links
+                mobileMenuLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
                 });
             }
         }
