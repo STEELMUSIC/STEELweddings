@@ -123,6 +123,10 @@
             transition: background 0.8s ease;
             height: 1.8rem; /* Feste Höhe für das Logo */
             line-height: 1.8rem; /* Vertikale Zentrierung des Textes */
+            width: auto; /* Verhindert Größenänderungen */
+            position: relative; /* Für bessere Positionierung */
+            text-align: left; /* Konsistente Textausrichtung */
+            padding-right: 0.2rem; /* Etwas Platz rechts */
         }
         
         .logo.about-section {
@@ -144,6 +148,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            transform: translateX(0); /* Verhindert Verschiebung */
         }
         
         .logo.contact-section {
@@ -989,9 +994,12 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         window.addEventListener('DOMContentLoaded', function() {
+            // Apple-style scroll effects for images
+            const parallaxImages = document.querySelectorAll('.image-parallax');
+            const stickyImage = document.querySelector('.sticky-image');
+            
             // Umlaute direkt im HTML korrekt darstellen durch korrektes Encoding
             // Diese Lösung ist robuster als die vorherige
             const encodingFix = () => {
@@ -1132,10 +1140,6 @@
             // Event-Listener für das Scrollen
             window.addEventListener('scroll', handleScroll);
             
-            // Apple-style scroll effects for images
-            const parallaxImages = document.querySelectorAll('.image-parallax');
-            const stickyImage = document.querySelector('#sticky-image1');
-            
             window.addEventListener('scroll', () => {
                 // Handle all parallax images
                 parallaxImages.forEach(image => {
@@ -1160,8 +1164,6 @@
                 // Handle Apple-style sticky image
                 if (stickyImage) {
                     const stickyContainer = stickyImage.closest('.sticky-container');
-                    if (!stickyContainer) return;
-                    
                     const containerTop = stickyContainer.offsetTop;
                     const containerHeight = stickyContainer.offsetHeight;
                     
@@ -1170,8 +1172,8 @@
                     const scrollRatio = Math.min(1, Math.max(0, scrollPosition / containerHeight));
                     
                     // Apply scale and opacity transformations
-                    const scale = 1 - (scrollRatio * 0.3);
-                    const opacity = 1 - (scrollRatio * 0.7);
+                    const scale = 1 - (scrollRatio *.3);
+                    const opacity = 1 - (scrollRatio * .7);
                     
                     stickyImage.style.transform = `translateY(-50%) scale(${scale})`;
                     stickyImage.style.opacity = opacity;
