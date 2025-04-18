@@ -801,8 +801,18 @@
                 opacity: 1;
             }
         }
-/* Korrektur des Layouts */
+/* CSS-Fix für das Layout und Mobile-Menü */
 @media (max-width: 768px) {
+    /* Navigationsleiste nur mit Logo in der mobilen Ansicht */
+    .nav-links {
+        display: none !important;
+    }
+    
+    /* Logo-Bereich auf volle Breite */
+    .logo {
+        width: auto !important;
+    }
+    
     /* Erzwinge eine Spalten-Ansicht für mobile Geräte */
     .service-item {
         flex-direction: column !important;
