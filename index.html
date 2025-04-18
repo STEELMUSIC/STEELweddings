@@ -761,97 +761,6 @@
             color: var(--text-secondary);
         }
         
-        /* Responsive */
-        /* Mobile Menu Styles - stark vereinfacht */
-        .mobile-menu-toggle {
-            display: none;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            position: relative;
-            z-index: 9999;
-        }
-        
-        .mobile-menu-toggle span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: white;
-            margin: 5px 0;
-        }
-        
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #121214;
-            padding-top: 80px;
-            z-index: 9998;
-        }
-        
-        .mobile-menu.show {
-            display: block;
-        }
-        
-        .mobile-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-        
-        .mobile-menu li {
-            margin: 20px 0;
-        }
-        
-        .mobile-menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-        }
-        
-        .mobile-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .mobile-menu li {
-            margin: 20px 0;
-        }
-        
-        .mobile-menu a {
-            font-size: 1.2rem;
-            color: var(--light-text);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .mobile-menu a:hover {
-            color: var(--primary-color);
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-toggle {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-            
-            .about-container,
-            .service-item {
-                flex-direction: column;
-            }
-        }
-        
         /* Set hero content to be visible from the start */
         .hero-content {
             opacity: 1;
@@ -892,6 +801,69 @@
                 opacity: 1;
             }
         }
+        
+        /* Mobile Menu Styles - extrem vereinfacht */
+        .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 1001;
+        }
+        
+        .mobile-menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background-color: white;
+        }
+        
+        .mobile-menu {
+            display: none; /* Standardmäßig ausgeblendet */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #121214;
+            z-index: 1000;
+            padding-top: 80px;
+            text-align: center;
+        }
+        
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .mobile-menu li {
+            margin: 20px 0;
+        }
+        
+        .mobile-menu a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .about-container,
+            .service-item {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -911,7 +883,7 @@
                 </li>
             </ul>
             
-            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <div onclick="toggleMobileMenu()" class="mobile-menu-toggle" id="mobile-menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -921,12 +893,12 @@
     
     <div class="mobile-menu" id="mobile-menu">
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Euer Tag</a></li>
-            <li><a href="#services">Leistungen</a></li>
-            <li><a href="#info">Infos</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-            <li><a href="#" id="mobile-language-toggle">EN</a></li>
+            <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMobileMenu()">Euer Tag</a></li>
+            <li><a href="#services" onclick="closeMobileMenu()">Leistungen</a></li>
+            <li><a href="#info" onclick="closeMobileMenu()">Infos</a></li>
+            <li><a href="#contact" onclick="closeMobileMenu()">Kontakt</a></li>
+            <li><a href="#" id="mobile-language-toggle" onclick="closeMobileMenu()">EN</a></li>
         </ul>
     </div>
 
@@ -1097,6 +1069,7 @@
             
             // Apple-style scroll effects for images
             const parallaxImages = document.querySelectorAll('.image-parallax');
+            const stickyImage = document.querySelector('.sticky-image');
             
             // Umlaute direkt im HTML korrekt darstellen durch korrektes Encoding
             // Diese Lösung ist robuster als die vorherige
@@ -1168,43 +1141,43 @@
                 }
             });
             
-        // Logo-Farbe je nach Scrollposition ändern (vereinfacht)
-        window.addEventListener('scroll', function() {
-            const logo = document.querySelector('.logo');
-            const languageToggle = document.getElementById('language-toggle');
-            
-            if (!logo || !languageToggle) return;
-            
-            const scrollPos = window.scrollY + 60;
-            
-            // Farbe aus ursprünglicher Sektion entfernen
-            logo.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
-            languageToggle.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
-            
-            // Finde aktuelle Sektion und setze ihre Farbe
-            if (document.getElementById('about') && scrollPos >= document.getElementById('about').offsetTop - 100) {
-                logo.classList.add('about-section');
-                languageToggle.classList.add('about-section');
-            } 
-            if (document.getElementById('services') && scrollPos >= document.getElementById('services').offsetTop - 100) {
-                logo.classList.remove('about-section');
-                languageToggle.classList.remove('about-section');
-                logo.classList.add('services-section');
-                languageToggle.classList.add('services-section');
-            }
-            if (document.getElementById('info') && scrollPos >= document.getElementById('info').offsetTop - 100) {
-                logo.classList.remove('services-section');
-                languageToggle.classList.remove('services-section');
-                logo.classList.add('info-section');
-                languageToggle.classList.add('info-section');
-            }
-            if (document.getElementById('contact') && scrollPos >= document.getElementById('contact').offsetTop - 100) {
-                logo.classList.remove('info-section');
-                languageToggle.classList.remove('info-section');
-                logo.classList.add('contact-section');
-                languageToggle.classList.add('contact-section');
-            }
-        });
+            // Logo-Farbe je nach Scrollposition ändern (vereinfacht)
+            window.addEventListener('scroll', function() {
+                const logo = document.querySelector('.logo');
+                const languageToggle = document.getElementById('language-toggle');
+                
+                if (!logo || !languageToggle) return;
+                
+                const scrollPos = window.scrollY + 60;
+                
+                // Farbe aus ursprünglicher Sektion entfernen
+                logo.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
+                languageToggle.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
+                
+                // Finde aktuelle Sektion und setze ihre Farbe
+                if (document.getElementById('about') && scrollPos >= document.getElementById('about').offsetTop - 100) {
+                    logo.classList.add('about-section');
+                    languageToggle.classList.add('about-section');
+                } 
+                if (document.getElementById('services') && scrollPos >= document.getElementById('services').offsetTop - 100) {
+                    logo.classList.remove('about-section');
+                    languageToggle.classList.remove('about-section');
+                    logo.classList.add('services-section');
+                    languageToggle.classList.add('services-section');
+                }
+                if (document.getElementById('info') && scrollPos >= document.getElementById('info').offsetTop - 100) {
+                    logo.classList.remove('services-section');
+                    languageToggle.classList.remove('services-section');
+                    logo.classList.add('info-section');
+                    languageToggle.classList.add('info-section');
+                }
+                if (document.getElementById('contact') && scrollPos >= document.getElementById('contact').offsetTop - 100) {
+                    logo.classList.remove('info-section');
+                    languageToggle.classList.remove('info-section');
+                    logo.classList.add('contact-section');
+                    languageToggle.classList.add('contact-section');
+                }
+            });
             
             window.addEventListener('scroll', () => {
                 // Handle all parallax images
@@ -1251,46 +1224,7 @@
             
             // Contact form handling
             initContactForm();
-            
-            // Mobile menu
-            initMobileMenu();
         });
-        
-        // Initialize animations for sections as they scroll into view
-        function initScrollAnimations() {
-            const sections = document.querySelectorAll('section:not(.hero)');
-            const animatedElements = document.querySelectorAll('.service-item, .about-content, .about-image, .info-content');
-            
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                    }
-                };
-            
-            if (languageToggle) {
-                languageToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    switchLanguage(e);
-                });
-            }
-            
-            if (mobileLanguageToggle) {
-                mobileLanguageToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    switchLanguage(e);
-                });
-            }, observerOptions);
-            
-            sections.forEach(section => observer.observe(section));
-            animatedElements.forEach(element => observer.observe(element));
-        }
         
         // Initialize language switcher
         function initLanguageSwitcher() {
@@ -1389,13 +1323,30 @@
                     currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
                     document.documentElement.lang = currentLanguage;
                     
+                    // Aktualisiere den Text des Sprachumschalters
+                    if (languageToggle) {
+                        languageToggle.textContent = translations[currentLanguage]['lang-switch'];
+                    }
+                    if (mobileLanguageToggle) {
+                        mobileLanguageToggle.textContent = translations[currentLanguage]['lang-switch'];
+                    }
+                    
                     // Update basic UI elements
                     document.querySelector('.nav-links li:nth-child(1) a').textContent = translations[currentLanguage]['nav-home'];
                     document.querySelector('.nav-links li:nth-child(2) a').textContent = translations[currentLanguage]['nav-about'];
                     document.querySelector('.nav-links li:nth-child(3) a').textContent = translations[currentLanguage]['nav-services'];
                     document.querySelector('.nav-links li:nth-child(4) a').textContent = translations[currentLanguage]['nav-info'];
                     document.querySelector('.nav-links li:nth-child(5) a').textContent = translations[currentLanguage]['nav-contact'];
-                    this.textContent = translations[currentLanguage]['lang-switch'];
+                    
+                    // Update mobile menu items
+                    const mobileLinks = document.querySelectorAll('#mobile-menu ul li');
+                    if (mobileLinks.length >= 5) {
+                        mobileLinks[0].querySelector('a').textContent = translations[currentLanguage]['nav-home'];
+                        mobileLinks[1].querySelector('a').textContent = translations[currentLanguage]['nav-about'];
+                        mobileLinks[2].querySelector('a').textContent = translations[currentLanguage]['nav-services'];
+                        mobileLinks[3].querySelector('a').textContent = translations[currentLanguage]['nav-info'];
+                        mobileLinks[4].querySelector('a').textContent = translations[currentLanguage]['nav-contact'];
+                    }
                     
                     // Update section headers and hero
                     document.querySelector('.hero p').textContent = translations[currentLanguage]['hero-text'];
@@ -1433,9 +1384,22 @@
                             if (element) element.placeholder = placeholder;
                         }
                     } else {
-                        // Reset German content - we'll just reload the page for simplicity
+                        // Reset German content - without page reload
                         location.reload();
                     }
+                };
+            
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchLanguage(e);
+                });
+            }
+            
+            if (mobileLanguageToggle) {
+                mobileLanguageToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    switchLanguage(e);
                 });
             }
         }
@@ -1480,26 +1444,22 @@
                 });
             }
         }
-        
-        // Stark vereinfachtes Mobile-Menü
-        function initMobileMenu() {
-            // Direkter JavaScript-Ansatz ohne viele Event-Handler
-            document.getElementById('mobile-menu-toggle').onclick = function() {
-                var menu = document.getElementById('mobile-menu');
-                if (menu.classList.contains('show')) {
-                    menu.classList.remove('show');
-                } else {
-                    menu.classList.add('show');
-                }
-            };
-            
-            // Links im Menü sollen das Menü schließen
-            var menuLinks = document.querySelectorAll('#mobile-menu a');
-            for (var i = 0; i < menuLinks.length; i++) {
-                menuLinks[i].onclick = function() {
-                    document.getElementById('mobile-menu').classList.remove('show');
-                };
+    </script>
+    
+    <!-- Inline-JavaScript für mobiles Menü -->
+    <script>
+        // Globale Funktionen für mobiles Menü
+        function toggleMobileMenu() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
             }
+        }
+        
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').style.display = 'none';
         }
     </script>
 </body>
