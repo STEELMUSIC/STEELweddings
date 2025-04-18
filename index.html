@@ -771,6 +771,7 @@
             background: none;
             border: none;
             z-index: 1001;
+            position: relative;
         }
         
         .mobile-menu-toggle span {
@@ -795,6 +796,7 @@
             text-align: center;
             opacity: 0;
             visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
         
         .mobile-menu.active {
@@ -843,21 +845,6 @@
             .service-item {
                 flex-direction: column;
             }
-            
-            /* Stellen Sie sicher, dass alle Abschnitte in der mobilen Ansicht sichtbar sind */
-            section:not(.hero) {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-                visibility: visible !important;
-                display: block !important;
-            }
-            
-            .about-content, .about-image, .service-item, .info-content {
-                opacity: 1 !important;
-                transform: translateY(0) !important;
-                visibility: visible !important;
-                display: block !important;
-            }
         }
         
         /* Set hero content to be visible from the start */
@@ -867,18 +854,19 @@
         }
         
         section:not(.hero) {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 0;
+            transform: translateY(30px);
             transition: opacity 0.8s ease, transform 1s ease;
         }
+        
         section.in-view {
             opacity: 1;
             transform: translateY(0);
         }
         
         .service-item, .about-content, .about-image, .info-content {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 0;
+            transform: translateY(30px);
             transition: opacity 0.8s ease, transform 1s ease;
             transition-delay: 0.2s;
         }
@@ -929,22 +917,22 @@
                     <a href="#" id="language-toggle">EN</a>
                 </li>
             </ul>
-            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
-            
-            <div class="mobile-menu" id="mobile-menu">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Euer Tag</a></li>
-                    <li><a href="#services">Leistungen</a></li>
-                    <li><a href="#info">Infos</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
-                    <li><a href="#" id="mobile-language-toggle">EN</a></li>
-                </ul>
             </div>
+        </div>
+        
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Euer Tag</a></li>
+                <li><a href="#services">Leistungen</a></li>
+                <li><a href="#info">Infos</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#" id="mobile-language-toggle">EN</a></li>
+            </ul>
         </div>
     </header>
 
@@ -1110,26 +1098,6 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', function() {
-            // Debug-Nachricht
-            console.log('DOM fully loaded');
-            
-            // Prüfe, ob alle Sektionen sichtbar sind
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.opacity = '1';
-                section.style.visibility = 'visible';
-                section.style.display = 'block';
-                console.log(`Section ${section.id || 'ohne ID'} sichtbar gemacht`);
-            });
-            
-            // Erzwinge Sichtbarkeit für Elemente, die möglicherweise versteckt sind
-            const hiddenElements = document.querySelectorAll('.about-content, .about-image, .service-item, .info-content');
-            hiddenElements.forEach(element => {
-                element.style.opacity = '1';
-                element.style.visibility = 'visible';
-                element.style.display = 'block';
-            });
-            
             // Apple-style scroll effects for images
             const parallaxImages = document.querySelectorAll('.image-parallax');
             const stickyImage = document.querySelector('.sticky-image');
@@ -1562,18 +1530,13 @@
                 return;
             }
             
-            // Stellen Sie sicher, dass das Menü standardmäßig geschlossen ist
-            mobileMenu.classList.remove('active');
-            
-            // Event-Listener für den Toggle-Button
-            mobileMenuToggle.addEventListener('click', function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-                console.log('Mobile menu toggle clicked');
+            mobileMenuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
                 mobileMenu.classList.toggle('active');
             });
             
-            // Event-Listener für die Menü-Links
+            // Close menu when clicking on links
             const mobileMenuLinks = mobileMenu.querySelectorAll('a');
             mobileMenuLinks.forEach(link => {
                 link.addEventListener('click', function() {
@@ -1581,7 +1544,7 @@
                 });
             });
             
-            // Event-Listener für Klicks außerhalb des Menüs
+            // Close menu when clicking outside
             document.addEventListener('click', function(event) {
                 if (mobileMenu.classList.contains('active') && 
                     !mobileMenu.contains(event.target) && 
@@ -1589,8 +1552,6 @@
                     mobileMenu.classList.remove('active');
                 }
             });
-            
-            console.log('Mobile menu initialized');
         }
     </script>
 </body>
