@@ -762,54 +762,22 @@
         }
         
         /* Responsive */
-        /* Mobile Menu Styles */
+        /* Mobile Menu Styles - stark vereinfacht */
         .mobile-menu-toggle {
             display: none;
             cursor: pointer;
-            z-index: 9999;
-            position: relative;
-            margin-right: 10px;
             width: 30px;
-            height: 25px;
+            height: 30px;
+            position: relative;
+            z-index: 9999;
         }
         
         .mobile-menu-toggle span {
             display: block;
-            position: absolute;
-            height: 3px;
             width: 100%;
-            background: white;
-            border-radius: 3px;
-            left: 0;
-            transform: rotate(0deg);
-            transition: .25s ease-in-out;
-        }
-        
-        .mobile-menu-toggle span:nth-child(1) {
-            top: 0px;
-        }
-        
-        .mobile-menu-toggle span:nth-child(2) {
-            top: 10px;
-        }
-        
-        .mobile-menu-toggle span:nth-child(3) {
-            top: 20px;
-        }
-        
-        .mobile-menu-toggle.active span:nth-child(1) {
-            top: 10px;
-            transform: rotate(135deg);
-        }
-        
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-            left: -60px;
-        }
-        
-        .mobile-menu-toggle.active span:nth-child(3) {
-            top: 10px;
-            transform: rotate(-135deg);
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
         }
         
         .mobile-menu {
@@ -817,17 +785,14 @@
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(18, 18, 20, 0.95);
-            z-index: 9998;
+            background-color: #121214;
             padding-top: 80px;
-            text-align: center;
+            z-index: 9998;
         }
         
-        .mobile-menu.active {
+        .mobile-menu.show {
             display: block;
         }
         
@@ -835,21 +800,17 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            text-align: center;
         }
         
         .mobile-menu li {
-            margin: 30px 0;
+            margin: 20px 0;
         }
         
         .mobile-menu a {
-            font-size: 1.5rem;
-            color: var(--light-text);
+            color: white;
             text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .mobile-menu a:hover {
-            color: var(--primary-color);
+            font-size: 1.5rem;
         }
         
         .mobile-menu ul {
@@ -958,7 +919,6 @@
         </div>
     </header>
     
-    <!-- Mobile Menu (außerhalb vom Header) -->
     <div class="mobile-menu" id="mobile-menu">
         <ul>
             <li><a href="#home">Home</a></li>
@@ -1132,20 +1092,11 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', function() {
+            // Debug-Ausgabe hinzufügen
+            console.log('DOMContentLoaded: Mobile Menu initialisieren');
+            
             // Apple-style scroll effects for images
             const parallaxImages = document.querySelectorAll('.image-parallax');
-            const stickyImage = document.querySelector('.sticky-image');
-            
-            // Simple solution to ensure all content is visible
-            const allSections = document.querySelectorAll('section');
-            for (let i = 0; i < allSections.length; i++) {
-                allSections[i].style.opacity = "1";
-            }
-            
-            const allElements = document.querySelectorAll('.service-item, .about-content, .about-image, .info-content');
-            for (let i = 0; i < allElements.length; i++) {
-                allElements[i].style.opacity = "1";
-            }
             
             // Umlaute direkt im HTML korrekt darstellen durch korrektes Encoding
             // Diese Lösung ist robuster als die vorherige
@@ -1530,27 +1481,23 @@
             }
         }
         
-        // Initialize mobile menu with a completely different approach
+        // Stark vereinfachtes Mobile-Menü
         function initMobileMenu() {
-            var toggleButton = document.getElementById('mobile-menu-toggle');
-            var mobileMenu = document.getElementById('mobile-menu');
-            var menuLinks = document.querySelectorAll('#mobile-menu a');
-            
-            // Make sure elements exist
-            if (!toggleButton || !mobileMenu) return;
-            
-            // Toggle menu when clicking the button
-            toggleButton.onclick = function(e) {
-                e.preventDefault();
-                this.classList.toggle('active');
-                mobileMenu.classList.toggle('active');
+            // Direkter JavaScript-Ansatz ohne viele Event-Handler
+            document.getElementById('mobile-menu-toggle').onclick = function() {
+                var menu = document.getElementById('mobile-menu');
+                if (menu.classList.contains('show')) {
+                    menu.classList.remove('show');
+                } else {
+                    menu.classList.add('show');
+                }
             };
             
-            // Close menu when clicking on links
+            // Links im Menü sollen das Menü schließen
+            var menuLinks = document.querySelectorAll('#mobile-menu a');
             for (var i = 0; i < menuLinks.length; i++) {
                 menuLinks[i].onclick = function() {
-                    toggleButton.classList.remove('active');
-                    mobileMenu.classList.remove('active');
+                    document.getElementById('mobile-menu').classList.remove('show');
                 };
             }
         }
