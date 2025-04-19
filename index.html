@@ -903,6 +903,10 @@
 
 /* Mobiles Menü Styling */
 .mobile-menu {
+    z-index: 3000;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     display: none;
     position: fixed;
     top: 0;
@@ -1596,12 +1600,12 @@ function toggleMobileMenu(event) {
         
         // Kurz warten und dann ausblenden
         setTimeout(() => {
-            menu.style.display = 'none';
+            menu.classList.remove('active');
         }, 300);
     } else {
         // Menü öffnen
         menuOpen = true;
-        menu.style.display = 'block';
+        menu.classList.add('active');
         toggle.classList.add('active');
         
         // Animation zum Einblenden
