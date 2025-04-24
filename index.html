@@ -146,10 +146,14 @@
         }
         
         .logo.info-section {
-            background: linear-gradient(90deg, var(--info-color), #38f9d7);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+    background: linear-gradient(90deg, #43e97b, #38f9d7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    width: 188px; /* Gleiche Breite wie im Grundzustand */
+    letter-spacing: -0.5px; /* Konsistenten Buchstabenabstand beibehalten */
+    padding: 0; /* Kein Padding */
+    text-align: left; /* Linksbündige Ausrichtung */
         }
         
         .logo.contact-section {
@@ -198,10 +202,60 @@
             color: var(--light-text);
             transition: var(--transition);
             font-size: 0.9rem; /* Explizit definierte Schriftgröße für alle Links */
+            padding: 6px 12px;
+            border-radius: 6px;
         }
         
+        /* NEU: Hover-Farben für das Desktop-Menü */
         .nav-links a:hover {
             color: var(--primary-color);
+            background-color: rgba(160, 68, 255, 0.1);
+        }
+        
+        /* NEU: Spezifische Hover-Farben je nach Abschnitt */
+        .nav-links.about-active a[href="#about"]:hover,
+        body.section-about .nav-links a[href="#about"]:hover {
+            color: var(--about-color);
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+        
+        .nav-links.services-active a[href="#services"]:hover,
+        body.section-services .nav-links a[href="#services"]:hover {
+            color: var(--service-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+        
+        .nav-links.info-active a[href="#info"]:hover,
+        body.section-info .nav-links a[href="#info"]:hover {
+            color: var(--info-color);
+            background-color: rgba(67, 233, 123, 0.1);
+        }
+        
+        .nav-links.contact-active a[href="#contact"]:hover,
+        body.section-contact .nav-links a[href="#contact"]:hover {
+            color: var(--contact-color);
+            background-color: rgba(248, 87, 166, 0.1);
+        }
+        
+        /* NEU: Aktive Menüpunkte je nach Abschnitt */
+        body.section-about .nav-links a[href="#about"] {
+            color: var(--about-color);
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+        
+        body.section-services .nav-links a[href="#services"] {
+            color: var(--service-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+        
+        body.section-info .nav-links a[href="#info"] {
+            color: var(--info-color);
+            background-color: rgba(67, 233, 123, 0.1);
+        }
+        
+        body.section-contact .nav-links a[href="#contact"] {
+            color: var(--contact-color);
+            background-color: rgba(248, 87, 166, 0.1);
         }
         
         .language-switch {
@@ -374,6 +428,13 @@
             z-index: 2;
             padding: 2rem;
             position: relative;
+            opacity: 0; /* Initial versteckt */
+            transform: translateY(40px); /* Initial nach unten verschoben */
+            transition: opacity 1.2s ease, transform 1.2s ease; /* Sanfter Übergang */
+will-change: opacity, transform;
+        }
+        
+        .hero-content.visible {
             opacity: 1;
             transform: translateY(0);
         }
@@ -455,6 +516,14 @@
             position: relative;
             transform-style: preserve-3d;
             perspective: 1000px;
+            opacity: 0; /* NEU: initial versteckt */
+            transform: translateX(-40px); /* NEU: initial verschoben */
+            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+        }
+        
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
         
         .about-image img {
@@ -466,6 +535,14 @@
         
         .about-content {
             flex: 1;
+            opacity: 0; /* NEU: initial versteckt */
+            transform: translateX(40px); /* NEU: initial verschoben */
+            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+        }
+        
+        .about-content.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
         
         .about-title {
@@ -495,6 +572,14 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            opacity: 0; /* NEU: initial versteckt */
+            transform: translateY(30px); /* NEU: initial verschoben */
+            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+        }
+        
+        .services-title.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .services-container {
@@ -513,6 +598,14 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
+            opacity: 0; /* NEU: initial versteckt */
+            transform: translateY(50px); /* NEU: initial verschoben */
+            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+        }
+        
+        .service-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .service-content {
@@ -590,6 +683,14 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            opacity: 0; /* NEU: initial versteckt */
+            transform: translateY(30px); /* NEU: initial verschoben */
+            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+        }
+        
+        .info-title.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .info-content {
@@ -597,6 +698,14 @@
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0; /* NEU: initial versteckt */
+            transform: translateY(40px); /* NEU: initial verschoben */
+            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+        }
+        
+        .info-content.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* Contact */
@@ -616,6 +725,14 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            opacity: 0; /* NEU: initial versteckt */
+            transform: translateY(30px); /* NEU: initial verschoben */
+            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+        }
+        
+        .contact-title.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .contact-container {
@@ -626,6 +743,14 @@
         .contact-intro {
             text-align: left;
             margin-bottom: 3rem;
+            opacity: 0; /* NEU: initial versteckt */
+            transform: translateY(30px); /* NEU: initial verschoben */
+            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+        }
+        
+        .contact-intro.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .contact-form {
@@ -633,6 +758,14 @@
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0; /* NEU: initial versteckt */
+            transform: translateY(40px); /* NEU: initial verschoben */
+            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+        }
+        
+        .contact-form.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .form-group label::after {
@@ -761,20 +894,17 @@
             color: var(--text-secondary);
         }
         
-        /* Set hero content to be visible from the start */
-        .hero-content {
+        /* NEU: Animation für Elemente beim Scrollen */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+will-change: opacity, transform;
+        }
+        
+        .fade-in-element.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-        
-        section:not(.hero) {
-            opacity: 1;
-            transform: none;
-        }
-        
-        .service-item, .about-content, .about-image, .info-content {
-            opacity: 1;
-            transform: none;
         }
         
         /* Apple-style sticky scroll for images */
@@ -799,6 +929,12 @@
                 transition: none;
                 transform: none;
                 opacity: 1;
+            }
+            
+            .fade-in-element {
+                opacity: 1;
+                transform: none;
+                transition: none;
             }
         }
 /* CSS-Fix für das Layout und Mobile-Menü */
@@ -1189,10 +1325,35 @@
         window.addEventListener('DOMContentLoaded', function() {
             // Debug-Ausgabe hinzufügen
             console.log('DOMContentLoaded: Mobile Menu initialisieren');
+// NEU: Scroll-Animations-Observer einrichten (bidirektional)
+const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible');
+        }
+    });
+}, {
+    root: null,
+    rootMargin: '-50px', 
+    threshold: 0.15
+});
             
-            // Apple-style scroll effects for images
-            const parallaxImages = document.querySelectorAll('.image-parallax');
-            const stickyImage = document.querySelector('.sticky-image');
+// Apple-style scroll effects for images
+const parallaxImages = document.querySelectorAll('.image-parallax');
+const stickyImage = document.querySelector('.sticky-image');
+            
+// Hero-Content in den Observer aufnehmen statt direkt anzuzeigen
+const heroContent = document.querySelector('.hero-content');
+if (heroContent) {
+    scrollObserver.observe(heroContent);
+}
+
+// NEU: Beobachte alle Elemente, die animiert werden sollen
+document.querySelectorAll('.about-image, .about-content, .services-title, .service-item, .info-title, .info-content, .contact-title, .contact-intro, .contact-form').forEach(elem => {
+    scrollObserver.observe(elem);
+});
             
             // Umlaute direkt im HTML korrekt darstellen durch korrektes Encoding
             // Diese Lösung ist robuster als die vorherige
@@ -1263,6 +1424,37 @@
                     lightRays.style.opacity = 0.6 * fadeRatio;
                 }
             });
+            
+            // NEU: Bodyclass setzen basierend auf aktuellem Abschnitt für Desktop-Menü-Farben
+            function updateSectionClasses() {
+                const scrollPos = window.scrollY + 100; // Etwas Offset, damit der Header schon früher die Farbe ändert
+                
+                // Entfernen aller Abschnitts-Klassen vom Body
+                document.body.classList.remove('section-about', 'section-services', 'section-info', 'section-contact');
+                
+                // Aktuellen Abschnitt bestimmen und entsprechende Klasse setzen
+                const sections = [
+                    { id: 'contact', class: 'section-contact' },
+                    { id: 'info', class: 'section-info' },
+                    { id: 'services', class: 'section-services' },
+                    { id: 'about', class: 'section-about' }
+                ];
+                
+                // Von unten nach oben prüfen (umgekehrte Reihenfolge für korrekte Priorität)
+                for (const section of sections) {
+                    const elem = document.getElementById(section.id);
+                    if (elem && scrollPos >= elem.offsetTop) {
+                        document.body.classList.add(section.class);
+                        break;
+                    }
+                }
+            }
+            
+            // NEU: Aktualisiere Abschnittsklassen beim Scrollen
+            window.addEventListener('scroll', updateSectionClasses);
+            
+            // Initial aufrufen
+            updateSectionClasses();
             
             // Logo-Farbe je nach Scrollposition ändern (vereinfacht)
             window.addEventListener('scroll', function() {
@@ -1525,6 +1717,9 @@
                     switchLanguage(e);
                 });
             }
+            
+            // Füge die Funktion dem globalen Scope hinzu, damit sie später verfügbar ist
+            window.switchLanguage = switchLanguage;
         }
         
         // Initialize contact form
