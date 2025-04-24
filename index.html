@@ -21,6 +21,80 @@
             --text-secondary: #bbbbbb;
             --transition: all 0.4s ease;
         }
+
+/* Logo-Styling */
+.logo {
+    display: inline-block;
+    position: relative;
+    width: 188px;
+    height: 34px;
+    text-decoration: none;
+}
+
+#logo-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Farbwechsel für verschiedene Abschnitte mit Übergängen */
+#steel-path, #weddings-path, #weddings-path2, #weddings-path3,
+#weddings-path4, #weddings-path5, #weddings-path6, 
+#weddings-path7, #weddings-path8 {
+    transition: fill 0.8s ease;
+}
+
+/* Wechselt die Gradienten basierend auf Abschnitt */
+body.section-about #steel-path,
+body.section-about #weddings-path,
+body.section-about #weddings-path2, 
+body.section-about #weddings-path3,
+body.section-about #weddings-path4,
+body.section-about #weddings-path5,
+body.section-about #weddings-path6,
+body.section-about #weddings-path7,
+body.section-about #weddings-path8 {
+    fill: url(#about-gradient);
+}
+
+body.section-services #steel-path,
+body.section-services #weddings-path,
+body.section-services #weddings-path2, 
+body.section-services #weddings-path3,
+body.section-services #weddings-path4,
+body.section-services #weddings-path5,
+body.section-services #weddings-path6,
+body.section-services #weddings-path7,
+body.section-services #weddings-path8 {
+    fill: url(#services-gradient);
+}
+
+body.section-info #steel-path,
+body.section-info #weddings-path,
+body.section-info #weddings-path2, 
+body.section-info #weddings-path3,
+body.section-info #weddings-path4,
+body.section-info #weddings-path5,
+body.section-info #weddings-path6,
+body.section-info #weddings-path7,
+body.section-info #weddings-path8 {
+    fill: url(#info-gradient);
+}
+
+body.section-contact #steel-path,
+body.section-contact #weddings-path,
+body.section-contact #weddings-path2, 
+body.section-contact #weddings-path3,
+body.section-contact #weddings-path4,
+body.section-contact #weddings-path5,
+body.section-contact #weddings-path6,
+body.section-contact #weddings-path7,
+body.section-contact #weddings-path8 {
+    fill: url(#contact-gradient);
+}
         
         * {
             margin: 0;
@@ -110,59 +184,7 @@
         .info-content a:hover {
             border-bottom: 1px solid var(--info-color);
         }
-        
-        .logo {
-            font-size: 1.6rem;
-            letter-spacing: -0.5px;
-            background: linear-gradient(90deg, var(--primary-color), #6441a5);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-decoration: none;
-            display: inline-block;
-            transition: background 0.8s ease;
-            height: 1.8rem; /* Feste Höhe für das Logo */
-            line-height: 1.8rem; /* Vertikale Zentrierung des Textes */
-            width: 188px; /* Feste Breite, um Verrutschen zu verhindern */
-            position: relative; /* Für bessere Positionierung */
-        }
-        
-        .logo span {
-            display: inline-block; /* Verhindert Verschiebung */
-        }
-        
-        .logo.about-section {
-            background: linear-gradient(90deg, var(--about-color), #ff9e7d);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .logo.services-section {
-            background: linear-gradient(90deg, var(--service-color), #00f2fe);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .logo.info-section {
-    background: linear-gradient(90deg, #43e97b, #38f9d7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    width: 188px; /* Gleiche Breite wie im Grundzustand */
-    letter-spacing: -0.5px; /* Konsistenten Buchstabenabstand beibehalten */
-    padding: 0; /* Kein Padding */
-    text-align: left; /* Linksbündige Ausrichtung */
-        }
-        
-        .logo.contact-section {
-            background: linear-gradient(90deg, var(--contact-color), var(--contact-highlight));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
+
         header {
             position: fixed;
             top: 0;
@@ -1126,10 +1148,75 @@ will-change: opacity, transform;
     </style>
 </head>
 <body>
+  <!-- Gradienten für das Logo -->
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <linearGradient id="primary-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--primary-color)" />
+        <stop offset="100%" stop-color="var(--secondary-color)" />
+      </linearGradient>
+      <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--about-color)" />
+        <stop offset="100%" stop-color="#ff9e7d" />
+      </linearGradient>
+      <linearGradient id="services-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--service-color)" />
+        <stop offset="100%" stop-color="#00f2fe" />
+      </linearGradient>
+      <linearGradient id="info-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--info-color)" />
+        <stop offset="100%" stop-color="#38f9d7" />
+      </linearGradient>
+      <linearGradient id="contact-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--contact-color)" />
+        <stop offset="100%" stop-color="var(--contact-highlight)" />
+      </linearGradient>
+    </defs>
+  </svg>
+
   <!-- Header -->
 <header>
     <div class="nav-container">
-        <a href="#" class="logo"><span style="font-weight: 300;">STEEL</span><span style="font-weight: 600;">weddings</span></a>
+        <a href="#" class="logo">
+  <svg id="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 573.86 103.91" width="188" height="34">
+    <defs>
+      <!-- Hauptgradient (violett) -->
+      <linearGradient id="main-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#a044ff" />
+        <stop offset="100%" stop-color="#6441a5" />
+      </linearGradient>
+      
+      <!-- About Gradient (rot) -->
+      <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#ff6b6b" />
+        <stop offset="100%" stop-color="#ff9e7d" />
+      </linearGradient>
+      
+      <!-- Services Gradient (blau) -->
+      <linearGradient id="services-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#4facfe" />
+        <stop offset="100%" stop-color="#00f2fe" />
+      </linearGradient>
+      
+      <!-- Info Gradient (grün) -->
+      <linearGradient id="info-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#43e97b" />
+        <stop offset="100%" stop-color="#38f9d7" />
+      </linearGradient>
+      
+      <!-- Contact Gradient (pink) -->
+      <linearGradient id="contact-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#f857a6" />
+        <stop offset="100%" stop-color="#ff5858" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Logo Pfade mit Standard-Gradient (violett) -->
+    <path id="steel-path" fill="url(#main-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+    
+    <path id="weddings-path" fill="url(#main-gradient)" d="m345.39,65.03h3.91l5.22,16.06c.61,1.76,1.1,3.58,1.65,5.72.44-2.14,1.32-4.84,1.59-5.72l5.28-16.06h3.9l5.22,16.06c.49,1.43,1.15,3.74,1.65,5.72.55-2.2,.66-2.86,1.59-5.72l5.28-16.06h3.96l-9.02,26.62h-3.68l-5.5-16.72c-.66-1.98-1.1-3.63-1.43-5.22-.38,1.43-.83,3.02-1.54,5.22l-5.5,16.72h-3.79l-8.8-26.62Z"/><path id="weddings-path2" fill="url(#main-gradient)" d="m386.37,78.34c0-8.3,5.17-14.02,12.76-14.02s12.1,5.11,12.1,12.65v1.87h-21.17c.27,6.49,3.68,10.23,9.4,10.23,4.34,0,7.15-1.87,8.14-5.39h3.63c-1.43,5.61-5.55,8.63-11.82,8.63-7.81,0-13.03-5.61-13.03-13.97Zm3.79-2.25h17.27c0-5.11-3.3-8.52-8.3-8.52s-8.3,3.3-8.96,8.52Z"/><path id="weddings-path3" fill="url(#main-gradient)" d="m415.41,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/><path id="weddings-path4" fill="url(#main-gradient)" d="m447.53,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/><path id="weddings-path5" fill="url(#main-gradient)" d="m480.58,54.91c0-1.54,1.26-2.86,2.8-2.86s2.86,1.32,2.86,2.86-1.32,2.8-2.86,2.8-2.8-1.26-2.8-2.8Zm.93,10.12h3.79v26.62h-3.79v-26.62Z"/><path id="weddings-path6" fill="url(#main-gradient)" d="m493.23,91.65v-26.62h3.3l.55,4.62c1.76-3.41,5.28-5.33,9.13-5.33,7.31,0,10.34,4.34,10.34,11.05v16.28h-3.79v-15.45c0-6.21-2.8-8.41-7.2-8.41-5.44,0-8.52,3.96-8.52,9.95v13.91h-3.79Z"/><path id="weddings-path7" fill="url(#main-gradient)" d="m534.81,64.32c4.62,0,8.14,2.15,9.84,6.05l.38-5.33h3.3v25.79c0,7.92-5.06,13.09-12.87,13.09-6.82,0-11.6-3.85-12.65-10.28h3.79c.82,4.29,4.12,6.82,8.91,6.82,5.44,0,9.07-3.68,9.07-9.24v-6.32c-1.82,3.74-5.5,5.94-10.06,5.94-7.59,0-12.21-5.99-12.21-13.25s4.67-13.25,12.48-13.25Zm.28,23.1c5.77,0,9.18-4.18,9.18-9.9s-3.3-9.84-9.13-9.84-9.02,4.45-9.02,9.84,3.35,9.9,8.96,9.9Z"/><path id="weddings-path8" fill="url(#main-gradient)" d="m557.64,84.17c0,3.08,2.31,5,6.05,5,4.12,0,6.54-1.76,6.54-4.62,0-2.2-1.1-3.46-4.23-4.23l-4.56-1.16c-4.62-1.15-6.87-3.57-6.87-7.2,0-4.67,3.9-7.64,9.62-7.64s9.24,3.08,9.4,8.03h-3.68c-.11-3.08-2.25-4.9-5.83-4.9s-5.83,1.59-5.83,4.45c0,2.04,1.43,3.46,4.34,4.18l4.56,1.15c4.62,1.16,6.71,3.3,6.71,7.15,0,4.78-4.07,7.92-10.12,7.92s-9.73-3.19-9.73-8.14h3.63Z"/>
+  </svg>
+</a>
         
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
