@@ -22,98 +22,98 @@
             --transition: all 0.4s ease;
         }
 
-/* Logo-Styling */
-.logo {
-    display: inline-block;
-    position: relative;
-    width: 188px;
-    height: 34px;
-    text-decoration: none;
-}
+        .logo {
+            display: inline-flex !important;
+            align-items: center !important;
+            position: relative;
+            width: 188px;
+            height: 60px !important;
+            text-decoration: none;
+            overflow: hidden !important;
+            z-index: 1001 !important;
+            background-color: transparent !important;
+            justify-content: center !important;
+        }
 
-#logo-svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+        #logo-svg {
+            width: 188px;
+            height: 34px;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            display: block !important;
+            position: relative !important;
+            top: 5px !important;
+        }
 
-/* Farbwechsel für verschiedene Abschnitte mit Übergängen */
-#steel-path, #weddings-path, #weddings-path2, #weddings-path3,
-#weddings-path4, #weddings-path5, #weddings-path6, 
-#weddings-path7, #weddings-path8 {
-    transition: fill 0.8s ease;
-}
+        #steel-path, #weddings-path, #weddings-path2, #weddings-path3,
+        #weddings-path4, #weddings-path5, #weddings-path6, 
+        #weddings-path7, #weddings-path8 {
+            transition: fill 0.8s ease;
+        }
 
-/* Wechselt die Gradienten basierend auf Abschnitt */
-body.section-about #steel-path,
-body.section-about #weddings-path,
-body.section-about #weddings-path2, 
-body.section-about #weddings-path3,
-body.section-about #weddings-path4,
-body.section-about #weddings-path5,
-body.section-about #weddings-path6,
-body.section-about #weddings-path7,
-body.section-about #weddings-path8 {
-    fill: url(#about-gradient);
-}
+        body.section-about #steel-path,
+        body.section-about #weddings-path,
+        body.section-about #weddings-path2, 
+        body.section-about #weddings-path3,
+        body.section-about #weddings-path4,
+        body.section-about #weddings-path5,
+        body.section-about #weddings-path6,
+        body.section-about #weddings-path7,
+        body.section-about #weddings-path8 {
+            fill: url(#about-gradient);
+        }
 
-body.section-services #steel-path,
-body.section-services #weddings-path,
-body.section-services #weddings-path2, 
-body.section-services #weddings-path3,
-body.section-services #weddings-path4,
-body.section-services #weddings-path5,
-body.section-services #weddings-path6,
-body.section-services #weddings-path7,
-body.section-services #weddings-path8 {
-    fill: url(#services-gradient);
-}
+        body.section-services #steel-path,
+        body.section-services #weddings-path,
+        body.section-services #weddings-path2, 
+        body.section-services #weddings-path3,
+        body.section-services #weddings-path4,
+        body.section-services #weddings-path5,
+        body.section-services #weddings-path6,
+        body.section-services #weddings-path7,
+        body.section-services #weddings-path8 {
+            fill: url(#services-gradient);
+        }
 
-body.section-info #steel-path,
-body.section-info #weddings-path,
-body.section-info #weddings-path2, 
-body.section-info #weddings-path3,
-body.section-info #weddings-path4,
-body.section-info #weddings-path5,
-body.section-info #weddings-path6,
-body.section-info #weddings-path7,
-body.section-info #weddings-path8 {
-    fill: url(#info-gradient);
-}
+        body.section-info #steel-path,
+        body.section-info #weddings-path,
+        body.section-info #weddings-path2, 
+        body.section-info #weddings-path3,
+        body.section-info #weddings-path4,
+        body.section-info #weddings-path5,
+        body.section-info #weddings-path6,
+        body.section-info #weddings-path7,
+        body.section-info #weddings-path8 {
+            fill: url(#info-gradient);
+        }
 
-body.section-contact #steel-path,
-body.section-contact #weddings-path,
-body.section-contact #weddings-path2, 
-body.section-contact #weddings-path3,
-body.section-contact #weddings-path4,
-body.section-contact #weddings-path5,
-body.section-contact #weddings-path6,
-body.section-contact #weddings-path7,
-body.section-contact #weddings-path8 {
-    fill: url(#contact-gradient);
-}
+        body.section-contact #steel-path,
+        body.section-contact #weddings-path,
+        body.section-contact #weddings-path2, 
+        body.section-contact #weddings-path3,
+        body.section-contact #weddings-path4,
+        body.section-contact #weddings-path5,
+        body.section-contact #weddings-path6,
+        body.section-contact #weddings-path7,
+        body.section-contact #weddings-path8 {
+            fill: url(#contact-gradient);
+        }
 
-        /* CSS-Fix für das Logo-Problem */
-body.section-services .logo,
-body.section-info .logo {
-    /* Diese Eigenschaften zurücksetzen, damit das Logo nicht expandiert */
-    width: 188px !important;
-    height: 34px !important;
-    overflow: hidden; /* Alles, was über den definierten Bereich hinausgeht, abschneiden */
-    z-index: 10; /* Sicherstellen, dass das Logo über anderen Elementen liegt */
-}
+        body.section-services .logo,
+        body.section-info .logo {
+            width: 188px !important;
+            height: 34px !important;
+            overflow: hidden;
+            z-index: 10;
+        }
 
-/* Sicherstellen, dass das SVG sich nicht über seinen Container hinaus ausdehnt */
-body.section-services #logo-svg,
-body.section-info #logo-svg {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 188px;
-    max-height: 34px;
-}
+        body.section-services #logo-svg,
+        body.section-info #logo-svg {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 188px;
+            max-height: 34px;
+        }
 
         * {
             margin: 0;
@@ -132,7 +132,6 @@ body.section-info #logo-svg {
             font-weight: 600;
         }
         
-        /* Farbige fettungen je nach Bereich */
         .about-content strong {
             color: var(--about-color);
         }
@@ -170,7 +169,6 @@ body.section-info #logo-svg {
             margin-bottom: 1rem;
         }
         
-        /* Links in den jeweiligen Bereichen */
         .about-content a {
             color: var(--about-color);
             text-decoration: none;
@@ -224,36 +222,34 @@ body.section-info #logo-svg {
             justify-content: space-between;
             align-items: center;
             padding: 1rem 2rem;
-            height: 60px; /* Feste Höhe für die Navigation */
+            height: 60px;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
-            align-items: center; /* Elemente vertikal zentrieren */
+            align-items: center;
         }
         
         .nav-links li {
             margin-left: 2rem;
-            font-size: 0.9rem; /* Einheitliche Schriftgröße */
+            font-size: 0.9rem;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--light-text);
             transition: var(--transition);
-            font-size: 0.9rem; /* Explizit definierte Schriftgröße für alle Links */
+            font-size: 0.9rem;
             padding: 6px 12px;
             border-radius: 6px;
         }
         
-        /* NEU: Hover-Farben für das Desktop-Menü */
         .nav-links a:hover {
             color: var(--primary-color);
             background-color: rgba(160, 68, 255, 0.1);
         }
         
-        /* NEU: Spezifische Hover-Farben je nach Abschnitt */
         .nav-links.about-active a[href="#about"]:hover,
         body.section-about .nav-links a[href="#about"]:hover {
             color: var(--about-color);
@@ -278,7 +274,6 @@ body.section-info #logo-svg {
             background-color: rgba(248, 87, 166, 0.1);
         }
         
-        /* NEU: Aktive Menüpunkte je nach Abschnitt */
         body.section-about .nav-links a[href="#about"] {
             color: var(--about-color);
             background-color: rgba(255, 107, 107, 0.1);
@@ -316,7 +311,6 @@ body.section-info #logo-svg {
             cursor: pointer;
         }
         
-        /* Farbwechsel für den Sprachschalter */
         .language-switch a.about-section {
             background-color: rgba(255, 107, 107, 0.2);
             border-color: rgba(255, 107, 107, 0.3);
@@ -373,7 +367,6 @@ body.section-info #logo-svg {
             position: relative;
         }
         
-        /* Modern Apple-style gradient background */
         .hero::before {
             content: '';
             position: absolute;
@@ -385,7 +378,6 @@ body.section-info #logo-svg {
             z-index: 1;
         }
         
-        /* Modern Apple-style hero background */
         .hero-background {
             position: absolute;
             top: 0;
@@ -469,10 +461,10 @@ body.section-info #logo-svg {
             z-index: 2;
             padding: 2rem;
             position: relative;
-            opacity: 0; /* Initial versteckt */
-            transform: translateY(40px); /* Initial nach unten verschoben */
-            transition: opacity 1.2s ease, transform 1.2s ease; /* Sanfter Übergang */
-will-change: opacity, transform;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            will-change: opacity, transform;
         }
         
         .hero-content.visible {
@@ -535,7 +527,6 @@ will-change: opacity, transform;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
         
-        /* About */
         .about {
             padding: 6rem 2rem;
             background-color: var(--light-bg);
@@ -557,9 +548,9 @@ will-change: opacity, transform;
             position: relative;
             transform-style: preserve-3d;
             perspective: 1000px;
-            opacity: 0; /* NEU: initial versteckt */
-            transform: translateX(-40px); /* NEU: initial verschoben */
-            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
         .about-image.visible {
@@ -576,9 +567,9 @@ will-change: opacity, transform;
         
         .about-content {
             flex: 1;
-            opacity: 0; /* NEU: initial versteckt */
-            transform: translateX(40px); /* NEU: initial verschoben */
-            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
         .about-content.visible {
@@ -596,7 +587,6 @@ will-change: opacity, transform;
             color: transparent;
         }
         
-        /* Services */
         .services {
             padding: 6rem 2rem;
             background-color: var(--dark-bg);
@@ -613,9 +603,9 @@ will-change: opacity, transform;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            opacity: 0; /* NEU: initial versteckt */
-            transform: translateY(30px); /* NEU: initial verschoben */
-            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
         .services-title.visible {
@@ -635,13 +625,13 @@ will-change: opacity, transform;
             padding: 2rem;
             background-color: var(--light-bg);
             border-radius: 12px;
-            margin-bottom: 4rem; /* Increased margin for Apple-style spacing */
+            margin-bottom: 4rem;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             position: relative;
             overflow: hidden;
-            opacity: 0; /* NEU: initial versteckt */
-            transform: translateY(50px); /* NEU: initial verschoben */
-            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
         .service-item.visible {
@@ -673,7 +663,6 @@ will-change: opacity, transform;
             transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1), scale 0.7s cubic-bezier(0.23, 1, 0.32, 1);
         }
         
-        /* Apple-style image effects */
         .image-parallax {
             transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             will-change: transform;
@@ -702,7 +691,6 @@ will-change: opacity, transform;
             opacity: 1;
         }
         
-        /* Info Section */
         .info-section {
             padding: 6rem 2rem;
             background-color: var(--light-bg);
@@ -724,9 +712,9 @@ will-change: opacity, transform;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            opacity: 0; /* NEU: initial versteckt */
-            transform: translateY(30px); /* NEU: initial verschoben */
-            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
         .info-title.visible {
@@ -739,9 +727,9 @@ will-change: opacity, transform;
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            opacity: 0; /* NEU: initial versteckt */
-            transform: translateY(40px); /* NEU: initial verschoben */
-            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
         .info-content.visible {
@@ -749,7 +737,6 @@ will-change: opacity, transform;
             transform: translateY(0);
         }
         
-        /* Contact */
         .contact {
             padding: 6rem 2rem;
             background-color: var(--dark-bg);
@@ -766,9 +753,9 @@ will-change: opacity, transform;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            opacity: 0; /* NEU: initial versteckt */
-            transform: translateY(30px); /* NEU: initial verschoben */
-            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
         .contact-title.visible {
@@ -784,9 +771,9 @@ will-change: opacity, transform;
         .contact-intro {
             text-align: left;
             margin-bottom: 3rem;
-            opacity: 0; /* NEU: initial versteckt */
-            transform: translateY(30px); /* NEU: initial verschoben */
-            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
         .contact-intro.visible {
@@ -799,9 +786,9 @@ will-change: opacity, transform;
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            opacity: 0; /* NEU: initial versteckt */
-            transform: translateY(40px); /* NEU: initial verschoben */
-            transition: opacity 1s ease, transform 1s ease; /* NEU: Animation */
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
         .contact-form.visible {
@@ -881,7 +868,6 @@ will-change: opacity, transform;
             color: #ff6b6b;
         }
         
-        /* Footer */
         footer {
             background-color: #0c0c0e;
             padding: 3rem 2rem 1rem;
@@ -935,12 +921,11 @@ will-change: opacity, transform;
             color: var(--text-secondary);
         }
         
-        /* NEU: Animation für Elemente beim Scrollen */
         .fade-in-element {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 0.8s ease, transform 0.8s ease;
-will-change: opacity, transform;
+            will-change: opacity, transform;
         }
         
         .fade-in-element.visible {
@@ -948,7 +933,6 @@ will-change: opacity, transform;
             transform: translateY(0);
         }
         
-        /* Apple-style sticky scroll for images */
         .sticky-container {
             position: relative;
             height: 100vh;
@@ -978,235 +962,219 @@ will-change: opacity, transform;
                 transition: none;
             }
         }
-/* CSS-Fix für das Layout und Mobile-Menü */
-@media (max-width: 768px) {
-    /* Navigationsleiste nur mit Logo in der mobilen Ansicht */
-    .nav-links {
-        display: none !important;
-    }
-    
-    /* Logo-Bereich auf volle Breite */
-    .logo {
-        width: auto !important;
-    }
-    
-    /* Erzwinge eine Spalten-Ansicht für mobile Geräte */
-    .service-item {
-        flex-direction: column !important;
-        width: 100% !important;
-    }
-    
-    .service-content {
-        width: 100% !important;
-        order: 2; /* Text nach dem Bild anzeigen */
-    }
-    
-    .service-image {
-        width: 100% !important;
-        order: 1; /* Bild vor dem Text anzeigen */
-        margin-bottom: 20px;
-    }
-    
-    /* Allgemeine Layout-Fixes */
-    .about-container {
-        flex-direction: column !important;
-    }
-    
-    .about-image, .about-content {
-        width: 100% !important;
-    }
-    
-    /* Fixes für Abstände */
-    .about, .services, .info-section, .contact {
-        padding: 4rem 1rem !important;
-    }
-    
-    /* Mobile Menü-Button immer sichtbar machen */
-    .mobile-menu-toggle {
-        display: flex !important;
-        position: fixed;
-        top: 15px;
-        right: 20px;
-        z-index: 2000;
-        background: rgba(18, 18, 20, 0.7);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        padding: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-    
-    .mobile-menu-toggle span {
-        margin: 2px 0;
-        width: 24px;
-    }
-}
 
-/* Verbessertes Hamburger-Menü */
-.mobile-menu-toggle {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    z-index: 2000;
-}
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none !important;
+            }
+            
+            .logo {
+                width: auto !important;
+            }
+            
+            .service-item {
+                flex-direction: column !important;
+                width: 100% !important;
+            }
+            
+            .service-content {
+                width: 100% !important;
+                order: 2;
+            }
+            
+            .service-image {
+                width: 100% !important;
+                order: 1;
+                margin-bottom: 20px;
+            }
+            
+            .about-container {
+                flex-direction: column !important;
+            }
+            
+            .about-image, .about-content {
+                width: 100% !important;
+            }
+            
+            .about, .services, .info-section, .contact {
+                padding: 4rem 1rem !important;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex !important;
+                position: fixed;
+                top: 15px;
+                right: 20px;
+                z-index: 2000;
+                background: rgba(18, 18, 20, 0.7);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                align-items: center;
+                justify-content: center;
+                padding: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+            
+            .mobile-menu-toggle span {
+                margin: 2px 0;
+                width: 24px;
+            }
+        }
 
-.mobile-menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    margin: 3px 0;
-    background-color: white;
-    transition: all 0.3s ease;
-    border-radius: 1px;
-}
+        .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            z-index: 2000;
+        }
 
-/* Animation des Menü-Buttons */
-.mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
-}
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            margin: 3px 0;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
 
-.mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
 
-.mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(4px, -4px);
-}
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
 
-/* Mobiles Menü Styling */
-.mobile-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    background-color: rgba(18, 18, 20, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 1999;
-    padding: 80px 0 30px;
-    text-align: center;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
 
-.mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(18, 18, 20, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1999;
+            padding: 80px 0 30px;
+            text-align: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
 
-.mobile-menu li {
-    margin: 20px 0;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-}
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-.mobile-menu.active li {
-    opacity: 1;
-    transform: translateY(0);
-}
+        .mobile-menu li {
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
 
-/* Verzögerte Animation für die Menüpunkte */
-.mobile-menu li:nth-child(1) { transition-delay: 0.05s; }
-.mobile-menu li:nth-child(2) { transition-delay: 0.1s; }
-.mobile-menu li:nth-child(3) { transition-delay: 0.15s; }
-.mobile-menu li:nth-child(4) { transition-delay: 0.2s; }
-.mobile-menu li:nth-child(5) { transition-delay: 0.25s; }
-.mobile-menu li:nth-child(6) { transition-delay: 0.3s; }
+        .mobile-menu.active li {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-.mobile-menu a {
-    font-size: 1.2rem;
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    padding: 8px 20px;
-    border-radius: 8px;
-    display: inline-block;
-    width: 80%;
-}
+        .mobile-menu li:nth-child(1) { transition-delay: 0.05s; }
+        .mobile-menu li:nth-child(2) { transition-delay: 0.1s; }
+        .mobile-menu li:nth-child(3) { transition-delay: 0.15s; }
+        .mobile-menu li:nth-child(4) { transition-delay: 0.2s; }
+        .mobile-menu li:nth-child(5) { transition-delay: 0.25s; }
+        .mobile-menu li:nth-child(6) { transition-delay: 0.3s; }
 
-.mobile-menu a:hover {
-    color: var(--primary-color);
-}
+        .mobile-menu a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            width: 80%;
+        }
 
-.mobile-menu a.active {
-    background: rgba(160, 68, 255, 0.2);
-    color: var(--primary-color);
-}
+        .mobile-menu a:hover {
+            color: var(--primary-color);
+        }
 
-/* Farbkodierung der Abschnitte im Menü */
-.mobile-menu a.about-active {
-    background: rgba(255, 107, 107, 0.2);
-    color: var(--about-color);
-}
+        .mobile-menu a.active {
+            background: rgba(160, 68, 255, 0.2);
+            color: var(--primary-color);
+        }
 
-.mobile-menu a.services-active {
-    background: rgba(79, 172, 254, 0.2);
-    color: var(--service-color);
-}
+        .mobile-menu a.about-active {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--about-color);
+        }
 
-.mobile-menu a.info-active {
-    background: rgba(67, 233, 123, 0.2);
-    color: var(--info-color);
-}
+        .mobile-menu a.services-active {
+            background: rgba(79, 172, 254, 0.2);
+            color: var(--service-color);
+        }
 
-.mobile-menu a.contact-active {
-    background: rgba(248, 87, 166, 0.2);
-    color: var(--contact-color);
-}
-/* Verbesserter Fix für das Logo-Problem */
-.logo {
-    /* Exakte Größe erzwingen */
-    width: 188px !important;
-    height: 34px !important;
-    display: inline-block !important;
-    overflow: hidden !important; /* Wichtig, um Übergrößen zu verhindern */
-    position: relative !important;
-    z-index: 1001 !important;
-    background-color: transparent !important;
-}
+        .mobile-menu a.info-active {
+            background: rgba(67, 233, 123, 0.2);
+            color: var(--info-color);
+        }
 
-/* SVG-Element auf genau die richtige Größe begrenzen */
-#logo-svg {
-    width: 188px !important;
-    height: 34px !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-}
+        .mobile-menu a.contact-active {
+            background: rgba(248, 87, 166, 0.2);
+            color: var(--contact-color);
+        }
 
-/* Spezieller Fix für die Infos-Sektion */
-body.section-info .logo,
-body.section-services .logo {
-    transform: none !important;
-    transition: none !important;
-}
+        .logo {
+            width: 188px !important;
+            height: 34px !important;
+            display: inline-block !important;
+            overflow: visible !important;
+            position: relative !important;
+            z-index: 1001 !important;
+            background-color: transparent !important;
+        }
 
-/* Das Rechteck weiterhin entfernen */
-body.section-services .logo::after,
-body.section-info .logo::after,
-body.section-services .logo::before,
-body.section-info .logo::before {
-    display: none !important;
-    content: none !important;
-    background: transparent !important;
-}
+        #logo-svg {
+            width: 188px !important;
+            height: 34px !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            display: block !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+        }
+
+        body.section-info .logo,
+        body.section-services .logo {
+            transform: none !important;
+            transition: none !important;
+        }
+
+        body.section-services .logo::after,
+        body.section-info .logo::after,
+        body.section-services .logo::before,
+        body.section-info .logo::before {
+            display: none !important;
+            content: none !important;
+            background: transparent !important;
+        }
     </style>
 </head>
 <body>
-  <!-- Gradienten für das Logo -->
   <svg width="0" height="0" style="position: absolute;">
     <defs>
       <linearGradient id="primary-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -1232,47 +1200,47 @@ body.section-info .logo::before {
     </defs>
   </svg>
 
-  <!-- Header -->
-<header>
+  <header>
     <div class="nav-container">
         <a href="#" class="logo">
-  <svg id="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 573.86 103.91" width="188" height="34">
+  <svg id="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 573.86 103.91" width="188" height="38" style="transform: translateY(2px);">
     <defs>
-      <!-- Hauptgradient (violett) -->
       <linearGradient id="main-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stop-color="#a044ff" />
         <stop offset="100%" stop-color="#6441a5" />
       </linearGradient>
       
-      <!-- About Gradient (rot) -->
       <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stop-color="#ff6b6b" />
         <stop offset="100%" stop-color="#ff9e7d" />
       </linearGradient>
       
-      <!-- Services Gradient (blau) -->
       <linearGradient id="services-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stop-color="#4facfe" />
         <stop offset="100%" stop-color="#00f2fe" />
       </linearGradient>
       
-      <!-- Info Gradient (grün) -->
       <linearGradient id="info-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stop-color="#43e97b" />
         <stop offset="100%" stop-color="#38f9d7" />
       </linearGradient>
       
-      <!-- Contact Gradient (pink) -->
       <linearGradient id="contact-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stop-color="#f857a6" />
         <stop offset="100%" stop-color="#ff5858" />
       </linearGradient>
     </defs>
     
-    <!-- Logo Pfade mit Standard-Gradient (violett) -->
     <path id="steel-path" fill="url(#main-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
     
-    <path id="weddings-path" fill="url(#main-gradient)" d="m345.39,65.03h3.91l5.22,16.06c.61,1.76,1.1,3.58,1.65,5.72.44-2.14,1.32-4.84,1.59-5.72l5.28-16.06h3.9l5.22,16.06c.49,1.43,1.15,3.74,1.65,5.72.55-2.2,.66-2.86,1.59-5.72l5.28-16.06h3.96l-9.02,26.62h-3.68l-5.5-16.72c-.66-1.98-1.1-3.63-1.43-5.22-.38,1.43-.83,3.02-1.54,5.22l-5.5,16.72h-3.79l-8.8-26.62Z"/><path id="weddings-path2" fill="url(#main-gradient)" d="m386.37,78.34c0-8.3,5.17-14.02,12.76-14.02s12.1,5.11,12.1,12.65v1.87h-21.17c.27,6.49,3.68,10.23,9.4,10.23,4.34,0,7.15-1.87,8.14-5.39h3.63c-1.43,5.61-5.55,8.63-11.82,8.63-7.81,0-13.03-5.61-13.03-13.97Zm3.79-2.25h17.27c0-5.11-3.3-8.52-8.3-8.52s-8.3,3.3-8.96,8.52Z"/><path id="weddings-path3" fill="url(#main-gradient)" d="m415.41,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/><path id="weddings-path4" fill="url(#main-gradient)" d="m447.53,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/><path id="weddings-path5" fill="url(#main-gradient)" d="m480.58,54.91c0-1.54,1.26-2.86,2.8-2.86s2.86,1.32,2.86,2.86-1.32,2.8-2.86,2.8-2.8-1.26-2.8-2.8Zm.93,10.12h3.79v26.62h-3.79v-26.62Z"/><path id="weddings-path6" fill="url(#main-gradient)" d="m493.23,91.65v-26.62h3.3l.55,4.62c1.76-3.41,5.28-5.33,9.13-5.33,7.31,0,10.34,4.34,10.34,11.05v16.28h-3.79v-15.45c0-6.21-2.8-8.41-7.2-8.41-5.44,0-8.52,3.96-8.52,9.95v13.91h-3.79Z"/><path id="weddings-path7" fill="url(#main-gradient)" d="m534.81,64.32c4.62,0,8.14,2.15,9.84,6.05l.38-5.33h3.3v25.79c0,7.92-5.06,13.09-12.87,13.09-6.82,0-11.6-3.85-12.65-10.28h3.79c.82,4.29,4.12,6.82,8.91,6.82,5.44,0,9.07-3.68,9.07-9.24v-6.32c-1.82,3.74-5.5,5.94-10.06,5.94-7.59,0-12.21-5.99-12.21-13.25s4.67-13.25,12.48-13.25Zm.28,23.1c5.77,0,9.18-4.18,9.18-9.9s-3.3-9.84-9.13-9.84-9.02,4.45-9.02,9.84,3.35,9.9,8.96,9.9Z"/><path id="weddings-path8" fill="url(#main-gradient)" d="m557.64,84.17c0,3.08,2.31,5,6.05,5,4.12,0,6.54-1.76,6.54-4.62,0-2.2-1.1-3.46-4.23-4.23l-4.56-1.16c-4.62-1.15-6.87-3.57-6.87-7.2,0-4.67,3.9-7.64,9.62-7.64s9.24,3.08,9.4,8.03h-3.68c-.11-3.08-2.25-4.9-5.83-4.9s-5.83,1.59-5.83,4.45c0,2.04,1.43,3.46,4.34,4.18l4.56,1.15c4.62,1.16,6.71,3.3,6.71,7.15,0,4.78-4.07,7.92-10.12,7.92s-9.73-3.19-9.73-8.14h3.63Z"/>
+    <path id="weddings-path" fill="url(#main-gradient)" d="m345.39,65.03h3.91l5.22,16.06c.61,1.76,1.1,3.58,1.65,5.72.44-2.14,1.32-4.84,1.59-5.72l5.28-16.06h3.9l5.22,16.06c.49,1.43,1.15,3.74,1.65,5.72,.55-2.2,.66-2.86,1.59-5.72l5.28-16.06h3.96l-9.02,26.62h-3.68l-5.5-16.72c-.66-1.98-1.1-3.63-1.43-5.22-.38,1.43-.83,3.02-1.54,5.22l-5.5,16.72h-3.79l-8.8-26.62Z"/>
+    <path id="weddings-path2" fill="url(#main-gradient)" d="m386.37,78.34c0-8.3,5.17-14.02,12.76-14.02s12.1,5.11,12.1,12.65v1.87h-21.17c.27,6.49,3.68,10.23,9.4,10.23,4.34,0,7.15-1.87,8.14-5.39h3.63c-1.43,5.61-5.55,8.63-11.82,8.63-7.81,0-13.03-5.61-13.03-13.97Zm3.79-2.25h17.27c0-5.11-3.3-8.52-8.3-8.52s-8.3,3.3-8.96,8.52Z"/>
+    <path id="weddings-path3" fill="url(#main-gradient)" d="m415.41,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
+    <path id="weddings-path4" fill="url(#main-gradient)" d="m447.53,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
+    <path id="weddings-path5" fill="url(#main-gradient)" d="m480.58,54.91c0-1.54,1.26-2.86,2.8-2.86s2.86,1.32,2.86,2.86-1.32,2.8-2.86,2.8-2.8-1.26-2.8-2.8Zm.93,10.12h3.79v26.62h-3.79v-26.62Z"/>
+    <path id="weddings-path6" fill="url(#main-gradient)" d="m493.23,91.65v-26.62h3.3l.55,4.62c1.76-3.41,5.28-5.33,9.13-5.33,7.31,0,10.34,4.34,10.34,11.05v16.28h-3.79v-15.45c0-6.21-2.8-8.41-7.2-8.41-5.44,0-8.52,3.96-8.52,9.95v13.91h-3.79Z"/>
+    <path id="weddings-path7" fill="url(#main-gradient)" d="m534.81,64.32c4.62,0,8.14,2.15,9.84,6.05l.38-5.33h3.3v25.79c0,7.92-5.06,13.09-12.87,13.09-6.82,0-11.6-3.85-12.65-10.28h3.79c.82,4.29,4.12,6.82,8.91,6.82,5.44,0,9.07-3.68,9.07-9.24v-6.32c-1.82,3.74-5.5,5.94-10.06,5.94-7.59,0-12.21-5.99-12.21-13.25s4.67-13.25,12.48-13.25Zm.28,23.1c5.77,0,9.18-4.18,9.18-9.9s-3.3-9.84-9.13-9.84-9.02,4.45-9.02,9.84,3.35,9.9,8.96,9.9Z"/>
+    <path id="weddings-path8" fill="url(#main-gradient)" d="m557.64,84.17c0,3.08,2.31,5,6.05,5,4.12,0,6.54-1.76,6.54-4.62,0-2.2-1.1-3.46-4.23-4.23l-4.56-1.16c-4.62-1.15-6.87-3.57-6.87-7.2,0-4.67,3.9-7.64,9.62-7.64s9.24,3.08,9.4,8.03h-3.68c-.11-3.08-2.25-4.9-5.83-4.9s-5.83,1.59-5.83,4.45c0,2.04,1.43,3.46,4.34,4.18l4.56,1.15c4.62,1.16,6.71,3.3,6.71,7.15,0,4.78-4.07,7.92-10.12,7.92s-9.73-3.19-9.73-8.14h3.63Z"/>
   </svg>
 </a>
         
@@ -1306,22 +1274,38 @@ body.section-info .logo::before {
     </ul>
 </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="glass-circle"></div>
-            <div class="glass-circle"></div>
-            <div class="glass-circle"></div>
-            <div class="light-rays"></div>
-        </div>
-        <div class="hero-content">
-            <h1><span style="font-weight: 300; font-size: 3.8rem;">STEEL</span><span style="font-weight: 600;">weddings</span></h1>
-            <p>Heiraten mit Stil. Und STEEL.</p>
-            <a href="#contact" class="cta-button">Anfrage senden</a>
-        </div>
-    </section>
+<section class="hero" id="home">
+    <div class="hero-background">
+        <div class="glass-circle"></div>
+        <div class="glass-circle"></div>
+        <div class="glass-circle"></div>
+        <div class="light-rays"></div>
+    </div>
+    <div class="hero-content">
+        <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 573.86 103.91">
+            <defs>
+                <linearGradient id="hero-main-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#a044ff" />
+                    <stop offset="100%" stop-color="#6441a5" />
+                </linearGradient>
+            </defs>
+            
+            <path fill="url(#hero-main-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+            
+            <path fill="url(#hero-main-gradient)" d="m345.39,65.03h3.91l5.22,16.06c.61,1.76,1.1,3.58,1.65,5.72,.44-2.14,1.32-4.84,1.59-5.72l5.28-16.06h3.9l5.22,16.06c.49,1.43,1.15,3.74,1.65,5.72,.55-2.2,.66-2.86,1.59-5.72l5.28-16.06h3.96l-9.02,26.62h-3.68l-5.5-16.72c-.66-1.98-1.1-3.63-1.43-5.22-.38,1.43-.83,3.02-1.54,5.22l-5.5,16.72h-3.79l-8.8-26.62Z"/>
+            <path fill="url(#hero-main-gradient)" d="m386.37,78.34c0-8.3,5.17-14.02,12.76-14.02s12.1,5.11,12.1,12.65v1.87h-21.17c.27,6.49,3.68,10.23,9.4,10.23,4.34,0,7.15-1.87,8.14-5.39h3.63c-1.43,5.61-5.55,8.63-11.82,8.63-7.81,0-13.03-5.61-13.03-13.97Zm3.79-2.25h17.27c0-5.11-3.3-8.52-8.3-8.52s-8.3,3.3-8.96,8.52Z"/>
+            <path fill="url(#hero-main-gradient)" d="m415.41,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
+            <path fill="url(#hero-main-gradient)" d="m447.53,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
+            <path fill="url(#hero-main-gradient)" d="m480.58,54.91c0-1.54,1.26-2.86,2.8-2.86s2.86,1.32,2.86,2.86-1.32,2.8-2.86,2.8-2.8-1.26-2.8-2.8Zm.93,10.12h3.79v26.62h-3.79v-26.62Z"/>
+            <path fill="url(#hero-main-gradient)" d="m493.23,91.65v-26.62h3.3l.55,4.62c1.76-3.41,5.28-5.33,9.13-5.33,7.31,0,10.34,4.34,10.34,11.05v16.28h-3.79v-15.45c0-6.21-2.8-8.41-7.2-8.41-5.44,0-8.52,3.96-8.52,9.95v13.91h-3.79Z"/>
+            <path fill="url(#hero-main-gradient)" d="m534.81,64.32c4.62,0,8.14,2.15,9.84,6.05l.38-5.33h3.3v25.79c0,7.92-5.06,13.09-12.87,13.09-6.82,0-11.6-3.85-12.65-10.28h3.79c.82,4.29,4.12,6.82,8.91,6.82,5.44,0,9.07-3.68,9.07-9.24v-6.32c-1.82,3.74-5.5,5.94-10.06,5.94-7.59,0-12.21-5.99-12.21-13.25s4.67-13.25,12.48-13.25Zm.28,23.1c5.77,0,9.18-4.18,9.18-9.9s-3.3-9.84-9.13-9.84-9.02,4.45-9.02,9.84,3.35,9.9,8.96,9.9Z"/>
+            <path fill="url(#hero-main-gradient)" d="m557.64,84.17c0,3.08,2.31,5,6.05,5,4.12,0,6.54-1.76,6.54-4.62,0-2.2-1.1-3.46-4.23-4.23l-4.56-1.16c-4.62-1.15-6.87-3.57-6.87-7.2,0-4.67,3.9-7.64,9.62-7.64s9.24,3.08,9.4,8.03h-3.68c-.11-3.08-2.25-4.9-5.83-4.9s-5.83,1.59-5.83,4.45c0,2.04,1.43,3.46,4.34,4.18l4.56,1.15c4.62,1.16,6.71,3.3,6.71,7.15,0,4.78-4.07,7.92-10.12,7.92s-9.73-3.19-9.73-8.14h3.63Z"/>
+        </svg>
+        <p>Heiraten mit Stil. Und STEEL.</p>
+        <a href="#contact" class="cta-button">Anfrage senden</a>
+    </div>
+</section>
 
-    <!-- About Section -->
     <section class="about" id="about">
         <div class="about-container">
             <div class="about-image" data-parallax-intensity="20">
@@ -1336,7 +1320,6 @@ body.section-info .logo::before {
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
         <h2 class="services-title">Eure Hochzeitsfeier</h2>
         <div class="services-container">
@@ -1374,12 +1357,10 @@ body.section-info .logo::before {
         </div>
     </section>
 
-    <!-- Apple-Style Sticky Scroll Image Gallery -->
     <section class="sticky-container">
         <img src="/api/placeholder/1200/800" alt="DJ in Action" class="sticky-image" id="sticky-image1">
     </section>
 
-    <!-- Info Section -->
     <section class="info-section" id="info">
         <div class="info-container">
             <h2 class="info-title">Das solltet ihr noch wissen.</h2>
@@ -1392,7 +1373,6 @@ body.section-info .logo::before {
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="contact-title">Passt? Prima.</h2>
         <div class="contact-container">
@@ -1431,7 +1411,6 @@ body.section-info .logo::before {
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -1468,9 +1447,6 @@ body.section-info .logo::before {
 
     <script>
         window.addEventListener('DOMContentLoaded', function() {
-            // Debug-Ausgabe hinzufügen
-            console.log('DOMContentLoaded: Mobile Menu initialisieren');
-// NEU: Scroll-Animations-Observer einrichten (bidirektional)
 const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1485,32 +1461,25 @@ const scrollObserver = new IntersectionObserver((entries) => {
     threshold: 0.15
 });
             
-// Apple-style scroll effects for images
 const parallaxImages = document.querySelectorAll('.image-parallax');
 const stickyImage = document.querySelector('.sticky-image');
             
-// Hero-Content in den Observer aufnehmen statt direkt anzuzeigen
 const heroContent = document.querySelector('.hero-content');
 if (heroContent) {
     scrollObserver.observe(heroContent);
 }
 
-// NEU: Beobachte alle Elemente, die animiert werden sollen
 document.querySelectorAll('.about-image, .about-content, .services-title, .service-item, .info-title, .info-content, .contact-title, .contact-intro, .contact-form').forEach(elem => {
     scrollObserver.observe(elem);
 });
             
-            // Umlaute direkt im HTML korrekt darstellen durch korrektes Encoding
-            // Diese Lösung ist robuster als die vorherige
             const encodingFix = () => {
                 try {
-                    // Prüfen, ob das Encoding der Seite korrekt ist
                     const charsetMeta = document.querySelector('meta[charset]');
                     if (charsetMeta && charsetMeta.getAttribute('charset').toLowerCase() !== 'utf-8') {
                         charsetMeta.setAttribute('charset', 'utf-8');
                     }
                     
-                    // Manchmal hilft es, das Dokument explizit mit UTF-8 zu rendern
                     const contentTypeMeta = document.querySelector('meta[http-equiv="Content-Type"]');
                     if (contentTypeMeta) {
                         contentTypeMeta.setAttribute('content', 'text/html; charset=utf-8');
@@ -1519,8 +1488,6 @@ document.querySelectorAll('.about-image, .about-content, .services-title, .servi
                     document.querySelectorAll('p, h1, h2, h3, a, span, button, label, input, textarea').forEach(element => {
                         if (!element.textContent) return;
                         
-                        // Text bereits im DOM korrekt rendern, falls er durch HTML-Entities kodiert ist
-                        // Dies ist eine Notlösung, da die Daten eigentlich schon korrekt kodiert sein sollten
                         const decoder = document.createElement('textarea');
                         decoder.innerHTML = element.innerHTML;
                         const decodedText = decoder.value;
@@ -1534,12 +1501,10 @@ document.querySelectorAll('.about-image, .about-content, .services-title, .servi
                 }
             };
             
-            // Encoding-Fix mehrfach ausführen, um sicherzustellen, dass dynamische Inhalte auch verarbeitet werden
             encodingFix();
             setTimeout(encodingFix, 500);
             setTimeout(encodingFix, 1500);
             
-            // Sticky header behavior
             const header = document.querySelector('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -1551,16 +1516,13 @@ document.querySelectorAll('.about-image, .about-content, .services-title, .servi
                 }
             });
             
-            // Fade out glass circles when scrolling away from hero
             window.addEventListener('scroll', () => {
                 const heroHeight = document.querySelector('.hero').offsetHeight;
                 const glassCircles = document.querySelectorAll('.glass-circle');
                 const lightRays = document.querySelector('.light-rays');
                 
-                // Calculate fade ratio based on scroll position
                 const fadeRatio = Math.max(0, 1 - (window.scrollY / heroHeight));
                 
-                // Apply fading to glass circles and light rays
                 glassCircles.forEach(circle => {
                     circle.style.opacity = 0.8 * fadeRatio;
                 });
@@ -1570,90 +1532,61 @@ document.querySelectorAll('.about-image, .about-content, .services-title, .servi
                 }
             });
             
-            // NEU: Bodyclass setzen basierend auf aktuellem Abschnitt für Desktop-Menü-Farben
-            function updateSectionClasses() {
-                const scrollPos = window.scrollY + 100; // Etwas Offset, damit der Header schon früher die Farbe ändert
-                
-                // Entfernen aller Abschnitts-Klassen vom Body
-                document.body.classList.remove('section-about', 'section-services', 'section-info', 'section-contact');
-                
-                // Aktuellen Abschnitt bestimmen und entsprechende Klasse setzen
-                const sections = [
-                    { id: 'contact', class: 'section-contact' },
-                    { id: 'info', class: 'section-info' },
-                    { id: 'services', class: 'section-services' },
-                    { id: 'about', class: 'section-about' }
-                ];
-                
-                // Von unten nach oben prüfen (umgekehrte Reihenfolge für korrekte Priorität)
-                for (const section of sections) {
-                    const elem = document.getElementById(section.id);
-                    if (elem && scrollPos >= elem.offsetTop) {
-                        document.body.classList.add(section.class);
-                        break;
-                    }
-                }
-            }
-            
-            // NEU: Aktualisiere Abschnittsklassen beim Scrollen
             window.addEventListener('scroll', updateSectionClasses);
             
-            // Initial aufrufen
             updateSectionClasses();
             
-           // Verbesserte Farbwechselfunktion für das Logo
-function updateLogoColors() {
+function combinedColorUpdate() {
+    const scrollPos = window.scrollY + 80;
+    
+    document.body.classList.remove('section-about', 'section-services', 'section-info', 'section-contact');
+    
     const logo = document.querySelector('.logo');
     const languageToggle = document.getElementById('language-toggle');
     const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
     
-    if (!logo) return;
+    if (logo) {
+        const colorClasses = ['about-section', 'services-section', 'info-section', 'contact-section'];
+        logo.classList.remove(...colorClasses);
+        
+        if (languageToggle) languageToggle.classList.remove(...colorClasses);
+        if (mobileLanguageToggle) mobileLanguageToggle.classList.remove(...colorClasses);
+    }
     
-    // Scroll-Position mit etwas Offset für früheren Farbwechsel
-    const scrollPos = window.scrollY + 60;
-    
-    // Alle Farbklassen zuerst entfernen
-    const colorClasses = ['about-section', 'services-section', 'info-section', 'contact-section'];
-    logo.classList.remove(...colorClasses);
-    
-    if (languageToggle) languageToggle.classList.remove(...colorClasses);
-    if (mobileLanguageToggle) mobileLanguageToggle.classList.remove(...colorClasses);
-    
-    // Sektionen in umgekehrter Reihenfolge (von unten nach oben) prüfen
-    // und die erste zutreffende Sektion verwenden
     const sections = [
-        { id: 'contact', class: 'contact-section' },
-        { id: 'info', class: 'info-section' },
-        { id: 'services', class: 'services-section' },
-        { id: 'about', class: 'about-section' }
+        { id: 'contact', bodyClass: 'section-contact', elementClass: 'contact-section' },
+        { id: 'info', bodyClass: 'section-info', elementClass: 'info-section' },
+        { id: 'services', bodyClass: 'section-services', elementClass: 'services-section' },
+        { id: 'about', bodyClass: 'section-about', elementClass: 'about-section' }
     ];
     
-    // Die erste passende Sektion finden
-    let activeSection = null;
     for (const section of sections) {
         const elem = document.getElementById(section.id);
-        if (elem && scrollPos >= elem.offsetTop - 100) {
-            activeSection = section;
+        if (elem && scrollPos >= elem.offsetTop) {
+            document.body.classList.add(section.bodyClass);
+            
+            if (logo) logo.classList.add(section.elementClass);
+            if (languageToggle) languageToggle.classList.add(section.elementClass);
+            if (mobileLanguageToggle) mobileLanguageToggle.classList.add(section.elementClass);
+            
             break;
         }
     }
-    
-    // Wenn eine aktive Sektion gefunden wurde, die entsprechende Klasse setzen
-    if (activeSection) {
-        logo.classList.add(activeSection.class);
-        if (languageToggle) languageToggle.classList.add(activeSection.class);
-        if (mobileLanguageToggle) mobileLanguageToggle.classList.add(activeSection.class);
-    }
 }
 
-// Diese Funktion beim Scrollen aufrufen
+function updateSectionClasses() {
+    combinedColorUpdate();
+}
+
+function updateLogoColors() {}
+
+combinedColorUpdate();
+
 window.addEventListener('scroll', updateLogoColors);
 
-// Auch beim Laden der Seite aufrufen, um die initiale Farbe zu setzen
 document.addEventListener('DOMContentLoaded', updateLogoColors);
             
             window.addEventListener('scroll', () => {
-                // Handle all parallax images
                 parallaxImages.forEach(image => {
                     const container = image.closest('[data-parallax-intensity]');
                     if (!container) return;
@@ -1662,28 +1595,22 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                     const rect = container.getBoundingClientRect();
                     const viewportHeight = window.innerHeight;
                     
-                    // Only apply effect when in viewport
                     if (rect.top < viewportHeight && rect.bottom > 0) {
-                        // Calculate how far through the container we've scrolled (0 to 1)
                         const scrollProgress = 1 - (rect.top + rect.height / 2) / (viewportHeight + rect.height);
                         
-                        // Apply scale effect
                         const scale = 1 + (scrollProgress * 0.1);
                         image.style.transform = `scale(${Math.min(1.1, scale)})`;
                     }
                 });
                 
-                // Handle Apple-style sticky image
                 if (stickyImage) {
                     const stickyContainer = stickyImage.closest('.sticky-container');
                     const containerTop = stickyContainer.offsetTop;
                     const containerHeight = stickyContainer.offsetHeight;
                     
-                    // Calculate how far we've scrolled through the container
                     const scrollPosition = window.scrollY - containerTop;
                     const scrollRatio = Math.min(1, Math.max(0, scrollPosition / containerHeight));
                     
-                    // Apply scale and opacity transformations
                     const scale = 1 - (scrollRatio *.3);
                     const opacity = 1 - (scrollRatio * .7);
                     
@@ -1692,20 +1619,16 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                 }
             });
             
-            // Language switcher
             initLanguageSwitcher();
             
-            // Contact form handling
             initContactForm();
         });
         
-        // Initialize language switcher
         function initLanguageSwitcher() {
             const languageToggle = document.getElementById('language-toggle');
             const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
             let currentLanguage = 'de';
             
-            // Simple translations
             const translations = {
                 de: {
                     'nav-home': 'Home',
@@ -1757,7 +1680,6 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                 }
             };
             
-            // English versions of longer text content
             const englishTexts = {
                 'about-p1': 'Your wedding is <strong>exciting</strong> – especially for you. But your loved ones are also getting dressed up and ready to celebrate. That\'s where I come in. I believe you shouldn\'t <em>have to worry about the music</em>. I\'ll make sure your party is a complete success!',
                 'about-p2': 'The guests at your wedding are both young and old. To appeal to them, music should play that everyone knows (<strong>hits only!</strong>). Sometimes it\'s something from the 60s for twisting, another time from the 90s for thrashing. Current charts and <strong>electronic beats</strong> are also essential. All wrapped in a mix that doesn\'t scare anyone but still feels like you\'re in a club.',
@@ -1780,7 +1702,6 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                 'contact-p2': 'My prices start at <span class="highlight">1500,- €</span> (incl. VAT) for 7 hours and depend on what time I should start. I always play until at least 3 am. Open end on request!'
             };
             
-            // Form placeholders in English
             const englishPlaceholders = {
                 'name': 'Who\'s getting married? :)',
                 'email': 'dreamcouple@email.com',
@@ -1789,14 +1710,12 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                 'message': 'e.g. schedule, start time, number of guests, music'
             };
             
-            // Function to switch language
             const switchLanguage = function(e) {
                     e.preventDefault();
                     
                     currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
                     document.documentElement.lang = currentLanguage;
                     
-                    // Aktualisiere den Text des Sprachumschalters
                     if (languageToggle) {
                         languageToggle.textContent = translations[currentLanguage]['lang-switch'];
                     }
@@ -1804,14 +1723,12 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                         mobileLanguageToggle.textContent = translations[currentLanguage]['lang-switch'];
                     }
                     
-                    // Update basic UI elements
                     document.querySelector('.nav-links li:nth-child(1) a').textContent = translations[currentLanguage]['nav-home'];
                     document.querySelector('.nav-links li:nth-child(2) a').textContent = translations[currentLanguage]['nav-about'];
                     document.querySelector('.nav-links li:nth-child(3) a').textContent = translations[currentLanguage]['nav-services'];
                     document.querySelector('.nav-links li:nth-child(4) a').textContent = translations[currentLanguage]['nav-info'];
                     document.querySelector('.nav-links li:nth-child(5) a').textContent = translations[currentLanguage]['nav-contact'];
                     
-                    // Update mobile menu items
                     const mobileLinks = document.querySelectorAll('#mobile-menu ul li');
                     if (mobileLinks.length >= 5) {
                         mobileLinks[0].querySelector('a').textContent = translations[currentLanguage]['nav-home'];
@@ -1821,7 +1738,6 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                         mobileLinks[4].querySelector('a').textContent = translations[currentLanguage]['nav-contact'];
                     }
                     
-                    // Update section headers and hero
                     document.querySelector('.hero p').textContent = translations[currentLanguage]['hero-text'];
                     document.querySelector('.cta-button').textContent = translations[currentLanguage]['cta-button'];
                     document.querySelector('.about-title').textContent = translations[currentLanguage]['about-title'];
@@ -1829,7 +1745,6 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                     document.querySelector('.info-title').textContent = translations[currentLanguage]['info-title'];
                     document.querySelector('.contact-title').textContent = translations[currentLanguage]['contact-title'];
                     
-                    // Update form elements
                     document.querySelector('label[for="name"]').textContent = translations[currentLanguage]['form-name'];
                     document.querySelector('label[for="email"]').textContent = translations[currentLanguage]['form-email'];
                     document.querySelector('label[for="phone"]').textContent = translations[currentLanguage]['form-phone'];
@@ -1838,26 +1753,21 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                     document.querySelector('label[for="message"]').textContent = translations[currentLanguage]['form-details'];
                     document.querySelector('.submit-btn').textContent = translations[currentLanguage]['submit-btn'];
                     
-                    // Update footer elements
                     document.querySelector('.footer-section:nth-child(2) h3').textContent = translations[currentLanguage]['footer-contact'];
                     document.querySelector('.footer-section:nth-child(3) h3').textContent = translations[currentLanguage]['footer-legal'];
                     document.querySelector('.copyright p').textContent = translations[currentLanguage]['copyright'];
                     
-                    // Update content paragraphs when switching to English
                     if (currentLanguage === 'en') {
-                        // Update paragraphs with English content
                         for (const [id, content] of Object.entries(englishTexts)) {
                             const element = document.getElementById(id);
                             if (element) element.innerHTML = content;
                         }
                         
-                        // Update form placeholders
                         for (const [id, placeholder] of Object.entries(englishPlaceholders)) {
                             const element = document.getElementById(id);
                             if (element) element.placeholder = placeholder;
                         }
                     } else {
-                        // Reset German content - without page reload
                         location.reload();
                     }
                 };
@@ -1876,11 +1786,9 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                 });
             }
             
-            // Füge die Funktion dem globalen Scope hinzu, damit sie später verfügbar ist
             window.switchLanguage = switchLanguage;
         }
         
-        // Initialize contact form
         function initContactForm() {
             const contactForm = document.querySelector('.contact-form');
             const formStatus = document.getElementById('form-status');
@@ -1889,7 +1797,6 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
-                    // Basic validation
                     const name = document.getElementById('name').value;
                     const email = document.getElementById('email').value;
                     const date = document.getElementById('date').value;
@@ -1905,7 +1812,6 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                         return;
                     }
                     
-                    // Simulate form submission
                     formStatus.textContent = document.documentElement.lang === 'de' ? 
                         'Vielen Dank für deine Anfrage! Wir melden uns in Kürze bei dir.' : 
                         'Thank you for your inquiry! We will get back to you soon.';
@@ -1913,7 +1819,6 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
                     formStatus.style.display = 'block';
                     contactForm.reset();
                     
-                    // Hide success message after 5 seconds
                     setTimeout(() => {
                         formStatus.style.display = 'none';
                     }, 5000);
@@ -1922,42 +1827,35 @@ document.addEventListener('DOMContentLoaded', updateLogoColors);
         }
     </script>
     
-    <!-- Inline-JavaScript für mobiles Menü -->
     <script>
-// Verbessertess mobiles Menü mit Apple-Stil
-let menuOpen = false; // Globale Variable, um den Zustand des Menüs zu speichern
+let menuOpen = false;
 
 function toggleMobileMenu(event) {
     if (event) {
-        event.stopPropagation(); // Verhindert, dass das Event weitergeleitet wird
+        event.stopPropagation();
     }
     
     const menu = document.getElementById('mobile-menu');
     const toggle = document.getElementById('mobile-menu-toggle');
     
     if (menuOpen) {
-        // Menü schließen
         menuOpen = false;
         toggle.classList.remove('active');
         
-        // Animation zum Ausblenden
         const menuItems = menu.querySelectorAll('li');
         menuItems.forEach(item => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(-10px)';
         });
         
-        // Kurz warten und dann ausblenden
         setTimeout(() => {
             menu.style.display = 'none';
         }, 300);
     } else {
-        // Menü öffnen
         menuOpen = true;
         menu.style.display = 'block';
         toggle.classList.add('active');
         
-        // Animation zum Einblenden
         setTimeout(() => {
             const menuItems = menu.querySelectorAll('li');
             menuItems.forEach(item => {
@@ -1968,9 +1866,8 @@ function toggleMobileMenu(event) {
     }
 }
 
-// Diese Funktion aktualisiert die aktive Klasse im mobilen Menü
 function updateMobileMenuActiveState() {
-    const scrollPos = window.scrollY + 60; // +60 für Offset des Headers
+    const scrollPos = window.scrollY + 60;
     const sections = [
         { id: 'home', navId: 'mobile-nav-home', class: 'active' },
         { id: 'about', navId: 'mobile-nav-about', class: 'about-active' },
@@ -1979,7 +1876,6 @@ function updateMobileMenuActiveState() {
         { id: 'contact', navId: 'mobile-nav-contact', class: 'contact-active' }
     ];
     
-    // Entferne alle aktiven Klassen
     sections.forEach(section => {
         const navItem = document.getElementById(section.navId);
         if (navItem) {
@@ -1987,8 +1883,7 @@ function updateMobileMenuActiveState() {
         }
     });
     
-    // Setze die aktive Klasse für den aktuellen Abschnitt
-    let currentSection = 'home'; // Standard
+    let currentSection = 'home';
     
     for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i].id);
@@ -1998,7 +1893,6 @@ function updateMobileMenuActiveState() {
         }
     }
     
-    // Aktiven Abschnitt hervorheben
     const activeSection = sections.find(s => s.id === currentSection);
     if (activeSection) {
         const navItem = document.getElementById(activeSection.navId);
@@ -2008,55 +1902,45 @@ function updateMobileMenuActiveState() {
     }
 }
 
-// Verhindern, dass Klicks außerhalb des Menüs es nicht schließen
 document.addEventListener('click', function(event) {
     const menu = document.getElementById('mobile-menu');
     const toggle = document.getElementById('mobile-menu-toggle');
     
-    // Wenn das Menü offen ist und der Klick nicht auf das Menü oder den Toggle war
     if (menuOpen && menu && !menu.contains(event.target) && !toggle.contains(event.target)) {
         toggleMobileMenu();
     }
 });
 
-// Füge diese Funktionen zum DOMContentLoaded-Event hinzu
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile-Menü-Toggle-Button
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation(); // Das ist wichtig, um Bubblingeffekte zu verhindern
+            e.stopPropagation();
             toggleMobileMenu(e);
         });
     }
     
-    // Menüpunkte schließen das Menü beim Klick
     const menuItems = document.querySelectorAll('#mobile-menu a');
     menuItems.forEach(item => {
         item.addEventListener('click', function(e) {
-            // Falls es sich um den Sprachumschalter handelt
             if (this.id === 'mobile-language-toggle') {
                 e.preventDefault();
                 
-                // Sprachumschaltung durchführen
                 const languageToggleFn = window.switchLanguage;
                 if (typeof languageToggleFn === 'function') {
                     languageToggleFn(e);
                 }
             }
             
-            // Menü in jedem Fall schließen mit kurzer Verzögerung
             setTimeout(() => {
                 toggleMobileMenu();
             }, 100);
         });
     });
     
-    // Aktualisiere den aktiven Menüpunkt beim Scrollen
     window.addEventListener('scroll', updateMobileMenuActiveState);
     
-    // Initialisiere den aktiven Menüpunkt
     updateMobileMenuActiveState();
 });
     </script>
