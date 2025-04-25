@@ -95,7 +95,26 @@ body.section-contact #weddings-path7,
 body.section-contact #weddings-path8 {
     fill: url(#contact-gradient);
 }
-        
+
+        /* CSS-Fix für das Logo-Problem */
+body.section-services .logo,
+body.section-info .logo {
+    /* Diese Eigenschaften zurücksetzen, damit das Logo nicht expandiert */
+    width: 188px !important;
+    height: 34px !important;
+    overflow: hidden; /* Alles, was über den definierten Bereich hinausgeht, abschneiden */
+    z-index: 10; /* Sicherstellen, dass das Logo über anderen Elementen liegt */
+}
+
+/* Sicherstellen, dass das SVG sich nicht über seinen Container hinaus ausdehnt */
+body.section-services #logo-svg,
+body.section-info #logo-svg {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 188px;
+    max-height: 34px;
+}
+
         * {
             margin: 0;
             padding: 0;
@@ -1144,7 +1163,46 @@ will-change: opacity, transform;
     background: rgba(248, 87, 166, 0.2);
     color: var(--contact-color);
 }
+/* Verbesserter Fix für das Logo-Problem */
+.logo {
+    /* Exakte Größe erzwingen */
+    width: 188px !important;
+    height: 34px !important;
+    display: inline-block !important;
+    overflow: hidden !important; /* Wichtig, um Übergrößen zu verhindern */
+    position: relative !important;
+    z-index: 1001 !important;
+    background-color: transparent !important;
+}
 
+/* SVG-Element auf genau die richtige Größe begrenzen */
+#logo-svg {
+    width: 188px !important;
+    height: 34px !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* Spezieller Fix für die Infos-Sektion */
+body.section-info .logo,
+body.section-services .logo {
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Das Rechteck weiterhin entfernen */
+body.section-services .logo::after,
+body.section-info .logo::after,
+body.section-services .logo::before,
+body.section-info .logo::before {
+    display: none !important;
+    content: none !important;
+    background: transparent !important;
+}
     </style>
 </head>
 <body>
@@ -1543,43 +1601,56 @@ document.querySelectorAll('.about-image, .about-content, .services-title, .servi
             // Initial aufrufen
             updateSectionClasses();
             
-            // Logo-Farbe je nach Scrollposition ändern (vereinfacht)
-            window.addEventListener('scroll', function() {
-                const logo = document.querySelector('.logo');
-                const languageToggle = document.getElementById('language-toggle');
-                
-                if (!logo || !languageToggle) return;
-                
-                const scrollPos = window.scrollY + 60;
-                
-                // Farbe aus ursprünglicher Sektion entfernen
-                logo.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
-                languageToggle.classList.remove('about-section', 'services-section', 'info-section', 'contact-section');
-                
-                // Finde aktuelle Sektion und setze ihre Farbe
-                if (document.getElementById('about') && scrollPos >= document.getElementById('about').offsetTop - 100) {
-                    logo.classList.add('about-section');
-                    languageToggle.classList.add('about-section');
-                } 
-                if (document.getElementById('services') && scrollPos >= document.getElementById('services').offsetTop - 100) {
-                    logo.classList.remove('about-section');
-                    languageToggle.classList.remove('about-section');
-                    logo.classList.add('services-section');
-                    languageToggle.classList.add('services-section');
-                }
-                if (document.getElementById('info') && scrollPos >= document.getElementById('info').offsetTop - 100) {
-                    logo.classList.remove('services-section');
-                    languageToggle.classList.remove('services-section');
-                    logo.classList.add('info-section');
-                    languageToggle.classList.add('info-section');
-                }
-                if (document.getElementById('contact') && scrollPos >= document.getElementById('contact').offsetTop - 100) {
-                    logo.classList.remove('info-section');
-                    languageToggle.classList.remove('info-section');
-                    logo.classList.add('contact-section');
-                    languageToggle.classList.add('contact-section');
-                }
-            });
+           // Verbesserte Farbwechselfunktion für das Logo
+function updateLogoColors() {
+    const logo = document.querySelector('.logo');
+    const languageToggle = document.getElementById('language-toggle');
+    const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
+    
+    if (!logo) return;
+    
+    // Scroll-Position mit etwas Offset für früheren Farbwechsel
+    const scrollPos = window.scrollY + 60;
+    
+    // Alle Farbklassen zuerst entfernen
+    const colorClasses = ['about-section', 'services-section', 'info-section', 'contact-section'];
+    logo.classList.remove(...colorClasses);
+    
+    if (languageToggle) languageToggle.classList.remove(...colorClasses);
+    if (mobileLanguageToggle) mobileLanguageToggle.classList.remove(...colorClasses);
+    
+    // Sektionen in umgekehrter Reihenfolge (von unten nach oben) prüfen
+    // und die erste zutreffende Sektion verwenden
+    const sections = [
+        { id: 'contact', class: 'contact-section' },
+        { id: 'info', class: 'info-section' },
+        { id: 'services', class: 'services-section' },
+        { id: 'about', class: 'about-section' }
+    ];
+    
+    // Die erste passende Sektion finden
+    let activeSection = null;
+    for (const section of sections) {
+        const elem = document.getElementById(section.id);
+        if (elem && scrollPos >= elem.offsetTop - 100) {
+            activeSection = section;
+            break;
+        }
+    }
+    
+    // Wenn eine aktive Sektion gefunden wurde, die entsprechende Klasse setzen
+    if (activeSection) {
+        logo.classList.add(activeSection.class);
+        if (languageToggle) languageToggle.classList.add(activeSection.class);
+        if (mobileLanguageToggle) mobileLanguageToggle.classList.add(activeSection.class);
+    }
+}
+
+// Diese Funktion beim Scrollen aufrufen
+window.addEventListener('scroll', updateLogoColors);
+
+// Auch beim Laden der Seite aufrufen, um die initiale Farbe zu setzen
+document.addEventListener('DOMContentLoaded', updateLogoColors);
             
             window.addEventListener('scroll', () => {
                 // Handle all parallax images
