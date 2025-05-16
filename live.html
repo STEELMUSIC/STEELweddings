@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEEL | Live Bookings</title>
+    <style>
+        :root {
+            --primary-color: #4facfe;
+            --secondary-color: #00f2fe;
+            --steel-color: #f3930d;
+            --steel-secondary: #e67e22;
+            --weddings-color: #a044ff;
+            --weddings-secondary: #6441a5;
+            --about-color: #ff6b6b;
+            --about-secondary: #ff9e7d;
+            --corporate-color: #43e97b;
+            --corporate-secondary: #38f9d7;
+            --light-bg: #1e1e20;
+            --dark-bg: #121214;
+            --darker-bg: #0c0c0e;
+            --dark-text: #f5f5f7;
+            --light-text: #f5f5f7;
+            --text-secondary: #bbbbbb;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+            color: var(--light-text);
+            background-color: var(--dark-bg);
+        }
+        
+        strong {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        em {
+            font-style: normal;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            letter-spacing: 0.01rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(30, 30, 32, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 60px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 34px;
+            display: block;
+            position: relative;
+        }
+
+        #steel-logo path {
+            transition: fill 0.6s ease;
+            fill: var(--steel-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light-text);
+            transition: var(--transition);
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border-bottom: none;
+        }
+        
+        .nav-links a:hover {
+            color: var(--steel-color);
+            background-color: rgba(243, 147, 13, 0.1);
+        }
+
+        .nav-links a.about:hover {
+            color: var(--about-color);
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+
+        .nav-links a.live {
+            color: var(--primary-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+
+        .nav-links a.live:hover {
+            color: var(--primary-color);
+            background-color: rgba(79, 172, 254, 0.2);
+        }
+
+        .nav-links a.weddings:hover {
+            color: var(--weddings-color);
+            background-color: rgba(160, 68, 255, 0.1);
+        }
+
+        .nav-links a.corporate:hover {
+            color: var(--corporate-color);
+            background-color: rgba(67, 233, 123, 0.1);
+        }
+        
+        .language-switch {
+            margin-left: 1rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            padding-left: 1rem;
+        }
+        
+        .language-switch a {
+            background-color: rgba(79, 172, 254, 0.2);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            cursor: pointer;
+        }
+        
+        .language-switch a:hover {
+            background-color: rgba(79, 172, 254, 0.4);
+            border-color: rgba(79, 172, 254, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0) 0%, 
+                rgba(0, 0, 0, 0.2) 50%, 
+                rgba(0, 0, 0, 0.8) 100%);
+            z-index: 1;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-image: url('images/live/STEEL_Weinkeller_Dortmund_6.JPG');
+            background-size: cover;
+            background-position: center;
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+        
+        @keyframes slowZoom {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            padding: 3rem;
+            position: relative;
+            margin-bottom: 5rem;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            will-change: opacity, transform;
+        }
+        
+        .hero-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--light-text);
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: 0px 4px 12px rgba(79, 172, 254, 0.3);
+            border-bottom: none;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        /* Main Content */
+        .live-section {
+            padding: 6rem 2rem;
+            background-color: var(--light-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .live-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .live-heading {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .live-heading.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .live-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        .live-text {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .live-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .live-image {
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .live-image.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .live-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .live-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .live-subheading {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Events Section */
+        .events-section {
+            padding: 6rem 2rem;
+            background-color: var(--dark-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .events-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .events-heading {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .events-heading.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .events-list {
+            margin-bottom: 4rem;
+        }
+        
+        .event-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease, box-shadow 0.3s ease;
+        }
+        
+        .event-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .event-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .event-date {
+            flex: 0 0 100px;
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 8px;
+            margin-right: 1.5rem;
+            color: white;
+        }
+        
+        .event-date .day {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .event-date .month {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .event-date .year {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .event-info {
+            flex: 1;
+        }
+        
+        .event-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .event-location {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-time {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .event-status {
+            margin-left: auto;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .event-status.upcoming {
+            background-color: rgba(79, 172, 254, 0.2);
+            color: var(--primary-color);
+        }
+        
+        .event-status.sold-out {
+            background-color: rgba(255, 107, 107, 0.2);
+            color: var(--about-color);
+        }
+        
+        .view-more-button {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 0.8rem 2rem;
+            background-color: rgba(79, 172, 254, 0.1);
+            color: var(--primary-color);
+            border: 1px solid rgba(79, 172, 254, 0.2);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease, background-color 0.3s ease;
+        }
+        
+        .view-more-button.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .view-more-button:hover {
+            background-color: rgba(79, 172, 254, 0.2);
+        }
+
+        /* Booking Section */
+        .booking-section {
+            padding: 6rem 2rem;
+            background-color: var(--light-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .booking-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .booking-text {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .booking-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .booking-heading {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .booking-form {
+            background-color: var(--dark-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .booking-form.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .booking-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.2);
+            color: var(--light-text);
+            font-size: 16px;
+        }
+        
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234facfe' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2rem;
+        }
+        
+        .form-group ::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        /* Featured Section */
+        .featured-section {
+            padding: 6rem 2rem;
+            background-color: var(--dark-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .featured-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .featured-heading {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .featured-heading.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .featured-item {
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease, box-shadow 0.3s ease;
+        }
+        
+        .featured-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .featured-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .featured-item:hover .featured-image img {
+            transform: scale(1.05);
+        }
+        
+        .featured-content {
+            padding: 1.5rem;
+        }
+        
+        .featured-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .featured-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .featured-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: none;
+        }
+        
+        .featured-link i {
+            transition: transform 0.3s ease;
+        }
+        
+        .featured-link:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker-bg);
+            padding: 3rem 2rem 1rem;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            border-bottom: none;
+        }
+        
+        .footer-section a:hover {
+            color: var(--light-text);
+        }
+        
+        .copyright {
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            z-index: 2000;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            margin: 3px 0;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(18, 18, 20, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1999;
+            padding: 80px 0 30px;
+            text-align: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu li {
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu li:nth-child(1) { transition-delay: 0.05s; }
+        .mobile-menu li:nth-child(2) { transition-delay: 0.1s; }
+        .mobile-menu li:nth-child(3) { transition-delay: 0.15s; }
+        .mobile-menu li:nth-child(4) { transition-delay: 0.2s; }
+        .mobile-menu li:nth-child(5) { transition-delay: 0.25s; }
+        .mobile-menu li:nth-child(6) { transition-delay: 0.3s; }
+
+        .mobile-menu a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            width: 80%;
+            border-bottom: none;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu a.live-active {
+            background: rgba(79, 172, 254, 0.2);
+            color: var(--primary-color);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none !important;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex !important;
+                position: fixed;
+                top: 15px;
+                right: 20px;
+                z-index: 2000;
+                background: rgba(18, 18, 20, 0.7);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                align-items: center;
+                justify-content: center;
+                padding: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content {
+                padding: 2rem;
+                margin-bottom: 3rem;
+            }
+            
+            .live-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .booking-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .event-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .event-date {
+                margin-bottom: 1rem;
+                margin-right: 0;
+                align-self: flex-start;
+            }
+            
+            .event-status {
+                margin-left: 0;
+                margin-top: 1rem;
+                align-self: flex-start;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+            }
+            
+            .footer-section {
+                min-width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <svg id="steel-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.58 91.64" width="120" height="34">
+          <path class="logo-path" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html" class="about">About</a></li>
+        <li><a href="live.html" class="live">Live</a></li>
+        <li><a href="weddings.html" class="weddings">Weddings</a></li>
+        <li><a href="corporate.html" class="corporate">Corporate</a></li>
+        <li class="language-switch">
+          <a href="#" id="language-toggle">EN</a>
+        </li>
+      </ul>
+      
+      <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="about.html" id="mobile-nav-about">About</a></li>
+      <li><a href="live.html" id="mobile-nav-live" class="live-active">Live</a></li>
+      <li><a href="weddings.html" id="mobile-nav-weddings">Weddings</a></li>
+      <li><a href="corporate.html" id="mobile-nav-corporate">Corporate</a></li>
+      <li><a href="#" id="mobile-language-toggle">EN</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+      <h1>STEEL Live</h1>
+      <p>Festivals, Clubs und Events mit einzigartigem Sound und unvergesslicher Atmosphäre.</p>
+      <a href="#booking" class="cta-button">Booking anfragen</a>
+    </div>
+  </section>
+
+  <!-- Live Section -->
+  <section class="live-section" id="live">
+    <div class="live-container">
+      <h2 class="live-heading">DJ Erfahrung auf höchstem Niveau</h2>
+      <div class="live-grid">
+        <div class="live-text">
+          <h3 class="live-subheading">Club Szene</h3>
+          <p>Als fester Bestandteil der Club-Szene im Ruhrgebiet garantiere ich energiegeladene Sets, die das Publikum begeistern. Mit meinem <strong>Open Format Stil</strong> kreiere ich einen nahtlosen Mix aus elektronischer Musik, aktuellen Charts und zeitlosen Klassikern.</p>
+          <p>Die Kunst des Live-Mixings liegt für mich darin, die perfekte Balance zwischen Bekanntem und Überraschendem zu finden. Meine Sets sind technisch präzise und emotional packend zugleich – perfekt abgestimmt auf die jeweilige Location und das Publikum.</p>
+          <h3 class="live-subheading">Festival Highlights</h3>
+          <p>Auf Festivals entfaltet sich meine musikalische Vielseitigkeit in voller Pracht. Von <em>energiegeladenen Daytime-Sets</em> bis zu <em>atmosphärischen Nighttime-Performances</em> – ich passe meinen Sound perfekt an die Stimmung und den Moment an.</p>
+          <p>Mit jahrelanger Erfahrung auf diversen Bühnen weiß ich genau, wie ich die Festival-Crowd zum Tanzen bringe und unvergessliche Momente schaffe.</p>
+        </div>
+        <div class="live-image">
+          <img src="images/live/STEEL_Weinkeller_Dortmund_6.JPG" alt="STEEL DJ in Club">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="events-section" id="events">
+    <div class="events-container">
+      <h2 class="events-heading">Upcoming Events</h2>
+      <div class="events-list">
+        <div class="event-item">
+          <div class="event-date">
+            <div class="day">15</div>
+            <div class="month">Mai</div>
+            <div class="year">2025</div>
+          </div>
+          <div class="event-info">
+            <h3 class="event-name">Club Zentral</h3>
+            <div class="event-location">Essen, Deutschland</div>
+            <div class="event-time">Doors: 22:00 | STEEL: 00:00-02:00</div>
+          </div>
+          <div class="event-status upcoming">Tickets verfügbar</div>
+        </div>
+        <div class="event-item">
+          <div class="event-date">
+            <div class="day">28</div>
+            <div class="month">Mai</div>
+            <div class="year">2025</div>
+          </div>
+          <div class="event-info">
+            <h3 class="event-name">Beats & Vibes Festival</h3>
+            <div class="event-location">Dortmund, Deutschland</div>
+            <div class="event-time">STEEL auf der Main Stage: 19:30-21:00</div>
+          </div>
+          <div class="event-status upcoming">Tickets verfügbar</div>
+        </div>
+        <div class="event-item">
+          <div class="event-date">
+            <div class="day">10</div>
+            <div class="month">Jun</div>
+            <div class="year">2025</div>
+          </div>
+          <div class="event-info">
+            <h3 class="event-name">Pulse Nightclub</h3>
+            <div class="event-location">Düsseldorf, Deutschland</div>
+            <div class="event-time">Doors: 23:00 | STEEL: 01:00-03:00</div>
+          </div>
+          <div class="event-status sold-out">Ausverkauft</div>
+        </div>
+        <div class="event-item">
+          <div class="event-date">
+            <div class="day">24</div>
+            <div class="month">Jun</div>
+            <div class="year">2025</div>
+          </div>
+          <div class="event-info">
+            <h3 class="event-name">Summer Sensation Open Air</h3>
+            <div class="event-location">Köln, Deutschland</div>
+            <div class="event-time">STEEL: 18:00-19:30</div>
+          </div>
+          <div class="event-status upcoming">Early Bird verfügbar</div>
+        </div>
+      </div>
+      <a href="#" class="view-more-button">Alle Events anzeigen</a>
+    </div>
+  </section>
+
+  <!-- Featured Section -->
+  <section class="featured-section" id="featured">
+    <div class="featured-container">
+      <h2 class="featured-heading">Featured</h2>
+      <div class="featured-grid">
+        <div class="featured-item">
+          <div class="featured-image">
+            <img src="/api/placeholder/400/300" alt="STEEL SoundCloud Mix">
+          </div>
+          <div class="featured-content">
+            <h3 class="featured-title">Summer Vibes Mix 2025</h3>
+            <p class="featured-description">Mein neuester Mix mit den besten Summer House Tracks für die kommende Festival Saison.</p>
+            <a href="#" class="featured-link">
+              Auf SoundCloud anhören <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="featured-item">
+          <div class="featured-image">
+            <img src="/api/placeholder/400/300" alt="STEEL Single">
+          </div>
+          <div class="featured-content">
+            <h3 class="featured-title">Neue Single: "Electric Dreams"</h3>
+            <p class="featured-description">Meine aktuelle Veröffentlichung mit sommerlichen Deep House Vibes und träumerischen Vocals.</p>
+            <a href="#" class="featured-link">
+              Auf Spotify streamen <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="featured-item">
+          <div class="featured-image">
+            <img src="/api/placeholder/400/300" alt="STEEL Interview">
+          </div>
+          <div class="featured-content">
+            <h3 class="featured-title">DJ Mag Interview</h3>
+            <p class="featured-description">Im Gespräch über meine Einflüsse, meinen Produktionsstil und kommende Projekte.</p>
+            <a href="#" class="featured-link">
+              Interview lesen <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section class="booking-section" id="booking">
+    <div class="booking-container">
+      <div class="booking-text">
+        <h2 class="booking-heading">Booking Anfrage</h2>
+        <p>Du planst ein Event und suchst nach dem perfekten DJ, um deine Veranstaltung zu einem unvergesslichen Erlebnis zu machen? Ob Club-Night, Festival oder Special Event – ich biete maßgeschneiderte DJ-Sets, die genau auf deine Anforderungen zugeschnitten sind.</p>
+        <p>Um die bestmögliche Beratung bieten zu können, <strong>gib bitte möglichst detaillierte Informationen</strong> zu deinem Event an. So kann ich dir ein passendes Angebot unterbreiten.</p>
+        <p>Für Club-Events oder Festivals solltest du frühzeitig anfragen, da Termine schnell vergeben sein können. Ein Vorlauf von <em>2-3 Monaten</em> ist empfehlenswert.</p>
+        <p>Hast du Fragen oder besondere Anforderungen? Kontaktiere mich direkt unter <a href="mailto:booking@steelmusic.net">booking@steelmusic.net</a>.</p>
+      </div>
+      <div class="booking-form">
+        <h3>Kontaktiere mich</h3>
+        <form>
+          <div class="form-group">
+            <label for="name">Name / Organisation</label>
+            <input type="text" id="name" placeholder="Dein Name oder deine Organisation" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" placeholder="Deine E-Mail-Adresse" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" placeholder="Deine Telefonnummer">
+          </div>
+          <div class="form-group">
+            <label for="event-type">Event-Typ</label>
+            <select id="event-type" required>
+              <option value="">Bitte wählen</option>
+              <option value="club">Club-Night</option>
+              <option value="festival">Festival / Open Air</option>
+              <option value="other">Andere Veranstaltung</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="event-date">Event-Datum</label>
+            <input type="date" id="event-date" required>
+          </div>
+          <div class="form-group">
+            <label for="location">Location / Stadt</label>
+            <input type="text" id="location" placeholder="Wo findet das Event statt?" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Details & Anforderungen</label>
+            <textarea id="message" rows="5" placeholder="Beschreibe dein Event und deine Vorstellungen" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Anfrage senden</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>STEEL</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="corporate.html">Corporate</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Kontakt</h3>
+        <ul>
+          <li><a href="tel:+491234567890">+49 123 456 7890</a></li>
+          <li><a href="mailto:info@steelmusic.net">info@steelmusic.net</a></li>
+          <li><a href="mailto:booking@steelmusic.net">booking@steelmusic.net</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Social Media</h3>
+        <ul>
+          <li><a href="https://instagram.com/steelofficial" target="_blank">Instagram</a></li>
+          <li><a href="https://soundcloud.com/steelofficial" target="_blank">SoundCloud</a></li>
+          <li><a href="https://spotify.com/artist/steel" target="_blank">Spotify</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Rechtliches</h3>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 STEELmusic. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize mobile menu
+    let menuOpen = false;
+
+    function toggleMobileMenu(event) {
+      if (event) {
+        event.stopPropagation();
+      }
+      
+      const menu = document.getElementById('mobile-menu');
+      const toggle = document.getElementById('mobile-menu-toggle');
+      
+      if (menuOpen) {
+        menuOpen = false;
+        toggle.classList.remove('active');
+        
+        const menuItems = menu.querySelectorAll('li');
+        menuItems.forEach(item => {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(-10px)';
+        });
+        
+        setTimeout(() => {
+          menu.style.display = 'none';
+        }, 300);
+      } else {
+        menuOpen = true;
+        menu.style.display = 'block';
+        toggle.classList.add('active');
+        
+        setTimeout(() => {
+          const menuItems = menu.querySelectorAll('li');
+          menuItems.forEach(item => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          });
+        }, 10);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate hero content
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        setTimeout(() => {
+          heroContent.classList.add('visible');
+        }, 300);
+      }
+
+      // Scroll animations
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '-30px', 
+        threshold: 0.1
+      });
+
+      // Observe elements for scroll animations
+      document.querySelectorAll('.live-heading, .live-text, .live-image, .events-heading, .event-item, .view-more-button, .featured-heading, .featured-item, .booking-text, .booking-form').forEach(elem => {
+        scrollObserver.observe(elem);
+      });
+
+      // Add shadow to header on scroll
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.95)';
+          header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+        } else {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.8)';
+          header.style.boxShadow = 'none';
+        }
+      });
+
+      // Handle mobile menu
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMobileMenu(e);
+        });
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        const menu = document.getElementById('mobile-menu');
+        const toggle = document.getElementById('mobile-menu-toggle');
+        
+        if (menuOpen && menu && !menu.contains(event.target) && !toggle.contains(event.target)) {
+          toggleMobileMenu();
+        }
+      });
+
+      // Close menu when clicking on links
+      const menuItems = document.querySelectorAll('#mobile-menu a');
+      menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+          setTimeout(() => {
+            toggleMobileMenu();
+          }, 100);
+        });
+      });
+
+      // Language switcher
+      const languageToggle = document.getElementById('language-toggle');
+      const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
+      let currentLanguage = 'de';
+
+      const switchLanguage = function(e) {
+        e.preventDefault();
+        
+        currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
+        document.documentElement.lang = currentLanguage;
+        
+        if (languageToggle) {
+          languageToggle.textContent = currentLanguage === 'de' ? 'EN' : 'DE';
+        }
+        if (mobileLanguageToggle) {
+          mobileLanguageToggle.textContent = currentLanguage === 'de' ? 'EN' : 'DE';
+        }
+
+        // For a full implementation, you would add more translations here
+      };
+
+      if (languageToggle) {
+        languageToggle.addEventListener('click', switchLanguage);
+      }
+      
+      if (mobileLanguageToggle) {
+        mobileLanguageToggle.addEventListener('click', switchLanguage);
+      }
+    });
+  </script>
+</body>
+</html>

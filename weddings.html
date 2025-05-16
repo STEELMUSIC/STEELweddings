@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEELweddings | Hochzeits-DJ im Ruhrgebiet</title>
+    <style>
+        :root {
+            --primary-color: #a044ff;
+            --secondary-color: #6441a5;
+            --contact-color: #f857a6;
+            --contact-highlight: #ff5858;
+            --about-color: #ff6b6b;
+            --service-color: #4facfe;
+            --info-color: #43e97b;
+            --steel-color: #f3930d;
+            --steel-secondary: #e67e22;
+            --light-bg: #1e1e20;
+            --dark-bg: #121214;
+            --darker-bg: #0c0c0e;
+            --dark-text: #f5f5f7;
+            --light-text: #f5f5f7;
+            --text-secondary: #bbbbbb;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+            color: var(--light-text);
+            background-color: var(--dark-bg);
+        }
+        
+        strong {
+            font-weight: 600;
+        }
+        
+        .about-content strong {
+            color: var(--about-color);
+        }
+        
+        .service-item strong {
+            color: var(--service-color);
+        }
+        
+        .info-content strong {
+            color: var(--info-color);
+        }
+        
+        .contact-intro strong {
+            color: var(--contact-color);
+        }
+        
+        em {
+            font-style: normal;
+            font-weight: 500;
+        }
+        
+        .about-content em {
+            color: var(--about-color);
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: var(--contact-color);
+        }
+        
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            letter-spacing: 0.01rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-content a {
+            color: var(--about-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--about-color);
+            transition: var(--transition);
+        }
+        
+        .about-content a:hover {
+            border-bottom: 1px solid var(--about-color);
+        }
+        
+        .service-content a {
+            color: var(--service-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--service-color);
+            transition: var(--transition);
+        }
+        
+        .service-content a:hover {
+            border-bottom: 1px solid var(--service-color);
+        }
+        
+        .info-content a {
+            color: var(--info-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--info-color);
+            transition: var(--transition);
+        }
+        
+        .info-content a:hover {
+            border-bottom: 1px solid var(--info-color);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(30, 30, 32, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 60px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 34px;
+            display: block;
+            position: relative;
+        }
+
+        #steel-path, #weddings-path, #weddings-path2, #weddings-path3,
+        #weddings-path4, #weddings-path5, #weddings-path6, 
+        #weddings-path7, #weddings-path8 {
+            transition: fill 0.8s ease;
+        }
+
+        body.section-about #steel-path,
+        body.section-about #weddings-path,
+        body.section-about #weddings-path2, 
+        body.section-about #weddings-path3,
+        body.section-about #weddings-path4,
+        body.section-about #weddings-path5,
+        body.section-about #weddings-path6,
+        body.section-about #weddings-path7,
+        body.section-about #weddings-path8 {
+            fill: url(#about-gradient);
+        }
+
+        body.section-services #steel-path,
+        body.section-services #weddings-path,
+        body.section-services #weddings-path2, 
+        body.section-services #weddings-path3,
+        body.section-services #weddings-path4,
+        body.section-services #weddings-path5,
+        body.section-services #weddings-path6,
+        body.section-services #weddings-path7,
+        body.section-services #weddings-path8 {
+            fill: url(#services-gradient);
+        }
+
+        body.section-info #steel-path,
+        body.section-info #weddings-path,
+        body.section-info #weddings-path2, 
+        body.section-info #weddings-path3,
+        body.section-info #weddings-path4,
+        body.section-info #weddings-path5,
+        body.section-info #weddings-path6,
+        body.section-info #weddings-path7,
+        body.section-info #weddings-path8 {
+            fill: url(#info-gradient);
+        }
+
+        body.section-contact #steel-path,
+        body.section-contact #weddings-path,
+        body.section-contact #weddings-path2, 
+        body.section-contact #weddings-path3,
+        body.section-contact #weddings-path4,
+        body.section-contact #weddings-path5,
+        body.section-contact #weddings-path6,
+        body.section-contact #weddings-path7,
+        body.section-contact #weddings-path8 {
+            fill: url(#contact-gradient);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light-text);
+            transition: var(--transition);
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background-color: rgba(160, 68, 255, 0.1);
+        }
+
+        body.section-about .nav-links a:hover {
+            color: var(--about-color);
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+        
+        body.section-services .nav-links a:hover {
+            color: var(--service-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+        
+        body.section-info .nav-links a:hover {
+            color: var(--info-color);
+            background-color: rgba(67, 233, 123, 0.1);
+        }
+        
+        body.section-contact .nav-links a:hover {
+            color: var(--contact-color);
+            background-color: rgba(248, 87, 166, 0.1);
+        }
+        
+        body.section-about .nav-links a[href="#about"] {
+            color: var(--about-color);
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+        
+        body.section-services .nav-links a[href="#services"] {
+            color: var(--service-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+        
+        body.section-info .nav-links a[href="#info"] {
+            color: var(--info-color);
+            background-color: rgba(67, 233, 123, 0.1);
+        }
+        
+        body.section-contact .nav-links a[href="#contact"] {
+            color: var(--contact-color);
+            background-color: rgba(248, 87, 166, 0.1);
+        }
+        
+        .language-switch {
+            margin-left: 1rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            padding-left: 1rem;
+        }
+        
+        .language-switch a {
+            background-color: rgba(160, 68, 255, 0.2);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid rgba(160, 68, 255, 0.3);
+            cursor: pointer;
+        }
+        
+        .language-switch a:hover {
+            background-color: rgba(160, 68, 255, 0.4);
+            border-color: rgba(160, 68, 255, 0.6);
+        }
+        
+        body.section-about .language-switch a {
+            background-color: rgba(255, 107, 107, 0.2);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+        
+        body.section-services .language-switch a {
+            background-color: rgba(79, 172, 254, 0.2);
+            border-color: rgba(79, 172, 254, 0.3);
+        }
+        
+        body.section-info .language-switch a {
+            background-color: rgba(67, 233, 123, 0.2);
+            border-color: rgba(67, 233, 123, 0.3);
+        }
+        
+        body.section-contact .language-switch a {
+            background-color: rgba(248, 87, 166, 0.2);
+            border-color: rgba(248, 87, 166, 0.3);
+        }
+        
+        body.section-about .language-switch a:hover {
+            background-color: rgba(255, 107, 107, 0.4);
+            border-color: rgba(255, 107, 107, 0.6);
+        }
+        
+        body.section-services .language-switch a:hover {
+            background-color: rgba(79, 172, 254, 0.4);
+            border-color: rgba(79, 172, 254, 0.6);
+        }
+        
+        body.section-info .language-switch a:hover {
+            background-color: rgba(67, 233, 123, 0.4);
+            border-color: rgba(67, 233, 123, 0.6);
+        }
+        
+        body.section-contact .language-switch a:hover {
+            background-color: rgba(248, 87, 166, 0.4);
+            border-color: rgba(248, 87, 166, 0.6);
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            padding-top: 80px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(ellipse at center, rgba(50, 50, 70, 0.5) 0%, rgba(30, 30, 40, 0.5) 40%, rgba(10, 10, 20, 0.8) 80%);
+            z-index: 1;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .glass-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .glass-circle:nth-child(1) {
+            width: 700px;
+            height: 700px;
+            left: -150px;
+            top: -150px;
+            opacity: 0.8;
+            background: linear-gradient(45deg, rgba(160, 68, 255, 0.2), rgba(100, 65, 165, 0.1));
+        }
+        
+        .glass-circle:nth-child(2) {
+            width: 500px;
+            height: 500px;
+            right: -100px;
+            top: 20%;
+            opacity: 0.7;
+            background: linear-gradient(45deg, rgba(100, 65, 165, 0.2), rgba(160, 68, 255, 0.1));
+        }
+        
+        .glass-circle:nth-child(3) {
+            width: 600px;
+            height: 600px;
+            left: 20%;
+            bottom: -150px;
+            opacity: 0.6;
+            background: linear-gradient(45deg, rgba(79, 172, 254, 0.2), rgba(160, 68, 255, 0.1));
+        }
+        
+        .light-rays {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, 
+                rgba(160, 68, 255, 0.2) 0%, 
+                rgba(160, 68, 255, 0) 50%, 
+                rgba(100, 65, 165, 0.2) 100%);
+            z-index: 1;
+            animation: lightShift 15s ease-in-out infinite alternate;
+        }
+        
+        @keyframes lightShift {
+            0% {
+                opacity: 0.4;
+                background-position: 0% 0%;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0.4;
+                background-position: 100% 100%;
+            }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            will-change: opacity, transform;
+        }
+        
+        .hero-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary-color), #6c13d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h1 span:first-child {
+                font-size: 2.8rem;
+            }
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.5;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: 0px 4px 12px rgba(160, 68, 255, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 15px rgba(160, 68, 255, 0.4);
+        }
+        
+        .about {
+            padding: 6rem 2rem;
+            background-color: var(--light-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .about-image.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .about-content {
+            flex: 1;
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .about-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #ff6b6b, #ff9e7d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .services {
+            padding: 6rem 2rem;
+            background-color: var(--dark-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .services-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .services-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .services-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .service-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-content {
+            flex: 2;
+        }
+        
+        .service-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--service-color);
+        }
+        
+        .service-image {
+            flex: 1;
+            overflow: hidden;
+            border-radius: 8px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .service-image img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1), scale 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .image-parallax {
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            will-change: transform;
+        }
+        
+        .image-parallax:hover {
+            transform: scale(1.03);
+        }
+        
+        .service-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, 
+                rgba(79, 172, 254, 0.1),
+                rgba(0, 242, 254, 0.05));
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-image:hover::after {
+            opacity: 1;
+        }
+        
+        .info-section {
+            padding: 6rem 2rem;
+            background-color: var(--light-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .info-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .info-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(90deg, #43e97b, #38f9d7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .info-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .info-content {
+            background-color: rgba(30, 30, 32, 0.7);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .info-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .contact {
+            padding: 6rem 2rem;
+            background-color: var(--dark-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .contact-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, #f857a6, #ff5858);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .contact-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-intro {
+            text-align: left;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .contact-intro.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .contact-form {
+            background-color: rgba(30, 30, 32, 0.7);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .contact-form.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .form-group label::after {
+            content: '*';
+            color: var(--contact-color);
+            margin-left: 2px;
+        }
+        
+        .form-group:nth-child(3) label::after {
+            content: '';
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.2);
+            color: var(--light-text);
+            font-size: 16px;
+        }
+        
+        .form-group ::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(90deg, #f857a6, #ff5858);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(90deg, #ff5858, #f857a6);
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 15px rgba(248, 87, 166, 0.4);
+        }
+        
+        .form-status {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .form-status.success {
+            background-color: rgba(67, 233, 123, 0.2);
+            color: #43e97b;
+        }
+        
+        .form-status.error {
+            background-color: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+        }
+        
+        footer {
+            background-color: var(--darker-bg);
+            padding: 3rem 2rem 1rem;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-section a:hover {
+            color: var(--light-text);
+        }
+        
+        .copyright {
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+        
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            will-change: opacity, transform;
+        }
+        
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .sticky-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .sticky-image {
+            position: sticky;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            z-index: 2000;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            margin: 3px 0;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(18, 18, 20, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1999;
+            padding: 80px 0 30px;
+            text-align: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu li {
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu li:nth-child(1) { transition-delay: 0.05s; }
+        .mobile-menu li:nth-child(2) { transition-delay: 0.1s; }
+        .mobile-menu li:nth-child(3) { transition-delay: 0.15s; }
+        .mobile-menu li:nth-child(4) { transition-delay: 0.2s; }
+        .mobile-menu li:nth-child(5) { transition-delay: 0.25s; }
+        .mobile-menu li:nth-child(6) { transition-delay: 0.3s; }
+
+        .mobile-menu a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            width: 80%;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-color);
+        }
+        
+        body.section-about .mobile-menu a[href="#about"],
+        .mobile-menu a.about-active {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--about-color);
+        }
+        
+        body.section-services .mobile-menu a[href="#services"],
+        .mobile-menu a.services-active {
+            background: rgba(79, 172, 254, 0.2);
+            color: var(--service-color);
+        }
+        
+        body.section-info .mobile-menu a[href="#info"],
+        .mobile-menu a.info-active {
+            background: rgba(67, 233, 123, 0.2);
+            color: var(--info-color);
+        }
+        
+        body.section-contact .mobile-menu a[href="#contact"],
+        .mobile-menu a.contact-active {
+            background: rgba(248, 87, 166, 0.2);
+            color: var(--contact-color);
+        }
+
+        @media (prefers-reduced-motion) {
+            section, .service-item, .about-content, .about-image, .info-content {
+                transition: none;
+                transform: none;
+                opacity: 1;
+            }
+            
+            .fade-in-element {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none !important;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex !important;
+                position: fixed;
+                top: 15px;
+                right: 20px;
+                z-index: 2000;
+                background: rgba(18, 18, 20, 0.7);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                align-items: center;
+                justify-content: center;
+                padding: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+            
+            .service-item {
+                flex-direction: column !important;
+                width: 100% !important;
+            }
+            
+            .service-content {
+                width: 100% !important;
+                order: 2;
+            }
+            
+            .service-image {
+                width: 100% !important;
+                order: 1;
+                margin-bottom: 20px;
+            }
+            
+            .about-container {
+                flex-direction: column !important;
+            }
+            
+            .about-image, .about-content {
+                width: 100% !important;
+            }
+            
+            .about, .services, .info-section, .contact {
+                padding: 4rem 1rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <linearGradient id="primary-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--primary-color)" />
+        <stop offset="100%" stop-color="var(--secondary-color)" />
+      </linearGradient>
+      <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--about-color)" />
+        <stop offset="100%" stop-color="#ff9e7d" />
+      </linearGradient>
+      <linearGradient id="services-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--service-color)" />
+        <stop offset="100%" stop-color="#00f2fe" />
+      </linearGradient>
+      <linearGradient id="info-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--info-color)" />
+        <stop offset="100%" stop-color="#38f9d7" />
+      </linearGradient>
+      <linearGradient id="contact-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--contact-color)" />
+        <stop offset="100%" stop-color="var(--contact-highlight)" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <svg id="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 573.86 103.91" width="188" height="38">
+          <defs>
+            <linearGradient id="primary-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="var(--primary-color)" />
+              <stop offset="100%" stop-color="var(--secondary-color)" />
+            </linearGradient>
+            <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="var(--about-color)" />
+              <stop offset="100%" stop-color="#ff9e7d" />
+            </linearGradient>
+            <linearGradient id="services-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="var(--service-color)" />
+              <stop offset="100%" stop-color="#00f2fe" />
+            </linearGradient>
+            <linearGradient id="info-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="var(--info-color)" />
+              <stop offset="100%" stop-color="#38f9d7" />
+            </linearGradient>
+            <linearGradient id="contact-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="var(--contact-color)" />
+              <stop offset="100%" stop-color="var(--contact-highlight)" />
+            </linearGradient>
+          </defs>
+          <path id="steel-path" fill="url(#primary-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+          <path id="weddings-path" fill="url(#primary-gradient)" d="m345.39,65.03h3.91l5.22,16.06c.61,1.76,1.1,3.58,1.65,5.72,.44-2.14,1.32-4.84,1.59-5.72l5.28-16.06h3.9l5.22,16.06c.49,1.43,1.15,3.74,1.65,5.72,.55-2.2,.66-2.86,1.59-5.72l5.28-16.06h3.96l-9.02,26.62h-3.68l-5.5-16.72c-.66-1.98-1.1-3.63-1.43-5.22-.38,1.43-.83,3.02-1.54,5.22l-5.5,16.72h-3.79l-8.8-26.62Z"/>
+          <path id="weddings-path2" fill="url(#primary-gradient)" d="m386.37,78.34c0-8.3,5.17-14.02,12.76-14.02s12.1,5.11,12.1,12.65v1.87h-21.17c.27,6.49,3.68,10.23,9.4,10.23,4.34,0,7.15-1.87,8.14-5.39h3.63c-1.43,5.61-5.55,8.63-11.82,8.63-7.81,0-13.03-5.61-13.03-13.97Zm3.79-2.25h17.27c0-5.11-3.3-8.52-8.3-8.52s-8.3,3.3-8.96,8.52Z"/>
+          <path id="weddings-path3" fill="url(#primary-gradient)" d="m415.41,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
+          <path id="weddings-path4" fill="url(#primary-gradient)" d="m447.53,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
+          <path id="weddings-path5" fill="url(#primary-gradient)" d="m480.58,54.91c0-1.54,1.26-2.86,2.8-2.86s2.86,1.32,2.86,2.86-1.32,2.8-2.86,2.8-2.8-1.26-2.8-2.8Zm.93,10.12h3.79v26.62h-3.79v-26.62Z"/>
+          <path id="weddings-path6" fill="url(#primary-gradient)" d="m493.23,91.65v-26.62h3.3l.55,4.62c1.76-3.41,5.28-5.33,9.13-5.33,7.31,0,10.34,4.34,10.34,11.05v16.28h-3.79v-15.45c0-6.21-2.8-8.41-7.2-8.41-5.44,0-8.52,3.96-8.52,9.95v13.91h-3.79Z"/>
+          <path id="weddings-path7" fill="url(#primary-gradient)" d="m534.81,64.32c4.62,0,8.14,2.15,9.84,6.05l.38-5.33h3.3v25.79c0,7.92-5.06,13.09-12.87,13.09-6.82,0-11.6-3.85-12.65-10.28h3.79c.82,4.29,4.12,6.82,8.91,6.82,5.44,0,9.07-3.68,9.07-9.24v-6.32c-1.82,3.74-5.5,5.94-10.06,5.94-7.59,0-12.21-5.99-12.21-13.25s4.67-13.25,12.48-13.25Zm.28,23.1c5.77,0,9.18-4.18,9.18-9.9s-3.3-9.84-9.13-9.84-9.02,4.45-9.02,9.84,3.35,9.9,8.96,9.9Z"/>
+          <path id="weddings-path8" fill="url(#primary-gradient)" d="m557.64,84.17c0,3.08,2.31,5,6.05,5,4.12,0,6.54-1.76,6.54-4.62,0-2.2-1.1-3.46-4.23-4.23l-4.56-1.16c-4.62-1.15-6.87-3.57-6.87-7.2,0-4.67,3.9-7.64,9.62-7.64s9.24,3.08,9.4,8.03h-3.68c-.11-3.08-2.25-4.9-5.83-4.9s-5.83,1.59-5.83,4.45c0,2.04,1.43,3.46,4.34,4.18l4.56,1.15c4.62,1.16,6.71,3.3,6.71,7.15,0,4.78-4.07,7.92-10.12,7.92s-9.73-3.19-9.73-8.14h3.63Z"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html" class="about">About</a></li>
+        <li><a href="live.html" class="live">Live</a></li>
+        <li><a href="weddings.html" class="weddings">Weddings</a></li>
+        <li><a href="corporate.html" class="corporate">Corporate</a></li>
+        <li class="language-switch">
+          <a href="#" id="language-toggle">EN</a>
+        </li>
+      </ul>
+      
+      <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="index.html#about" id="mobile-nav-about">About</a></li>
+      <li><a href="index.html#live" id="mobile-nav-live">Live</a></li>
+      <li><a href="weddings.html" id="mobile-nav-weddings" class="weddings-active">Weddings</a></li>
+      <li><a href="index.html#corporate" id="mobile-nav-corporate">Corporate</a></li>
+      <li><a href="#" id="mobile-language-toggle">EN</a></li>
+    </ul>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="hero-background">
+      <div class="glass-circle"></div>
+      <div class="glass-circle"></div>
+      <div class="glass-circle"></div>
+      <div class="light-rays"></div>
+    </div>
+    <div class="hero-content">
+      <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 573.86 103.91" width="300">
+        <defs>
+          <linearGradient id="hero-main-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#a044ff" />
+            <stop offset="100%" stop-color="#6441a5" />
+          </linearGradient>
+        </defs>
+        
+        <path fill="url(#hero-main-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+        
+        <path fill="url(#hero-main-gradient)" d="m345.39,65.03h3.91l5.22,16.06c.61,1.76,1.1,3.58,1.65,5.72,.44-2.14,1.32-4.84,1.59-5.72l5.28-16.06h3.9l5.22,16.06c.49,1.43,1.15,3.74,1.65,5.72,.55-2.2,.66-2.86,1.59-5.72l5.28-16.06h3.96l-9.02,26.62h-3.68l-5.5-16.72c-.66-1.98-1.1-3.63-1.43-5.22-.38,1.43-.83,3.02-1.54,5.22l-5.5,16.72h-3.79l-8.8-26.62Z"/>
+        <path fill="url(#hero-main-gradient)" d="m386.37,78.34c0-8.3,5.17-14.02,12.76-14.02s12.1,5.11,12.1,12.65v1.87h-21.17c.27,6.49,3.68,10.23,9.4,10.23,4.34,0,7.15-1.87,8.14-5.39h3.63c-1.43,5.61-5.55,8.63-11.82,8.63-7.81,0-13.03-5.61-13.03-13.97Zm3.79-2.25h17.27c0-5.11-3.3-8.52-8.3-8.52s-8.3,3.3-8.96,8.52Z"/>
+        <path fill="url(#hero-main-gradient)" d="m415.41,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
+        <path fill="url(#hero-main-gradient)" d="m447.53,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
+        <path fill="url(#hero-main-gradient)" d="m480.58,54.91c0-1.54,1.26-2.86,2.8-2.86s2.86,1.32,2.86,2.86-1.32,2.8-2.86,2.8-2.8-1.26-2.8-2.8Zm.93,10.12h3.79v26.62h-3.79v-26.62Z"/>
+        <path fill="url(#hero-main-gradient)" d="m493.23,91.65v-26.62h3.3l.55,4.62c1.76-3.41,5.28-5.33,9.13-5.33,7.31,0,10.34,4.34,10.34,11.05v16.28h-3.79v-15.45c0-6.21-2.8-8.41-7.2-8.41-5.44,0-8.52,3.96-8.52,9.95v13.91h-3.79Z"/>
+        <path fill="url(#hero-main-gradient)" d="m534.81,64.32c4.62,0,8.14,2.15,9.84,6.05l.38-5.33h3.3v25.79c0,7.92-5.06,13.09-12.87,13.09-6.82,0-11.6-3.85-12.65-10.28h3.79c.82,4.29,4.12,6.82,8.91,6.82,5.44,0,9.07-3.68,9.07-9.24v-6.32c-1.82,3.74-5.5,5.94-10.06,5.94-7.59,0-12.21-5.99-12.21-13.25s4.67-13.25,12.48-13.25Zm.28,23.1c5.77,0,9.18-4.18,9.18-9.9s-3.3-9.84-9.13-9.84-9.02,4.45-9.02,9.84,3.35,9.9,8.96,9.9Z"/>
+        <path fill="url(#hero-main-gradient)" d="m557.64,84.17c0,3.08,2.31,5,6.05,5,4.12,0,6.54-1.76,6.54-4.62,0-2.2-1.1-3.46-4.23-4.23l-4.56-1.16c-4.62-1.15-6.87-3.57-6.87-7.2,0-4.67,3.9-7.64,9.62-7.64s9.24,3.08,9.4,8.03h-3.68c-.11-3.08-2.25-4.9-5.83-4.9s-5.83,1.59-5.83,4.45c0,2.04,1.43,3.46,4.34,4.18l4.56,1.15c4.62,1.16,6.71,3.3,6.71,7.15,0,4.78-4.07,7.92-10.12,7.92s-9.73-3.19-9.73-8.14h3.63Z"/>
+      </svg>
+      <p>Heiraten mit Stil. Und STEEL.</p>
+      <a href="#contact" class="cta-button">Anfrage senden</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-image" data-parallax-intensity="20">
+        <img src="/api/placeholder/500/400" alt="DJ bei einer Hochzeit" class="image-parallax">
+      </div>
+      <div class="about-content">
+        <h2 class="about-title">Euer Tag rückt näher. Und jetzt?</h2>
+        <p id="about-p1">Eure Hochzeit ist <strong>aufregend</strong> – vor allem für euch selbst. Aber auch eure Liebsten machen sich schick und haben Lust, es so richtig krachen zu lassen. Hier komme ich ins Spiel. Denn ich finde: Ihr solltet euch <em>nicht den Kopf über die Musik zerbrechen</em> müssen. Ich kümmere mich darum, dass eure Party ein voller Erfolg wird!</p>
+        <p id="about-p2">Die Gäste auf eurer Hochzeit sind jung und alt. Um sie anzusprechen, sollte Musik laufen, die alle kennen (<strong>Hits only!</strong>). Mal ist es was aus den 60ern zum Twisten, ein anderes Mal aus den 90ern zum Trashen. Aktuelle Charts und <strong>elektronische Beats</strong> dürfen natürlich nicht fehlen. Alles in einem Mix verpackt, der niemanden erschrecken lässt und sich trotzdem so anfühlt, als wärt ihr gerade im Club.</p>
+        <p id="about-p3">Hier spielen auch Songs eine wichtige Rolle, die euch und eure Gäste verbinden. <strong>#JGA</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2 class="services-title">Eure Hochzeitsfeier</h2>
+    <div class="services-container">
+      <div class="service-item">
+        <div class="service-content">
+          <h3 id="service1-title">Endlich geht es los.</h3>
+          <p id="service1-p1">Zum Eröffnen der Tanzfläche seid ihr gefragt: Ob ein <strong>Wiener Walzer</strong> oder ein <strong>Discofox</strong>, manchmal auch einfach nur ein gemütliches Schunkeln: Durch eure Songauswahl beginnt die Party und eine unvergessliche Nacht. Wählt weise – gerne mit meinem Support.</p>
+          <p id="service1-p2">Ihr wollt <strong>keinen Eröffnungstanz</strong>? Kein Problem. Es ist eure Hochzeit und die gestalten wir so, wie ihr es wollt.</p>
+        </div>
+        <div class="service-image" data-parallax-intensity="10">
+          <img src="/api/placeholder/400/300" alt="Hochzeitspaar tanzt" class="image-parallax">
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-content">
+          <h3 id="service2-title">Let's party.</h3>
+          <p id="service2-p1">Ist die Party dann voll im Gange, gibt es kein Halten mehr. <strong>Live Mashups</strong> transportieren eure Gäste in eine andere Klangwelt – weit weg vom üblichem Gedudel aus dem Radio. Musikwünsche baue ich gerne an passender Stelle in den Mix ein.</p>
+          <p id="service2-p2">Spätestens wenn <strong>Beyoncé</strong> mit ihren Single Ladies die Nächstglücklichen zum Brautstraußfangen bittet, ist die Tanzfläche vor keinem Hit (und Gast) mehr sicher!</p>
+        </div>
+        <div class="service-image" data-parallax-intensity="10">
+          <img src="/api/placeholder/400/300" alt="Hochzeitsfeier" class="image-parallax">
+        </div>
+      </div>
+      <div class="service-item">
+        <div class="service-content">
+          <h3 id="service3-title">Tolle Technik.</h3>
+          <p id="service3-p1">Habt ihr schon mal von <strong>Fohhn</strong> gehört? Seit 1993 stellt die deutsche Firma Premium-Soundsysteme her – alles made in Germany. Je nach Location reicht meine Fohhn-Anlage für bis zu 200 Personen und mehr. Wenn ich auflege, stimmt also nicht nur die Musikauswahl, sondern auch die Klangqualität.</p>
+          <p id="service3-p2"><strong>Licht</strong> wird meiner Meinung nach häufig unterbewertet. Dabei sorgen steuerbare Lichter für eine epische Stimmung während der Party und für tolle Fotos im Nachhinein. Mit Ambientespots kann ich eure Location akkurat in Szene setzen und so nur mithilfe von Licht eine gemütliche Grundstimmung erzeugen, sobald es draußen dämmert.</p>
+          <p id="service3-p3">Für noch mehr <strong>Club-Atmosphäre</strong> habe ich auf Wunsch Nebel dabei, um die Lichtstrahlen im Raum so richtig zum Vorschein zu bringen.</p>
+        </div>
+        <div class="service-image" data-parallax-intensity="10">
+          <img src="/api/placeholder/400/300" alt="DJ-Equipment" class="image-parallax">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sticky-container">
+    <img src="/api/placeholder/1200/800" alt="DJ in Action" class="sticky-image" id="sticky-image1">
+  </section>
+
+  <section class="info-section" id="info">
+    <div class="info-container">
+      <h2 class="info-title">Das solltet ihr noch wissen.</h2>
+      <div class="info-content">
+        <p id="info-p1">Ich komme ursprünglich aus der <strong>Clubszene</strong> und lege auch heute noch regelmäßig in Discotheken auf. Übergänge und das Mixing sind mir daher sehr wichtig. Vor allem achte ich darauf, dass aufeinanderfolgende Songs zueinander passen. Musikwünsche binde ich an der Stelle ein, wo sie reinpassen. Ich spiele grundsätzlich keine Genres kreuz und quer – ich bin nun mal keine Jukebox. Falls ihr mich mal live erleben wollt: Bei <a href="https://instagram.com/steelofficial" target="_blank">Instagram</a> verkünde ich regelmäßig, wann und wo ich auflege.</p>
+        <p id="info-p2">Musikalisch bin ich ein <strong>Allrounder</strong> (Open Format). Außerdem kenne ich mich sehr gut mit elektronischer Musik aus (<a href="https://linktr.ee/STEELofficial" target="_blank">und als STEEL selbst auch solche Musik heraus</a>). Ich bin definitiv nicht der Richtige, wenn es um Hochzeiten mit hohem Schlager- oder Après-Ski-Anteil geht. Da gibt es andere DJs für.</p>
+        <p id="info-p3">Ich bin <strong>DJ, kein Entertainer oder Animateur</strong>. Ich konzentriere mich daher aufs Auflegen und benutze das Mikrofon nur selten, wenn es gerade gut reinpasst.</p>
+        <p id="info-p4">Übrigens: Ich bin Mitglied der <strong><a href="https://lovecrew-ruhrpott.de" target="_blank">Lovecrew Ruhrpott</a></strong>. Das ist ein Zusammenschluss der besten Hochzeitsdienstleister*innen im Ruhrgebiet. Wenn ihr noch am Anfang eurer Hochzeitsplanung steckt, schaut unbedingt mal vorbei!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 class="contact-title">Passt? Prima.</h2>
+    <div class="contact-container">
+      <div class="contact-intro">
+        <p id="contact-p1">Ihr bekommt jetzt schon Lust auf eure Hochzeitsfeier? Sehr cool! Fragt doch einfach nach, vielleicht habe ich noch einen Termin frei. Um auf Nummer sicher zu gehen, solltet ihr mich ungefähr ein Jahr vor eurer Hochzeit anfragen. Aber auch spontan bin ich manchmal noch verfügbar.</p>
+        <p id="contact-p2">Meine Preise starten für 7 Stunden bei <span class="highlight">1500,- €</span> (inkl. MwSt.) und sind davon abhängig, um wie viel Uhr ich loslegen soll. Ich spiele immer bis mindestens 3 Uhr. Auf Wunsch auch open end!</p>
+      </div>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Wer heiratet? :)" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" placeholder="traumpaar@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefon/Handy</label>
+          <input type="tel" id="phone" placeholder="I call you maybe">
+        </div>
+        <div class="form-group">
+          <label for="date">Hochzeitsdatum</label>
+          <input type="date" id="date" required>
+        </div>
+        <div class="form-group">
+          <label for="location">Ort</label>
+          <input type="text" id="location" placeholder="Wo steigt die Party?" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Details</label>
+          <textarea id="message" rows="5" placeholder="z. B. Ablauf, Beginn, Gästeanzahl, Musik" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Anfrage senden</button>
+        <div id="form-status" class="form-status" style="display: none;"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>STEELweddings</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#about">Euer Tag</a></li>
+          <li><a href="#services">Leistungen</a></li>
+          <li><a href="#info">Infos</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Kontakt</h3>
+        <ul>
+          <li><a href="tel:+491234567890">+49 123 456 7890</a></li>
+          <li><a href="mailto:info@steelweddings.net">info@steelweddings.net</a></li>
+          <li>Ruhrgebiet & Umgebung</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>STEEL Universe</h3>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#live">Live</a></li>
+          <li><a href="index.html#corporate">Corporate</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Rechtliches</h3>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 STEELweddings. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      // Initialize animations
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '-50px', 
+        threshold: 0.15
+      });
+              
+      // Apply to hero content
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        scrollObserver.observe(heroContent);
+      }
+
+      // Apply to all sections that need animations
+      document.querySelectorAll('.about-image, .about-content, .services-title, .service-item, .info-title, .info-content, .contact-title, .contact-intro, .contact-form').forEach(elem => {
+        scrollObserver.observe(elem);
+      });
+              
+      // Handle header styling on scroll
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.95)';
+          header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+        } else {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.8)';
+          header.style.boxShadow = 'none';
+        }
+      });
+      
+        // Mobile navigation color updates
+        function updateMobileMenuColors() {
+          const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+          
+          // Remove any existing active classes
+          mobileNavLinks.forEach(link => {
+            link.classList.remove('about-active', 'services-active', 'info-active', 'contact-active');
+          });
+          
+          // Apply the correct class based on the body class
+          if (document.body.classList.contains('section-about')) {
+            document.getElementById('mobile-nav-about')?.classList.add('about-active');
+            document.getElementById('mobile-language-toggle')?.classList.add('about-section');
+          } else if (document.body.classList.contains('section-services')) {
+            document.getElementById('mobile-nav-services')?.classList.add('services-active');
+            document.getElementById('mobile-language-toggle')?.classList.add('services-section');
+          } else if (document.body.classList.contains('section-info')) {
+            document.getElementById('mobile-nav-info')?.classList.add('info-active');
+            document.getElementById('mobile-language-toggle')?.classList.add('info-section');
+          } else if (document.body.classList.contains('section-contact')) {
+            document.getElementById('mobile-nav-contact')?.classList.add('contact-active');
+            document.getElementById('mobile-language-toggle')?.classList.add('contact-section');
+          }
+        }
+        
+        // Call this after the section is updated
+        function updateSectionClasses() {
+          const scrollPos = window.scrollY + 80;
+          
+          document.body.classList.remove('section-about', 'section-services', 'section-info', 'section-contact');
+          
+          const sections = [
+            { id: 'contact', bodyClass: 'section-contact' },
+            { id: 'info', bodyClass: 'section-info' },
+            { id: 'services', bodyClass: 'section-services' },
+            { id: 'about', bodyClass: 'section-about' }
+          ];
+          
+          for (const section of sections) {
+            const elem = document.getElementById(section.id);
+            if (elem && scrollPos >= elem.offsetTop) {
+              document.body.classList.add(section.bodyClass);
+              updateMobileMenuColors(); // Update mobile menu colors
+              break;
+            }
+          }
+        }
+        
+        // Initial call and scroll event listener
+        updateSectionClasses();
+        window.addEventListener('scroll', updateSectionClasses);
+
+      // Handle parallax effects
+      const parallaxImages = document.querySelectorAll('.image-parallax');
+      const stickyImage = document.querySelector('.sticky-image');
+              
+      window.addEventListener('scroll', () => {
+        parallaxImages.forEach(image => {
+          const container = image.closest('[data-parallax-intensity]');
+          if (!container) return;
+                  
+          const intensity = parseFloat(container.dataset.parallaxIntensity) / 10;
+          const rect = container.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
+                  
+          if (rect.top < viewportHeight && rect.bottom > 0) {
+            const scrollProgress = 1 - (rect.top + rect.height / 2) / (viewportHeight + rect.height);
+                    
+            const scale = 1 + (scrollProgress * 0.1);
+            image.style.transform = `scale(${Math.min(1.1, scale)})`;
+          }
+        });
+                
+        if (stickyImage) {
+          const stickyContainer = stickyImage.closest('.sticky-container');
+          const containerTop = stickyContainer.offsetTop;
+          const containerHeight = stickyContainer.offsetHeight;
+                  
+          const scrollPosition = window.scrollY - containerTop;
+          const scrollRatio = Math.min(1, Math.max(0, scrollPosition / containerHeight));
+                  
+          const scale = 1 - (scrollRatio * 0.3);
+          const opacity = 1 - (scrollRatio * 0.7);
+                  
+          stickyImage.style.transform = `translateY(-50%) scale(${scale})`;
+          stickyImage.style.opacity = opacity;
+        }
+      });
+
+      // Initialize mobile menu functionality
+      let menuOpen = false;
+
+      function toggleMobileMenu(event) {
+        if (event) {
+          event.stopPropagation();
+        }
+        
+        const menu = document.getElementById('mobile-menu');
+        const toggle = document.getElementById('mobile-menu-toggle');
+        
+        if (menuOpen) {
+          menuOpen = false;
+          toggle.classList.remove('active');
+          
+          const menuItems = menu.querySelectorAll('li');
+          menuItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(-10px)';
+          });
+          
+          setTimeout(() => {
+            menu.style.display = 'none';
+          }, 300);
+        } else {
+          menuOpen = true;
+          menu.style.display = 'block';
+          toggle.classList.add('active');
+          
+          setTimeout(() => {
+            const menuItems = menu.querySelectorAll('li');
+            menuItems.forEach(item => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            });
+          }, 10);
+        }
+      }
+
+      // Apply mobile menu toggle
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMobileMenu(e);
+        });
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        const menu = document.getElementById('mobile-menu');
+        const toggle = document.getElementById('mobile-menu-toggle');
+        
+        if (menuOpen && menu && !menu.contains(event.target) && !toggle.contains(event.target)) {
+          toggleMobileMenu();
+        }
+      });
+
+      // Close menu when clicking on menu items
+      const menuItems = document.querySelectorAll('#mobile-menu a');
+      menuItems.forEach(item => {
+        if (item.id !== 'mobile-language-toggle') {
+          item.addEventListener('click', function() {
+            setTimeout(() => {
+              toggleMobileMenu();
+            }, 100);
+          });
+        }
+      });
+
+      // Initialize language switcher
+      const languageToggle = document.getElementById('language-toggle');
+      const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
+      let currentLanguage = 'de';
+      
+      const translations = {
+        de: {
+          'nav-about': 'Euer Tag',
+          'nav-services': 'Leistungen',
+          'nav-info': 'Infos',
+          'nav-contact': 'Kontakt',
+          'lang-switch': 'EN',
+          'hero-text': 'Heiraten mit Stil. Und STEEL.',
+          'cta-button': 'Anfrage senden',
+          'about-title': 'Euer Tag rückt näher. Und jetzt?',
+          'services-title': 'Eure Hochzeitsfeier',
+          'info-title': 'Das solltet ihr noch wissen.',
+          'contact-title': 'Passt? Prima.',
+          'form-name': 'Name',
+          'form-email': 'E-Mail',
+          'form-phone': 'Telefon/Handy',
+          'form-date': 'Hochzeitsdatum',
+          'form-location': 'Ort',
+          'form-details': 'Details',
+          'submit-btn': 'Anfrage senden',
+          'footer-contact': 'Kontakt',
+          'footer-legal': 'Rechtliches',
+          'copyright': '© 2025 STEELweddings. Alle Rechte vorbehalten.'
+        },
+        en: {
+          'nav-about': 'Your Day',
+          'nav-services': 'Services',
+          'nav-info': 'Info',
+          'nav-contact': 'Contact',
+          'lang-switch': 'DE',
+          'hero-text': 'Weddings with style. And STEEL.',
+          'cta-button': 'Send inquiry',
+          'about-title': 'Your big day is approaching. What now?',
+          'services-title': 'Your Wedding Party',
+          'info-title': 'What you should know.',
+          'contact-title': 'Sounds good?',
+          'form-name': 'Name',
+          'form-email': 'Email',
+          'form-phone': 'Phone',
+          'form-date': 'Wedding date',
+          'form-location': 'Location',
+          'form-details': 'Details',
+          'submit-btn': 'Send inquiry',
+          'footer-contact': 'Contact',
+          'footer-legal': 'Legal',
+          'copyright': '© 2025 STEELweddings. All rights reserved.'
+        }
+      };
+      
+      const englishTexts = {
+        'about-p1': 'Your wedding is <strong>exciting</strong> – especially for you. But your loved ones are also getting dressed up and ready to celebrate. That\'s where I come in. I believe you shouldn\'t <em>have to worry about the music</em>. I\'ll make sure your party is a complete success!',
+        'about-p2': 'The guests at your wedding are both young and old. To appeal to them, music should play that everyone knows (<strong>hits only!</strong>). Sometimes it\'s something from the 60s for twisting, another time from the 90s for thrashing. Current charts and <strong>electronic beats</strong> are also essential. All wrapped in a mix that doesn\'t scare anyone but still feels like you\'re in a club.',
+        'about-p3': 'Songs that connect you and your guests also play an important role here. <strong>#BachelorParty</strong>',
+        'service1-title': 'Finally, it\'s starting.',
+        'service1-p1': 'To open the dance floor, you are asked: Whether a <strong>Viennese Waltz</strong> or a <strong>Disco Fox</strong>, sometimes just a cozy swinging: Your song selection starts the party and an unforgettable night. Choose wisely – I\'m happy to support you.',
+        'service1-p2': 'You don\'t want a <strong>first dance</strong>? No problem. It\'s your wedding, and we\'ll design it the way you want it.',
+        'service2-title': 'Let\'s party.',
+        'service2-p1': 'Once the party is in full swing, there\'s no stopping. <strong>Live Mashups</strong> transport your guests to a different sound world – far away from the usual radio noise. I\'m happy to incorporate music requests at the right place in the mix.',
+        'service2-p2': 'At the latest when <strong>Beyoncé</strong> invites the next lucky ones to catch the bridal bouquet with her Single Ladies, the dance floor is safe from no hit (and guest)!',
+        'service3-title': 'Great technology.',
+        'service3-p1': 'Have you ever heard of <strong>Fohhn</strong>? Since 1993, the German company has been producing premium sound systems – all made in Germany. Depending on the location, my Fohhn system is sufficient for up to 200 people and more. So when I DJ, not only is the music selection right, but also the sound quality.',
+        'service3-p2': '<strong>Lighting</strong> is often undervalued in my opinion. Yet controllable lights create an epic atmosphere during the party and great photos afterward. With ambient spots, I can accurately set the scene at your location and create a cozy basic mood just with light as soon as it gets dark outside.',
+        'service3-p3': 'For even more <strong>club atmosphere</strong>, I have fog on request to really bring out the light beams in the room.',
+        'info-p1': 'I originally come from the <strong>club scene</strong> and still regularly DJ in discotheques today. Transitions and mixing are therefore very important to me. Above all, I make sure that consecutive songs fit together. I incorporate music requests at the point where they fit in. I basically don\'t play genres criss-cross – I\'m not a jukebox. If you want to experience me live: On <a href="https://instagram.com/steelofficial" target="_blank">Instagram</a>, I regularly announce when and where I\'m performing.',
+        'info-p2': 'Musically, I\'m an <strong>all-rounder</strong> (open format). I\'m also very knowledgeable about electronic music (<a href="https://linktr.ee/STEELofficial" target="_blank">and as STEEL, I also release such music myself</a>). I\'m definitely not the right person for weddings with a high proportion of German folk or après-ski music. There are other DJs for that.',
+        'info-p3': 'I\'m a <strong>DJ, not an entertainer or animator</strong>. I therefore focus on DJing and only rarely use the microphone when it fits well.',
+        'info-p4': 'By the way: I\'m a member of the <strong><a href="https://lovecrew-ruhrpott.de" target="_blank">Lovecrew Ruhrpott</a></strong>. This is an association of the best wedding service providers in the Ruhr area. If you\'re just starting your wedding planning, be sure to check it out!',
+        'contact-p1': 'Are you already getting excited about your wedding celebration? Very cool! Just ask, maybe I still have a date available. To be on the safe side, you should contact me about a year before your wedding. But I\'m sometimes available spontaneously too.',
+        'contact-p2': 'My prices start at <span class="highlight">1500,- €</span> (incl. VAT) for 7 hours and depend on what time I should start. I always play until at least 3 am. Open end on request!'
+      };
+      
+      const englishPlaceholders = {
+        'name': 'Who\'s getting married? :)',
+        'email': 'dreamcouple@email.com',
+        'phone': 'I call you maybe',
+        'location': 'Where will the party take place?',
+        'message': 'e.g. schedule, start time, number of guests, music'
+      };
+      
+      const switchLanguage = function(e) {
+        e.preventDefault();
+        
+        currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
+        document.documentElement.lang = currentLanguage;
+        
+        if (languageToggle) {
+          languageToggle.textContent = translations[currentLanguage]['lang-switch'];
+        }
+        if (mobileLanguageToggle) {
+          mobileLanguageToggle.textContent = translations[currentLanguage]['lang-switch'];
+        }
+        
+        // Update hero text
+        document.querySelector('.hero p').textContent = translations[currentLanguage]['hero-text'];
+        document.querySelector('.cta-button').textContent = translations[currentLanguage]['cta-button'];
+        
+        // Update navigation
+        document.querySelectorAll('.nav-links li a').forEach(link => {
+          if (link.getAttribute('href') === '#about') {
+            link.textContent = translations[currentLanguage]['nav-about'];
+          } else if (link.getAttribute('href') === '#services') {
+            link.textContent = translations[currentLanguage]['nav-services'];
+          } else if (link.getAttribute('href') === '#info') {
+            link.textContent = translations[currentLanguage]['nav-info'];
+          } else if (link.getAttribute('href') === '#contact') {
+            link.textContent = translations[currentLanguage]['nav-contact'];
+          }
+        });
+        
+        // Update section titles
+        document.querySelector('.about-title').textContent = translations[currentLanguage]['about-title'];
+        document.querySelector('.services-title').textContent = translations[currentLanguage]['services-title'];
+        document.querySelector('.info-title').textContent = translations[currentLanguage]['info-title'];
+        document.querySelector('.contact-title').textContent = translations[currentLanguage]['contact-title'];
+        
+        // Update form labels
+        document.querySelector('label[for="name"]').textContent = translations[currentLanguage]['form-name'];
+        document.querySelector('label[for="email"]').textContent = translations[currentLanguage]['form-email'];
+        document.querySelector('label[for="phone"]').textContent = translations[currentLanguage]['form-phone'];
+        document.querySelector('label[for="date"]').textContent = translations[currentLanguage]['form-date'];
+        document.querySelector('label[for="location"]').textContent = translations[currentLanguage]['form-location'];
+        document.querySelector('label[for="message"]').textContent = translations[currentLanguage]['form-details'];
+        document.querySelector('.submit-btn').textContent = translations[currentLanguage]['submit-btn'];
+        
+        // Update content
+        if (currentLanguage === 'en') {
+          for (const [id, content] of Object.entries(englishTexts)) {
+            const element = document.getElementById(id);
+            if (element) element.innerHTML = content;
+          }
+          
+          for (const [id, placeholder] of Object.entries(englishPlaceholders)) {
+            const element = document.getElementById(id);
+            if (element) element.placeholder = placeholder;
+          }
+        } else {
+          // Reload the page to restore German content
+          location.reload();
+        }
+      };
+      
+      if (languageToggle) {
+        languageToggle.addEventListener('click', switchLanguage);
+      }
+      
+      if (mobileLanguageToggle) {
+        mobileLanguageToggle.addEventListener('click', switchLanguage);
+      }
+      
+      // Initialize contact form
+      const contactForm = document.querySelector('.contact-form');
+      const formStatus = document.getElementById('form-status');
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const date = document.getElementById('date').value;
+          const location = document.getElementById('location').value;
+          const message = document.getElementById('message').value;
+          
+          if (!name || !email || !date || !location || !message) {
+            formStatus.textContent = document.documentElement.lang === 'de' ? 
+              'Bitte fülle alle Pflichtfelder aus.' : 
+              'Please fill in all required fields.';
+            formStatus.className = 'form-status error';
+            formStatus.style.display = 'block';
+            return;
+          }
+          
+          formStatus.textContent = document.documentElement.lang === 'de' ? 
+            'Vielen Dank für deine Anfrage! Wir melden uns in Kürze bei dir.' : 
+            'Thank you for your inquiry! We will get back to you soon.';
+          formStatus.className = 'form-status success';
+          formStatus.style.display = 'block';
+          contactForm.reset();
+          
+          setTimeout(() => {
+            formStatus.style.display = 'none';
+          }, 5000);
+        });
+      }
+    });
+  </script>
+<style>
+/* 1. Alle Farb-Variablen auf Lila-Töne vereinheitlichen */
+:root {
+    --primary-color: #a044ff;
+    --secondary-color: #6441a5;
+    
+    /* Alle Sektionsfarben auf Lila-Töne umstellen */
+    --about-color: var(--primary-color);
+    --service-color: var(--primary-color);
+    --info-color: var(--primary-color);
+    --contact-color: var(--primary-color);
+    --contact-highlight: var(--secondary-color);
+    --steel-color: var(--primary-color);
+    --steel-secondary: var(--secondary-color);
+    
+    /* Weitere Variablen bleiben gleich */
+    --light-bg: #1e1e20;
+    --dark-bg: #121214;
+    --darker-bg: #0c0c0e;
+    --dark-text: #f5f5f7;
+    --light-text: #f5f5f7;
+    --text-secondary: #bbbbbb;
+    --transition: all 0.4s ease;
+}
+
+/* 2. Farbliche Hervorhebungen in allen Sektionen auf Lila vereinheitlichen */
+.about-content strong,
+.service-item strong,
+.info-content strong,
+.contact-intro strong {
+    color: var(--primary-color);
+}
+
+.about-content em,
+.service-content em,
+.info-content em {
+    color: var(--primary-color);
+}
+
+/* 3. Alle Linear-Gradienten für Überschriften auf Lila vereinheitlichen */
+.hero h1,
+.about-title,
+.services-title,
+.info-title,
+.contact-title {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* 4. Hover-Effekte für Navigationselemente vereinheitlichen */
+.nav-links a:hover,
+body.section-about .nav-links a:hover,
+body.section-services .nav-links a:hover,
+body.section-info .nav-links a:hover,
+body.section-contact .nav-links a:hover {
+    color: var(--primary-color);
+    background-color: rgba(160, 68, 255, 0.1);
+}
+
+/* 5. Aktive Navigationselemente in allen Sektionen */
+body.section-about .nav-links a[href="#about"],
+body.section-services .nav-links a[href="#services"],
+body.section-info .nav-links a[href="#info"],
+body.section-contact .nav-links a[href="#contact"] {
+    color: var(--primary-color);
+    background-color: rgba(160, 68, 255, 0.1);
+}
+
+/* 6. Mobile-Navigation anpassen */
+body.section-about .mobile-menu a[href="#about"],
+body.section-services .mobile-menu a[href="#services"],
+body.section-info .mobile-menu a[href="#info"],
+body.section-contact .mobile-menu a[href="#contact"],
+.mobile-menu a.about-active,
+.mobile-menu a.services-active,
+.mobile-menu a.info-active,
+.mobile-menu a.contact-active {
+    background: rgba(160, 68, 255, 0.2);
+    color: var(--primary-color);
+}
+
+.mobile-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* 7. Links in allen Abschnitten */
+.about-content a,
+.service-content a,
+.info-content a {
+    color: var(--primary-color);
+    border-bottom: 1px dotted var(--primary-color);
+}
+
+.about-content a:hover,
+.service-content a:hover,
+.info-content a:hover {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+/* 8. Sprach-Switcher in allen Sektionen */
+.language-switch a,
+body.section-about .language-switch a,
+body.section-services .language-switch a,
+body.section-info .language-switch a,
+body.section-contact .language-switch a {
+    background-color: rgba(160, 68, 255, 0.2);
+    border-color: rgba(160, 68, 255, 0.3);
+}
+
+.language-switch a:hover,
+body.section-about .language-switch a:hover,
+body.section-services .language-switch a:hover,
+body.section-info .language-switch a:hover,
+body.section-contact .language-switch a:hover {
+    background-color: rgba(160, 68, 255, 0.4);
+    border-color: rgba(160, 68, 255, 0.6);
+}
+
+/* 9. Button-Styles vereinheitlichen */
+.cta-button,
+.submit-btn {
+    background-color: var(--primary-color);
+    box-shadow: 0px 4px 12px rgba(160, 68, 255, 0.3);
+}
+
+.cta-button:hover,
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0px 6px 15px rgba(160, 68, 255, 0.4);
+}
+
+/* 10. Formular-Statusmeldungen */
+.form-status.success {
+    background-color: rgba(160, 68, 255, 0.2);
+    color: var(--primary-color);
+}
+
+/* 11. Footer-Überschriften */
+.footer-section h3 {
+    color: var(--primary-color);
+}
+
+/* 12. Alle Sektions-Gradienten auf Lila umstellen */
+#about-gradient,
+#services-gradient,
+#info-gradient,
+#contact-gradient {
+    stop-color: var(--primary-color);
+}
+
+/* Logo-Pfade immer mit dem primären Gradienten füllen */
+#steel-path, 
+#weddings-path, 
+#weddings-path2, 
+#weddings-path3,
+#weddings-path4, 
+#weddings-path5, 
+#weddings-path6,
+#weddings-path7, 
+#weddings-path8 {
+    fill: url(#primary-gradient);
+}
+
+/* Glaskreise und Lichtstrahlen anpassen */
+.glass-circle:nth-child(1),
+.glass-circle:nth-child(2),
+.glass-circle:nth-child(3) {
+    background: linear-gradient(45deg, rgba(160, 68, 255, 0.2), rgba(100, 65, 165, 0.1));
+}
+
+.light-rays {
+    background: linear-gradient(135deg, 
+        rgba(160, 68, 255, 0.2) 0%, 
+        rgba(160, 68, 255, 0) 50%, 
+        rgba(100, 65, 165, 0.2) 100%);
+}
+
+/* Submit-Button in Lila statt mit Gradient */
+.submit-btn {
+    background: var(--primary-color);
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Gradienten für die SVG-Definitionen vereinheitlichen
+    const gradients = document.querySelectorAll('linearGradient');
+    gradients.forEach(gradient => {
+        const stops = gradient.querySelectorAll('stop');
+        if (stops.length >= 2) {
+            stops[0].setAttribute('stop-color', '#a044ff');
+            stops[1].setAttribute('stop-color', '#6441a5');
+        }
+    });
+    
+    // 2. Dynamisches Ändern der Farben beim Scrollen unterbinden
+    const logoPathIds = ['#steel-path', '#weddings-path', '#weddings-path2', '#weddings-path3', 
+                         '#weddings-path4', '#weddings-path5', '#weddings-path6', '#weddings-path7', '#weddings-path8'];
+    
+    // Ursprüngliche updateSectionClasses-Funktion überschreiben
+    const originalUpdateSectionClasses = window.updateSectionClasses;
+    if (typeof originalUpdateSectionClasses === 'function') {
+        window.updateSectionClasses = function() {
+            const scrollPos = window.scrollY + 80;
+            
+            document.body.classList.remove('section-about', 'section-services', 'section-info', 'section-contact');
+            
+            const sections = [
+                { id: 'contact', bodyClass: 'section-contact' },
+                { id: 'info', bodyClass: 'section-info' },
+                { id: 'services', bodyClass: 'section-services' },
+                { id: 'about', bodyClass: 'section-about' }
+            ];
+            
+            for (const section of sections) {
+                const elem = document.getElementById(section.id);
+                if (elem && scrollPos >= elem.offsetTop) {
+                    document.body.classList.add(section.bodyClass);
+                    updateMobileMenuColors();
+                    
+                    // Alle Logo-Pfade immer mit dem primären Gradienten füllen
+                    logoPathIds.forEach(pathId => {
+                        const path = document.querySelector(pathId);
+                        if (path) {
+                            path.setAttribute('fill', 'url(#primary-gradient)');
+                        }
+                    });
+                    
+                    break;
+                }
+            }
+        };
+    }
+    
+    // 3. Mobile-Menü-Farben anpassen
+    const updateMobileMenuColors = window.updateMobileMenuColors;
+    if (typeof updateMobileMenuColors === 'function') {
+        window.updateMobileMenuColors = function() {
+            const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+            
+            mobileNavLinks.forEach(link => {
+                link.classList.remove('about-active', 'services-active', 'info-active', 'contact-active');
+            });
+            
+            // Aktive Klassen basierend auf der aktuellen Sektion setzen
+            if (document.body.classList.contains('section-about')) {
+                document.getElementById('mobile-nav-about')?.classList.add('about-active');
+            } else if (document.body.classList.contains('section-services')) {
+                document.getElementById('mobile-nav-services')?.classList.add('services-active');
+            } else if (document.body.classList.contains('section-info')) {
+                document.getElementById('mobile-nav-info')?.classList.add('info-active');
+            } else if (document.body.classList.contains('section-contact')) {
+                document.getElementById('mobile-nav-contact')?.classList.add('contact-active');
+            }
+        };
+    }
+    
+    // 4. Alle bestehenden Gradient-Stops in den SVG-Definitionen anpassen
+    document.querySelectorAll('linearGradient stop').forEach(stop => {
+        if (stop.getAttribute('offset') === '0%') {
+            stop.setAttribute('stop-color', '#a044ff');
+        } else if (stop.getAttribute('offset') === '100%') {
+            stop.setAttribute('stop-color', '#6441a5');
+        }
+    });
+});
+</script>
+</body>
+</html>

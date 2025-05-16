@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEELcorporate | Business Events</title>
+    <style>
+        :root {
+            --primary-color: #4facfe;
+            --secondary-color: #00f2fe;
+            --steel-color: #f3930d;
+            --steel-secondary: #e67e22;
+            --weddings-color: #a044ff;
+            --weddings-secondary: #6441a5;
+            --live-color: #43e97b;
+            --live-secondary: #38f9d7;
+            --about-color: #ff6b6b;
+            --about-secondary: #ff9e7d;
+            --corporate-primary: #4facfe;
+            --corporate-secondary: #6b9ed5;
+            --light-bg: #1e1e20;
+            --dark-bg: #121214;
+            --darker-bg: #0c0c0e;
+            --dark-text: #f5f5f7;
+            --light-text: #f5f5f7;
+            --text-secondary: #bbbbbb;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+            color: var(--light-text);
+            background-color: var(--dark-bg);
+        }
+        
+        strong {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        em {
+            font-style: normal;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            letter-spacing: 0.01rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            border-bottom: 1px solid var(--primary-color);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(30, 30, 32, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 60px;
+        }
+
+        .logo {
+            display: inline-flex !important;
+            align-items: center !important;
+            position: relative;
+            width: 188px;
+            height: 60px !important;
+            text-decoration: none;
+            overflow: hidden !important;
+            z-index: 1001 !important;
+            background-color: transparent !important;
+            justify-content: center !important;
+        }
+
+        #logo-svg {
+            width: 188px;
+            height: 34px;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            display: block !important;
+            position: relative !important;
+            top: 5px !important;
+        }
+
+        #steel-path, #corporate-path, #corporate-path2, #corporate-path3,
+        #corporate-path4, #corporate-path5, #corporate-path6, 
+        #corporate-path7, #corporate-path8 {
+            transition: fill 0.8s ease;
+            fill: var(--corporate-primary);
+        }
+
+        body.section-about #steel-path,
+        body.section-about #corporate-path,
+        body.section-about #corporate-path2, 
+        body.section-about #corporate-path3,
+        body.section-about #corporate-path4,
+        body.section-about #corporate-path5,
+        body.section-about #corporate-path6,
+        body.section-about #corporate-path7,
+        body.section-about #corporate-path8 {
+            fill: url(#about-gradient);
+        }
+
+        body.section-services #steel-path,
+        body.section-services #corporate-path,
+        body.section-services #corporate-path2, 
+        body.section-services #corporate-path3,
+        body.section-services #corporate-path4,
+        body.section-services #corporate-path5,
+        body.section-services #corporate-path6,
+        body.section-services #corporate-path7,
+        body.section-services #corporate-path8 {
+            fill: url(#services-gradient);
+        }
+
+        body.section-clients #steel-path,
+        body.section-clients #corporate-path,
+        body.section-clients #corporate-path2, 
+        body.section-clients #corporate-path3,
+        body.section-clients #corporate-path4,
+        body.section-clients #corporate-path5,
+        body.section-clients #corporate-path6,
+        body.section-clients #corporate-path7,
+        body.section-clients #corporate-path8 {
+            fill: url(#clients-gradient);
+        }
+
+        body.section-request #steel-path,
+        body.section-request #corporate-path,
+        body.section-request #corporate-path2, 
+        body.section-request #corporate-path3,
+        body.section-request #corporate-path4,
+        body.section-request #corporate-path5,
+        body.section-request #corporate-path6,
+        body.section-request #corporate-path7,
+        body.section-request #corporate-path8 {
+            fill: url(#request-gradient);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--light-text);
+            transition: var(--transition);
+            font-size: 0.9rem;
+            padding: 6px 12px;
+            border-radius: 6px;
+            border-bottom: none;
+        }
+        
+        .nav-links a:hover {
+            color: var(--steel-color);
+            background-color: rgba(243, 147, 13, 0.1);
+        }
+
+        .nav-links a.about:hover {
+            color: var(--about-color);
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+
+        .nav-links a.live:hover {
+            color: var(--live-color);
+            background-color: rgba(67, 233, 123, 0.1);
+        }
+
+        .nav-links a.weddings:hover {
+            color: var(--weddings-color);
+            background-color: rgba(160, 68, 255, 0.1);
+        }
+
+        .nav-links a.corporate {
+            color: var(--primary-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+
+        .nav-links a.corporate:hover {
+            color: var(--primary-color);
+            background-color: rgba(79, 172, 254, 0.2);
+        }
+        
+        body.section-about .nav-links a:hover {
+            color: var(--about-color);
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+        
+        body.section-services .nav-links a:hover {
+            color: var(--primary-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+        
+        body.section-clients .nav-links a:hover {
+            color: var(--primary-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+        
+        body.section-request .nav-links a:hover {
+            color: var(--primary-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+        
+        body.section-about .nav-links a[href="#about"] {
+            color: var(--about-color);
+            background-color: rgba(255, 107, 107, 0.1);
+        }
+        
+        body.section-services .nav-links a[href="#services"] {
+            color: var(--primary-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+        
+        body.section-clients .nav-links a[href="#clients"] {
+            color: var(--primary-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+        
+        body.section-request .nav-links a[href="#request"] {
+            color: var(--primary-color);
+            background-color: rgba(79, 172, 254, 0.1);
+        }
+        
+        .language-switch {
+            margin-left: 1rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            padding-left: 1rem;
+        }
+        
+        .language-switch a {
+            background-color: rgba(79, 172, 254, 0.2);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            cursor: pointer;
+        }
+        
+        .language-switch a:hover {
+            background-color: rgba(79, 172, 254, 0.4);
+            border-color: rgba(79, 172, 254, 0.6);
+        }
+        
+        body.section-about .language-switch a {
+            background-color: rgba(255, 107, 107, 0.2);
+            border-color: rgba(255, 107, 107, 0.3);
+        }
+        
+        body.section-services .language-switch a {
+            background-color: rgba(79, 172, 254, 0.2);
+            border-color: rgba(79, 172, 254, 0.3);
+        }
+        
+        body.section-clients .language-switch a {
+            background-color: rgba(79, 172, 254, 0.2);
+            border-color: rgba(79, 172, 254, 0.3);
+        }
+        
+        body.section-request .language-switch a {
+            background-color: rgba(79, 172, 254, 0.2);
+            border-color: rgba(79, 172, 254, 0.3);
+        }
+        
+        body.section-about .language-switch a:hover {
+            background-color: rgba(255, 107, 107, 0.4);
+            border-color: rgba(255, 107, 107, 0.6);
+        }
+        
+        body.section-services .language-switch a:hover {
+            background-color: rgba(79, 172, 254, 0.4);
+            border-color: rgba(79, 172, 254, 0.6);
+        }
+        
+        body.section-clients .language-switch a:hover {
+            background-color: rgba(79, 172, 254, 0.4);
+            border-color: rgba(79, 172, 254, 0.6);
+        }
+        
+        body.section-request .language-switch a:hover {
+            background-color: rgba(79, 172, 254, 0.4);
+            border-color: rgba(79, 172, 254, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0) 0%, 
+                rgba(0, 0, 0, 0.2) 50%, 
+                rgba(0, 0, 0, 0.8) 100%);
+            z-index: 1;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-image: url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+        
+        @keyframes slowZoom {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            padding: 3rem;
+            position: relative;
+            margin-bottom: 5rem;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            will-change: opacity, transform;
+        }
+        
+        .hero-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--light-text);
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: 0px 4px 12px rgba(79, 172, 254, 0.3);
+            border-bottom: none;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 6rem 2rem;
+            background-color: var(--light-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .services-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .services-heading {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .services-heading.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .service-card {
+            background-color: var(--dark-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-icon {
+            margin: 2rem auto 1rem;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.2), rgba(0, 242, 254, 0.2));
+            border-radius: 50%;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+        }
+        
+        .service-content {
+            padding: 1.5rem 2rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+        
+        .service-description {
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+        
+        .service-link {
+            display: inline-block;
+            align-self: flex-start;
+            padding: 0.6rem 1.2rem;
+            background-color: rgba(79, 172, 254, 0.1);
+            color: var(--primary-color);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border-bottom: none;
+            margin-top: auto;
+        }
+        
+        .service-link:hover {
+            background-color: rgba(79, 172, 254, 0.2);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 6rem 2rem;
+            background-color: var(--dark-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .benefits-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .benefits-heading {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .benefits-heading.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .benefits-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .benefits-intro.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background-color: var(--light-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .benefit-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .benefit-icon {
+            flex: 0 0 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(79, 172, 254, 0.2);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .benefit-content {
+            flex: 1;
+        }
+        
+        .benefit-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .benefit-description {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* Clients Section */
+        .clients-section {
+            padding: 6rem 2rem;
+            background-color: var(--light-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .clients-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .clients-heading {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .clients-heading.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .client-item {
+            height: 100px;
+            background-color: var(--dark-bg);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease, box-shadow 0.3s ease;
+        }
+        
+        .client-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .client-item:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .client-logo {
+            max-width: 100%;
+            max-height: 80px;
+            filter: grayscale(100%) brightness(1.2);
+            transition: filter 0.3s ease;
+        }
+        
+        .client-item:hover .client-logo {
+            filter: grayscale(0%) brightness(1);
+        }
+        
+        .clients-testimonials {
+            margin-top: 4rem;
+        }
+        
+        .testimonial {
+            padding: 2rem;
+            background-color: var(--dark-bg);
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .testimonial.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .testimonial-content {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding: 0 1rem;
+        }
+        
+        .testimonial-content::before,
+        .testimonial-content::after {
+            content: '"';
+            font-size: 3rem;
+            line-height: 0;
+            color: rgba(79, 172, 254, 0.3);
+            position: absolute;
+        }
+        
+        .testimonial-content::before {
+            left: -1rem;
+            top: 1rem;
+        }
+        
+        .testimonial-content::after {
+            right: -1rem;
+            bottom: 0;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+        
+        .testimonial-info h4 {
+            color: var(--light-text);
+            margin-bottom: 0.2rem;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Request Section */
+        .request-section {
+            padding: 6rem 2rem;
+            background-color: var(--dark-bg);
+            position: relative;
+            z-index: 5;
+        }
+        
+        .request-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .request-text {
+            flex: 1;
+            min-width: 300px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .request-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .request-heading {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .request-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--light-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .request-form.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+            font-size: 1rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.2);
+            color: var(--light-text);
+            font-size: 16px;
+        }
+        
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234facfe' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.2rem;
+        }
+        
+        .form-group ::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 16px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 15px rgba(79, 172, 254, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker-bg);
+            padding: 3rem 2rem 1rem;
+            position: relative;
+            z-index: 5;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            border-bottom: none;
+        }
+        
+        .footer-section a:hover {
+            color: var(--light-text);
+        }
+        
+        .copyright {
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-secondary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            z-index: 2000;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            margin: 3px 0;
+            background-color: white;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            background-color: rgba(18, 18, 20, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1999;
+            padding: 80px 0 30px;
+            text-align: center;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu li {
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu li:nth-child(1) { transition-delay: 0.05s; }
+        .mobile-menu li:nth-child(2) { transition-delay: 0.1s; }
+        .mobile-menu li:nth-child(3) { transition-delay: 0.15s; }
+        .mobile-menu li:nth-child(4) { transition-delay: 0.2s; }
+        .mobile-menu li:nth-child(5) { transition-delay: 0.25s; }
+        .mobile-menu li:nth-child(6) { transition-delay: 0.3s; }
+
+        .mobile-menu a {
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 8px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            width: 80%;
+            border-bottom: none;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu a.about-active {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--about-color);
+        }
+
+        .mobile-menu a.services-active {
+            background: rgba(79, 172, 254, 0.2);
+            color: var(--primary-color);
+        }
+
+        .mobile-menu a.clients-active {
+            background: rgba(79, 172, 254, 0.2);
+            color: var(--primary-color);
+        }
+
+        .mobile-menu a.request-active {
+            background: rgba(79, 172, 254, 0.2);
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu a.corporate-active {
+            background: rgba(79, 172, 254, 0.2);
+            color: var(--primary-color);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none !important;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex !important;
+                position: fixed;
+                top: 15px;
+                right: 20px;
+                z-index: 2000;
+                background: rgba(18, 18, 20, 0.7);
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                align-items: center;
+                justify-content: center;
+                padding: 8px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content {
+                padding: 2rem;
+                margin-bottom: 3rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .request-container {
+                flex-direction: column;
+            }
+            
+            .footer-container {
+                flex-direction: column;
+            }
+            
+            .footer-section {
+                min-width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <linearGradient id="primary-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--primary-color)" />
+        <stop offset="100%" stop-color="var(--secondary-color)" />
+      </linearGradient>
+      <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--about-color)" />
+        <stop offset="100%" stop-color="#ff9e7d" />
+      </linearGradient>
+      <linearGradient id="services-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--primary-color)" />
+        <stop offset="100%" stop-color="var(--secondary-color)" />
+      </linearGradient>
+      <linearGradient id="clients-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--primary-color)" />
+        <stop offset="100%" stop-color="var(--secondary-color)" />
+      </linearGradient>
+      <linearGradient id="request-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="var(--primary-color)" />
+        <stop offset="100%" stop-color="var(--secondary-color)" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- Header with Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <svg id="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 575.95 103.25" width="188" height="38">
+          <defs>
+            <linearGradient id="corporate-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#4facfe" />
+              <stop offset="100%" stop-color="#6b9ed5" />
+            </linearGradient>
+          </defs>
+          <path id="steel-path" fill="#4facfe" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+          <path id="corporate-path" fill="#4facfe" d="m359.58,64.32c6.16,0,10.67,3.57,11.71,9.07h-3.79c-.99-3.68-4.18-5.72-7.86-5.72-5.39,0-9.18,4.12-9.18,10.67s3.52,10.56,8.91,10.56c3.96,0,7.15-2.2,8.19-5.61h3.85c-1.26,5.44-5.99,9.02-12.04,9.02-7.53,0-12.65-5.55-12.65-13.91s5.11-14.08,12.87-14.08Z"/>
+          <path id="corporate-path2" fill="#4facfe" d="m388.84,64.32c7.81,0,13.53,5.88,13.53,14.02s-5.72,13.97-13.53,13.97-13.53-5.88-13.53-13.97,5.72-14.02,13.53-14.02Zm0,24.58c5.66,0,9.68-4.34,9.68-10.61s-4.01-10.56-9.68-10.56-9.68,4.4-9.68,10.56,3.96,10.61,9.68,10.61Z"/>
+          <path id="corporate-path3" fill="#4facfe" d="m422.33,68.11h-2.09c-4.89,0-8.03,3.3-8.03,8.36v15.18h-3.79v-26.62h3.58l.27,4.12c1.04-2.86,3.85-4.73,7.59-4.73.82,0,1.54.05,2.47.27v3.41Z"/>
+          <path id="corporate-path4" fill="#4facfe" d="m427.39,65.03h3.3l.38,5.39c1.87-4.12,5.61-6.1,10.06-6.1,7.7,0,12.32,5.88,12.32,13.91s-4.46,14.08-12.32,14.08c-4.51,0-8.08-1.92-9.95-5.77v16.72h-3.79v-38.22Zm13.09,23.87c5.77,0,9.13-4.45,9.13-10.56s-3.35-10.56-9.13-10.56-9.24,4.4-9.24,10.56,3.41,10.56,9.24,10.56Z"/>
+          <path id="corporate-path5" fill="#4facfe" d="m471.17,64.32c7.81,0,13.53,5.88,13.53,14.02s-5.72,13.97-13.53,13.97-13.53-5.88-13.53-13.97,5.72-14.02,13.53-14.02Zm0,24.58c5.66,0,9.68-4.34,9.68-10.61s-4.01-10.56-9.68-10.56-9.68,4.4-9.68,10.56,3.96,10.61,9.68,10.61Z"/>
+          <path id="corporate-path6" fill="#4facfe" d="m504.67,68.11h-2.09c-4.89,0-8.03,3.3-8.03,8.36v15.18h-3.79v-26.62h3.58l.27,4.12c1.04-2.86,3.85-4.73,7.59-4.73.82,0,1.54.05,2.47.27v3.41Z"/>
+          <path id="corporate-path7" fill="#4facfe" d="m507.25,84.45c0-4.89,3.74-7.97,9.95-8.47l8.8-.71v-.88c0-5.22-3.13-6.87-7.04-6.87-4.62,0-7.37,2.09-7.37,5.66h-3.46c0-5.39,4.4-8.85,10.94-8.85,6.16,0,10.67,3.08,10.67,10.12v17.21h-3.19l-.49-4.67c-1.65,3.35-5.28,5.33-9.79,5.33-5.66,0-9.02-3.19-9.02-7.86Zm18.75-4.89v-1.43l-7.86.61c-5,.44-7.04,2.64-7.04,5.61,0,3.24,2.42,4.89,6.05,4.89,5.61,0,8.85-3.9,8.85-9.68Z"/>
+          <path id="corporate-path8" fill="#4facfe" d="m539.21,91.65v-23.43h-5.33v-3.19h5.33v-8.41h3.74v8.41h5.33v3.19h-5.33v23.43h-3.74Z"/>
+          <path id="corporate-path9" fill="#4facfe" d="m551.09,78.34c0-8.3,5.17-14.02,12.76-14.02s12.1,5.11,12.1,12.65v1.87h-21.17c.27,6.49,3.68,10.23,9.4,10.23,4.34,0,7.15-1.87,8.14-5.39h3.63c-1.43,5.61-5.55,8.63-11.82,8.63-7.81,0-13.03-5.61-13.03-13.97Zm3.79-2.25h17.27c0-5.11-3.3-8.52-8.3-8.52s-8.3,3.3-8.96,8.52Z"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html" class="about">About</a></li>
+        <li><a href="live.html" class="live">Live</a></li>
+        <li><a href="weddings.html" class="weddings">Weddings</a></li>
+        <li><a href="corporate.html" class="corporate">Corporate</a></li>
+        <li class="language-switch">
+          <a href="#" id="language-toggle">EN</a>
+        </li>
+      </ul>
+      
+      <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="about.html" id="mobile-nav-about">About</a></li>
+      <li><a href="live.html" id="mobile-nav-live">Live</a></li>
+      <li><a href="weddings.html" id="mobile-nav-weddings">Weddings</a></li>
+      <li><a href="corporate.html" id="mobile-nav-corporate" class="corporate-active">Corporate</a></li>
+      <li><a href="#" id="mobile-language-toggle">EN</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+      <h1>Business Events<br>mit Premium Sound</h1>
+      <p>Professionelle Musikkonzepte für Firmenveranstaltungen, Messen, Produktpräsentationen und exklusive Corporate Events.</p>
+      <a href="#request" class="cta-button">Unverbindlich anfragen</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services-section" id="services">
+    <div class="services-container">
+      <h2 class="services-heading">Unsere Corporate Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Firmenveranstaltungen</h3>
+            <p class="service-description">Maßgeschneidertes Musikkonzept für Ihr Firmenjubiläum, Sommerfest oder Ihre Weihnachtsfeier. Angepasst an Ihr Unternehmen und die Gäste Ihrer Veranstaltung.</p>
+            <a href="#request" class="service-link">Mehr erfahren</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Produktpräsentationen</h3>
+            <p class="service-description">Den perfekten Sound für Ihre Produktpräsentation. Von dezenter Hintergrundmusik bis hin zu atmosphärischen Beats für den großen Auftritt.</p>
+            <a href="#request" class="service-link">Mehr erfahren</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Messen & Kongresse</h3>
+            <p class="service-description">Heben Sie sich von der Konkurrenz ab mit einem professionellen Sound-Konzept für Ihren Messestand oder Kongress. Aufmerksamkeitsstark und einprägsam.</p>
+            <a href="#request" class="service-link">Mehr erfahren</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-glass-cheers"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">After-Work Events</h3>
+            <p class="service-description">Vom entspannten After-Work Meeting bis zur Networking-Party. Der richtige Sound für Ihre Mitarbeiter und Geschäftspartner.</p>
+            <a href="#request" class="service-link">Mehr erfahren</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-microphone-alt"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Technik & Equipment</h3>
+            <p class="service-description">Professionelles Sound- und Lichtequipment für Events jeder Größe. Von kleinen Meetings bis hin zu großen Corporate Events.</p>
+            <a href="#request" class="service-link">Mehr erfahren</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-headphones"></i>
+          </div>
+          <div class="service-content">
+            <h3 class="service-title">Sounddesign</h3>
+            <p class="service-description">Individuelle Audio-Produktion und Soundbranding für Ihre Marke. Von Jingles über Produktsounds bis hin zu Corporate Playlists.</p>
+            <a href="#request" class="service-link">Mehr erfahren</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section" id="benefits">
+    <div class="benefits-container">
+      <h2 class="benefits-heading">Ihre Vorteile</h2>
+      <div class="benefits-intro">
+        <p>Ein maßgeschneidertes Musikkonzept kann einen entscheidenden Unterschied für den Erfolg Ihrer Veranstaltung machen. Hier sind die Vorteile, die Sie mit STEEL für Ihr Corporate Event erhalten:</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">Professionelles Image</h3>
+            <p class="benefit-description">Ein durchdachtes Musikkonzept unterstreicht die Professionalität Ihres Unternehmens und hinterlässt einen bleibenden Eindruck bei Ihren Gästen.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">Maßgeschneiderte Lösung</h3>
+            <p class="benefit-description">Jede Musikauswahl wird individuell auf Ihr Unternehmen, Ihre Marke und die Art Ihrer Veranstaltung abgestimmt.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">Stimmungssetzung</h3>
+            <p class="benefit-description">Die richtige Musik schafft die gewünschte Atmosphäre – ob entspannt, anregend oder energiegeladen, je nach Bedarf Ihres Events.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">Technische Zuverlässigkeit</h3>
+            <p class="benefit-description">Mit professionellem Equipment und jahrelanger Erfahrung garantiere ich einen reibungslosen technischen Ablauf Ihrer Veranstaltung.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">Flexible Anpassung</h3>
+            <p class="benefit-description">Während der Veranstaltung kann die Musik jederzeit an die aktuelle Stimmung und den Ablauf angepasst werden.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="benefit-content">
+            <h3 class="benefit-title">GEMA-Abwicklung</h3>
+            <p class="benefit-description">Ich übernehme auf Wunsch die komplette GEMA-Anmeldung und -Abwicklung für Ihre Veranstaltung.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="clients-section" id="clients">
+    <div class="clients-container">
+      <h2 class="clients-heading">Zufriedene Kunden</h2>
+      <div class="clients-grid">
+        <div class="client-item">
+          <img src="/api/placeholder/150/100" alt="Client Logo" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="/api/placeholder/150/100" alt="Client Logo" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="/api/placeholder/150/100" alt="Client Logo" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="/api/placeholder/150/100" alt="Client Logo" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="/api/placeholder/150/100" alt="Client Logo" class="client-logo">
+        </div>
+        <div class="client-item">
+          <img src="/api/placeholder/150/100" alt="Client Logo" class="client-logo">
+        </div>
+      </div>
+      
+      <div class="clients-testimonials">
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>STEEL hat das Musikkonzept für unsere Produktpräsentation perfekt umgesetzt. Die Musik unterstützte genau die emotionalen Höhepunkte unserer Präsentation und hat maßgeblich zum Erfolg der Veranstaltung beigetragen.</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="/api/placeholder/50/50" alt="Testimonial Avatar" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Sarah Schmidt</h4>
+              <p>Marketingleiterin, TechSolutions GmbH</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-content">
+            <p>Bereits zum dritten Mal haben wir STEEL für unser jährliches Firmenjubiläum engagiert. Die Musikauswahl war wie immer perfekt auf unsere Unternehmenskultur und die unterschiedlichen Altersgruppen unserer Mitarbeiter abgestimmt.</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="/api/placeholder/50/50" alt="Testimonial Avatar" class="testimonial-avatar">
+            <div class="testimonial-info">
+              <h4>Thomas Weber</h4>
+              <p>Geschäftsführer, Weber & Partner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Request Section -->
+  <section class="request-section" id="request">
+    <div class="request-container">
+      <div class="request-text">
+        <h2 class="request-heading">Unverbindliche Anfrage</h2>
+        <p>Sie planen eine Firmenveranstaltung und suchen nach dem passenden Musikkonzept? Ich freue mich auf Ihre Anfrage und erstelle Ihnen gerne ein individuelles Angebot, das perfekt zu Ihrem Event passt.</p>
+        <p>Je <strong>detaillierter</strong> Ihre Angaben, desto besser kann ich auf Ihre Wünsche eingehen. Besonders wichtig sind dabei:</p>
+        <ul>
+          <li>Art und Größe der Veranstaltung</li>
+          <li>Datum und Dauer</li>
+          <li>Location</li>
+          <li>Gewünschte Musikrichtung</li>
+          <li>Besonderheiten Ihres Events</li>
+        </ul>
+        <p>Alternativ können Sie mich auch direkt kontaktieren:<br>
+        <strong>Telefon:</strong> +49 123 456 7890<br>
+        <strong>E-Mail:</strong> <a href="mailto:corporate@steelmusic.net">corporate@steelmusic.net</a></p>
+      </div>
+      <div class="request-form">
+        <form>
+          <div class="form-group">
+            <label for="company">Unternehmen / Organisation</label>
+            <input type="text" id="company" placeholder="Ihr Unternehmen" required>
+          </div>
+          <div class="form-group">
+            <label for="name">Ansprechpartner</label>
+            <input type="text" id="name" placeholder="Vor- und Nachname" required>
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" placeholder="Ihre E-Mail-Adresse" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" placeholder="Ihre Telefonnummer">
+          </div>
+          <div class="form-group">
+            <label for="event-type">Art der Veranstaltung</label>
+            <select id="event-type" required>
+              <option value="">Bitte wählen</option>
+              <option value="company-event">Firmenfeier / Jubiläum</option>
+              <option value="product-launch">Produktpräsentation</option>
+              <option value="fair">Messe / Kongress</option>
+              <option value="after-work">After-Work Event</option>
+              <option value="other">Andere Veranstaltung</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="event-date">Datum der Veranstaltung</label>
+            <input type="date" id="event-date" required>
+          </div>
+          <div class="form-group">
+            <label for="location">Location / Stadt</label>
+            <input type="text" id="location" placeholder="Wo findet die Veranstaltung statt?" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Details & Wünsche</label>
+            <textarea id="message" rows="5" placeholder="Beschreiben Sie Ihre Veranstaltung und Ihre Vorstellungen" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Anfrage senden</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>STEEL</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="weddings.html">Weddings</a></li>
+          <li><a href="corporate.html">Corporate</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Kontakt</h3>
+        <ul>
+          <li><a href="tel:+491234567890">+49 123 456 7890</a></li>
+          <li><a href="mailto:info@steelmusic.net">info@steelmusic.net</a></li>
+          <li><a href="mailto:corporate@steelmusic.net">corporate@steelmusic.net</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Social Media</h3>
+        <ul>
+          <li><a href="https://instagram.com/steelofficial" target="_blank">Instagram</a></li>
+          <li><a href="https://linkedin.com/company/steel" target="_blank">LinkedIn</a></li>
+          <li><a href="https://xing.com/profile/steel" target="_blank">Xing</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Rechtliches</h3>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 STEELmusic. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize mobile menu
+    let menuOpen = false;
+
+    function toggleMobileMenu(event) {
+      if (event) {
+        event.stopPropagation();
+      }
+      
+      const menu = document.getElementById('mobile-menu');
+      const toggle = document.getElementById('mobile-menu-toggle');
+      
+      if (menuOpen) {
+        menuOpen = false;
+        toggle.classList.remove('active');
+        
+        const menuItems = menu.querySelectorAll('li');
+        menuItems.forEach(item => {
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(-10px)';
+        });
+        
+        setTimeout(() => {
+          menu.style.display = 'none';
+        }, 300);
+      } else {
+        menuOpen = true;
+        menu.style.display = 'block';
+        toggle.classList.add('active');
+        
+        setTimeout(() => {
+          const menuItems = menu.querySelectorAll('li');
+          menuItems.forEach(item => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          });
+        }, 10);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animate hero content
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        setTimeout(() => {
+          heroContent.classList.add('visible');
+        }, 300);
+      }
+
+      // Scroll animations
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '-30px', 
+        threshold: 0.1
+      });
+
+      // Observe elements for scroll animations
+      document.querySelectorAll('.services-heading, .service-card, .benefits-heading, .benefits-intro, .benefit-item, .clients-heading, .client-item, .testimonial, .request-text, .request-form').forEach(elem => {
+        scrollObserver.observe(elem);
+      });
+
+      // Add shadow to header on scroll
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.95)';
+          header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+        } else {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.8)';
+          header.style.boxShadow = 'none';
+        }
+      });
+      
+      // Update logo colors based on scroll position
+      function updateSectionClasses() {
+        const scrollPos = window.scrollY + 80;
+        
+        document.body.classList.remove('section-about', 'section-services', 'section-clients', 'section-request');
+        
+        const sections = [
+          { id: 'request', bodyClass: 'section-request' },
+          { id: 'clients', bodyClass: 'section-clients' },
+          { id: 'services', bodyClass: 'section-services' },
+          { id: 'about', bodyClass: 'section-about' }
+        ];
+        
+        for (const section of sections) {
+          const elem = document.getElementById(section.id);
+          if (elem && scrollPos >= elem.offsetTop) {
+            document.body.classList.add(section.bodyClass);
+            break;
+          }
+        }
+      }
+      
+      // Mobile navigation color updates
+      function updateMobileMenuColors() {
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+        
+        // Remove any existing active classes
+        mobileNavLinks.forEach(link => {
+          link.classList.remove('about-active', 'services-active', 'clients-active', 'request-active');
+        });
+        
+        // Apply the correct class based on the body class
+        if (document.body.classList.contains('section-about')) {
+          document.getElementById('mobile-nav-about')?.classList.add('about-active');
+        } else if (document.body.classList.contains('section-services')) {
+          document.getElementById('mobile-nav-services')?.classList.add('services-active');
+        } else if (document.body.classList.contains('section-clients')) {
+          document.getElementById('mobile-nav-clients')?.classList.add('clients-active');
+        } else if (document.body.classList.contains('section-request')) {
+          document.getElementById('mobile-nav-request')?.classList.add('request-active');
+        }
+      }
+      
+      // Call this after the section is updated
+      function updateSectionAndMenuClasses() {
+        updateSectionClasses();
+        updateMobileMenuColors();
+      }
+      
+      // Initial call and scroll event listener
+      updateSectionAndMenuClasses();
+      window.addEventListener('scroll', updateSectionAndMenuClasses);
+
+      // Handle mobile menu
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMobileMenu(e);
+        });
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        const menu = document.getElementById('mobile-menu');
+        const toggle = document.getElementById('mobile-menu-toggle');
+        
+        if (menuOpen && menu && !menu.contains(event.target) && !toggle.contains(event.target)) {
+          toggleMobileMenu();
+        }
+      });
+
+      // Close menu when clicking on links
+      const menuItems = document.querySelectorAll('#mobile-menu a');
+      menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+          setTimeout(() => {
+            toggleMobileMenu();
+          }, 100);
+        });
+      });
+
+      // Language switcher
+      const languageToggle = document.getElementById('language-toggle');
+      const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
+      let currentLanguage = 'de';
+
+      const switchLanguage = function(e) {
+        e.preventDefault();
+        
+        currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
+        document.documentElement.lang = currentLanguage;
+        
+        if (languageToggle) {
+          languageToggle.textContent = currentLanguage === 'de' ? 'EN' : 'DE';
+        }
+        if (mobileLanguageToggle) {
+          mobileLanguageToggle.textContent = currentLanguage === 'de' ? 'EN' : 'DE';
+        }
+
+        // For a full implementation, you would add more translations here
+      };
+
+      if (languageToggle) {
+        languageToggle.addEventListener('click', switchLanguage);
+      }
+      
+      if (mobileLanguageToggle) {
+        mobileLanguageToggle.addEventListener('click', switchLanguage);
+      }
+    });
+  </script>
+</body>
+</html>

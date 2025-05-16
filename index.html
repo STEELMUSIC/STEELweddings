@@ -4,115 +4,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEELweddings | Hochzeits-DJ im Ruhrgebiet</title>
+    <title>STEEL | Worldwide Booking DJ </title>
     <style>
         :root {
-            --primary-color: #a044ff;
-            --secondary-color: #6441a5;
-            --contact-color: #f857a6;
-            --contact-highlight: #ff5858;
-            --about-color: #ff6b6b;
-            --service-color: #4facfe;
-            --info-color: #43e97b;
+            --primary-color: #f3930d;
+            --secondary-color: #e67e22;
+            --gradient-light: #f8a838;
+            --gradient-dark: #d57c0a;
+            --weddings-color: var(--primary-color);
+            --weddings-secondary: var(--secondary-color);
+            --live-color: var(--primary-color);
+            --live-secondary: var(--secondary-color);
+            --corporate-color: var(--primary-color);
+            --corporate-secondary: var(--secondary-color);
+            --about-color: var(--primary-color);
+            --about-secondary: var(--secondary-color);
             --light-bg: #1e1e20;
             --dark-bg: #121214;
+            --darker-bg: #0c0c0e;
             --dark-text: #f5f5f7;
             --light-text: #f5f5f7;
             --text-secondary: #bbbbbb;
             --transition: all 0.4s ease;
-        }
-
-        .logo {
-            display: inline-flex !important;
-            align-items: center !important;
-            position: relative;
-            width: 188px;
-            height: 60px !important;
-            text-decoration: none;
-            overflow: hidden !important;
-            z-index: 1001 !important;
-            background-color: transparent !important;
-            justify-content: center !important;
-        }
-
-        #logo-svg {
-            width: 188px;
-            height: 34px;
-            max-width: 100% !important;
-            max-height: 100% !important;
-            display: block !important;
-            position: relative !important;
-            top: 5px !important;
-        }
-
-        #steel-path, #weddings-path, #weddings-path2, #weddings-path3,
-        #weddings-path4, #weddings-path5, #weddings-path6, 
-        #weddings-path7, #weddings-path8 {
-            transition: fill 0.8s ease;
-        }
-
-        body.section-about #steel-path,
-        body.section-about #weddings-path,
-        body.section-about #weddings-path2, 
-        body.section-about #weddings-path3,
-        body.section-about #weddings-path4,
-        body.section-about #weddings-path5,
-        body.section-about #weddings-path6,
-        body.section-about #weddings-path7,
-        body.section-about #weddings-path8 {
-            fill: url(#about-gradient);
-        }
-
-        body.section-services #steel-path,
-        body.section-services #weddings-path,
-        body.section-services #weddings-path2, 
-        body.section-services #weddings-path3,
-        body.section-services #weddings-path4,
-        body.section-services #weddings-path5,
-        body.section-services #weddings-path6,
-        body.section-services #weddings-path7,
-        body.section-services #weddings-path8 {
-            fill: url(#services-gradient);
-        }
-
-        body.section-info #steel-path,
-        body.section-info #weddings-path,
-        body.section-info #weddings-path2, 
-        body.section-info #weddings-path3,
-        body.section-info #weddings-path4,
-        body.section-info #weddings-path5,
-        body.section-info #weddings-path6,
-        body.section-info #weddings-path7,
-        body.section-info #weddings-path8 {
-            fill: url(#info-gradient);
-        }
-
-        body.section-contact #steel-path,
-        body.section-contact #weddings-path,
-        body.section-contact #weddings-path2, 
-        body.section-contact #weddings-path3,
-        body.section-contact #weddings-path4,
-        body.section-contact #weddings-path5,
-        body.section-contact #weddings-path6,
-        body.section-contact #weddings-path7,
-        body.section-contact #weddings-path8 {
-            fill: url(#contact-gradient);
-        }
-
-        body.section-services .logo,
-        body.section-info .logo {
-            width: 188px !important;
-            height: 34px !important;
-            overflow: hidden;
-            z-index: 10;
-        }
-
-        body.section-services #logo-svg,
-        body.section-info #logo-svg {
-            width: 100% !important;
-            height: 100% !important;
-            max-width: 188px;
-            max-height: 34px;
         }
 
         * {
@@ -128,78 +41,16 @@
             background-color: var(--dark-bg);
         }
         
-        strong {
-            font-weight: 600;
-        }
-        
-        .about-content strong {
-            color: var(--about-color);
-        }
-        
-        .service-item strong {
-            color: var(--service-color);
-        }
-        
-        .info-content strong {
-            color: var(--info-color);
-        }
-        
-        .contact-intro strong {
-            color: var(--contact-color);
-        }
-        
-        em {
-            font-style: normal;
-            font-weight: 500;
-        }
-        
-        .about-content em {
-            color: var(--about-color);
-        }
-        
-        .highlight {
-            font-weight: 600;
-            color: var(--contact-color);
-        }
-        
         p {
             color: var(--text-secondary);
             line-height: 1.8;
             letter-spacing: 0.01rem;
             margin-bottom: 1rem;
         }
-        
-        .about-content a {
-            color: var(--about-color);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--about-color);
-            transition: var(--transition);
-        }
-        
-        .about-content a:hover {
-            border-bottom: 1px solid var(--about-color);
-        }
-        
-        .service-content a {
-            color: var(--service-color);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--service-color);
-            transition: var(--transition);
-        }
-        
-        .service-content a:hover {
-            border-bottom: 1px solid var(--service-color);
-        }
-        
-        .info-content a {
-            color: var(--info-color);
-            text-decoration: none;
-            border-bottom: 1px dotted var(--info-color);
-            transition: var(--transition);
-        }
-        
-        .info-content a:hover {
-            border-bottom: 1px solid var(--info-color);
+
+        strong {
+            font-weight: 600;
+            color: var(--primary-color);
         }
 
         header {
@@ -224,7 +75,20 @@
             padding: 1rem 2rem;
             height: 60px;
         }
-        
+
+        .logo {
+            width: 120px;
+            height: 34px;
+            display: block;
+            position: relative;
+        }
+
+        #steel-logo path {
+            transition: fill 0.6s ease;
+            fill: url(#logo-gradient);
+        }
+
+        /* Neues Styling für die Menüpunkte */
         .nav-links {
             display: flex;
             list-style: none;
@@ -245,53 +109,37 @@
             border-radius: 6px;
         }
         
+        /* About-Link speziell stylen */
+        .nav-links .about-link {
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        /* Service-Links speziell stylen */
+        .nav-links .service-link {
+            font-weight: 500;
+        }
+        
+        /* Hover-Effekte */
         .nav-links a:hover {
             color: var(--primary-color);
-            background-color: rgba(160, 68, 255, 0.1);
+            background-color: rgba(243, 147, 13, 0.1);
+            text-decoration: none;
+            border-bottom: none;
         }
         
-        .nav-links.about-active a[href="#about"]:hover,
-        body.section-about .nav-links a[href="#about"]:hover {
-            color: var(--about-color);
-            background-color: rgba(255, 107, 107, 0.1);
+        /* Trennlinie zwischen About und Services */
+        .service-divider {
+            display: inline-block;
+            width: 1px;
+            height: 16px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 8px 0 4px;
         }
         
-        .nav-links.services-active a[href="#services"]:hover,
-        body.section-services .nav-links a[href="#services"]:hover {
-            color: var(--service-color);
-            background-color: rgba(79, 172, 254, 0.1);
-        }
-        
-        .nav-links.info-active a[href="#info"]:hover,
-        body.section-info .nav-links a[href="#info"]:hover {
-            color: var(--info-color);
-            background-color: rgba(67, 233, 123, 0.1);
-        }
-        
-        .nav-links.contact-active a[href="#contact"]:hover,
-        body.section-contact .nav-links a[href="#contact"]:hover {
-            color: var(--contact-color);
-            background-color: rgba(248, 87, 166, 0.1);
-        }
-        
-        body.section-about .nav-links a[href="#about"] {
-            color: var(--about-color);
-            background-color: rgba(255, 107, 107, 0.1);
-        }
-        
-        body.section-services .nav-links a[href="#services"] {
-            color: var(--service-color);
-            background-color: rgba(79, 172, 254, 0.1);
-        }
-        
-        body.section-info .nav-links a[href="#info"] {
-            color: var(--info-color);
-            background-color: rgba(67, 233, 123, 0.1);
-        }
-        
-        body.section-contact .nav-links a[href="#contact"] {
-            color: var(--contact-color);
-            background-color: rgba(248, 87, 166, 0.1);
+        a, .logo, .nav-links a, .footer-section a {
+            text-decoration: none;
+            border-bottom: none;
         }
         
         .language-switch {
@@ -301,70 +149,32 @@
         }
         
         .language-switch a {
-            background-color: rgba(160, 68, 255, 0.2);
+            background-color: rgba(243, 147, 13, 0.2);
             padding: 0.3rem 0.6rem;
             border-radius: 4px;
             font-size: 0.8rem;
             font-weight: 600;
             transition: var(--transition);
-            border: 1px solid rgba(160, 68, 255, 0.3);
+            border: 1px solid rgba(243, 147, 13, 0.3);
             cursor: pointer;
         }
         
-        .language-switch a.about-section {
-            background-color: rgba(255, 107, 107, 0.2);
-            border-color: rgba(255, 107, 107, 0.3);
-        }
-        
-        .language-switch a.services-section {
-            background-color: rgba(79, 172, 254, 0.2);
-            border-color: rgba(79, 172, 254, 0.3);
-        }
-        
-        .language-switch a.info-section {
-            background-color: rgba(67, 233, 123, 0.2);
-            border-color: rgba(67, 233, 123, 0.3);
-        }
-        
-        .language-switch a.contact-section {
-            background-color: rgba(248, 87, 166, 0.2);
-            border-color: rgba(248, 87, 166, 0.3);
-        }
-        
         .language-switch a:hover {
-            background-color: rgba(160, 68, 255, 0.4);
-            border-color: rgba(160, 68, 255, 0.6);
+            background-color: rgba(243, 147, 13, 0.4);
+            border-color: rgba(243, 147, 13, 0.6);
         }
-        
-        .language-switch a.about-section:hover {
-            background-color: rgba(255, 107, 107, 0.4);
-            border-color: rgba(255, 107, 107, 0.6);
-        }
-        
-        .language-switch a.services-section:hover {
-            background-color: rgba(79, 172, 254, 0.4);
-            border-color: rgba(79, 172, 254, 0.6);
-        }
-        
-        .language-switch a.info-section:hover {
-            background-color: rgba(67, 233, 123, 0.4);
-            border-color: rgba(67, 233, 123, 0.6);
-        }
-        
-        .language-switch a.contact-section:hover {
-            background-color: rgba(248, 87, 166, 0.4);
-            border-color: rgba(248, 87, 166, 0.6);
-        }
-        
+
+        /* Minimalistischer Hero-Bereich ohne Kästen */
         .hero {
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* Zentriert den Inhalt vertikal */
             background-color: #000;
-            padding-top: 80px;
             overflow: hidden;
             position: relative;
+            padding-bottom: 160px; /* Platz für den Booking-Button unten */
         }
         
         .hero::before {
@@ -374,7 +184,10 @@
             height: 100%;
             top: 0;
             left: 0;
-            background: radial-gradient(ellipse at center, rgba(50, 50, 70, 0.5) 0%, rgba(30, 30, 40, 0.5) 40%, rgba(10, 10, 20, 0.8) 80%);
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0) 0%, 
+                rgba(0, 0, 0, 0.3) 60%, 
+                rgba(0, 0, 0, 0.8) 100%);
             z-index: 1;
         }
         
@@ -385,86 +198,110 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            overflow: hidden;
+            background-image: url('images/index/bearbeitete Fotos STEEL-8.jpg');
+            background-size: cover;
+            background-position: center 20%; /* Sicherstellen, dass der obere Teil (Kopf) immer sichtbar ist */
+            background-attachment: fixed; /* Parallax-Effekt */
+            will-change: transform;
+            transition: transform 0.5s ease-out;
         }
         
-        .glass-circle {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transform-style: preserve-3d;
-            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        .scrolled .hero-background {
+            transform: scale(1.05) translateY(-2%); /* Leichte Skalierung und Verschiebung beim Scrollen */
         }
         
-        .glass-circle:nth-child(1) {
-            width: 700px;
-            height: 700px;
-            left: -150px;
-            top: -150px;
-            opacity: 0.8;
-            background: linear-gradient(45deg, rgba(160, 68, 255, 0.2), rgba(100, 65, 165, 0.1));
-        }
-        
-        .glass-circle:nth-child(2) {
-            width: 500px;
-            height: 500px;
-            right: -100px;
-            top: 20%;
-            opacity: 0.7;
-            background: linear-gradient(45deg, rgba(100, 65, 165, 0.2), rgba(160, 68, 255, 0.1));
-        }
-        
-        .glass-circle:nth-child(3) {
-            width: 600px;
-            height: 600px;
-            left: 20%;
-            bottom: -150px;
-            opacity: 0.6;
-            background: linear-gradient(45deg, rgba(79, 172, 254, 0.2), rgba(160, 68, 255, 0.1));
-        }
-        
-        .light-rays {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: linear-gradient(135deg, 
-                rgba(160, 68, 255, 0.2) 0%, 
-                rgba(160, 68, 255, 0) 50%, 
-                rgba(100, 65, 165, 0.2) 100%);
-            z-index: 1;
-            animation: lightShift 15s ease-in-out infinite alternate;
-        }
-        
-        @keyframes lightShift {
+        @keyframes heroAnimation {
             0% {
-                opacity: 0.4;
-                background-position: 0% 0%;
+                transform: scale(1) translate(0, 0);
+                filter: brightness(1);
             }
             50% {
-                opacity: 0.6;
+                transform: scale(1.03) translate(-5px, -5px);
+                filter: brightness(1.05) saturate(1.05);
             }
             100% {
-                opacity: 0.4;
-                background-position: 100% 100%;
+                transform: scale(1.05) translate(5px, 0);
+                filter: brightness(1.1) saturate(1.1);
             }
         }
         
+        /* Releases Section - Statische Version ohne Animation */
+        .releases-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .releases-heading h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .releases-heading p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .releases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .release-card {
+            background: rgba(30, 30, 32, 0.7);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .release-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+        }
+        
+        .view-all-releases {
+            display: block;
+            margin: 3rem auto 0;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .view-all-releases:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Hero-Scroll-Effekt */
         .hero-content {
             max-width: 800px;
-            text-align: center;
             z-index: 2;
-            padding: 2rem;
+            padding: 3rem;
             position: relative;
+            text-align: center;
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 1.2s ease, transform 1.2s ease;
+            transition: opacity 1s ease, transform 1s ease;
             will-change: opacity, transform;
+            margin: 0 auto;
         }
         
         .hero-content.visible {
@@ -472,1477 +309,2485 @@
             transform: translateY(0);
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            background: linear-gradient(90deg, var(--primary-color), #6c13d7);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+        .hero-content.hidden {
+            opacity: 0;
+            transform: translateY(-40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
         
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero h1 span:first-child {
-                font-size: 2.8rem;
-            }
+        .hero-logo {
+            display: none; /* Logo ausblenden */
+        }
+        
+        .hero h1 {
+            display: none; /* DJ & Musikproduzent ausblenden */
         }
         
         .hero p {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
-            line-height: 1.5;
+            display: none; /* Slogan ausblenden */
         }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 400;
-            transition: var(--transition);
-            font-size: 1.1rem;
-            box-shadow: 0px 4px 12px rgba(160, 68, 255, 0.3);
-        }
-        
-        .cta-button:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0px 6px 15px rgba(160, 68, 255, 0.4);
-        }
-        
-        .hero-image {
-            width: 100%;
-            max-width: 800px;
-            margin: 4rem auto 0;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        .about {
-            padding: 6rem 2rem;
-            background-color: var(--light-bg);
-            position: relative;
-            z-index: 5;
-        }
-        
-        .about-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-image {
-            flex: 1;
-            overflow: hidden;
-            position: relative;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-            opacity: 0;
-            transform: translateX(-40px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        
-        .about-image.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        .about-content {
-            flex: 1;
-            opacity: 0;
-            transform: translateX(40px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        
-        .about-content.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .about-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(90deg, #ff6b6b, #ff9e7d);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .services {
-            padding: 6rem 2rem;
-            background-color: var(--dark-bg);
-            position: relative;
-            z-index: 5;
-        }
-        
-        .services-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-weight: 600;
-            background: linear-gradient(90deg, #4facfe, #00f2fe);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        
-        .services-title.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .services-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .service-item {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            padding: 2rem;
-            background-color: var(--light-bg);
-            border-radius: 12px;
-            margin-bottom: 4rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        
-        .service-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .service-content {
-            flex: 2;
-        }
-        
-        .service-content h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: var(--service-color);
-        }
-        
-        .service-image {
-            flex: 1;
-            overflow: hidden;
-            border-radius: 8px;
-            position: relative;
-            transform-style: preserve-3d;
-        }
-        
-        .service-image img {
-            width: 100%;
-            border-radius: 8px;
-            transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1), scale 0.7s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        .image-parallax {
-            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-            will-change: transform;
-        }
-        
-        .image-parallax:hover {
-            transform: scale(1.03);
-        }
-        
-        .service-image::after {
-            content: '';
+
+        /* Apple-Style Booking Dropdown - Im unteren Bereich */
+        .booking-container {
             position: absolute;
-            top: 0;
+            bottom: 80px; /* Abstand vom unteren Rand */
             left: 0;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom right, 
-                rgba(79, 172, 254, 0.1),
-                rgba(0, 242, 254, 0.05));
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
-        .service-image:hover::after {
-            opacity: 1;
-        }
-        
-        .info-section {
-            padding: 6rem 2rem;
-            background-color: var(--light-bg);
+        .booking-dropdown {
             position: relative;
-            z-index: 5;
-        }
-        
-        .info-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .info-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
+            z-index: 100;
             text-align: center;
-            background: linear-gradient(90deg, #43e97b, #38f9d7);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
+            max-width: 230px;
+            width: 230px;
         }
         
-        .info-title.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .booking-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .info-content {
-            background-color: rgba(30, 30, 32, 0.7);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease, transform 1s ease;
+        .booking-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
         }
         
-        .info-content.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .contact {
-            padding: 6rem 2rem;
-            background-color: var(--dark-bg);
-            position: relative;
-            z-index: 5;
-        }
-        
-        .contact-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: 600;
-            background: linear-gradient(90deg, #f857a6, #ff5858);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        
-        .contact-title.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .contact-intro {
-            text-align: left;
-            margin-bottom: 3rem;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        
-        .contact-intro.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .contact-form {
-            background-color: rgba(30, 30, 32, 0.7);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s ease, transform 1s ease;
-        }
-        
-        .contact-form.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .form-group label::after {
-            content: '*';
-            color: var(--contact-color);
+        .booking-button i {
+            transition: transform 0.2s ease;
+            font-size: 0.8rem;
             margin-left: 2px;
         }
         
-        .form-group:nth-child(3) label::after {
-            content: '';
+        .booking-dropdown.open .booking-button i {
+            transform: rotate(180deg);
         }
         
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--light-text);
-            font-size: 1rem;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background-color: rgba(0, 0, 0, 0.2);
-            color: var(--light-text);
-            font-size: 16px;
-        }
-        
-        .form-group ::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 16px;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(90deg, #f857a6, #ff5858);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        
-        .submit-btn:hover {
-            background: linear-gradient(90deg, #ff5858, #f857a6);
-            transform: translateY(-2px);
-            box-shadow: 0px 6px 15px rgba(248, 87, 166, 0.4);
-        }
-        
-        .form-status {
-            margin-top: 1rem;
-            padding: 0.8rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-        
-        .form-status.success {
-            background-color: rgba(67, 233, 123, 0.2);
-            color: #43e97b;
-        }
-        
-        .form-status.error {
-            background-color: rgba(255, 107, 107, 0.2);
-            color: #ff6b6b;
-        }
-        
-        footer {
-            background-color: #0c0c0e;
-            padding: 3rem 2rem 1rem;
-            position: relative;
-            z-index: 5;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 200px;
-            margin-bottom: 2rem;
-        }
-        
-        .footer-section h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .footer-section ul {
-            list-style: none;
-        }
-        
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-section a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .footer-section a:hover {
-            color: var(--light-text);
-        }
-        
-        .copyright {
-            text-align: left;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 2rem 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-secondary);
-        }
-        
-        .fade-in-element {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            will-change: opacity, transform;
-        }
-        
-        .fade-in-element.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .sticky-container {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-        }
-        
-        .sticky-image {
-            position: sticky;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        
-        @media (prefers-reduced-motion) {
-            section, .service-item, .about-content, .about-image, .info-content {
-                transition: none;
-                transform: none;
-                opacity: 1;
-            }
-            
-            .fade-in-element {
-                opacity: 1;
-                transform: none;
-                transition: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none !important;
-            }
-            
-            .logo {
-                width: auto !important;
-            }
-            
-            .service-item {
-                flex-direction: column !important;
-                width: 100% !important;
-            }
-            
-            .service-content {
-                width: 100% !important;
-                order: 2;
-            }
-            
-            .service-image {
-                width: 100% !important;
-                order: 1;
-                margin-bottom: 20px;
-            }
-            
-            .about-container {
-                flex-direction: column !important;
-            }
-            
-            .about-image, .about-content {
-                width: 100% !important;
-            }
-            
-            .about, .services, .info-section, .contact {
-                padding: 4rem 1rem !important;
-            }
-            
-            .mobile-menu-toggle {
-                display: flex !important;
-                position: fixed;
-                top: 15px;
-                right: 20px;
-                z-index: 2000;
-                background: rgba(18, 18, 20, 0.7);
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                align-items: center;
-                justify-content: center;
-                padding: 8px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            }
-            
-            .mobile-menu-toggle span {
-                margin: 2px 0;
-                width: 24px;
-            }
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            cursor: pointer;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: fixed;
-            z-index: 2000;
-        }
-
-        .mobile-menu-toggle span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            margin: 3px 0;
-            background-color: white;
-            transition: all 0.3s ease;
-            border-radius: 1px;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(4px, 4px);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(4px, -4px);
-        }
-
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 0;
+        .booking-options {
+            position: absolute;
+            bottom: 110%; /* Nach oben öffnen */
             left: 0;
             width: 100%;
-            height: auto;
-            background-color: rgba(18, 18, 20, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 1999;
-            padding: 80px 0 30px;
-            text-align: center;
-            border-bottom-left-radius: 15px;
-            border-bottom-right-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .mobile-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .mobile-menu li {
-            margin: 20px 0;
+            background: rgba(30, 30, 32, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
             opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
+            visibility: hidden;
+            pointer-events: none;
+            transition: all 0.2s ease;
+            transform: translateY(5px) scale(0.98);
+            transform-origin: bottom center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        .mobile-menu.active li {
+        
+        .booking-dropdown.open .booking-options {
             opacity: 1;
-            transform: translateY(0);
+            visibility: visible;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
         }
-
-        .mobile-menu li:nth-child(1) { transition-delay: 0.05s; }
-        .mobile-menu li:nth-child(2) { transition-delay: 0.1s; }
-        .mobile-menu li:nth-child(3) { transition-delay: 0.15s; }
-        .mobile-menu li:nth-child(4) { transition-delay: 0.2s; }
-        .mobile-menu li:nth-child(5) { transition-delay: 0.25s; }
-        .mobile-menu li:nth-child(6) { transition-delay: 0.3s; }
-
-        .mobile-menu a {
-            font-size: 1.2rem;
-            color: white;
+        
+        .booking-option {
+            display: block;
+            padding: 0.9rem 1.2rem;
+            color: var(--light-text);
             text-decoration: none;
-            transition: color 0.3s ease;
-            padding: 8px 20px;
-            border-radius: 8px;
-            display: inline-block;
-            width: 80%;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background-color 0.15s ease;
         }
+        
+        .booking-option:last-child {
+            border-bottom: none;
+        }
+        
+        .booking-option:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .booking-option-content {
+            width: 100%;
+        }
+        
+        .booking-option-content h4 {
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.1rem;
+            color: white;
+        }
+        
+        .booking-option-content p {
+            font-size: 0.75rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+/* CSS für den aufgepeppten Apple-Style Releases Section */
+.releases-section {
+    background-color: var(--light-bg);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
 
-        .mobile-menu a:hover {
-            color: var(--primary-color);
-        }
+/* Apple-artiger mehrschichtiger Hintergrund */
+.releases-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+        /* Hauptgradient */
+        linear-gradient(135deg, rgba(243, 147, 13, 0.05), transparent 70%),
+        /* Akzentgradient */
+        linear-gradient(45deg, transparent 30%, rgba(230, 126, 34, 0.03) 60%),
+        /* Dynamischer Farbverlauf */
+        radial-gradient(at 20% 30%, rgba(243, 147, 13, 0.04), transparent 60%),
+        radial-gradient(at 80% 70%, rgba(229, 126, 34, 0.04), transparent 60%);
+    z-index: 0;
+}
 
-        .mobile-menu a.active {
-            background: rgba(160, 68, 255, 0.2);
-            color: var(--primary-color);
-        }
+/* Subtiles Noise und Muster für Tiefe */
+.releases-section::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+        /* Organisches Noise-Pattern */
+        radial-gradient(circle, rgba(255,255,255,.008) 0.5px, transparent 0.5px),
+        /* Wellenartiges Muster */
+        linear-gradient(to right, rgba(243, 147, 13, 0.01) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(243, 147, 13, 0.01) 1px, transparent 1px);
+    background-size: 25px 25px, 80px 80px, 80px 80px;
+    z-index: 1;
+    opacity: 0.3;
+}
 
-        .mobile-menu a.about-active {
-            background: rgba(255, 107, 107, 0.2);
-            color: var(--about-color);
-        }
+/* Schwebende Lichter ohne Blur */
+.floating-light {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(243, 147, 13, 0.6);
+    border-radius: 50%;
+    z-index: 5;
+    box-shadow: 0 0 10px 2px rgba(243, 147, 13, 0.3);
+    animation: floatLightGentle 20s ease-in-out infinite;
+    opacity: 0.8;
+}
 
-        .mobile-menu a.services-active {
-            background: rgba(79, 172, 254, 0.2);
-            color: var(--service-color);
-        }
+.floating-light.small {
+    width: 1px;
+    height: 1px;
+    box-shadow: 0 0 6px 1px rgba(243, 147, 13, 0.4);
+    animation-duration: 15s;
+}
 
-        .mobile-menu a.info-active {
-            background: rgba(67, 233, 123, 0.2);
-            color: var(--info-color);
-        }
+.floating-light.large {
+    width: 3px;
+    height: 3px;
+    box-shadow: 0 0 15px 3px rgba(243, 147, 13, 0.3);
+    animation-duration: 25s;
+}
 
-        .mobile-menu a.contact-active {
-            background: rgba(248, 87, 166, 0.2);
-            color: var(--contact-color);
-        }
+/* Noch größerer Bewegungsradius */
+@keyframes floatLightGentle {
+    0% { 
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+    25% { 
+        transform: translate(60px, 80px);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translate(-70px, 120px);
+        opacity: 0.9;
+    }
+    75% { 
+        transform: translate(80px, -60px);
+        opacity: 0.5;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+}
 
-        .logo {
-            width: 188px !important;
-            height: 34px !important;
-            display: inline-block !important;
-            overflow: visible !important;
-            position: relative !important;
-            z-index: 1001 !important;
-            background-color: transparent !important;
-        }
+@keyframes floatLightGentleAlt {
+    0% { 
+        transform: translate(0, 0);
+        opacity: 0.4;
+    }
+    33% { 
+        transform: translate(-100px, 90px);
+        opacity: 0.9;
+    }
+    66% { 
+        transform: translate(120px, -80px);
+        opacity: 0.6;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 0.4;
+    }
+}
 
-        #logo-svg {
-            width: 188px !important;
-            height: 34px !important;
-            max-width: 100% !important;
-            max-height: 100% !important;
-            display: block !important;
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important;
-        }
+@keyframes floatLightSlow {
+    0% { 
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+    50% { 
+        transform: translate(140px, -100px);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+}
 
-        body.section-info .logo,
-        body.section-services .logo {
-            transform: none !important;
-            transition: none !important;
-        }
+/* Diagonale Bewegung */
+@keyframes floatLightDiagonal {
+    0% { 
+        transform: translate(0, 0);
+        opacity: 0.4;
+    }
+    50% { 
+        transform: translate(100px, 100px);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 0.4;
+    }
+}
 
-        body.section-services .logo::after,
-        body.section-info .logo::after,
-        body.section-services .logo::before,
-        body.section-info .logo::before {
-            display: none !important;
-            content: none !important;
-            background: transparent !important;
-        }
+/* Animationen auf verschiedene Lichter anwenden */
+.floating-light:nth-child(1) { animation: floatLightGentle 18s ease-in-out infinite; }
+.floating-light:nth-child(2) { animation: floatLightGentleAlt 20s ease-in-out infinite; }
+.floating-light:nth-child(3) { animation: floatLightSlow 25s ease-in-out infinite; }
+.floating-light:nth-child(4) { animation: floatLightGentle 22s ease-in-out infinite; }
+.floating-light:nth-child(5) { animation: floatLightGentleAlt 19s ease-in-out infinite; }
+.floating-light:nth-child(6) { animation: floatLightSlow 24s ease-in-out infinite; }
+.floating-light:nth-child(7) { animation: floatLightGentle 21s ease-in-out infinite; }
+.floating-light:nth-child(8) { animation: floatLightGentleAlt 17s ease-in-out infinite; }
+.floating-light:nth-child(9) { animation: floatLightSlow 23s ease-in-out infinite; }
+.floating-light:nth-child(10) { animation: floatLightGentle 20s ease-in-out infinite; }
+.floating-light:nth-child(11) { animation: floatLightGentleAlt 16s ease-in-out infinite; }
+.floating-light:nth-child(12) { animation: floatLightSlow 22s ease-in-out infinite; }
+.floating-light:nth-child(13) { animation: floatLightDiagonal 18s ease-in-out infinite; }
+.floating-light:nth-child(14) { animation: floatLightGentle 20s ease-in-out infinite; }
+.floating-light:nth-child(15) { animation: floatLightGentleAlt 19s ease-in-out infinite; }
+.floating-light:nth-child(16) { animation: floatLightSlow 23s ease-in-out infinite; }
+.floating-light:nth-child(17) { animation: floatLightDiagonal 21s ease-in-out infinite; }
+.floating-light:nth-child(18) { animation: floatLightGentle 17s ease-in-out infinite; }
+
+/* Logo-Integration bleibt gleich */
+.releases-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.releases-heading h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.releases-title-logo {
+    display: inline-block;
+    height: 40px;
+    width: auto;
+    margin: 0 8px;
+    position: relative;
+    top: 3px;
+}
+
+.releases-title-logo svg {
+    height: 100%;
+    width: auto;
+}
+
+.releases-title-logo path {
+    fill: url(#title-gradient);
+    filter: drop-shadow(0 0 10px rgba(243, 147, 13, 0.3));
+}
+
+/* Improved Glassmorphism Container */
+.releases-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    background: rgba(30, 30, 32, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+        
+.releases-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.releases-heading.scroll-fade-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.releases-heading.scroll-fade-element.hidden {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.releases-heading h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.releases-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Neue Release-Liste im Stil des Bildes */
+.releases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.release-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(30, 30, 34, 0.8);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    margin-bottom: 1.2rem;
+}
+
+.release-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.release-item:hover {
+    transform: translateY(-3px) !important;
+    background-color: rgba(35, 35, 40, 0.95);
+}
+
+.release-accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--gradient-light), var(--gradient-dark));
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.release-info {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+/* Künstler-Anzeige */
+.release-artist {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.release-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--light-text);
+}
+
+.release-meta {
+    display: flex;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.release-year {
+    margin-right: 1rem;
+}
+
+.release-label {
+    color: var(--text-secondary);
+}
+
+/* Spotify-Embed-Container */
+.spotify-embed-container {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spotify-embed-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.spotify-iframe {
+    border-radius: 12px;
+    background-color: #181818;
+}
+
+/* Angepasste Styling für erweiterte Streaming-Icons */
+.release-links {
+  display: flex;
+  gap: 0.8rem; /* Kleinerer Abstand zwischen Icons */
+  align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+  flex-wrap: wrap; /* Erlaubt Umbruch bei vielen Icons */
+  width: 100%; /* Stellt sicher, dass die volle Breite genutzt wird */
+}
+
+.platform-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1rem; /* Etwas kleinere Icons */
+  transition: color 0.2s ease, transform 0.2s ease;
+  flex: 0 0 calc(33.33% - 0.8rem); /* 3 Icons pro Reihe */
+  max-width: calc(33.33% - 0.8rem); /* Maximale Breite für 3 Icons pro Reihe */
+  margin-bottom: 0.5rem; /* Abstand zwischen den Reihen */
+}
+
+.platform-link:hover {
+  color: var(--primary-color);
+  transform: scale(1.15);
+}
+
+/* Spezifische Icon-Anpassungen */
+.platform-link svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.platform-link.deezer-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.platform-link.tidal-icon svg {
+  width: 2rem;
+  height: 0.7rem;
+}
+
+/* Spezifische Hover-Farben für die einzelnen Plattformen */
+.platform-link:hover .fa-apple { color: #FC3C44; }
+.platform-link:hover.deezer-icon svg { fill: #A238FF; }
+.platform-link:hover .fa-amazon { color: #FF9900; }
+.platform-link:hover .fa-soundcloud { color: #FF5500; }
+.platform-link:hover .fa-youtube { color: #FF0000; }
+
+/* Mehr spezifischer Selektor für das Tidal-Icon beim Hover - WICHTIG: Diese Regeln müssen außerhalb des Media Queries stehen */
+.platform-link.tidal-icon:hover svg {
+  fill: #FFFFFF !important;
+}
+
+.release-links .platform-link.tidal-icon:hover svg {
+  fill: #FFFFFF !important;
+}
+
+.platform-link.tidal-icon:hover svg text {
+  fill: #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+/* Responsive Design für die Icons */
+@media (max-width: 768px) {
+  .release-links {
+    margin-top: 0.8rem;
+    justify-content: flex-start;
+  }
+  
+  .platform-link {
+    font-size: 0.9rem;
+    flex: 0 0 calc(33.33% - 0.8rem); /* Behält 3 Icons pro Reihe bei */
+  }
+  
+  .platform-link svg {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+  
+  .platform-link.deezer-icon svg {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+  
+  .platform-link.tidal-icon svg {
+    width: 1.8rem;
+    height: 0.65rem;
+  }
+}
+
+/* Angepasste Position und Größe für Short Facts */
+.short-facts-container {
+  position: absolute;
+  top: 100px; /* Nach oben verschoben */
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.short-facts {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 18px;
+  padding: 0.6rem 1.5rem;
+  max-width: 800px; /* Verkleinerte Breite */
+  width: auto; /* Auto statt 100% für bessere Anpassung */
+  flex-wrap: wrap;
+}
+
+.short-fact-divider {
+  width: 0px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 0.2rem;
+}
+
+.short-fact-highlight {
+  color: var(--light-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Instagram Link im Apple-Stil */
+.instagram-link {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 0.45rem 0.8rem;
+  transition: all 0.2s ease;
+  color: white;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.instagram-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.instagram-link i {
+  font-size: 1rem;
+  margin-right: 0.4rem;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.instagram-text {
+  font-size: 0.9rem;
+}
+
+/* Mobile Anpassungen */
+@media (max-width: 768px) {
+  .instagram-link {
+    padding: 0.35rem 0.7rem;
+  }
+}
+
+/* Footer */
+footer {
+    background-color: var(--darker-bg);
+    padding: 3rem 2rem 1rem;
+    position: relative;
+    z-index: 5;
+    margin-top: -40px; /* Apple-Style Overlap mit der vorherigen Sektion */
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.footer-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-section h3 {
+    background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
+}
+
+.footer-divider {
+    display: block;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0.3rem 0;
+    width: 12%;
+}
+
+.copyright {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+}
+
+.copyright p {
+    margin: 0;
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2000;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 3px 0;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgba(18, 18, 20, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1999;
+    padding: 80px 0 30px;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    margin: 15px 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu.active li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu li:nth-child(1) { transition-delay: 0.05s; }
+.mobile-menu li:nth-child(2) { transition-delay: 0.1s; }
+.mobile-menu li:nth-child(3) { transition-delay: 0.15s; }
+.mobile-menu li:nth-child(4) { transition-delay: 0.2s; }
+.mobile-menu li:nth-child(5) { transition-delay: 0.25s; }
+.mobile-menu li:nth-child(6) { transition-delay: 0.3s; }
+
+/* Mobile Menü-Trenner */
+.mobile-menu-divider {
+    position: relative;
+    text-align: center;
+    padding: 10px 0;
+    margin: 15px 0 5px;
+    opacity: 0.5;
+}
+
+.mobile-menu-divider span {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    background-color: rgba(18, 18, 20, 0.95);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+.mobile-menu-divider:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    z-index: 0;
+}
+
+.mobile-menu a {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 8px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 80%;
+}
+
+/* About-Link im Mobile-Menü */
+.mobile-menu .about-link {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.1rem;
+}
+
+/* Service-Links im Mobile-Menü */
+.mobile-menu .service-link {
+    font-weight: 500;
+}
+
+.mobile-menu a:hover {
+    color: var(--primary-color);
+    background-color: rgba(243, 147, 13, 0.1);
+    text-decoration: none;
+}
+
+/* Media Queries für mobile Anpassungen */
+@media (max-width: 992px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-container {
+        padding: 1rem;
+    }
+    
+    .footer-section {
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-section {
+        margin-bottom: 0;
+    }
+    
+    .hero {
+        padding-bottom: 120px;
+    }
+    
+    .booking-container {
+        bottom: 60px;
+    }
+    
+    .releases-container {
+        padding: 1.5rem;
+    }
+    
+    .releases-heading h2 {
+        font-size: 2rem;
+    }
+    
+    .release-title {
+        font-size: 1.1rem;
+    }
+}
+/* Streaming Platform Icons für den Header-Bereich */
+.platform-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: rgba(30, 30, 34, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.platform-icon svg {
+    fill: currentColor;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.platform-icon.deezer-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.platform-icon.tidal-icon svg {
+    width: 3rem;
+    height: 0.9rem;
+}
+
+.platform-icon:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.platform-icon:hover .fa-spotify { color: #1DB954; }
+.platform-icon:hover .fa-apple { color: #FC3C44; }
+.platform-icon:hover.deezer-icon svg { fill: #A238FF; }
+.platform-icon:hover .fa-amazon { color: #FF9900; }
+.platform-icon:hover.tidal-icon svg { fill: #000000; }
+.platform-icon:hover .fa-soundcloud { color: #FF5500; }
+.platform-icon:hover .fa-youtube { color: #FF0000; }
+.streaming-platforms {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  flex-direction: row; /* Wichtig: horizontale Ausrichtung */
+}
+
+/* Spotify placeholder styling */
+.spotify-placeholder {
+  width: 100%;
+  height: 80px;
+  background-color: rgba(25, 25, 25, 0.8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotify-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1DB954;
+  font-size: 0.9rem;
+}
+
+.spotify-loading-icon {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(29, 185, 84, 0.3);
+  border-top: 2px solid #1DB954;
+  border-radius: 50%;
+  animation: spotify-spin 1s linear infinite;
+}
+
+@keyframes spotify-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <svg width="0" height="0" style="position: absolute;">
-    <defs>
-      <linearGradient id="primary-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="var(--primary-color)" />
-        <stop offset="100%" stop-color="var(--secondary-color)" />
-      </linearGradient>
-      <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="var(--about-color)" />
-        <stop offset="100%" stop-color="#ff9e7d" />
-      </linearGradient>
-      <linearGradient id="services-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="var(--service-color)" />
-        <stop offset="100%" stop-color="#00f2fe" />
-      </linearGradient>
-      <linearGradient id="info-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="var(--info-color)" />
-        <stop offset="100%" stop-color="#38f9d7" />
-      </linearGradient>
-      <linearGradient id="contact-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="var(--contact-color)" />
-        <stop offset="100%" stop-color="var(--contact-highlight)" />
-      </linearGradient>
-    </defs>
-  </svg>
-
+  <!-- Header with Navigation -->
   <header>
     <div class="nav-container">
-        <a href="#" class="logo">
-  <svg id="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 573.86 103.91" width="188" height="38" style="transform: translateY(2px);">
-    <defs>
-      <linearGradient id="main-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#a044ff" />
-        <stop offset="100%" stop-color="#6441a5" />
-      </linearGradient>
-      
-      <linearGradient id="about-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#ff6b6b" />
-        <stop offset="100%" stop-color="#ff9e7d" />
-      </linearGradient>
-      
-      <linearGradient id="services-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#4facfe" />
-        <stop offset="100%" stop-color="#00f2fe" />
-      </linearGradient>
-      
-      <linearGradient id="info-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#43e97b" />
-        <stop offset="100%" stop-color="#38f9d7" />
-      </linearGradient>
-      
-      <linearGradient id="contact-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#f857a6" />
-        <stop offset="100%" stop-color="#ff5858" />
-      </linearGradient>
-    </defs>
-    
-    <path id="steel-path" fill="url(#main-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
-    
-    <path id="weddings-path" fill="url(#main-gradient)" d="m345.39,65.03h3.91l5.22,16.06c.61,1.76,1.1,3.58,1.65,5.72.44-2.14,1.32-4.84,1.59-5.72l5.28-16.06h3.9l5.22,16.06c.49,1.43,1.15,3.74,1.65,5.72,.55-2.2,.66-2.86,1.59-5.72l5.28-16.06h3.96l-9.02,26.62h-3.68l-5.5-16.72c-.66-1.98-1.1-3.63-1.43-5.22-.38,1.43-.83,3.02-1.54,5.22l-5.5,16.72h-3.79l-8.8-26.62Z"/>
-    <path id="weddings-path2" fill="url(#main-gradient)" d="m386.37,78.34c0-8.3,5.17-14.02,12.76-14.02s12.1,5.11,12.1,12.65v1.87h-21.17c.27,6.49,3.68,10.23,9.4,10.23,4.34,0,7.15-1.87,8.14-5.39h3.63c-1.43,5.61-5.55,8.63-11.82,8.63-7.81,0-13.03-5.61-13.03-13.97Zm3.79-2.25h17.27c0-5.11-3.3-8.52-8.3-8.52s-8.3,3.3-8.96,8.52Z"/>
-    <path id="weddings-path3" fill="url(#main-gradient)" d="m415.41,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
-    <path id="weddings-path4" fill="url(#main-gradient)" d="m447.53,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
-    <path id="weddings-path5" fill="url(#main-gradient)" d="m480.58,54.91c0-1.54,1.26-2.86,2.8-2.86s2.86,1.32,2.86,2.86-1.32,2.8-2.86,2.8-2.8-1.26-2.8-2.8Zm.93,10.12h3.79v26.62h-3.79v-26.62Z"/>
-    <path id="weddings-path6" fill="url(#main-gradient)" d="m493.23,91.65v-26.62h3.3l.55,4.62c1.76-3.41,5.28-5.33,9.13-5.33,7.31,0,10.34,4.34,10.34,11.05v16.28h-3.79v-15.45c0-6.21-2.8-8.41-7.2-8.41-5.44,0-8.52,3.96-8.52,9.95v13.91h-3.79Z"/>
-    <path id="weddings-path7" fill="url(#main-gradient)" d="m534.81,64.32c4.62,0,8.14,2.15,9.84,6.05l.38-5.33h3.3v25.79c0,7.92-5.06,13.09-12.87,13.09-6.82,0-11.6-3.85-12.65-10.28h3.79c.82,4.29,4.12,6.82,8.91,6.82,5.44,0,9.07-3.68,9.07-9.24v-6.32c-1.82,3.74-5.5,5.94-10.06,5.94-7.59,0-12.21-5.99-12.21-13.25s4.67-13.25,12.48-13.25Zm.28,23.1c5.77,0,9.18-4.18,9.18-9.9s-3.3-9.84-9.13-9.84-9.02,4.45-9.02,9.84,3.35,9.9,8.96,9.9Z"/>
-    <path id="weddings-path8" fill="url(#main-gradient)" d="m557.64,84.17c0,3.08,2.31,5,6.05,5,4.12,0,6.54-1.76,6.54-4.62,0-2.2-1.1-3.46-4.23-4.23l-4.56-1.16c-4.62-1.15-6.87-3.57-6.87-7.2,0-4.67,3.9-7.64,9.62-7.64s9.24,3.08,9.4,8.03h-3.68c-.11-3.08-2.25-4.9-5.83-4.9s-5.83,1.59-5.83,4.45c0,2.04,1.43,3.46,4.34,4.18l4.56,1.15c4.62,1.16,6.71,3.3,6.71,7.15,0,4.78-4.07,7.92-10.12,7.92s-9.73-3.19-9.73-8.14h3.63Z"/>
-  </svg>
-</a>
-        
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Euer Tag</a></li>
-            <li><a href="#services">Leistungen</a></li>
-            <li><a href="#info">Infos</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-            <li class="language-switch">
-                <a href="#" id="language-toggle">EN</a>
-            </li>
-        </ul>
-        
-        <div class="mobile-menu-toggle" id="mobile-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</header>
-
-<div class="mobile-menu" id="mobile-menu">
-    <ul>
-        <li><a href="#home" id="mobile-nav-home">Home</a></li>
-        <li><a href="#about" id="mobile-nav-about">Euer Tag</a></li>
-        <li><a href="#services" id="mobile-nav-services">Leistungen</a></li>
-        <li><a href="#info" id="mobile-nav-info">Infos</a></li>
-        <li><a href="#contact" id="mobile-nav-contact">Kontakt</a></li>
-        <li><a href="#" id="mobile-language-toggle">EN</a></li>
-    </ul>
-</div>
-
-<section class="hero" id="home">
-    <div class="hero-background">
-        <div class="glass-circle"></div>
-        <div class="glass-circle"></div>
-        <div class="glass-circle"></div>
-        <div class="light-rays"></div>
-    </div>
-    <div class="hero-content">
-        <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 573.86 103.91">
-            <defs>
-                <linearGradient id="hero-main-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#a044ff" />
-                    <stop offset="100%" stop-color="#6441a5" />
-                </linearGradient>
-            </defs>
-            
-            <path fill="url(#hero-main-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
-            
-            <path fill="url(#hero-main-gradient)" d="m345.39,65.03h3.91l5.22,16.06c.61,1.76,1.1,3.58,1.65,5.72,.44-2.14,1.32-4.84,1.59-5.72l5.28-16.06h3.9l5.22,16.06c.49,1.43,1.15,3.74,1.65,5.72,.55-2.2,.66-2.86,1.59-5.72l5.28-16.06h3.96l-9.02,26.62h-3.68l-5.5-16.72c-.66-1.98-1.1-3.63-1.43-5.22-.38,1.43-.83,3.02-1.54,5.22l-5.5,16.72h-3.79l-8.8-26.62Z"/>
-            <path fill="url(#hero-main-gradient)" d="m386.37,78.34c0-8.3,5.17-14.02,12.76-14.02s12.1,5.11,12.1,12.65v1.87h-21.17c.27,6.49,3.68,10.23,9.4,10.23,4.34,0,7.15-1.87,8.14-5.39h3.63c-1.43,5.61-5.55,8.63-11.82,8.63-7.81,0-13.03-5.61-13.03-13.97Zm3.79-2.25h17.27c0-5.11-3.3-8.52-8.3-8.52s-8.3,3.3-8.96,8.52Z"/>
-            <path fill="url(#hero-main-gradient)" d="m415.41,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
-            <path fill="url(#hero-main-gradient)" d="m447.53,78.4c0-8.03,4.56-14.08,12.48-14.08,4.4,0,7.92,1.92,9.79,5.77v-18.53h3.79v40.09h-3.3l-.38-5.44c-1.87,4.12-5.61,6.1-10.06,6.1-7.75,0-12.32-5.94-12.32-13.91Zm22.22-.11c0-6.1-3.41-10.56-9.24-10.56s-9.13,4.46-9.13,10.56,3.35,10.56,9.13,10.56,9.24-4.4,9.24-10.56Z"/>
-            <path fill="url(#hero-main-gradient)" d="m480.58,54.91c0-1.54,1.26-2.86,2.8-2.86s2.86,1.32,2.86,2.86-1.32,2.8-2.86,2.8-2.8-1.26-2.8-2.8Zm.93,10.12h3.79v26.62h-3.79v-26.62Z"/>
-            <path fill="url(#hero-main-gradient)" d="m493.23,91.65v-26.62h3.3l.55,4.62c1.76-3.41,5.28-5.33,9.13-5.33,7.31,0,10.34,4.34,10.34,11.05v16.28h-3.79v-15.45c0-6.21-2.8-8.41-7.2-8.41-5.44,0-8.52,3.96-8.52,9.95v13.91h-3.79Z"/>
-            <path fill="url(#hero-main-gradient)" d="m534.81,64.32c4.62,0,8.14,2.15,9.84,6.05l.38-5.33h3.3v25.79c0,7.92-5.06,13.09-12.87,13.09-6.82,0-11.6-3.85-12.65-10.28h3.79c.82,4.29,4.12,6.82,8.91,6.82,5.44,0,9.07-3.68,9.07-9.24v-6.32c-1.82,3.74-5.5,5.94-10.06,5.94-7.59,0-12.21-5.99-12.21-13.25s4.67-13.25,12.48-13.25Zm.28,23.1c5.77,0,9.18-4.18,9.18-9.9s-3.3-9.84-9.13-9.84-9.02,4.45-9.02,9.84,3.35,9.9,8.96,9.9Z"/>
-            <path fill="url(#hero-main-gradient)" d="m557.64,84.17c0,3.08,2.31,5,6.05,5,4.12,0,6.54-1.76,6.54-4.62,0-2.2-1.1-3.46-4.23-4.23l-4.56-1.16c-4.62-1.15-6.87-3.57-6.87-7.2,0-4.67,3.9-7.64,9.62-7.64s9.24,3.08,9.4,8.03h-3.68c-.11-3.08-2.25-4.9-5.83-4.9s-5.83,1.59-5.83,4.45c0,2.04,1.43,3.46,4.34,4.18l4.56,1.15c4.62,1.16,6.71,3.3,6.71,7.15,0,4.78-4.07,7.92-10.12,7.92s-9.73-3.19-9.73-8.14h3.63Z"/>
+      <a href="#" class="logo">
+        <svg id="steel-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.58 91.64" width="120" height="34">
+          <defs>
+            <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f8a838" />
+              <stop offset="100%" stop-color="#d57c0a" />
+            </linearGradient>
+          </defs>
+          <path class="logo-path" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
         </svg>
-        <p>Heiraten mit Stil. Und STEEL.</p>
-        <a href="#contact" class="cta-button">Anfrage senden</a>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html" class="about about-link">Über</a></li>
+        <li class="service-divider"></li>
+        <li><a href="live.html" class="live service-link">Live</a></li>
+        <li><a href="weddings.html" class="weddings service-link">Hochzeiten</a></li>
+        <li><a href="corporate.html" class="corporate service-link">Corporate</a></li>
+        <li class="language-switch">
+          <a href="#" id="language-toggle">EN</a>
+        </li>
+      </ul>
+      
+      <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="about.html" id="mobile-nav-about" class="about-link">Über</a></li>
+      <li class="mobile-menu-divider"><span>Services</span></li>
+      <li><a href="live.html" id="mobile-nav-live" class="service-link">Live</a></li>
+      <li><a href="weddings.html" id="mobile-nav-weddings" class="service-link">Hochzeiten</a></li>
+      <li><a href="corporate.html" id="mobile-nav-corporate" class="service-link">Corporate</a></li>
+      <li><a href="#" id="mobile-language-toggle">EN</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section mit Apple-Style Dropdown -->
+  <section class="hero" id="home">
+    <div class="hero-background"></div>
+  
+    <!-- Short Facts im Apple-Stil korrigiert -->
+    <div class="short-facts-container">
+      <div class="short-facts">
+        <div class="short-fact">
+          <span class="short-fact-highlight">All the gossip »</span>
+        </div>
+        <div class="short-fact-divider"></div>
+        <div class="short-fact">
+          <a href="https://www.instagram.com/steelofficial" class="instagram-link" target="_blank">
+            <i class="fab fa-instagram"></i>
+            <span class="instagram-text">@steelofficial</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Booking-Button im Apple-Style -->
+    <div class="booking-container">
+      <div class="booking-dropdown" id="booking-dropdown">
+        <div class="booking-button" id="booking-toggle">
+          Jetzt buchen <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="booking-options">
+          <a href="live.html#booking" class="booking-option">
+            <div class="booking-option-content">
+              <h4>Live</h4>
+            </div>
+          </a>
+          <a href="weddings.html#contact" class="booking-option">
+            <div class="booking-option-content">
+              <h4>Hochzeiten</h4>
+            </div>
+          </a>
+          <a href="corporate.html#request" class="booking-option">
+            <div class="booking-option-content">
+              <h4>Corporate</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-content">
+      <svg class="hero-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.58 91.64">
+        <defs>
+          <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#f8a838" />
+            <stop offset="100%" stop-color="#d57c0a" />
+          </linearGradient>
+        </defs>
+        <path fill="url(#hero-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+      </svg>
+      <h1>DJ & Musikproduzent</h1>
+      <p>Musik, die bewegt. Events, die begeistern.</p>
+    </div>
+  </section>
+<!-- Services Section - Kompakte Version -->
+<section class="services-section" id="services">
+  <!-- Floating lights like in releases section -->
+  <div class="floating-light" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+  <div class="floating-light small" style="left: 30%; top: 35%; animation-delay: 1.5s;"></div>
+  <div class="floating-light large" style="left: 50%; top: 25%; animation-delay: 3s;"></div>
+  <div class="floating-light" style="left: 70%; top: 40%; animation-delay: 1s;"></div>
+  <div class="floating-light small" style="left: 90%; top: 30%; animation-delay: 2.5s;"></div>
+  
+  <div class="services-container">
+    <div class="services-heading fade-in-element">
+      <h2>Deine Vision. <span class="services-highlight">Meine Musik.</span></h2>
+      <p>In Deutschland und auf der ganzen Welt.</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- Live Card -->
+      <a href="live.html" class="service-card fade-in-element" style="transition-delay: 0.1s;">
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="fas fa-music"></i>
+          </div>
+          <h3>Live</h3>
+          <p>Club • Festival • Open-Air</p>
+          <div class="service-cta">
+            <span>Erfahre mehr</span>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+        <div class="service-card-bg"></div>
+      </a>
+      
+      <!-- Weddings Card -->
+      <a href="weddings.html" class="service-card fade-in-element" style="transition-delay: 0.2s;">
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Hochzeiten</h3>
+          <p>Heiraten mit Stil. Und STEEL.</p>
+          <div class="service-cta">
+            <span>Erfahre mehr</span>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+        <div class="service-card-bg"></div>
+      </a>
+      
+      <!-- Corporate Card -->
+      <a href="corporate.html" class="service-card fade-in-element" style="transition-delay: 0.3s;">
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>Corporate</h3>
+          <p>Firmenfeier • Messe • Business-Event</p>
+          <div class="service-cta">
+            <span>Erfahre mehr</span>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+        <div class="service-card-bg"></div>
+      </a>
+    </div>
+  </div>
 </section>
 
-    <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-image" data-parallax-intensity="20">
-                <img src="DJ_bei_einer_Hochzeit.jpg" alt="DJ bei einer Hochzeit" class="image-parallax">
-            </div>
-            <div class="about-content">
-                <h2 class="about-title">Euer Tag rückt näher. Und jetzt?</h2>
-                <p id="about-p1">Eure Hochzeit ist <strong>aufregend</strong> – vor allem für euch selbst. Aber auch eure Liebsten machen sich schick und haben Lust, es so richtig krachen zu lassen. Hier komme ich ins Spiel. Denn ich finde: Ihr solltet euch <em>nicht den Kopf über die Musik zerbrechen</em> müssen. Ich kümmere mich darum, dass eure Party ein voller Erfolg wird!</p>
-                <p id="about-p2">Die Gäste auf eurer Hochzeit sind jung und alt. Um sie anzusprechen, sollte Musik laufen, die alle kennen (<strong>Hits only!</strong>). Mal ist es was aus den 60ern zum Twisten, ein anderes Mal aus den 90ern zum Trashen. Aktuelle Charts und <strong>elektronische Beats</strong> dürfen natürlich nicht fehlen. Alles in einem Mix verpackt, der niemanden erschrecken lässt und sich trotzdem so anfühlt, als wärt ihr gerade im Club.</p>
-                <p id="about-p3">Hier spielen auch Songs eine wichtige Rolle, die euch und eure Gäste verbinden. <strong>#JGA</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <h2 class="services-title">Eure Hochzeitsfeier</h2>
-        <div class="services-container">
-            <div class="service-item">
-                <div class="service-content">
-                    <h3 id="service1-title">Endlich geht es los.</h3>
-                    <p id="service1-p1">Zum Eröffnen der Tanzfläche seid ihr gefragt: Ob ein <strong>Wiener Walzer</strong> oder ein <strong>Discofox</strong>, manchmal auch einfach nur ein gemütliches Schunkeln: Durch eure Songauswahl beginnt die Party und eine unvergessliche Nacht. Wählt weise – gerne mit meinem Support.</p>
-                    <p id="service1-p2">Ihr wollt <strong>keinen Eröffnungstanz</strong>? Kein Problem. Es ist eure Hochzeit und die gestalten wir so, wie ihr es wollt.</p>
-                </div>
-                <div class="service-image" data-parallax-intensity="10">
-                    <img src="Hochzeitspaar_tanzt.jpg" alt="Hochzeitspaar tanzt" class="image-parallax">
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-content">
-                    <h3 id="service2-title">Let's party.</h3>
-                    <p id="service2-p1">Ist die Party dann voll im Gange, gibt es kein Halten mehr. <strong>Live Mashups</strong> transportieren eure Gäste in eine andere Klangwelt – weit weg vom üblichem Gedudel aus dem Radio. Musikwünsche baue ich gerne an passender Stelle in den Mix ein.</p>
-                    <p id="service2-p2">Spätestens wenn <strong>Beyoncé</strong> mit ihren Single Ladies die Nächstglücklichen zum Brautstraußfangen bittet, ist die Tanzfläche vor keinem Hit (und Gast) mehr sicher!</p>
-                </div>
-                <div class="service-image" data-parallax-intensity="10">
-                    <img src="/api/placeholder/400/300" alt="Hochzeitsfeier" class="image-parallax">
-                </div>
-            </div>
-            <div class="service-item">
-                <div class="service-content">
-                    <h3 id="service3-title">Tolle Technik.</h3>
-                    <p id="service3-p1">Habt ihr schon mal von <strong>Fohhn</strong> gehört? Seit 1993 stellt die deutsche Firma Premium-Soundsysteme her – alles made in Germany. Je nach Location reicht meine Fohhn-Anlage für bis zu 200 Personen und mehr. Wenn ich auflege, stimmt also nicht nur die Musikauswahl, sondern auch die Klangqualität.</p>
-                    <p id="service3-p2"><strong>Licht</strong> wird meiner Meinung nach häufig unterbewertet. Dabei sorgen steuerbare Lichter für eine epische Stimmung während der Party und für tolle Fotos im Nachhinein. Mit Ambientespots kann ich eure Location akkurat in Szene setzen und so nur mithilfe von Licht eine gemütliche Grundstimmung erzeugen, sobald es draußen dämmert.</p>
-                    <p id="service3-p3">Für noch mehr <strong>Club-Atmosphäre</strong> habe ich auf Wunsch Nebel dabei, um die Lichtstrahlen im Raum so richtig zum Vorschein zu bringen.</p>
-                </div>
-                <div class="service-image" data-parallax-intensity="10">
-                    <img src="/api/placeholder/400/300" alt="DJ-Equipment" class="image-parallax">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sticky-container">
-        <img src="/api/placeholder/1200/800" alt="DJ in Action" class="sticky-image" id="sticky-image1">
-    </section>
-
-    <section class="info-section" id="info">
-        <div class="info-container">
-            <h2 class="info-title">Das solltet ihr noch wissen.</h2>
-            <div class="info-content">
-                <p id="info-p1">Ich komme ursprünglich aus der <strong>Clubszene</strong> und lege auch heute noch regelmäßig in Discotheken auf. Übergänge und das Mixing sind mir daher sehr wichtig. Vor allem achte ich darauf, dass aufeinanderfolgende Songs zueinander passen. Musikwünsche binde ich an der Stelle ein, wo sie reinpassen. Ich spiele grundsätzlich keine Genres kreuz und quer – ich bin nun mal keine Jukebox. Falls ihr mich mal live erleben wollt: Bei <a href="https://instagram.com/steelofficial" target="_blank">Instagram</a> verkünde ich regelmäßig, wann und wo ich auflege.</p>
-                <p id="info-p2">Musikalisch bin ich ein <strong>Allrounder</strong> (Open Format). Außerdem kenne ich mich sehr gut mit elektronischer Musik aus (<a href="https://linktr.ee/STEELofficial" target="_blank">und als STEEL selbst auch solche Musik heraus</a>). Ich bin definitiv nicht der Richtige, wenn es um Hochzeiten mit hohem Schlager- oder Après-Ski-Anteil geht. Da gibt es andere DJs für.</p>
-                <p id="info-p3">Ich bin <strong>DJ, kein Entertainer oder Animateur</strong>. Ich konzentriere mich daher aufs Auflegen und benutze das Mikrofon nur selten, wenn es gerade gut reinpasst.</p>
-                <p id="info-p4">Übrigens: Ich bin Mitglied der <strong><a href="https://lovecrew-ruhrpott.de" target="_blank">Lovecrew Ruhrpott</a></strong>. Das ist ein Zusammenschluss der besten Hochzeitsdienstleister*innen im Ruhrgebiet. Wenn ihr noch am Anfang eurer Hochzeitsplanung steckt, schaut unbedingt mal vorbei!</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <h2 class="contact-title">Passt? Prima.</h2>
-        <div class="contact-container">
-            <div class="contact-intro">
-                <p id="contact-p1">Ihr bekommt jetzt schon Lust auf eure Hochzeitsfeier? Sehr cool! Fragt doch einfach nach, vielleicht habe ich noch einen Termin frei. Um auf Nummer sicher zu gehen, solltet ihr mich ungefähr ein Jahr vor eurer Hochzeit anfragen. Aber auch spontan bin ich manchmal noch verfügbar.</p>
-                <p id="contact-p2">Meine Preise starten für 7 Stunden bei <span class="highlight">1500,- €</span> (inkl. MwSt.) und sind davon abhängig, um wie viel Uhr ich loslegen soll. Ich spiele immer bis mindestens 3 Uhr. Auf Wunsch auch open end!</p>
-            </div>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Wer heiratet? :)" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-Mail</label>
-                    <input type="email" id="email" placeholder="traumpaar@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Telefon/Handy</label>
-                    <input type="tel" id="phone" placeholder="I call you maybe">
-                </div>
-                <div class="form-group">
-                    <label for="date">Hochzeitsdatum</label>
-                    <input type="date" id="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="location">Ort</label>
-                    <input type="text" id="location" placeholder="Wo steigt die Party?" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Details</label>
-                    <textarea id="message" rows="5" placeholder="z. B. Ablauf, Beginn, Gästeanzahl, Musik" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Anfrage senden</button>
-                <div id="form-status" class="form-status" style="display: none;"></div>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3><span style="font-weight: 300;">STEEL</span><span style="font-weight: 600;">weddings</span></h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Euer Tag</a></li>
-                    <li><a href="#services">Leistungen</a></li>
-                    <li><a href="#info">Infos</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Kontakt</h3>
-                <ul>
-                    <li><a href="tel:+491234567890">+49 123 456 7890</a></li>
-                    <li><a href="mailto:info@steelweddings.net">info@steelweddings.net</a></li>
-                    <li>Ruhrgebiet & Umgebung</li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Rechtliches</h3>
-                <ul>
-                    <li><a href="#">Impressum</a></li>
-                    <li><a href="#">Datenschutz</a></li>
-                    <li><a href="#">AGB</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 STEELweddings. Alle Rechte vorbehalten.</p>
-            <span class="footer-hint"></span>
-        </div>
-    </footer>
-
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        } else {
-            entry.target.classList.remove('visible');
-        }
-    });
-}, {
-    root: null,
-    rootMargin: '-50px', 
-    threshold: 0.15
-});
-            
-const parallaxImages = document.querySelectorAll('.image-parallax');
-const stickyImage = document.querySelector('.sticky-image');
-            
-const heroContent = document.querySelector('.hero-content');
-if (heroContent) {
-    scrollObserver.observe(heroContent);
+<style>
+/* Services Section - Kompakter Stil */
+.services-section {
+  background-color: var(--darker-bg);
+  padding: 4rem 2rem; /* Reduziertes vertikales Padding */
+  position: relative;
+  overflow: hidden;
+  margin-top: -1px;
 }
 
-document.querySelectorAll('.about-image, .about-content, .services-title, .service-item, .info-title, .info-content, .contact-title, .contact-intro, .contact-form').forEach(elem => {
-    scrollObserver.observe(elem);
-});
-            
-            const encodingFix = () => {
-                try {
-                    const charsetMeta = document.querySelector('meta[charset]');
-                    if (charsetMeta && charsetMeta.getAttribute('charset').toLowerCase() !== 'utf-8') {
-                        charsetMeta.setAttribute('charset', 'utf-8');
-                    }
-                    
-                    const contentTypeMeta = document.querySelector('meta[http-equiv="Content-Type"]');
-                    if (contentTypeMeta) {
-                        contentTypeMeta.setAttribute('content', 'text/html; charset=utf-8');
-                    }
-                    
-                    document.querySelectorAll('p, h1, h2, h3, a, span, button, label, input, textarea').forEach(element => {
-                        if (!element.textContent) return;
-                        
-                        const decoder = document.createElement('textarea');
-                        decoder.innerHTML = element.innerHTML;
-                        const decodedText = decoder.value;
-                        
-                        if (decodedText !== element.innerHTML) {
-                            element.innerHTML = decodedText;
-                        }
-                    });
-                } catch (e) {
-                    console.error('Fehler bei der Kodierungskorrektur:', e);
-                }
-            };
-            
-            encodingFix();
-            setTimeout(encodingFix, 500);
-            setTimeout(encodingFix, 1500);
-            
-            const header = document.querySelector('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.style.backgroundColor = 'rgba(30, 30, 32, 0.95)';
-                    header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
-                } else {
-                    header.style.backgroundColor = 'rgba(30, 30, 32, 0.8)';
-                    header.style.boxShadow = 'none';
-                }
-            });
-            
-            window.addEventListener('scroll', () => {
-                const heroHeight = document.querySelector('.hero').offsetHeight;
-                const glassCircles = document.querySelectorAll('.glass-circle');
-                const lightRays = document.querySelector('.light-rays');
-                
-                const fadeRatio = Math.max(0, 1 - (window.scrollY / heroHeight));
-                
-                glassCircles.forEach(circle => {
-                    circle.style.opacity = 0.8 * fadeRatio;
-                });
-                
-                if (lightRays) {
-                    lightRays.style.opacity = 0.6 * fadeRatio;
-                }
-            });
-            
-            window.addEventListener('scroll', updateSectionClasses);
-            
-            updateSectionClasses();
-            
-function combinedColorUpdate() {
-    const scrollPos = window.scrollY + 80;
+/* Hintergrund-Effekte beibehalten */
+.services-section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: 
+    linear-gradient(135deg, rgba(243, 147, 13, 0.05), transparent 70%),
+    linear-gradient(45deg, transparent 30%, rgba(230, 126, 34, 0.03) 60%),
+    radial-gradient(at 20% 30%, rgba(243, 147, 13, 0.04), transparent 60%),
+    radial-gradient(at 80% 70%, rgba(229, 126, 34, 0.04), transparent 60%);
+  z-index: 0;
+}
+
+.services-section::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: 
+    radial-gradient(circle, rgba(255,255,255,.008) 0.5px, transparent 0.5px),
+    linear-gradient(to right, rgba(243, 147, 13, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(243, 147, 13, 0.01) 1px, transparent 1px);
+  background-size: 25px 25px, 80px 80px, 80px 80px;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Kompaktere Überschrift */
+.services-heading {
+  text-align: center;
+  margin-bottom: 2rem; /* Reduzierter Abstand */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.services-heading.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-heading h2 {
+  font-size: 2.2rem; /* Etwas kleinere Schrift */
+  font-weight: 600;
+  color: var(--light-text);
+  margin-bottom: 0.5rem; /* Reduzierter Abstand */
+}
+
+.services-highlight {
+  background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.services-heading p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem; /* Kleinere Schrift */
+  color: var(--text-secondary);
+}
+
+/* Kompakteres Grid mit kleineren Abständen */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; /* Kleinerer Abstand zwischen Karten */
+}
+
+/* Kompaktere Service-Karten */
+.service-card {
+  position: relative;
+  height: 200px; /* Noch weiter reduzierte Höhe für kompakteres Layout */
+  background: rgba(30, 30, 32, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px; /* Leicht verkleinert */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02); /* Leicht reduzierter Hover-Effekt */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover .service-card-bg {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.service-card:hover .service-cta {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Kompakterer Inhalt */
+.service-card-content {
+  position: relative;
+  z-index: 10;
+  padding: 1.5rem; /* Reduziertes Padding */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(125deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 70%),
+    linear-gradient(to right, rgba(243, 147, 13, 0.08), rgba(230, 126, 34, 0.04));
+  opacity: 0.5;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+  z-index: 1;
+}
+
+/* Kleineres Service-Icon */
+.service-icon {
+  font-size: 1.5rem; /* Kleineres Icon */
+  margin-bottom: 1rem; /* Reduzierter Abstand */
+  color: var(--primary-color);
+  width: 50px; /* Kleineres Icon-Container */
+  height: 50px; /* Kleineres Icon-Container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(243, 147, 13, 0.1);
+  border-radius: 14px; /* Entsprechend angepasst */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  background: rgba(243, 147, 13, 0.2);
+}
+
+/* Kompaktere Typografie mit konsistenter Ausrichtung und reduzierten Abständen */
+.service-card h3 {
+  font-size: 1.3rem; /* Kleinere Überschrift */
+  font-weight: 600;
+  margin-bottom: 0.2rem; /* Noch weiter reduzierter Abstand */
+  color: var(--light-text);
+  padding-left: 0; /* Konsistente Ausrichtung */
+}
+
+.service-card p {
+  font-size: 0.9rem; /* Kleinerer Text */
+  color: var(--text-secondary);
+  margin-top: 0; /* Kein Abstand nach oben */
+  margin-bottom: 0.6rem; /* Deutlich reduzierter Abstand */
+  line-height: 1.3; /* Noch kompaktere Zeilenhöhe */
+  padding-left: 0; /* Konsistente Ausrichtung */
+}
+
+.service-cta {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.9rem; /* Kleinerer Text */
+  color: var(--primary-color);
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(0); /* Entfernen des negativen X-Offsets */
+  width: fit-content;
+  padding-left: 0; /* Konsistente Ausrichtung mit anderen Elementen */
+  margin-top: 0; /* Kein zusätzlicher Abstand nach oben */
+}
+
+.service-cta i {
+  margin-left: 0.5rem;
+  font-size: 0.7rem; /* Kleinerer Pfeil */
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-cta i {
+  transform: translateX(3px);
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .services-section {
+    padding: 3rem 1.5rem; /* Noch kompakter auf Tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-card {
+    height: 180px; /* Noch flacher auf Mobilgeräten */
+  }
+  
+  .services-heading h2 {
+    font-size: 1.8rem;
+  }
+  
+  .services-heading p {
+    font-size: 0.9rem;
+  }
+  
+  .services-section {
+    padding: 2.5rem 1.5rem; /* Noch kompakter auf Mobilgeräten */
+  }
+}
+.hidden-release {
+  display: none;
+}
+<!-- Add this CSS code to your existing styles -->
+<style>
+
+/* Repositioning the streaming icons to the top-right corner (without background boxes) */
+.release-item {
+  position: relative; /* Ensure proper positioning context */
+}
+
+.release-links {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  width: auto;
+  max-width: 120px; /* Limit width for proper positioning */
+  justify-content: flex-end;
+  z-index: 10;
+}
+
+.platform-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  margin-bottom: 0.25rem;
+  /* No background, removed border and other box styling */
+}
+
+.platform-link:hover {
+  color: var(--primary-color);
+  transform: scale(1.15);
+}
+
+/* Keep the specific hover effects for different platforms */
+.platform-link:hover .fa-apple { color: #FC3C44; }
+.platform-link:hover.deezer-icon svg { fill: #A238FF; }
+.platform-link:hover .fa-amazon { color: #FF9900; }
+.platform-link:hover .fa-soundcloud { color: #FF5500; }
+.platform-link:hover .fa-youtube { color: #FF0000; }
+.platform-link.tidal-icon:hover svg { fill: #FFFFFF !important; }
+
+/* Adjust the release info to have full width */
+.release-info {
+  flex: 1;
+  width: 100%;
+  padding-right: 3rem; /* Make space for the icons */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .release-links {
+    top: 0.75rem;
+    right: 1rem;
+    max-width: 100px;
+    gap: 0.5rem;
+  }
+  
+  .platform-link {
+    font-size: 0.8rem;
+  }
+  
+  .platform-link.deezer-icon svg,
+  .platform-link svg {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  
+  .platform-link.tidal-icon svg {
+    width: 1.6rem;
+    height: 0.55rem;
+  }
+}
+/* Add this CSS to improve the TIDAL logo display */
+
+/* Specific adjustment for the TIDAL icon */
+.platform-link.tidal-icon svg {
+  width: 2.5rem !important; /* Force wider width */
+  height: 1rem !important; /* Adjust height */
+  overflow: visible; /* Prevent clipping */
+}
+
+/* Ensure full logo visibility in the top right corner */
+.release-links .platform-link.tidal-icon {
+  margin-right: 0.3rem; /* Add extra space on the right */
+  transform-origin: center; /* Center transform origin for hover scaling */
+}
+</style>
+<!-- Releases Section im modernen dunklen Design -->
+<section class="releases-section" id="releases">
+  <!-- Noch mehr schwebende Lichter mit größerem Radius -->
+  <div class="floating-light" style="left: 5%; top: 10%; animation-delay: 0s;"></div>
+  <div class="floating-light small" style="left: 15%; top: 25%; animation-delay: 2s;"></div>
+  <div class="floating-light large" style="left: 25%; top: 40%; animation-delay: 4s;"></div>
+  <div class="floating-light" style="left: 35%; top: 15%; animation-delay: 1s;"></div>
+  <div class="floating-light small" style="left: 45%; top: 30%; animation-delay: 3s;"></div>
+  <div class="floating-light" style="left: 55%; top: 20%; animation-delay: 5s;"></div>
+  <div class="floating-light large" style="left: 65%; top: 35%; animation-delay: 2s;"></div>
+  <div class="floating-light" style="left: 75%; top: 45%; animation-delay: 4s;"></div>
+  <div class="floating-light small" style="left: 85%; top: 30%; animation-delay: 1s;"></div>
+  <div class="floating-light" style="left: 95%; top: 20%; animation-delay: 3s;"></div>
+  <div class="floating-light large" style="left: 20%; top: 60%; animation-delay: 0s;"></div>
+  <div class="floating-light" style="left: 50%; top: 70%; animation-delay: 2s;"></div>
+  <div class="floating-light small" style="left: 10%; top: 50%; animation-delay: 3s;"></div>
+  <div class="floating-light" style="left: 30%; top: 55%; animation-delay: 1s;"></div>
+  <div class="floating-light large" style="left: 70%; top: 65%; animation-delay: 4s;"></div>
+  <div class="floating-light" style="left: 90%; top: 45%; animation-delay: 2s;"></div>
+  <div class="floating-light small" style="left: 40%; top: 75%; animation-delay: 3s;"></div>
+  <div class="floating-light" style="left: 60%; top: 80%; animation-delay: 1s;"></div>
+  
+  <div class="releases-container">
+    <div class="releases-heading fade-in-element">
+      <h2>
+        So klingt 
+        <span class="releases-title-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.58 91.64">
+            <defs>
+              <linearGradient id="title-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f8a838" />
+                <stop offset="100%" stop-color="#d57c0a" />
+              </linearGradient>
+            </defs>
+            <path d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+          </svg>
+        </span>
+      </h2>
+ <!-- Streaming Links mit Deezer-Herz und TIDAL-Schriftzug wie gewünscht -->
+ <div class="streaming-platforms">
+  <a href="https://open.spotify.com/artist/1Ecl9uVEThgbEiJWaPwF7B" target="_blank" class="platform-icon" aria-label="STEEL auf Spotify">
+    <i class="fab fa-spotify"></i>
+  </a>
+  <a href="#" target="_blank" class="platform-icon" aria-label="STEEL auf Apple Music">
+    <i class="fab fa-apple"></i>
+  </a>
+  <a href="#" target="_blank" class="platform-icon deezer-icon" aria-label="STEEL auf Deezer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+           2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+           18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+  </a>  
+  <a href="#" target="_blank" class="platform-icon" aria-label="STEEL auf Amazon Music">
+    <i class="fab fa-amazon"></i>
+  </a>
+  <a href="#" target="_blank" class="platform-icon tidal-icon" aria-label="STEEL auf TIDAL">
+    <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+      <text 
+        x="50%" 
+        y="50%" 
+        text-anchor="middle" 
+        dominant-baseline="middle"
+        fill="currentColor" 
+        font-family="Arial, sans-serif" 
+        font-size="12" 
+        font-weight="bold">
+        TIDAL
+      </text>
+    </svg>
+  </a>
+  <a href="https://soundcloud.com/steelofficial" target="_blank" class="platform-icon" aria-label="STEEL auf SoundCloud">
+    <i class="fab fa-soundcloud"></i>
+  </a>
+  <a href="#" target="_blank" class="platform-icon" aria-label="STEEL auf YouTube">
+    <i class="fab fa-youtube"></i>
+  </a>
+</div>
+</div>
+<div class="releases-list">
+       
+      <!-- Aktualisierter Release-Bereich mit Spotify-Playern und allen Streaming-Plattform-Icons -->
+      
+      <!-- Release Item 1 -->
+      <div class="release-item fade-in-element" style="transition-delay: 0.1s;">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">STEEL, GRATIFY</div>
+          <h3 class="release-title">Waterfalls (feat. Amanda Wilson)</h3>
+          <div class="release-meta">
+            <span class="release-year">2025</span>
+            <span class="release-label">Virgin Records (Universal)</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="1pY17VJbj2DHfT0NoAoyXk">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <!-- Spotify-Icon wurde entfernt, dafür alle anderen Icons hinzugefügt -->
+          <a href="https://music.apple.com/de/album/waterfalls-feat-amanda-wilson/1787470933" target="_blank" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="https://www.deezer.com/en/album/695319001" target="_blank" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="https://music.amazon.de/albums/B0DS46Y6QF" target="_blank" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="https://tidal.com/browse/track/410639647" target="_blank" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steel-official/waterfalls-feat-amanda-wilson" target="_blank" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="https://www.youtube.com/watch?v=gy8eO60aYuw" target="_blank" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Release Item 2 -->
+      <div class="release-item fade-in-element" style="transition-delay: 0.2s;">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">STEEL, FSDW, Gordon & Doyle</div>
+          <h3 class="release-title">Stand by Me</h3>
+          <div class="release-meta">
+            <span class="release-year">2021</span>
+            <span class="release-label">Golden Chocolate Records</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="7HiL5RWBUnw5FPpCP1U3IP">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <!-- Gleicher Aufbau wie bei Item 1 -->
+          <a href="#" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="#" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="#" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steelofficial" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Release Item 3 -->
+      <div class="release-item fade-in-element" style="transition-delay: 0.3s;">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">Felix Harrer, STEEL, LEZA</div>
+          <h3 class="release-title">Strobo Oder Mondlicht</h3>
+          <div class="release-meta">
+            <span class="release-year">2024</span>
+            <span class="release-label">Kontor Records</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="14oFOeznVecHwRFHFxOgVU">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <!-- Gleicher Aufbau wie bei Item 1 und 2 -->
+          <a href="#" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="#" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="#" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steelofficial" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Release Item 4 -->
+      <div class="release-item fade-in-element" style="transition-delay: 0.4s;">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">STEEL, HALO</div>
+          <h3 class="release-title">Bubbly</h3>
+          <div class="release-meta">
+            <span class="release-year">2024</span>
+            <span class="release-label">Playbox / Kontor</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="5LkyJQQVqmF8TPuTtEUyxF">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <!-- Gleicher Aufbau wie bei den vorherigen Items -->
+          <a href="#" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="#" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="#" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steelofficial" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Versteckte Release-Items (werden erst nach Klick auf "Mehr" angezeigt) -->
+      <!-- Diese sollten ebenfalls mit dem gleichen Muster aktualisiert werden -->
+      <div class="release-item hidden-release fade-in-element">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">Calmani & Grey, Chad Clemens</div>
+          <h3 class="release-title">To the Moon and Back (STEEL Remix)</h3>
+          <div class="release-meta">
+            <span class="release-year">2020</span>
+            <span class="release-label">WEPLAY Music</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="1fpyRCvG4IvggZabVfpVn7">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <!-- Gleicher Aufbau wie bei den sichtbaren Items -->
+          <a href="#" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="#" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="#" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steelofficial" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Weitere versteckte Items mit gleichem Schema -->
+      <div class="release-item hidden-release fade-in-element">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">MICAR, STEEL</div>
+          <h3 class="release-title">Runaway Train</h3>
+          <div class="release-meta">
+            <span class="release-year">2022</span>
+            <span class="release-label">LoudKult</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="5qVHAQFaXHpjZ8qExtaRPC">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <a href="#" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="#" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="#" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steelofficial" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="release-item hidden-release fade-in-element">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">STEEL</div>
+          <h3 class="release-title">Cry (Just A Little) (feat. Amanda Wilson)</h3>
+          <div class="release-meta">
+            <span class="release-year">2022</span>
+            <span class="release-label">Golden Chocolate Records</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="2yyIOMSLxgGHuOqTTdKpJV">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <a href="#" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="#" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="#" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steelofficial" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="release-item hidden-release fade-in-element">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">Deeperlove, STEEL</div>
+          <h3 class="release-title">Forever In My Mind</h3>
+          <div class="release-meta">
+            <span class="release-year">2024</span>
+            <span class="release-label">Playbox / Kontor</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="0StgJ51cx2DAtjFlz8617a">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <a href="#" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="#" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="#" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steelofficial" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="#" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
     
-    document.body.classList.remove('section-about', 'section-services', 'section-info', 'section-contact');
-    
-    const logo = document.querySelector('.logo');
-    const languageToggle = document.getElementById('language-toggle');
-    const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
-    
-    if (logo) {
-        const colorClasses = ['about-section', 'services-section', 'info-section', 'contact-section'];
-        logo.classList.remove(...colorClasses);
+    <a href="#" class="view-all-releases fade-in-element" id="load-more-releases">Mehr</a>
+  </div>
+</section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section fade-in-element" style="transition-delay: 0.1s;">
+        <h3>STEEL</h3>
+        <ul>
+          <li><a href="about.html">Über</a></li>
+          <li class="footer-divider"></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="weddings.html">Hochzeiten</a></li>
+          <li><a href="corporate.html">Corporate</a></li>
+        </ul>
+      </div>
+      <div class="footer-section fade-in-element" style="transition-delay: 0.2s;">
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Weltweite Bookings:</li>
+          <li><a href="mailto:info@steelmusic.net">info@steelmusic.net</a></li>
+        </ul>
+      </div>
+      <div class="footer-section fade-in-element" style="transition-delay: 0.3s;">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="https://instagram.com/steelofficial" target="_blank">Instagram</a></li>
+          <li><a href="https://tiktok.com/@steel.official" target="_blank">TikTok</a></li>
+        </ul>
+      </div>
+      <div class="footer-section fade-in-element" style="transition-delay: 0.4s;">
+        <h3>Rechtliches</h3>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 STEELmusic. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Lazy-loading für Spotify iFrames
+const spotifyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const placeholder = entry.target;
+      const trackId = placeholder.dataset.spotifyId;
+      
+      if (trackId) {
+        // Erstelle das iframe-Element
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://open.spotify.com/embed/track/${trackId}?utm_source=generator&theme=0`;
+        iframe.width = '100%';
+        iframe.height = '80';
+        iframe.frameBorder = '0';
+        iframe.allowTransparency = 'true';
+        iframe.allow = 'encrypted-media';
+        iframe.className = 'spotify-iframe';
         
-        if (languageToggle) languageToggle.classList.remove(...colorClasses);
-        if (mobileLanguageToggle) mobileLanguageToggle.classList.remove(...colorClasses);
+        // Ersetze den Platzhalter mit dem iframe
+        placeholder.parentNode.replaceChild(iframe, placeholder);
+        
+        // Beobachtung für dieses Element beenden
+        spotifyObserver.unobserve(placeholder);
+      }
     }
-    
-    const sections = [
-        { id: 'contact', bodyClass: 'section-contact', elementClass: 'contact-section' },
-        { id: 'info', bodyClass: 'section-info', elementClass: 'info-section' },
-        { id: 'services', bodyClass: 'section-services', elementClass: 'services-section' },
-        { id: 'about', bodyClass: 'section-about', elementClass: 'about-section' }
-    ];
-    
-    for (const section of sections) {
-        const elem = document.getElementById(section.id);
-        if (elem && scrollPos >= elem.offsetTop) {
-            document.body.classList.add(section.bodyClass);
-            
-            if (logo) logo.classList.add(section.elementClass);
-            if (languageToggle) languageToggle.classList.add(section.elementClass);
-            if (mobileLanguageToggle) mobileLanguageToggle.classList.add(section.elementClass);
-            
-            break;
+  });
+}, {
+  root: null,
+  rootMargin: '200px 0px', // Lädt den iFrame schon 200px bevor er sichtbar wird
+  threshold: 0.1
+});
+
+// Alle Spotify-Platzhalter beobachten
+document.querySelectorAll('.spotify-placeholder').forEach(placeholder => {
+  spotifyObserver.observe(placeholder);
+});
+      // Observer für Fade-in Animationen
+      const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      });
+      
+      // Alle Fade-in-Elemente zum Observer hinzufügen
+      document.querySelectorAll('.fade-in-element, .release-item, .view-all-releases, .footer-section').forEach(el => {
+        fadeObserver.observe(el);
+      });
+      
+      // Hero-Effekte
+      const heroSection = document.querySelector('.hero');
+      const heroContent = document.querySelector('.hero-content');
+      const heroBackground = document.querySelector('.hero-background');
+      
+      // Hero-Content einblenden
+      setTimeout(() => {
+        heroContent.classList.add('visible');
+      }, 300);
+      
+      // Hintergrund-Parallax beim Scrollen
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const heroHeight = heroSection.offsetHeight;
+        const scrollProgress = Math.min(scrollTop / heroHeight, 1);
+        
+        // Basics for header and hero effect
+        if (scrollTop > 50) {
+          document.body.classList.add('scrolled');
+          
+          // Hero-Content ausblenden beim Scrollen
+          if (scrollProgress > 0.2) {
+            heroContent.classList.add('hidden');
+            heroContent.classList.remove('visible');
+          }
+        } else {
+          document.body.classList.remove('scrolled');
+          
+          // Hero-Content einblenden beim Zurückscrollen
+          heroContent.classList.remove('hidden');
+          heroContent.classList.add('visible');
         }
-    }
-}
+        
+        // Verbesserter Parallax-Effekt für den Hintergrund
+        if (heroBackground) {
+          heroBackground.style.transform = `scale(${1 + scrollProgress * 0.1}) translateY(-${scrollProgress * 5}%)`;
+        }
+      });
 
-function updateSectionClasses() {
-    combinedColorUpdate();
-}
+      // Headerstil beim Scrollen anpassen
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.95)';
+          header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+        } else {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.8)';
+          header.style.boxShadow = 'none';
+        }
+      });
 
-function updateLogoColors() {}
-
-combinedColorUpdate();
-
-window.addEventListener('scroll', updateLogoColors);
-
-document.addEventListener('DOMContentLoaded', updateLogoColors);
-            
-            window.addEventListener('scroll', () => {
-                parallaxImages.forEach(image => {
-                    const container = image.closest('[data-parallax-intensity]');
-                    if (!container) return;
-                    
-                    const intensity = parseFloat(container.dataset.parallaxIntensity) / 10;
-                    const rect = container.getBoundingClientRect();
-                    const viewportHeight = window.innerHeight;
-                    
-                    if (rect.top < viewportHeight && rect.bottom > 0) {
-                        const scrollProgress = 1 - (rect.top + rect.height / 2) / (viewportHeight + rect.height);
-                        
-                        const scale = 1 + (scrollProgress * 0.1);
-                        image.style.transform = `scale(${Math.min(1.1, scale)})`;
-                    }
-                });
-                
-                if (stickyImage) {
-                    const stickyContainer = stickyImage.closest('.sticky-container');
-                    const containerTop = stickyContainer.offsetTop;
-                    const containerHeight = stickyContainer.offsetHeight;
-                    
-                    const scrollPosition = window.scrollY - containerTop;
-                    const scrollRatio = Math.min(1, Math.max(0, scrollPosition / containerHeight));
-                    
-                    const scale = 1 - (scrollRatio *.3);
-                    const opacity = 1 - (scrollRatio * .7);
-                    
-                    stickyImage.style.transform = `translateY(-50%) scale(${scale})`;
-                    stickyImage.style.opacity = opacity;
-                }
-            });
-            
-            initLanguageSwitcher();
-            
-            initContactForm();
+      // Apple-Style booking dropdown
+      const bookingToggle = document.getElementById('booking-toggle');
+      const bookingDropdown = document.getElementById('booking-dropdown');
+      
+      if (bookingToggle && bookingDropdown) {
+        bookingToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Toggle mit Animation
+          if (bookingDropdown.classList.contains('open')) {
+            bookingDropdown.classList.remove('open');
+          } else {
+            bookingDropdown.classList.add('open');
+          }
         });
         
-        function initLanguageSwitcher() {
-            const languageToggle = document.getElementById('language-toggle');
-            const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
-            let currentLanguage = 'de';
-            
-            const translations = {
-                de: {
-                    'nav-home': 'Home',
-                    'nav-about': 'Euer Tag',
-                    'nav-services': 'Leistungen',
-                    'nav-info': 'Infos',
-                    'nav-contact': 'Kontakt',
-                    'lang-switch': 'EN',
-                    'hero-text': 'Heiraten mit Stil. Und STEEL.',
-                    'cta-button': 'Anfrage senden',
-                    'about-title': 'Euer Tag rückt näher. Und jetzt?',
-                    'services-title': 'Eure Hochzeitsfeier',
-                    'info-title': 'Das solltet ihr noch wissen.',
-                    'contact-title': 'Passt? Prima.',
-                    'form-name': 'Name',
-                    'form-email': 'E-Mail',
-                    'form-phone': 'Telefon/Handy',
-                    'form-date': 'Hochzeitsdatum',
-                    'form-location': 'Ort',
-                    'form-details': 'Details',
-                    'submit-btn': 'Anfrage senden',
-                    'footer-contact': 'Kontakt',
-                    'footer-legal': 'Rechtliches',
-                    'copyright': '© 2025 STEELweddings. Alle Rechte vorbehalten.'
-                },
-                en: {
-                    'nav-home': 'Home',
-                    'nav-about': 'Your Day',
-                    'nav-services': 'Services',
-                    'nav-info': 'Info',
-                    'nav-contact': 'Contact',
-                    'lang-switch': 'DE',
-                    'hero-text': 'Weddings with style. And STEEL.',
-                    'cta-button': 'Send inquiry',
-                    'about-title': 'Your big day is approaching. What now?',
-                    'services-title': 'Your Wedding Party',
-                    'info-title': 'What you should know.',
-                    'contact-title': 'Sounds good?',
-                    'form-name': 'Name',
-                    'form-email': 'Email',
-                    'form-phone': 'Phone',
-                    'form-date': 'Wedding date',
-                    'form-location': 'Location',
-                    'form-details': 'Details',
-                    'submit-btn': 'Send inquiry',
-                    'footer-contact': 'Contact',
-                    'footer-legal': 'Legal',
-                    'copyright': '© 2025 STEELweddings. All rights reserved.'
-                }
-            };
-            
-            const englishTexts = {
-                'about-p1': 'Your wedding is <strong>exciting</strong> – especially for you. But your loved ones are also getting dressed up and ready to celebrate. That\'s where I come in. I believe you shouldn\'t <em>have to worry about the music</em>. I\'ll make sure your party is a complete success!',
-                'about-p2': 'The guests at your wedding are both young and old. To appeal to them, music should play that everyone knows (<strong>hits only!</strong>). Sometimes it\'s something from the 60s for twisting, another time from the 90s for thrashing. Current charts and <strong>electronic beats</strong> are also essential. All wrapped in a mix that doesn\'t scare anyone but still feels like you\'re in a club.',
-                'about-p3': 'Songs that connect you and your guests also play an important role here. <strong>#BachelorParty</strong>',
-                'service1-title': 'Finally, it\'s starting.',
-                'service1-p1': 'To open the dance floor, you are asked: Whether a <strong>Viennese Waltz</strong> or a <strong>Disco Fox</strong>, sometimes just a cozy swinging: Your song selection starts the party and an unforgettable night. Choose wisely – I\'m happy to support you.',
-                'service1-p2': 'You don\'t want a <strong>first dance</strong>? No problem. It\'s your wedding, and we\'ll design it the way you want it.',
-                'service2-title': 'Let\'s party.',
-                'service2-p1': 'Once the party is in full swing, there\'s no stopping. <strong>Live Mashups</strong> transport your guests to a different sound world – far away from the usual radio noise. I\'m happy to incorporate music requests at the right place in the mix.',
-                'service2-p2': 'At the latest when <strong>Beyoncé</strong> invites the next lucky ones to catch the bridal bouquet with her Single Ladies, the dance floor is safe from no hit (and guest)!',
-                'service3-title': 'Great technology.',
-                'service3-p1': 'Have you ever heard of <strong>Fohhn</strong>? Since 1993, the German company has been producing premium sound systems – all made in Germany. Depending on the location, my Fohhn system is sufficient for up to 200 people and more. So when I DJ, not only is the music selection right, but also the sound quality.',
-                'service3-p2': '<strong>Lighting</strong> is often undervalued in my opinion. Yet controllable lights create an epic atmosphere during the party and great photos afterward. With ambient spots, I can accurately set the scene at your location and create a cozy basic mood just with light as soon as it gets dark outside.',
-                'service3-p3': 'For even more <strong>club atmosphere</strong>, I have fog on request to really bring out the light beams in the room.',
-                'info-p1': 'I originally come from the <strong>club scene</strong> and still regularly DJ in discotheques today. Transitions and mixing are therefore very important to me. Above all, I make sure that consecutive songs fit together. I incorporate music requests at the point where they fit in. I basically don\'t play genres criss-cross – I\'m not a jukebox. If you want to experience me live: On <a href="https://instagram.com/steelofficial" target="_blank">Instagram</a>, I regularly announce when and where I\'m performing.',
-                'info-p2': 'Musically, I\'m an <strong>all-rounder</strong> (open format). I\'m also very knowledgeable about electronic music (<a href="https://linktr.ee/STEELofficial" target="_blank">and as STEEL, I also release such music myself</a>). I\'m definitely not the right person for weddings with a high proportion of German folk or après-ski music. There are other DJs for that.',
-                'info-p3': 'I\'m a <strong>DJ, not an entertainer or animator</strong>. I therefore focus on DJing and only rarely use the microphone when it fits well.',
-                'info-p4': 'By the way: I\'m a member of the <strong><a href="https://lovecrew-ruhrpott.de" target="_blank">Lovecrew Ruhrpott</a></strong>. This is an association of the best wedding service providers in the Ruhr area. If you\'re just starting your wedding planning, be sure to check it out!',
-                'contact-p1': 'Are you already getting excited about your wedding celebration? Very cool! Just ask, maybe I still have a date available. To be on the safe side, you should contact me about a year before your wedding. But I\'m sometimes available spontaneously too.',
-                'contact-p2': 'My prices start at <span class="highlight">1500,- €</span> (incl. VAT) for 7 hours and depend on what time I should start. I always play until at least 3 am. Open end on request!'
-            };
-            
-            const englishPlaceholders = {
-                'name': 'Who\'s getting married? :)',
-                'email': 'dreamcouple@email.com',
-                'phone': 'I call you maybe',
-                'location': 'Where will the party take place?',
-                'message': 'e.g. schedule, start time, number of guests, music'
-            };
-            
-            const switchLanguage = function(e) {
-                    e.preventDefault();
-                    
-                    currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
-                    document.documentElement.lang = currentLanguage;
-                    
-                    if (languageToggle) {
-                        languageToggle.textContent = translations[currentLanguage]['lang-switch'];
-                    }
-                    if (mobileLanguageToggle) {
-                        mobileLanguageToggle.textContent = translations[currentLanguage]['lang-switch'];
-                    }
-                    
-                    document.querySelector('.nav-links li:nth-child(1) a').textContent = translations[currentLanguage]['nav-home'];
-                    document.querySelector('.nav-links li:nth-child(2) a').textContent = translations[currentLanguage]['nav-about'];
-                    document.querySelector('.nav-links li:nth-child(3) a').textContent = translations[currentLanguage]['nav-services'];
-                    document.querySelector('.nav-links li:nth-child(4) a').textContent = translations[currentLanguage]['nav-info'];
-                    document.querySelector('.nav-links li:nth-child(5) a').textContent = translations[currentLanguage]['nav-contact'];
-                    
-                    const mobileLinks = document.querySelectorAll('#mobile-menu ul li');
-                    if (mobileLinks.length >= 5) {
-                        mobileLinks[0].querySelector('a').textContent = translations[currentLanguage]['nav-home'];
-                        mobileLinks[1].querySelector('a').textContent = translations[currentLanguage]['nav-about'];
-                        mobileLinks[2].querySelector('a').textContent = translations[currentLanguage]['nav-services'];
-                        mobileLinks[3].querySelector('a').textContent = translations[currentLanguage]['nav-info'];
-                        mobileLinks[4].querySelector('a').textContent = translations[currentLanguage]['nav-contact'];
-                    }
-                    
-                    document.querySelector('.hero p').textContent = translations[currentLanguage]['hero-text'];
-                    document.querySelector('.cta-button').textContent = translations[currentLanguage]['cta-button'];
-                    document.querySelector('.about-title').textContent = translations[currentLanguage]['about-title'];
-                    document.querySelector('.services-title').textContent = translations[currentLanguage]['services-title'];
-                    document.querySelector('.info-title').textContent = translations[currentLanguage]['info-title'];
-                    document.querySelector('.contact-title').textContent = translations[currentLanguage]['contact-title'];
-                    
-                    document.querySelector('label[for="name"]').textContent = translations[currentLanguage]['form-name'];
-                    document.querySelector('label[for="email"]').textContent = translations[currentLanguage]['form-email'];
-                    document.querySelector('label[for="phone"]').textContent = translations[currentLanguage]['form-phone'];
-                    document.querySelector('label[for="date"]').textContent = translations[currentLanguage]['form-date'];
-                    document.querySelector('label[for="location"]').textContent = translations[currentLanguage]['form-location'];
-                    document.querySelector('label[for="message"]').textContent = translations[currentLanguage]['form-details'];
-                    document.querySelector('.submit-btn').textContent = translations[currentLanguage]['submit-btn'];
-                    
-                    document.querySelector('.footer-section:nth-child(2) h3').textContent = translations[currentLanguage]['footer-contact'];
-                    document.querySelector('.footer-section:nth-child(3) h3').textContent = translations[currentLanguage]['footer-legal'];
-                    document.querySelector('.copyright p').textContent = translations[currentLanguage]['copyright'];
-                    
-                    if (currentLanguage === 'en') {
-                        for (const [id, content] of Object.entries(englishTexts)) {
-                            const element = document.getElementById(id);
-                            if (element) element.innerHTML = content;
-                        }
-                        
-                        for (const [id, placeholder] of Object.entries(englishPlaceholders)) {
-                            const element = document.getElementById(id);
-                            if (element) element.placeholder = placeholder;
-                        }
-                    } else {
-                        location.reload();
-                    }
-                };
-            
-            if (languageToggle) {
-                languageToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    switchLanguage(e);
-                });
-            }
-            
-            if (mobileLanguageToggle) {
-                mobileLanguageToggle.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    switchLanguage(e);
-                });
-            }
-            
-            window.switchLanguage = switchLanguage;
-        }
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!bookingDropdown.contains(event.target)) {
+            bookingDropdown.classList.remove('open');
+          }
+        });
         
-        function initContactForm() {
-            const contactForm = document.querySelector('.contact-form');
-            const formStatus = document.getElementById('form-status');
-            
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const name = document.getElementById('name').value;
-                    const email = document.getElementById('email').value;
-                    const date = document.getElementById('date').value;
-                    const location = document.getElementById('location').value;
-                    const message = document.getElementById('message').value;
-                    
-                    if (!name || !email || !date || !location || !message) {
-                        formStatus.textContent = document.documentElement.lang === 'de' ? 
-                            'Bitte fülle alle Pflichtfelder aus.' : 
-                            'Please fill in all required fields.';
-                        formStatus.className = 'form-status error';
-                        formStatus.style.display = 'block';
-                        return;
-                    }
-                    
-                    formStatus.textContent = document.documentElement.lang === 'de' ? 
-                        'Vielen Dank für deine Anfrage! Wir melden uns in Kürze bei dir.' : 
-                        'Thank you for your inquiry! We will get back to you soon.';
-                    formStatus.className = 'form-status success';
-                    formStatus.style.display = 'block';
-                    contactForm.reset();
-                    
-                    setTimeout(() => {
-                        formStatus.style.display = 'none';
-                    }, 5000);
-                });
+        // Prevent clicks inside dropdown from closing it
+        const bookingOptions = document.querySelector('.booking-options');
+        if (bookingOptions) {
+          bookingOptions.addEventListener('click', function(e) {
+            // Nur Links durchlassen, andere Klicks stoppen
+            if (e.target.tagName !== 'A') {
+              e.stopPropagation();
             }
+          });
         }
-    </script>
-    
-    <script>
-let menuOpen = false;
+      }
 
-function toggleMobileMenu(event) {
-    if (event) {
-        event.stopPropagation();
-    }
-    
-    const menu = document.getElementById('mobile-menu');
-    const toggle = document.getElementById('mobile-menu-toggle');
-    
-    if (menuOpen) {
-        menuOpen = false;
-        toggle.classList.remove('active');
+      // Initialize mobile menu
+      let menuOpen = false;
+
+      function toggleMobileMenu(event) {
+        if (event) {
+          event.stopPropagation();
+        }
         
-        const menuItems = menu.querySelectorAll('li');
-        menuItems.forEach(item => {
+        const menu = document.getElementById('mobile-menu');
+        const toggle = document.getElementById('mobile-menu-toggle');
+        
+        if (menuOpen) {
+          menuOpen = false;
+          toggle.classList.remove('active');
+          
+          const menuItems = menu.querySelectorAll('li');
+          menuItems.forEach(item => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(-10px)';
-        });
-        
-        setTimeout(() => {
+          });
+          
+          setTimeout(() => {
             menu.style.display = 'none';
-        }, 300);
-    } else {
-        menuOpen = true;
-        menu.style.display = 'block';
-        toggle.classList.add('active');
-        
-        setTimeout(() => {
+          }, 300);
+        } else {
+          menuOpen = true;
+          menu.style.display = 'block';
+          toggle.classList.add('active');
+          
+          setTimeout(() => {
             const menuItems = menu.querySelectorAll('li');
             menuItems.forEach(item => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            });
+          }, 10);
+        }
+      }
+
+      // Handle mobile menu
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleMobileMenu(e);
+        });
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        const menu = document.getElementById('mobile-menu');
+        const toggle = document.getElementById('mobile-menu-toggle');
+        
+        if (menuOpen && menu && !menu.contains(event.target) && !toggle.contains(event.target)) {
+          toggleMobileMenu();
+        }
+      });
+
+      // Close menu when clicking on links
+      const menuItems = document.querySelectorAll('#mobile-menu a');
+      menuItems.forEach(item => {
+        if (item.id !== 'mobile-language-toggle') {
+          item.addEventListener('click', function() {
+            setTimeout(() => {
+              toggleMobileMenu();
+            }, 100);
+          });
+        }
+      });
+
+      // Language switcher
+      const languageToggle = document.getElementById('language-toggle');
+      const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
+      let currentLanguage = 'de';
+
+      const switchLanguage = function(e) {
+        e.preventDefault();
+        
+        currentLanguage = currentLanguage === 'de' ? 'en' : 'de';
+        document.documentElement.lang = currentLanguage;
+        
+        if (languageToggle) {
+          languageToggle.textContent = currentLanguage === 'de' ? 'EN' : 'DE';
+        }
+        if (mobileLanguageToggle) {
+          mobileLanguageToggle.textContent = currentLanguage === 'de' ? 'EN' : 'DE';
+        }
+
+        // Weitere Übersetzungen hier
+      };
+
+      if (languageToggle) {
+        languageToggle.addEventListener('click', switchLanguage);
+      }
+      
+      if (mobileLanguageToggle) {
+        mobileLanguageToggle.addEventListener('click', switchLanguage);
+      }
+      
+      // "Mehr"-Button Funktionalität mit verbesserter Animation
+      const loadMoreButton = document.getElementById('load-more-releases');
+      const hiddenReleases = document.querySelectorAll('.hidden-release');
+      
+      if (loadMoreButton && hiddenReleases.length > 0) {
+        loadMoreButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Zeige versteckte Releases an mit verzögerter Animation
+          hiddenReleases.forEach((item, index) => {
+            setTimeout(() => {
+              item.style.display = 'flex';
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(20px)';
+              
+              // Animation zum sanften Einblenden
+              setTimeout(() => {
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 item.style.opacity = '1';
                 item.style.transform = 'translateY(0)';
+              }, 50);
+            }, index * 100); // Gestaffelte Animation
+          });
+          
+          // "Mehr"-Button mit Animation ausblenden
+          this.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          this.style.opacity = '0';
+          this.style.transform = 'translateY(-10px)';
+          
+          setTimeout(() => {
+            this.style.display = 'none';
+          }, 400);
+        });
+      }
+
+      // JavaScript für schwebende Lichter mit Scroll-Reaktion
+      const floatingLights = document.querySelectorAll('.floating-light');
+      let lastScrollY = window.scrollY;
+      
+      const handleLightScroll = () => {
+        const scrollY = window.scrollY;
+        const scrollDelta = scrollY - lastScrollY;
+        const sections = document.querySelector('.releases-section');
+        
+        if (sections) {
+          const sectionRect = sections.getBoundingClientRect();
+          
+          // Nur wenn die Section im Viewport ist
+          if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
+            floatingLights.forEach((light, index) => {
+              const baseSpeed = 1;
+              const speedModifier = (index + 1) * 0.1; // Jedes Licht hat eine leicht andere Geschwindigkeit
+              const movement = scrollDelta * baseSpeed * speedModifier;
+              
+              // Dynamische Anpassung der Lichtbewegung beim Scrollen
+              const currentTransform = light.style.transform || 'translateY(0)';
+              const currentY = parseFloat(currentTransform.match(/translateY\(([^)]+)\)/)?.[1] || '0');
+              
+              // Berechne neue Position basierend auf Scroll-Richtung
+              let newY = currentY + movement;
+              
+              // Sanfte Begrenzung des Bewegungsbereichs
+              if (newY > 100) newY = 100;
+              if (newY < -100) newY = -100;
+              
+              // Anwendung der neuen Transformation mit Transition für sanfte Bewegung
+              light.style.transition = 'transform 0.5s ease-out';
+              light.style.transform = `translateY(${newY}px)`;
+              
+              // Opacity-Änderung basierend auf Scroll-Richtung
+              if (scrollDelta > 0) {
+                // Nach unten scrollen - Lichter werden leicht transparenter
+                light.style.opacity = Math.max(0.2, 0.8 - Math.abs(scrollDelta) * 0.01);
+              } else {
+                // Nach oben scrollen - Lichter werden sichtbarer
+                light.style.opacity = Math.min(1, 0.5 + Math.abs(scrollDelta) * 0.01);
+              }
             });
-        }, 10);
-    }
-}
-
-function updateMobileMenuActiveState() {
-    const scrollPos = window.scrollY + 60;
-    const sections = [
-        { id: 'home', navId: 'mobile-nav-home', class: 'active' },
-        { id: 'about', navId: 'mobile-nav-about', class: 'about-active' },
-        { id: 'services', navId: 'mobile-nav-services', class: 'services-active' },
-        { id: 'info', navId: 'mobile-nav-info', class: 'info-active' },
-        { id: 'contact', navId: 'mobile-nav-contact', class: 'contact-active' }
-    ];
-    
-    sections.forEach(section => {
-        const navItem = document.getElementById(section.navId);
-        if (navItem) {
-            navItem.classList.remove('active', 'about-active', 'services-active', 'info-active', 'contact-active');
+          }
         }
+        
+        lastScrollY = scrollY;
+      };
+      
+      // Event-Listener für Scroll-Ereignisse
+      window.addEventListener('scroll', () => {
+        window.requestAnimationFrame(handleLightScroll);
+      }, { passive: true });
+      
+      // Initialisiere Lichter
+      floatingLights.forEach(light => {
+        light.style.opacity = '0.8';
+      });
+
+      // Preload Spotify-Verbindung für schnelleres Laden
+      const link = document.createElement('link');
+      link.rel = 'preconnect';
+      link.href = 'https://open.spotify.com';
+      document.head.appendChild(link);
     });
-    
-    let currentSection = 'home';
-    
-    for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i].id);
-        if (section && scrollPos >= section.offsetTop - 100) {
-            currentSection = sections[i].id;
-            break;
-        }
-    }
-    
-    const activeSection = sections.find(s => s.id === currentSection);
-    if (activeSection) {
-        const navItem = document.getElementById(activeSection.navId);
-        if (navItem) {
-            navItem.classList.add(activeSection.class);
-        }
-    }
-}
-
-document.addEventListener('click', function(event) {
-    const menu = document.getElementById('mobile-menu');
-    const toggle = document.getElementById('mobile-menu-toggle');
-    
-    if (menuOpen && menu && !menu.contains(event.target) && !toggle.contains(event.target)) {
-        toggleMobileMenu();
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleMobileMenu(e);
-        });
-    }
-    
-    const menuItems = document.querySelectorAll('#mobile-menu a');
-    menuItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            if (this.id === 'mobile-language-toggle') {
-                e.preventDefault();
-                
-                const languageToggleFn = window.switchLanguage;
-                if (typeof languageToggleFn === 'function') {
-                    languageToggleFn(e);
-                }
-            }
-            
-            setTimeout(() => {
-                toggleMobileMenu();
-            }, 100);
-        });
-    });
-    
-    window.addEventListener('scroll', updateMobileMenuActiveState);
-    
-    updateMobileMenuActiveState();
-});
-    </script>
+  </script>
 </body>
 </html>
