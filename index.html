@@ -1071,17 +1071,22 @@ footer {
     margin: 0;
 }
 
-/* Mobile Menu */
+/* CSS für die mobile Menü Animation */
+/* Füge diese CSS-Regeln in deinen style-Bereich ein, falls sie nicht bereits vorhanden sind */
+
 .mobile-menu-toggle {
     display: none;
     cursor: pointer;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    z-index: 2000;
+    position: relative; /* WICHTIG: position:relative statt fixed */
+    z-index: 2002;
+    width: 30px;
+    height: 30px;
 }
 
+/* Die drei Balken des Hamburger-Icons */
 .mobile-menu-toggle span {
     display: block;
     width: 24px;
@@ -1092,22 +1097,28 @@ footer {
     border-radius: 1px;
 }
 
+/* X-Animation: Erster Balken */
 .mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
+    transform: rotate(45deg) translate(5px, 5px) !important;
 }
 
+/* X-Animation: Zweiter Balken */
 .mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0 !important;
 }
 
+/* X-Animation: Dritter Balken */
 .mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(4px, -4px);
+    transform: rotate(-45deg) translate(5px, -5px) !important;
 }
 
+/* Mobile Menü Container */
 .mobile-menu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
     display: none;
     position: fixed;
-    top: 0;
+    top: 60px;
     left: 0;
     width: 100%;
     height: auto;
@@ -1115,29 +1126,19 @@ footer {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1999;
-    padding: 80px 0 30px;
+    padding: 20px 0 30px;
     text-align: center;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
+/* Menüpunkte Animation */
 .mobile-menu li {
     margin: 15px 0;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
-}
-
-.mobile-menu.active li {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .mobile-menu li:nth-child(1) { transition-delay: 0.05s; }
@@ -1189,6 +1190,39 @@ footer {
     width: 80%;
 }
 
+/* Sprachumschalter im mobilen Menü */
+#mobile-language-toggle {
+  background-color: rgba(243, 147, 13, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(243, 147, 13, 0.3);
+  width: auto;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+#mobile-language-toggle:hover {
+  background-color: rgba(243, 147, 13, 0.4);
+  border-color: rgba(243, 147, 13, 0.6);
+}
+
+/* Optionale Trennlinie über dem Sprachumschalter */
+#mobile-menu li:last-child {
+  position: relative;
+  margin-top: 30px;
+}
+
+#mobile-menu li:last-child:before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 35%;
+  right: 35%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
 /* About-Link im Mobile-Menü */
 .mobile-menu .about-link {
     font-weight: 400;
@@ -1219,6 +1253,8 @@ footer {
     
     .nav-container {
         padding: 1rem;
+        position: relative;
+        z-index: 2001;
     }
     
     .footer-section {
@@ -2588,77 +2624,6 @@ document.querySelectorAll('.spotify-placeholder').forEach(placeholder => {
         }
       }
 
-      // Initialize mobile menu
-      let menuOpen = false;
-
-      function toggleMobileMenu(event) {
-        if (event) {
-          event.stopPropagation();
-        }
-        
-        const menu = document.getElementById('mobile-menu');
-        const toggle = document.getElementById('mobile-menu-toggle');
-        
-        if (menuOpen) {
-          menuOpen = false;
-          toggle.classList.remove('active');
-          
-          const menuItems = menu.querySelectorAll('li');
-          menuItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(-10px)';
-          });
-          
-          setTimeout(() => {
-            menu.style.display = 'none';
-          }, 300);
-        } else {
-          menuOpen = true;
-          menu.style.display = 'block';
-          toggle.classList.add('active');
-          
-          setTimeout(() => {
-            const menuItems = menu.querySelectorAll('li');
-            menuItems.forEach(item => {
-              item.style.opacity = '1';
-              item.style.transform = 'translateY(0)';
-            });
-          }, 10);
-        }
-      }
-
-      // Handle mobile menu
-      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-      if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          toggleMobileMenu(e);
-        });
-      }
-
-      // Close menu when clicking outside
-      document.addEventListener('click', function(event) {
-        const menu = document.getElementById('mobile-menu');
-        const toggle = document.getElementById('mobile-menu-toggle');
-        
-        if (menuOpen && menu && !menu.contains(event.target) && !toggle.contains(event.target)) {
-          toggleMobileMenu();
-        }
-      });
-
-      // Close menu when clicking on links
-      const menuItems = document.querySelectorAll('#mobile-menu a');
-      menuItems.forEach(item => {
-        if (item.id !== 'mobile-language-toggle') {
-          item.addEventListener('click', function() {
-            setTimeout(() => {
-              toggleMobileMenu();
-            }, 100);
-          });
-        }
-      });
-
       // Language switcher
       const languageToggle = document.getElementById('language-toggle');
       const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
@@ -2788,6 +2753,77 @@ document.querySelectorAll('.spotify-placeholder').forEach(placeholder => {
       link.href = 'https://open.spotify.com';
       document.head.appendChild(link);
     });
+// Verbessertes mobiles Menü mit Animation
+document.getElementById('mobile-menu-toggle').onclick = function() {
+  var menu = document.getElementById('mobile-menu');
+  var toggle = document.getElementById('mobile-menu-toggle');
+  
+  toggle.classList.toggle('active');
+  
+  if (menu.style.display === 'block') {
+    // Animation zum Ausblenden
+    menu.style.opacity = '0';
+    
+    setTimeout(function() {
+      menu.style.display = 'none';
+      // Reset Menüpunkt-Animationen
+      document.querySelectorAll('#mobile-menu li').forEach(function(item) {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(-10px)';
+      });
+    }, 300);
+  } else {
+    // Menü einblenden
+    menu.style.display = 'block';
+    
+    // Kurze Verzögerung für CSS-Transition
+    setTimeout(function() {
+      menu.style.opacity = '1';
+      
+      // Menüpunkte animieren
+      document.querySelectorAll('#mobile-menu li').forEach(function(item, index) {
+        setTimeout(function() {
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        }, 100 + (index * 50));
+      });
+    }, 10);
+  }
+  
+  return false;
+};
+
+// Schließen bei Klick auf Menüpunkte
+document.querySelectorAll('#mobile-menu a:not(#mobile-language-toggle)').forEach(function(link) {
+  link.onclick = function() {
+    // Nach kurzem Delay schließen (für Feedback)
+    setTimeout(function() {
+      document.getElementById('mobile-menu-toggle').classList.remove('active');
+      document.getElementById('mobile-menu').style.opacity = '0';
+      
+      setTimeout(function() {
+        document.getElementById('mobile-menu').style.display = 'none';
+      }, 300);
+    }, 100);
+  };
+});
+
+// Schließen bei Klick außerhalb des Menüs
+document.addEventListener('click', function(event) {
+  var menu = document.getElementById('mobile-menu');
+  var toggle = document.getElementById('mobile-menu-toggle');
+  
+  if (menu.style.display === 'block' && 
+      !menu.contains(event.target) && 
+      !toggle.contains(event.target)) {
+    toggle.classList.remove('active');
+    menu.style.opacity = '0';
+    
+    setTimeout(function() {
+      menu.style.display = 'none';
+    }, 300);
+  }
+});
   </script>
 </body>
 </html>
