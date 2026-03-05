@@ -1,0 +1,4007 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <link rel="canonical" href="https://www.steelmusic.net/">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="assets/css/cookie-banner.css">
+    <link rel="preconnect" href="https://i.scdn.co">
+
+    <title>STEEL | DJ & Artist – Hochzeiten, Clubs & Festivals, Corporate Events</title>
+    <meta name="description" content="STEEL ist Profi-DJ für exklusive Hochzeiten, Clubs, Festivals und Corporate Events. Buchbar im Ruhrgebiet, NRW und als Destination Wedding DJ weltweit.">
+    <meta name="keywords" content="DJ Ruhrgebiet, DJ NRW, Hochzeits DJ NRW, Corporate DJ, Profi Event DJ, Club DJ NRW, DJ Destination Wedding">
+    <meta name="author" content="STEEL">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.steelmusic.net/">
+    <meta property="og:title" content="STEEL | DJ & Artist – Weddings, Clubs & Festivals, Corporate Events">
+    <meta property="og:description" content="Exklusive Events mit echtem Club-Sound & Feeling. STEEL ist als DJ im Ruhrgebiet, in NRW und auf der ganzen Welt zuhause.">
+    <meta property="og:image" content="https://www.steelmusic.net/images/index/steel-hochzeits-club-festival-corporate-dj.webp">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.steelmusic.net/">
+    <meta property="twitter:title" content="STEEL | DJ & Artist – Weddings, Clubs & Festivals, Corporate Events">
+    <meta property="twitter:description" content="Exklusive Events mit echtem Club-Sound & Feeling. In NRW und weltweit.">
+    <meta property="twitter:image" content="https://www.steelmusic.net/images/index/steel-hochzeits-club-festival-corporate-dj.webp">
+
+    <link rel="preload" as="image" href="images/index/steel-hochzeits-club-festival-corporate-dj.webp">
+    <style>
+        :root {
+            --primary-color: #f3930d;
+            --secondary-color: #e67e22;
+            --gradient-light: #f8a838;
+            --gradient-dark: #d57c0a;
+            --weddings-color: var(--primary-color);
+            --weddings-secondary: var(--secondary-color);
+            --live-color: var(--primary-color);
+            --live-secondary: var(--secondary-color);
+            --corporate-color: var(--primary-color);
+            --corporate-secondary: var(--secondary-color);
+            --about-color: var(--primary-color);
+            --about-secondary: var(--secondary-color);
+            --light-bg: #1e1e20;
+            --dark-bg: #121214;
+            --darker-bg: #0c0c0e;
+            --dark-text: #f5f5f7;
+            --light-text: #f5f5f7;
+            --text-secondary: #bbbbbb;
+            --transition: all 0.4s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            overflow-x: hidden;
+            color: var(--light-text);
+            background-color: var(--darker-bg);
+        }
+        
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            letter-spacing: 0.01rem;
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(30, 30, 32, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            height: 60px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 34px;
+            display: block;
+            position: relative;
+        }
+
+        #steel-logo path {
+            transition: fill 0.6s ease;
+            fill: url(#logo-gradient);
+        }
+
+        /* Neues Styling für die Menüpunkte */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+/* Grundlegende Abstände für alle Menüpunkte */
+.nav-links li {
+    margin-left: 0.75rem; /* Reduzierter Standard-Abstand zwischen Elementen */
+    font-size: 0.9rem;
+}
+        
+/* Ersetze die bestehenden Hover-Styles */
+.nav-links a {
+    position: relative;
+    text-decoration: none;
+    color: var(--light-text);
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    right: 12px;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    background-color: transparent; /* Kein Hintergrund mehr */
+}
+/* Service-Links */
+.nav-links .service-link {
+    font-weight: 500;
+}
+        
+        /* Hover-Effekte */
+        .nav-links a:hover {
+            color: var(--primary-color);
+            background-color: rgba(243, 147, 13, 0.1);
+            text-decoration: none;
+            border-bottom: none;
+        }
+        
+/* Trennlinie mit ausgewogenen Abständen */
+.service-divider {
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 0.1rem 0 0.1rem; /* Gleicher Abstand wie zwischen Menüpunkten */
+}
+        
+        a, .logo, .nav-links a, .footer-section a {
+            text-decoration: none;
+            border-bottom: none;
+        }
+        
+/* Sprachumschalter */
+.language-switch {
+    margin-left: 0.5rem; /* Größerer Abstand zum vorherigen Bereich */
+    padding-left: 0.75rem; /* Konsistenter Innenabstand */
+}
+        
+        .language-switch a {
+            background-color: rgba(243, 147, 13, 0.2);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .language-switch a:hover {
+            background-color: rgba(243, 147, 13, 0.4);
+            border-color: rgba(243, 147, 13, 0.6);
+        }
+
+        /* Minimalistischer Hero-Bereich ohne Kästen */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Zentriert den Inhalt vertikal */
+            background-color: var(--darker-bg);
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 160px; /* Platz für den Booking-Button unten */
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0, 0, 0, 0) 0%, 
+                rgba(0, 0, 0, 0.3) 60%, 
+                rgba(0, 0, 0, 0.8) 100%);
+            z-index: 1;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background-image: url('images/index/steel-hochzeits-club-festival-corporate-dj.webp');
+            background-size: cover;
+            background-position: center 30%;
+            
+            /* HIER IST DIE ÄNDERUNG: Nur die sanfte Animation, kein Fixed/Scroll Zeug */
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
+
+        /* Die Animation definieren (falls noch nicht vorhanden) */
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+        
+        /* WICHTIG: Diese Klasse LÖSCHEN oder so lassen, sie wird nicht mehr gebraucht */
+        .scrolled .hero-background {
+            /* transform: ...  <-- Das hier verursachte das Problem */
+            transform: none; 
+        }
+        
+        .scrolled .hero-background {
+            transform: scale(1.05) translateY(-2%); /* Leichte Skalierung und Verschiebung beim Scrollen */
+        }
+        
+        @keyframes heroAnimation {
+            0% {
+                transform: scale(1) translate(0, 0);
+                filter: brightness(1);
+            }
+            50% {
+                transform: scale(1.03) translate(-5px, -5px);
+                filter: brightness(1.05) saturate(1.05);
+            }
+            100% {
+                transform: scale(1.05) translate(5px, 0);
+                filter: brightness(1.1) saturate(1.1);
+            }
+        }
+        
+        /* Releases Section - Statische Version ohne Animation */
+        .releases-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .releases-heading h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .releases-heading p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .releases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .release-card {
+            background: rgba(30, 30, 32, 0.7);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .release-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+        }
+        
+        .view-all-releases {
+            display: block;
+            margin: 3rem auto 0;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .view-all-releases:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+
+        
+        /* Apple-Style Booking Dropdown - Im unteren Bereich */
+        .booking-container {
+            position: absolute;
+            bottom: 80px; /* Abstand vom unteren Rand */
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .booking-dropdown {
+            position: relative;
+            z-index: 100;
+            text-align: center;
+            max-width: 230px;
+            width: 230px;
+        }
+        
+        .booking-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s ease;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .booking-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+        
+        .booking-button i {
+            transition: transform 0.2s ease;
+            font-size: 0.8rem;
+            margin-left: 2px;
+        }
+        
+        .booking-dropdown.open .booking-button i {
+            transform: rotate(180deg);
+        }
+        
+        .booking-options {
+            position: absolute;
+            bottom: 110%; /* Nach oben öffnen */
+            left: 0;
+            width: 100%;
+            background: rgba(30, 30, 32, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: all 0.2s ease;
+            transform: translateY(5px) scale(0.98);
+            transform-origin: bottom center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .booking-dropdown.open .booking-options {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+        
+        .booking-option {
+            display: block;
+            padding: 0.9rem 1.2rem;
+            color: var(--light-text);
+            text-decoration: none;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background-color 0.15s ease;
+        }
+        
+        .booking-option:last-child {
+            border-bottom: none;
+        }
+        
+        .booking-option:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        
+        .booking-option-content {
+            width: 100%;
+        }
+        
+        .booking-option-content h4 {
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.1rem;
+            color: white;
+        }
+        
+        .booking-option-content p {
+            font-size: 0.75rem;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+/* CSS für den aufgepeppten Apple-Style Releases Section */
+.releases-section {
+    background-color: var(--light-bg);
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Apple-artiger mehrschichtiger Hintergrund */
+.releases-section::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+        linear-gradient(135deg, rgba(248, 168, 56, 0.05), transparent 70%),
+        linear-gradient(45deg, transparent 30%, rgba(213, 124, 10, 0.03) 60%),
+        radial-gradient(at 20% 30%, rgba(248, 168, 56, 0.04), transparent 60%),
+        radial-gradient(at 80% 70%, rgba(213, 124, 10, 0.04), transparent 60%);
+    z-index: 0;
+}
+
+/* Subtiles Noise und Muster für Tiefe */
+.releases-section::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: 
+        /* Organisches Noise-Pattern */
+        radial-gradient(circle, rgba(255,255,255,.008) 0.5px, transparent 0.5px),
+        /* Wellenartiges Muster */
+        linear-gradient(to right, rgba(243, 147, 13, 0.01) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(243, 147, 13, 0.01) 1px, transparent 1px);
+    background-size: 25px 25px, 80px 80px, 80px 80px;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+/* Schwebende Lichter ohne Blur */
+.floating-light {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(243, 147, 13, 0.6);
+    border-radius: 50%;
+    z-index: 5;
+    box-shadow: 0 0 10px 2px rgba(243, 147, 13, 0.3);
+    animation: floatLightGentle 20s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.floating-light.small {
+    width: 1px;
+    height: 1px;
+    box-shadow: 0 0 6px 1px rgba(243, 147, 13, 0.4);
+    animation-duration: 15s;
+}
+
+.floating-light.large {
+    width: 3px;
+    height: 3px;
+    box-shadow: 0 0 15px 3px rgba(243, 147, 13, 0.3);
+    animation-duration: 25s;
+}
+
+/* Noch größerer Bewegungsradius */
+@keyframes floatLightGentle {
+    0% { 
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+    25% { 
+        transform: translate(60px, 80px);
+        opacity: 0.8;
+    }
+    50% { 
+        transform: translate(-70px, 120px);
+        opacity: 0.9;
+    }
+    75% { 
+        transform: translate(80px, -60px);
+        opacity: 0.5;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+}
+
+@keyframes floatLightGentleAlt {
+    0% { 
+        transform: translate(0, 0);
+        opacity: 0.4;
+    }
+    33% { 
+        transform: translate(-100px, 90px);
+        opacity: 0.9;
+    }
+    66% { 
+        transform: translate(120px, -80px);
+        opacity: 0.6;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 0.4;
+    }
+}
+
+@keyframes floatLightSlow {
+    0% { 
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+    50% { 
+        transform: translate(140px, -100px);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 0.3;
+    }
+}
+
+/* Diagonale Bewegung */
+@keyframes floatLightDiagonal {
+    0% { 
+        transform: translate(0, 0);
+        opacity: 0.4;
+    }
+    50% { 
+        transform: translate(100px, 100px);
+        opacity: 0.8;
+    }
+    100% { 
+        transform: translate(0, 0);
+        opacity: 0.4;
+    }
+}
+
+/* Animationen auf verschiedene Lichter anwenden */
+.floating-light:nth-child(1) { animation: floatLightGentle 18s ease-in-out infinite; }
+.floating-light:nth-child(2) { animation: floatLightGentleAlt 20s ease-in-out infinite; }
+.floating-light:nth-child(3) { animation: floatLightSlow 25s ease-in-out infinite; }
+.floating-light:nth-child(4) { animation: floatLightGentle 22s ease-in-out infinite; }
+.floating-light:nth-child(5) { animation: floatLightGentleAlt 19s ease-in-out infinite; }
+.floating-light:nth-child(6) { animation: floatLightSlow 24s ease-in-out infinite; }
+.floating-light:nth-child(7) { animation: floatLightGentle 21s ease-in-out infinite; }
+.floating-light:nth-child(8) { animation: floatLightGentleAlt 17s ease-in-out infinite; }
+.floating-light:nth-child(9) { animation: floatLightSlow 23s ease-in-out infinite; }
+.floating-light:nth-child(10) { animation: floatLightGentle 20s ease-in-out infinite; }
+.floating-light:nth-child(11) { animation: floatLightGentleAlt 16s ease-in-out infinite; }
+.floating-light:nth-child(12) { animation: floatLightSlow 22s ease-in-out infinite; }
+.floating-light:nth-child(13) { animation: floatLightDiagonal 18s ease-in-out infinite; }
+.floating-light:nth-child(14) { animation: floatLightGentle 20s ease-in-out infinite; }
+.floating-light:nth-child(15) { animation: floatLightGentleAlt 19s ease-in-out infinite; }
+.floating-light:nth-child(16) { animation: floatLightSlow 23s ease-in-out infinite; }
+.floating-light:nth-child(17) { animation: floatLightDiagonal 21s ease-in-out infinite; }
+.floating-light:nth-child(18) { animation: floatLightGentle 17s ease-in-out infinite; }
+
+/* Logo-Integration bleibt gleich */
+.releases-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.releases-heading h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.releases-title-logo {
+    display: inline-block;
+    height: 40px;
+    width: auto;
+    margin: 0 8px;
+    position: relative;
+    top: 3px;
+}
+
+.releases-title-logo svg {
+    height: 100%;
+    width: auto;
+}
+
+.releases-title-logo path {
+    fill: url(#title-gradient);
+}
+
+/* Improved Glassmorphism Container */
+.releases-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    background: rgba(30, 30, 32, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+        
+.releases-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.releases-heading.scroll-fade-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.releases-heading.scroll-fade-element.hidden {
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+.releases-heading h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.releases-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Neue Release-Liste im Stil des Bildes */
+.releases-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.release-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(30, 30, 34, 0.8);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    margin-bottom: 1.2rem;
+}
+
+.release-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.release-item:hover {
+    transform: translateY(-3px) !important;
+    background-color: rgba(35, 35, 40, 0.95);
+}
+
+.release-accent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--gradient-light), var(--gradient-dark));
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+.release-info {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+/* Künstler-Anzeige */
+.release-artist {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.release-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--light-text);
+}
+
+.release-meta {
+    display: flex;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.release-year {
+    margin-right: 1rem;
+}
+
+.release-label {
+    color: var(--text-secondary);
+}
+
+/* Spotify-Embed-Container */
+.spotify-embed-container {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spotify-embed-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.spotify-iframe {
+    border-radius: 12px;
+    background-color: #181818;
+}
+
+/* Repositioning the streaming icons to the top-right corner (without background boxes) */
+.release-item {
+  position: relative; /* Ensure proper positioning context */
+}
+
+.release-links {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  width: auto;
+  max-width: 120px; /* Limit width for proper positioning */
+  justify-content: flex-end;
+  z-index: 10;
+}
+
+.platform-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  margin-bottom: 0.25rem;
+  text-decoration: none;
+  /* No background, removed border and other box styling */
+}
+
+.platform-link:hover {
+  transform: scale(1.15);
+}
+
+/* Keep the specific hover effects for different platforms */
+.platform-link:hover .fa-apple { color: #FC3C44; }
+.platform-link:hover.deezer-icon svg { fill: #A238FF; }
+.platform-link:hover .fa-amazon { color: #FF9900; }
+.platform-link:hover .fa-soundcloud { color: #FF5500; }
+.platform-link:hover .fa-youtube { color: #FF0000; }
+/* Spezifische Tidal-Hover-Regel mit höherer Spezifität */
+.release-links .platform-link.tidal-icon:hover,
+.platform-link.tidal-icon:hover {
+  color: #FFFFFF !important;
+}
+
+.release-links .platform-link.tidal-icon:hover svg,
+.platform-link.tidal-icon:hover svg {
+  fill: #FFFFFF !important;
+}
+
+.release-links .platform-link.tidal-icon:hover svg text,
+.platform-link.tidal-icon:hover svg text {
+  fill: #FFFFFF !important;
+}
+
+/* Adjust the release info to have full width */
+.release-info {
+  flex: 1;
+  width: 100%;
+  padding-right: 3rem; /* Make space for the icons */
+}
+
+/* Specific adjustment for the TIDAL icon */
+.platform-link.tidal-icon svg {
+  width: 1.8rem !important; /* Force wider width */
+  height: 0.65rem !important; /* Adjust height */
+  overflow: visible; /* Prevent clipping */
+}
+
+/* Ensure full logo visibility in the top right corner */
+.release-links .platform-link.tidal-icon {
+  margin-left: 1rem;
+  transform-origin: center; /* Center transform origin for hover scaling */
+}
+
+/* Angepasste Position und Größe für Short Facts */
+.short-facts-container {
+  position: absolute;
+  top: auto;
+  bottom: 4vh;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.short-fact-divider {
+  width: 0px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 0.2rem;
+}
+
+.short-fact-highlight {
+  color: var(--light-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Instagram Link im Apple-Stil */
+.instagram-link {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 0.45rem 0.8rem;
+  transition: all 0.2s ease;
+  color: white;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.instagram-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.instagram-link i {
+  font-size: 1rem;
+  margin-right: 0.4rem;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.instagram-text {
+  font-size: 0.9rem;
+}
+
+/* Mobile Anpassungen */
+@media (max-width: 768px) {
+  .instagram-link {
+    padding: 0.45rem 0.8rem;
+  }
+}
+
+/* Services Section - Kompakter Stil */
+.services-section {
+  background-color: var(--darker-bg);
+  padding: 4rem 2rem; /* Reduziertes vertikales Padding */
+  position: relative;
+  overflow: hidden;
+  margin-top: 0px;
+}
+
+/* Hintergrund-Effekte beibehalten */
+.services-section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: 
+    linear-gradient(135deg, rgba(243, 147, 13, 0.05), transparent 70%),
+    linear-gradient(45deg, transparent 30%, rgba(230, 126, 34, 0.03) 60%),
+    radial-gradient(at 20% 30%, rgba(243, 147, 13, 0.04), transparent 60%),
+    radial-gradient(at 80% 70%, rgba(229, 126, 34, 0.04), transparent 60%);
+  z-index: 0;
+}
+
+.services-section::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: 
+    radial-gradient(circle, rgba(255,255,255,.008) 0.5px, transparent 0.5px),
+    linear-gradient(to right, rgba(243, 147, 13, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(243, 147, 13, 0.01) 1px, transparent 1px);
+  background-size: 25px 25px, 80px 80px, 80px 80px;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Kompaktere Überschrift */
+.services-heading {
+  text-align: center;
+  margin-bottom: 2rem; /* Reduzierter Abstand */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.services-heading.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.services-heading h2 {
+  font-size: 2.2rem; /* Etwas kleinere Schrift */
+  font-weight: 600;
+  color: var(--light-text);
+  margin-bottom: 0.5rem; /* Reduzierter Abstand */
+}
+
+/* Titan-Effekt für "Meine Musik" - Subtile Version */
+.services-highlight {
+  background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  
+  /* Titan Glow-Effekt - weniger intensiv */
+  position: relative;
+  display: inline-block;
+  text-shadow: 
+    0 0 8px rgba(248, 168, 56, 0.4),
+    0 0 15px rgba(248, 168, 56, 0.3),
+    0 0 25px rgba(248, 168, 56, 0.2);
+  filter: 
+    drop-shadow(0 0 10px rgba(248, 168, 56, 0.4))
+    drop-shadow(0 0 18px rgba(213, 124, 10, 0.3));
+    
+  /* Apple-Style Animation */
+  animation: titanGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes titanGlow {
+  0% {
+    text-shadow: 
+      0 0 8px rgba(248, 168, 56, 0.4),
+      0 0 15px rgba(248, 168, 56, 0.3),
+      0 0 25px rgba(248, 168, 56, 0.2);
+    filter: 
+      drop-shadow(0 0 10px rgba(248, 168, 56, 0.4))
+      drop-shadow(0 0 18px rgba(213, 124, 10, 0.3));
+  }
+  100% {
+    text-shadow: 
+      0 0 12px rgba(248, 168, 56, 0.6),
+      0 0 20px rgba(248, 168, 56, 0.4),
+      0 0 30px rgba(248, 168, 56, 0.3);
+    filter: 
+      drop-shadow(0 0 15px rgba(248, 168, 56, 0.6))
+      drop-shadow(0 0 25px rgba(213, 124, 10, 0.4));
+  }
+}
+
+.services-heading p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem; /* Kleinere Schrift */
+  color: var(--text-secondary);
+}
+
+/* Kompakteres Grid mit kleineren Abständen */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; /* Kleinerer Abstand zwischen Karten */
+}
+
+/* Kompaktere Service-Karten */
+.service-card {
+  position: relative;
+  height: 200px; /* Noch weiter reduzierte Höhe für kompakteres Layout */
+  background: rgba(30, 30, 32, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px; /* Leicht verkleinert */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02); /* Leicht reduzierter Hover-Effekt */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover .service-card-bg {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.service-card:hover .service-cta {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Kompakterer Inhalt */
+.service-card-content {
+  position: relative;
+  z-index: 10;
+  padding: 1.5rem; /* Reduziertes Padding */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Update für echte Bilder (statt Hintergrund) */
+.service-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* WICHTIG: Verhält sich wie background-size: cover */
+    object-position: center; /* Standard-Fokus: Mitte */
+    z-index: 0;
+    transition: transform 0.6s ease;
+}
+
+/* Kleineres Service-Icon */
+.service-icon {
+  font-size: 1.5rem; /* Kleineres Icon */
+  margin-bottom: 1rem; /* Reduzierter Abstand */
+  color: var(--primary-color);
+  width: 50px; /* Kleineres Icon-Container */
+  height: 50px; /* Kleineres Icon-Container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(243, 147, 13, 0.1);
+  border-radius: 14px; /* Entsprechend angepasst */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  background: rgba(243, 147, 13, 0.2);
+}
+
+/* Kompaktere Typografie mit konsistenter Ausrichtung und reduzierten Abständen */
+.service-card h3 {
+  font-size: 1.3rem; /* Kleinere Überschrift */
+  font-weight: 600;
+  margin-bottom: 0.2rem; /* Noch weiter reduzierter Abstand */
+  color: var(--light-text);
+  padding-left: 0; /* Konsistente Ausrichtung */
+}
+
+.service-card p {
+  font-size: 0.9rem; /* Kleinerer Text */
+  color: var(--text-secondary);
+  margin-top: 0; /* Kein Abstand nach oben */
+  margin-bottom: 0.6rem; /* Deutlich reduzierter Abstand */
+  line-height: 1.3; /* Noch kompaktere Zeilenhöhe */
+  padding-left: 0; /* Konsistente Ausrichtung */
+}
+
+.service-cta {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.9rem; /* Kleinerer Text */
+  color: var(--primary-color);
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateX(0); /* Entfernen des negativen X-Offsets */
+  width: fit-content;
+  padding-left: 0; /* Konsistente Ausrichtung mit anderen Elementen */
+  margin-top: 0; /* Kein zusätzlicher Abstand nach oben */
+}
+
+.service-cta i {
+  margin-left: 0.5rem;
+  font-size: 0.7rem; /* Kleinerer Pfeil */
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-cta i {
+  transform: translateX(3px);
+}
+
+.hidden-release {
+  display: none;
+}
+
+/* Apple-Style Scroll-Effekt für den Releases-Titel */
+.releases-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 10;
+    
+    /* Versteckt beim Laden der Seite */
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+/* Apple-Style Einblend-Animation beim Scrollen */
+.releases-heading.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Zusätzlicher subtiler Effekt für das STEEL-Logo im Titel */
+.releases-title-logo {
+    display: inline-block;
+    height: 40px;
+    width: auto;
+    margin: 0 8px;
+    position: relative;
+    top: 3px;
+    
+    /* Startet leicht verkleinert und transparent */
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s, 
+                transform 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+    will-change: opacity, transform;
+}
+
+/* Logo-Animation beim Scrollen */
+.releases-heading.visible .releases-title-logo {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Neuer Apple-Style Code für Streaming Icons */
+.streaming-platforms {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.platform-icon {
+  opacity: 0;
+  transform: translateY(40px) scale(0.8);
+  transition: 
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+/* Entfernen Sie die :not(.visible) Bedingung */
+.platform-icon:nth-child(1) { transition-delay: 0.1s; }
+.platform-icon:nth-child(2) { transition-delay: 0.2s; }
+.platform-icon:nth-child(3) { transition-delay: 0.3s; }
+.platform-icon:nth-child(4) { transition-delay: 0.4s; }
+.platform-icon:nth-child(5) { transition-delay: 0.5s; }
+.platform-icon:nth-child(6) { transition-delay: 0.6s; }
+.platform-icon:nth-child(7) { transition-delay: 0.7s; }
+
+/* Nach dem Einfliegen: Schnelles Hover */
+.platform-icon.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.platform-icon.visible:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top i {
+    font-size: 1.2rem;
+}
+
+/* Animation beim Klick */
+@keyframes bounceUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.back-to-top:active {
+    animation: bounceUp 0.5s ease;
+}
+.scroll-progress-bar {
+    position: fixed;
+    top: 60px; /* Unter dem Header */
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+    z-index: 999;
+    transition: width 0.2s ease;
+    width: 0%;
+}
+
+/* Basis-Styling für Platform Icons */
+.platform-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: rgba(30, 30, 34, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    /* KEINE transition hier! */
+}
+
+.platform-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    /* KEIN transform hier! */
+}
+
+.platform-icon svg {
+    fill: currentColor;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.platform-icon.deezer-icon svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.platform-icon.tidal-icon svg {
+    width: 3rem;
+    height: 0.9rem;
+}
+
+.platform-icon:hover .fa-spotify { color: #1DB954; }
+.platform-icon:hover .fa-apple { color: #FC3C44; }
+.platform-icon:hover.deezer-icon svg { fill: #A238FF; }
+.platform-icon:hover .fa-amazon { color: #FF9900; }
+.platform-icon:hover.tidal-icon svg { fill: #000000; }
+.platform-icon:hover .fa-soundcloud { color: #FF5500; }
+.platform-icon:hover .fa-youtube { color: #FF0000; }
+.streaming-platforms {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  flex-direction: row; /* Wichtig: horizontale Ausrichtung */
+}
+
+/* Spotify placeholder styling */
+.spotify-placeholder {
+  width: 100%;
+  height: 80px;
+  background-color: rgba(25, 25, 25, 0.8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spotify-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1DB954;
+  font-size: 0.9rem;
+}
+
+.spotify-loading-icon {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(29, 185, 84, 0.3);
+  border-top: 2px solid #1DB954;
+  border-radius: 50%;
+  animation: spotify-spin 1s linear infinite;
+}
+
+@keyframes spotify-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* CSS für die mobile Menü Animation */
+/* Füge diese CSS-Regeln in deinen style-Bereich ein, falls sie nicht bereits vorhanden sind */
+
+.mobile-menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* WICHTIG: position:relative statt fixed */
+    z-index: 2002;
+    width: 30px;
+    height: 30px;
+}
+
+/* Die drei Balken des Hamburger-Icons */
+.mobile-menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 3px 0;
+    background-color: white;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+}
+
+/* X-Animation: Erster Balken */
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px) !important;
+}
+
+/* X-Animation: Zweiter Balken */
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0 !important;
+}
+
+/* X-Animation: Dritter Balken */
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px) !important;
+}
+
+/* Mobile Menü Container */
+.mobile-menu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgba(18, 18, 20, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1999;
+    padding: 20px 0 30px;
+    text-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Menüpunkte Animation */
+.mobile-menu li {
+    margin: 15px 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu li:nth-child(1) { transition-delay: 0.05s; }
+.mobile-menu li:nth-child(2) { transition-delay: 0.1s; }
+.mobile-menu li:nth-child(3) { transition-delay: 0.15s; }
+.mobile-menu li:nth-child(4) { transition-delay: 0.2s; }
+.mobile-menu li:nth-child(5) { transition-delay: 0.25s; }
+.mobile-menu li:nth-child(6) { transition-delay: 0.3s; }
+
+/* Mobile Menü-Trenner */
+.mobile-menu-divider {
+    position: relative;
+    text-align: center;
+    padding: 10px 0;
+    margin: 15px 0 5px;
+    opacity: 0.5;
+}
+
+.mobile-menu-divider span {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    background-color: rgba(18, 18, 20, 0.95);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+
+.mobile-menu-divider:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.15);
+    z-index: 0;
+}
+
+.mobile-menu a {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 8px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    width: 80%;
+}
+
+/* Sprachumschalter im mobilen Menü */
+#mobile-language-toggle {
+  background-color: rgba(243, 147, 13, 0.2);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(243, 147, 13, 0.3);
+  width: auto;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+#mobile-language-toggle:hover {
+  background-color: rgba(243, 147, 13, 0.4);
+  border-color: rgba(243, 147, 13, 0.6);
+}
+
+/* Optionale Trennlinie über dem Sprachumschalter */
+#mobile-menu li:last-child {
+  position: relative;
+  margin-top: 30px;
+}
+
+#mobile-menu li:last-child:before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 35%;
+  right: 35%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+/* About-Link im Mobile-Menü */
+.mobile-menu .about-link {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.2rem;
+}
+
+/* Service-Links im Mobile-Menü */
+.mobile-menu .service-link {
+    font-weight: 500;
+}
+
+.mobile-menu a:hover {
+    color: var(--primary-color);
+    background-color: rgba(243, 147, 13, 0.1);
+    text-decoration: none;
+}
+
+/* Moderner Footer im Apple-Stil */
+footer {
+  background-color: var(--darker-bg);
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+  margin-top: -40px;
+}
+
+/* Subtiler Hintergrund-Gradient */
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(at 20% 30%, rgba(243, 147, 13, 0.02), transparent 60%),
+    radial-gradient(at 80% 70%, rgba(230, 126, 34, 0.02), transparent 60%);
+  z-index: 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Hero-Sektion des Footers */
+.footer-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.footer-hero.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-logo {
+  width: 180px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+}
+
+.footer-tagline {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+/* Streaming Platforms */
+.footer-streaming {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-platform-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background: rgba(30, 30, 34, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.footer-platform-link:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.footer-platform-link:hover .fa-spotify { color: #1DB954; }
+.footer-platform-link:hover .fa-apple { color: #FC3C44; }
+.footer-platform-link:hover .fa-amazon { color: #FF9900; }
+.footer-platform-link:hover .fa-soundcloud { color: #FF5500; }
+.footer-platform-link:hover .fa-youtube { color: #FF0000; }
+
+/* Deezer and Tidal specific styles */
+.footer-platform-link.deezer-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+.footer-platform-link:hover.deezer-icon svg {
+  fill: #A238FF;
+}
+
+.footer-platform-link.tidal-icon svg {
+  width: 2.5rem;
+  height: 0.8rem;
+  fill: currentColor;
+}
+
+.footer-platform-link:hover.tidal-icon svg {
+  fill: #FFFFFF;
+}
+
+/* Social Media */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  color: var(--light-text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+}
+
+.footer-social-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.footer-social-link i {
+  font-size: 1.1rem;
+}
+
+.footer-social-link:hover .fa-instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-social-link:hover .fa-tiktok {
+  color: #000;
+}
+
+/* Stats/Badges */
+.footer-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-stat {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.footer-stat.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--gradient-light), var(--gradient-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.footer-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation Grid */
+.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  max-width: 300px; /* Optional: Maximale Breite für bessere Zentrierung */
+  margin: 0 auto 2rem auto; /* Zentriert das Grid-Container */
+}
+
+.footer-nav.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-nav-section {
+  text-align: center;
+}
+
+.footer-nav-section h4 {
+  font-size: 0.9rem;
+  color: var(--light-text);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-nav-section ul {
+  list-style: none;
+}
+
+.footer-nav-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-nav-section a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav-section a:hover {
+  color: var(--primary-color);
+}
+
+/* Contact Info */
+.footer-contact {
+  text-align: center;
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.footer-contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-contact-title {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-contact-email {
+  font-size: 1.1rem;
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-contact-email:hover {
+  color: var(--primary-color);
+}
+
+/* Bottom Section */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.85rem;
+}
+
+.footer-legal a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+  color: var(--primary-color);
+}
+
+.footer-copyright {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 992px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-container {
+        padding: 1rem;
+        position: relative;
+        z-index: 2001;
+    }
+    
+    .footer-nav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .footer-stats {
+        gap: 1.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .services-section {
+        padding: 3rem 1.5rem; /* Noch kompakter auf Tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 3rem 1.5rem 0;
+    }
+    
+    .footer-nav {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .footer-streaming {
+        gap: 0.8rem;
+    }
+    
+    .footer-platform-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-legal {
+        justify-content: center;
+    }
+    
+    .hero {
+        padding-bottom: 120px;
+    }
+    
+    .booking-container {
+        bottom: 60px;
+    }
+    
+    .releases-container {
+        padding: 1.5rem;
+    }
+    
+    .releases-heading h2 {
+        font-size: 2rem;
+    }
+    
+    .release-title {
+        font-size: 1.1rem;
+    }
+    
+    .release-links {
+        top: 0.75rem;
+        right: 1rem;
+        max-width: 100px;
+        gap: 0.5rem;
+    }
+    
+    .platform-link {
+        font-size: 0.8rem;
+    }
+    
+    .platform-link.deezer-icon svg,
+    .platform-link svg {
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+    
+    .platform-link.tidal-icon svg {
+        width: 1.6rem;
+        height: 0.55rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card {
+        height: 180px; /* Noch flacher auf Mobilgeräten */
+    }
+    
+    .services-heading h2 {
+        font-size: 1.8rem;
+    }
+    
+    .services-heading p {
+        font-size: 0.9rem;
+    }
+    
+    .services-section {
+        padding: 2.5rem 1.5rem; /* Noch kompakter auf Mobilgeräten */
+    }
+}
+.platform-icon.visible:hover {
+  transform: translateY(-8px) scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+    /* --- CARDS ANIMATION (Live, Hochzeit, Corporate) --- */
+    /* Startzustand: Unsichtbar & leicht nach unten verschoben */
+    .service-card {
+        opacity: 0;
+        transform: translateY(50px); /* Kommt von unten */
+        transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Sehr geschmeidige Bewegung */
+    }
+
+    /* Endzustand: Sichtbar & am Platz */
+    .service-card.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+ 
+    /* --- TEXT-LESBARKEIT AUF CARDS (Gradient Fix) --- */
+
+    /* 1. Der dunkle Verlauf ÜBER dem Bild, aber UNTER dem Text */
+    .service-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        /* Der Trick: Oben transparent, unten fast schwarz */
+        background: linear-gradient(
+            to bottom, 
+            rgba(0,0,0,0) 0%,   /* Oben: Komplett durchsichtig */
+            rgba(0,0,0,0.6) 50%, /* Mitte: Leicht abgedunkelt */
+            rgba(0,0,0,0.85) 100% /* Unten: Stark dunkel für den Text */
+        );
+        
+        z-index: 1; /* Liegt auf dem Bild */
+        pointer-events: none; /* Damit man trotzdem klicken kann */
+        border-radius: 16px; /* Damit der Schatten nicht über die Runden Ecken quillt */
+    }
+
+    /* 2. Den Text zwingend nach ganz vorne holen */
+    .service-card h3, 
+    .service-card p {
+        position: relative;
+        z-index: 2; /* WICHTIG: Muss über dem Verlauf liegen */
+        
+        /* Extra-Schutz: Ein weicher schwarzer Schatten hinter den Buchstaben */
+        text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+    /* --- INTERACTIVE CARDS (Helligkeit & Zoom) --- */
+    
+    /* 1. Grundeinstellung für das Bild */
+    .service-card .service-card-bg {
+        /* Standard: Ein Hauch dunkler (85%), das wirkt satter */
+        filter: brightness(0.85);
+        
+        /* Damit die Helligkeit weich überblendet (0.5s) */
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                    filter 0.5s ease;
+    }
+
+    /* 2. Wenn man mit der Maus auf die KARTE geht */
+    .service-card:hover .service-card-bg {
+        /* Bild wird hell und strahlend */
+        filter: brightness(1.05);
+        
+        /* Optional: Ein sanfter Zoom-Effekt dazu (sieht sehr modern aus) */
+        transform: scale(1.05);
+    }
+/* --- MARQUEE DESIGN (RESIZE-FIX & LOGIK) --- */
+
+.marquee-wrapper {
+        width: 100%;
+        max-width: 100vw;
+        overflow: hidden;
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem; 
+        position: relative;
+        z-index: 2;
+        margin-bottom: 12vh; 
+        
+        user-select: none;
+        -webkit-user-select: none;
+        
+        /* GPU-Beschleunigung aktivieren */
+        transform: translate3d(0,0,0);
+    }
+
+    .marquee-row {
+        display: flex;
+        width: 100%;
+        /* WICHTIG: Box-Sizing fixiert das Layout beim Resize */
+        box-sizing: border-box; 
+    }
+
+    .marquee-content {
+        display: inline-flex; 
+        /* Zwingt den Browser, immer die volle Breite des Textes zu nehmen */
+        min-width: max-content; 
+        flex-shrink: 0;
+        
+        white-space: nowrap;
+        gap: 0; 
+
+        /* Hardware-Beschleunigung */
+        transform: translate3d(0, 0, 0);
+        will-change: transform;
+    }
+    
+    .marquee-content span {
+        font-family: 'Inter', sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 0.9;
+        
+        color: transparent;
+        -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.7);
+        
+        font-size: 4.5rem; 
+        padding-right: 2rem; 
+        cursor: default;
+        
+        /* Transition NUR für Farbe, niemals "all" oder "transform" */
+        transition: color 0.3s ease, -webkit-text-stroke 0.3s ease, text-shadow 0.3s ease;
+    }
+    
+    .marquee-content span.sep {
+        opacity: 0.5;
+        pointer-events: none; 
+    }
+
+    /* Main Row Styles (Mitte) */
+    .marquee-row.main-row .marquee-content span {
+        font-size: 6rem;
+        -webkit-text-stroke: 2px rgba(243, 147, 13, 0.9);
+        opacity: 1;
+    }
+
+    /* --- ANIMATIONEN (DESKTOP) --- */
+    /* Wir nennen sie explizit "Desktop", damit der Browser sie unterscheidet */
+    
+    .scroll-left .marquee-content { 
+        animation: scrollLeftDesktop 30s linear infinite; 
+    }
+    .scroll-right .marquee-content { 
+        animation: scrollRightDesktop 30s linear infinite; 
+    }
+
+    @keyframes scrollLeftDesktop { 
+        0% { transform: translateX(0); } 
+        100% { transform: translateX(-100%); } 
+    }
+    @keyframes scrollRightDesktop { 
+        0% { transform: translateX(-100%); } 
+        100% { transform: translateX(0); } 
+    }
+
+    /* --- HOVER LOGIK --- */
+    .marquee-row:hover .marquee-content {
+        animation-play-state: paused;
+    }
+
+    .marquee-content span:not(.sep):hover {
+        color: #fff; 
+        -webkit-text-stroke: 0px transparent; 
+        text-shadow: 0 0 20px rgba(255,255,255, 0.6);
+    }
+
+    .marquee-row.main-row .marquee-content span:not(.sep):hover {
+        color: var(--primary-color);
+        text-shadow: 0 0 30px rgba(243, 147, 13, 0.8);
+    }
+
+    /* =========================================
+       MOBILE FIX (HIER PASSIERT DER TRICK)
+       ========================================= */
+    @media (max-width: 768px) {
+        .marquee-wrapper { gap: 0.2rem; margin-bottom: 25vh; }
+        
+        .marquee-content span {
+            font-size: 2.2rem; 
+            padding-right: 1rem;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+        }
+        .marquee-row.main-row .marquee-content span {
+            font-size: 3rem; 
+        }
+
+        /* TRICK: Wir nutzen hier eine ANDERE Animation (Name: ...Mobile).
+           Wenn man das Fenster zieht und die Grenze 768px überschreitet,
+           muss der Browser die alte Animation wegwerfen und die neue laden.
+           Das zwingt ihn, die Strecken und Geschwindigkeiten neu zu berechnen! 
+        */
+
+        .scroll-left .marquee-content { 
+            /* Zeit angepasst: 20s auf Handy wirkt ähnlich schnell wie 45s auf Desktop */
+            animation: scrollLeftMobile 30s linear infinite; 
+        }
+        .scroll-right .marquee-content { 
+            animation: scrollRightMobile 30s linear infinite; 
+        }
+    }
+
+    /* Definition der Mobile-Keyframes (identisch, aber neuer Name für Reset) */
+    @keyframes scrollLeftMobile { 
+        0% { transform: translateX(0); } 
+        100% { transform: translateX(-100%); } 
+    }
+    @keyframes scrollRightMobile { 
+        0% { transform: translateX(-100%); } 
+        100% { transform: translateX(0); } 
+    }
+    /* --- DYNAMIC HEADER BACKGROUND --- */
+    .hero-background-dynamic {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center 30%; /* Gleiche Position wie dein Original */
+        
+        /* Standardmäßig unsichtbar */
+        opacity: 0; 
+        z-index: 0; /* Liegt über dem Standard-Bild, aber unter dem Text */
+        
+        /* Der weiche Übergang (0.5 Sekunden) */
+        transition: opacity 0.5s ease-in-out;
+    }
+    /* --- BOOKING BUTTON FIX (Gegen Springen) --- */
+    .booking-container {
+        position: absolute; /* WICHTIG: Löst ihn aus dem Textfluss */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20; /* Über allem anderen */
+        
+        /* Desktop Position */
+        bottom: 12vh !important; 
+    }
+
+    /* Mobile Anpassung */
+    @media (max-width: 768px) {
+        .booking-container {
+            /* Auf dem Handy setzen wir ihn höher (ca. 10-12% von unten),
+               damit er nicht von der Safari-Leiste verdeckt wird 
+               und genug Abstand zum unteren Rand hat.
+            */
+            bottom: 12vh !important; 
+            
+            width: 90%; /* Button darf breit sein, damit man ihn gut trifft */
+            display: flex;
+            justify-content: center;
+        }
+    }
+    /* --- FEINTUNING DER GESCHWINDIGKEITEN --- */
+
+    /* Reihe 1 (Oben): Wirkt zu schnell? -> Wir erhöhen die Zeit auf 50s oder 55s */
+    .marquee-wrapper .marquee-row:nth-child(1) .marquee-content {
+        animation-duration: 55s !important; 
+    }
+
+    /* Reihe 3 (Unten): Wirkt okay? -> Lassen wir auf Standard (z.B. 45s) */
+    /* Oder wenn sie zu langsam ist, verringern wir hier die Zeit auf 40s */
+    .marquee-wrapper .marquee-row:nth-child(3) .marquee-content {
+        animation-duration: 45s; 
+    }
+
+    /* Reihe 2 (Mitte): Eigene Geschwindigkeit */
+    .marquee-wrapper .marquee-row:nth-child(2) .marquee-content {
+        animation-duration: 50s;
+    }
+    
+    /* Mobile Anpassung nicht vergessen! */
+    @media (max-width: 768px) {
+        .marquee-wrapper .marquee-row:nth-child(1) .marquee-content {
+            animation-duration: 25s !important;
+        }
+        .marquee-wrapper .marquee-row:nth-child(3) .marquee-content {
+            animation-duration: 20s !important;
+        }
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Cookie Banner CSS -->
+<link rel="stylesheet" href="assets/css/cookie-banner.css">
+</head>
+  <body class="page-default">
+  <!-- Header with Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <svg id="steel-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.58 91.64" width="120" height="34">
+          <defs>
+            <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f8a838" />
+              <stop offset="100%" stop-color="#d57c0a" />
+            </linearGradient>
+          </defs>
+          <path class="logo-path" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.99ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html" class="about about-link">Über</a></li>
+        <li class="service-divider"></li>
+        <li><a href="live.html" class="live service-link">Live</a></li>
+        <li><a href="weddings.html" class="weddings service-link">Hochzeiten</a></li>
+        <li><a href="corporate.html" class="corporate service-link">Corporate</a></li>
+        <li class="service-divider"></li> <!-- Neuer zweiter Trennstrich -->
+        <li class="language-switch">
+          <a href="#" id="language-toggle">EN</a>
+        </li>
+      </ul>
+      
+      <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+<!-- Nach dem </header> Tag: -->
+<div class="scroll-progress-bar"></div>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="about.html" id="mobile-nav-about" class="about-link">Über</a></li>
+      <li class="mobile-menu-divider"><span>Services</span></li>
+      <li><a href="live.html" id="mobile-nav-live" class="service-link">Live</a></li>
+      <li><a href="weddings.html" id="mobile-nav-weddings" class="service-link">Hochzeiten</a></li>
+      <li><a href="corporate.html" id="mobile-nav-corporate" class="service-link">Corporate</a></li>
+      <li><a href="#" id="mobile-language-toggle">EN</a></li>
+    </ul>
+  </div>
+
+  <section class="hero" id="home">
+    
+    <div class="hero-background"></div>
+    <div class="hero-background-dynamic"></div> 
+    <div class="hero-overlay"></div>
+
+    <h1 class="visually-hidden">STEEL - DJ & ARTIST - Live, Hochzeiten & Corporate Events in NRW und weltweit</h1>
+
+    <div class="marquee-wrapper">
+        
+        <div class="marquee-row scroll-left">
+            <div class="marquee-content">
+                <span data-bg="images/index/felix-harrer-steel-leon-club-dj.webp">CLUB</span> <span class="sep">•</span> 
+                <span data-bg="images/index/festival-dj-freshtival-enschede-steel.webp">FESTIVAL</span> <span class="sep">•</span> 
+                <span data-bg="images/index/open-air-fest-dj-nrw-ruhrgebiet.webp">OPEN AIR</span> <span class="sep">•</span> 
+                <span data-bg="images/index/felix-harrer-steel-leon-club-dj.webp">CLUB</span> <span class="sep">•</span> 
+                <span data-bg="images/index/festival-dj-freshtival-enschede-steel.webp">FESTIVAL</span> <span class="sep">•</span> 
+                <span data-bg="images/index/open-air-fest-dj-nrw-ruhrgebiet.webp">OPEN AIR</span> <span class="sep">•</span> 
+            </div>
+            <div class="marquee-content">
+                <span data-bg="images/index/felix-harrer-steel-leon-club-dj.webp">CLUB</span> <span class="sep">•</span> 
+                <span data-bg="images/index/festival-dj-freshtival-enschede-steel.webp">FESTIVAL</span> <span class="sep">•</span> 
+                <span data-bg="images/index/open-air-fest-dj-nrw-ruhrgebiet.webp">OPEN AIR</span> <span class="sep">•</span> 
+                <span data-bg="images/index/felix-harrer-steel-leon-club-dj.webp">CLUB</span> <span class="sep">•</span> 
+                <span data-bg="images/index/festival-dj-freshtival-enschede-steel.webp">FESTIVAL</span> <span class="sep">•</span> 
+                <span data-bg="images/index/open-air-fest-dj-nrw-ruhrgebiet.webp">OPEN AIR</span> <span class="sep">•</span> 
+            </div>
+        </div>
+
+        <div class="marquee-row scroll-right main-row">
+          <div class="marquee-content">
+              <span data-bg="images/index/dj-artist-steel-herne-nrw-ruhrgebiet.webp" data-pos="center 0%">DJ & ARTIST</span> <span class="sep">•</span> 
+              
+              <span data-bg="images/index/steel-music-producer-universal-virgin-intercord-records.webp" data-pos="center 100%">MUSIC PRODUCER</span> <span class="sep">•</span> 
+              
+              <span data-bg="images/index/dj-artist-steel-herne-nrw-ruhrgebiet.webp" data-pos="center 0%">DJ & ARTIST</span> <span class="sep">•</span> 
+              <span data-bg="images/index/steel-music-producer-universal-virgin-intercord-records.webp" data-pos="center 100%">MUSIC PRODUCER</span> <span class="sep">•</span> 
+          </div>
+          
+          <div class="marquee-content">
+              <span data-bg="images/index/dj-artist-steel-herne-nrw-ruhrgebiet.webp" data-pos="center 0%">DJ & ARTIST</span> <span class="sep">•</span> 
+              <span data-bg="images/index/steel-music-producer-universal-virgin-intercord-records.webp" data-pos="center 100%">MUSIC PRODUCER</span> <span class="sep">•</span> 
+              <span data-bg="images/index/dj-artist-steel-herne-nrw-ruhrgebiet.webp" data-pos="center 0%">DJ & ARTIST</span> <span class="sep">•</span> 
+              <span data-bg="images/index/steel-music-producer-universal-virgin-intercord-records.webp" data-pos="center 100%">MUSIC PRODUCER</span> <span class="sep">•</span> 
+          </div>
+      </div>
+
+        <div class="marquee-row scroll-left">
+            <div class="marquee-content">
+                <span data-bg="images/index/dj-corporate-party-messe-weihnachtsfeier-nrw-ruhrgebiet.webp">CORPORATE</span> <span class="sep">•</span> 
+                <span data-bg="images/index/hochzeits-dj-bochum-stolzenhoff-villa-uemminger-see.webp">WEDDING</span> <span class="sep">•</span>  
+                <span data-bg="images/index/dj-corporate-party-messe-weihnachtsfeier-nrw-ruhrgebiet.webp">CORPORATE</span> <span class="sep">•</span> 
+                <span data-bg="images/index/hochzeits-dj-bochum-stolzenhoff-villa-uemminger-see.webp">WEDDING</span> <span class="sep">•</span> 
+            </div>
+            <div class="marquee-content">
+                <span data-bg="images/index/dj-corporate-party-messe-weihnachtsfeier-nrw-ruhrgebiet.webp">CORPORATE</span> <span class="sep">•</span> 
+                <span data-bg="images/index/hochzeits-dj-bochum-stolzenhoff-villa-uemminger-see.webp">WEDDING</span> <span class="sep">•</span> 
+                <span data-bg="images/index/dj-corporate-party-messe-weihnachtsfeier-nrw-ruhrgebiet.webp">CORPORATE</span> <span class="sep">•</span> 
+                <span data-bg="images/index/hochzeits-dj-bochum-stolzenhoff-villa-uemminger-see.webp">WEDDING</span> <span class="sep">•</span> 
+            </div>
+        </div>
+    </div>
+
+    <div class="short-facts-container">
+      <div class="short-facts">
+        
+        <div class="short-fact">
+          <a href="https://www.instagram.com/steelofficial" class="instagram-link" target="_blank">
+            <i class="fab fa-instagram"></i>
+            <span class="instagram-text">@steelofficial</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+    
+    <div class="booking-container">
+      <div class="booking-dropdown" id="booking-dropdown">
+        <div class="booking-button" id="booking-toggle">
+          Jetzt buchen <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="booking-options">
+          <a href="live.html#booking" class="booking-option">
+            <div class="booking-option-content">
+              <h4>Live</h4>
+            </div>
+          </a>
+          <a href="weddings.html#contact" class="booking-option">
+            <div class="booking-option-content">
+              <h4>Hochzeiten</h4>
+            </div>
+          </a>
+          <a href="corporate.html#request" class="booking-option">
+            <div class="booking-option-content">
+              <h4>Corporate</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+</section>
+<!-- Services Section - Kompakte Version -->
+<section class="services-section" id="services">
+  <!-- Floating lights like in releases section -->
+  <div class="floating-light" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+  <div class="floating-light small" style="left: 30%; top: 35%; animation-delay: 1.5s;"></div>
+  <div class="floating-light large" style="left: 50%; top: 25%; animation-delay: 3s;"></div>
+  <div class="floating-light" style="left: 70%; top: 40%; animation-delay: 1s;"></div>
+  <div class="floating-light small" style="left: 90%; top: 30%; animation-delay: 2.5s;"></div>
+  
+  <div class="services-container">
+    <div class="services-heading fade-in-element">
+      <h2>Deine Vision. <span class="services-highlight">Meine Musik.</span></h2>
+      <p>In Deutschland und auf der ganzen Welt.</p>
+    </div>
+    
+    <div class="services-grid">
+      <a href="live.html" class="service-card fade-in-element" style="transition-delay: 0.1s;">
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="fas fa-music"></i>
+          </div>
+          <h3>Live</h3>
+          <p>Club • Festival • Open-Air</p>
+          <div class="service-cta">
+            <span>Erfahre mehr</span>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+        <img src="images/index/club-festival-open-air-dj-nrw.webp" 
+        alt="STEEL DJ Booking für Festivals, Clubs & Open Airs" 
+        class="service-card-bg" 
+        style="object-position: center 25%;"></a>
+      
+      <a href="weddings.html" class="service-card fade-in-element" style="transition-delay: 0.2s;">
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3>Hochzeiten</h3>
+          <p>Heiraten mit Stil. Und STEEL.</p>
+          <div class="service-cta">
+            <span>Erfahre mehr</span>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+        <img src="images/index/hochzeits-dj-nrw-feier.webp" 
+        alt="STEEL Hochzeits DJ Ruhrgebiet NRW - Bochum, Herne, Dortmund" 
+        class="service-card-bg">      </a>
+      
+      <a href="corporate.html" class="service-card fade-in-element" style="transition-delay: 0.3s;">
+        <div class="service-card-content">
+          <div class="service-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>Corporate</h3>
+          <p>Firmenfeier • Messe • Business-Event</p>
+          <div class="service-cta">
+            <span>Erfahre mehr</span>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+        <img src="images/index/corporate-dj-messe-firmenfeier-nrw.webp" 
+        alt="STEEL Event DJ für Corporate Events, Messen & Firmenfeiern" 
+        class="service-card-bg">      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Releases Section im modernen dunklen Design -->
+<section class="releases-section" id="releases">
+  <!-- Noch mehr schwebende Lichter mit größerem Radius -->
+  <div class="floating-light" style="left: 5%; top: 10%; animation-delay: 0s;"></div>
+  <div class="floating-light small" style="left: 15%; top: 25%; animation-delay: 2s;"></div>
+  <div class="floating-light large" style="left: 25%; top: 40%; animation-delay: 4s;"></div>
+  <div class="floating-light" style="left: 35%; top: 15%; animation-delay: 1s;"></div>
+  <div class="floating-light small" style="left: 45%; top: 30%; animation-delay: 3s;"></div>
+  <div class="floating-light" style="left: 55%; top: 20%; animation-delay: 5s;"></div>
+  <div class="floating-light large" style="left: 65%; top: 35%; animation-delay: 2s;"></div>
+  <div class="floating-light" style="left: 75%; top: 45%; animation-delay: 4s;"></div>
+  <div class="floating-light small" style="left: 85%; top: 30%; animation-delay: 1s;"></div>
+  <div class="floating-light" style="left: 95%; top: 20%; animation-delay: 3s;"></div>
+  <div class="floating-light large" style="left: 20%; top: 60%; animation-delay: 0s;"></div>
+  <div class="floating-light" style="left: 50%; top: 70%; animation-delay: 2s;"></div>
+  <div class="floating-light small" style="left: 10%; top: 50%; animation-delay: 3s;"></div>
+  <div class="floating-light" style="left: 30%; top: 55%; animation-delay: 1s;"></div>
+  <div class="floating-light large" style="left: 70%; top: 65%; animation-delay: 4s;"></div>
+  <div class="floating-light" style="left: 90%; top: 45%; animation-delay: 2s;"></div>
+  <div class="floating-light small" style="left: 40%; top: 75%; animation-delay: 3s;"></div>
+  <div class="floating-light" style="left: 60%; top: 80%; animation-delay: 1s;"></div>
+  
+  <div class="releases-container">
+    <div class="releases-heading fade-in-element">
+      <h2>
+        So klingt 
+        <span class="releases-title-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.58 91.64">
+            <defs>
+              <linearGradient id="title-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f8a838" />
+                <stop offset="100%" stop-color="#d57c0a" />
+              </linearGradient>
+            </defs>
+            <path d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+          </svg>
+        </span>
+      </h2>
+ <!-- Streaming Links mit Deezer-Herz und TIDAL-Schriftzug wie gewünscht -->
+ <div class="streaming-platforms">
+  <a href="https://open.spotify.com/intl-de/artist/1Ecl9uVEThgbEiJWaPwF7B" target="_blank" class="platform-icon" aria-label="STEEL auf Spotify">
+      <i class="fab fa-spotify"></i>
+  </a>
+  
+  <a href="https://music.apple.com/de/artist/steel/4075018" target="_blank" class="platform-icon" aria-label="STEEL auf Apple Music">
+      <i class="fab fa-apple"></i>
+  </a>
+  
+  <a href="https://www.deezer.com/artist/63317" target="_blank" class="platform-icon deezer-icon" aria-label="STEEL auf Deezer">
+     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+       <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+            2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+            18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+     </svg>
+  </a>
+  
+  <a href="https://music.amazon.de/artists/B001Q99BH2/steel" target="_blank" class="platform-icon" aria-label="STEEL auf Amazon Music">
+      <i class="fab fa-amazon"></i>
+  </a>
+  <a href="https://tidal.com/artist/46648379" target="_blank" class="platform-icon tidal-icon" aria-label="STEEL auf TIDAL">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+      <g transform="translate(0, 5)">
+        <path d="M5.4 1.2L1.8 4.8l3.6 3.6 3.6-3.6zM12 1.2L8.4 4.8l3.6 3.6 3.6-3.6zM18.6 1.2L15 4.8l3.6 3.6 3.6-3.6z"/>
+        <path d="M12 7.8L8.4 11.4l3.6 3.6 3.6-3.6z"/>
+      </g>
+    </svg>
+ </a>
+  <a href="https://soundcloud.com/steel-official" target="_blank" class="platform-icon" aria-label="STEEL auf SoundCloud">
+      <i class="fab fa-soundcloud"></i>
+  </a>
+  
+  <a href="https://www.youtube.com/@steel.official" target="_blank" class="platform-icon" aria-label="STEEL auf YouTube">
+      <i class="fab fa-youtube"></i>
+  </a>
+</div>
+</div>
+<div class="releases-list">
+       
+      <!-- Aktualisierter Release-Bereich mit Spotify-Playern und allen Streaming-Plattform-Icons -->
+      
+      <!-- Release Item 1 -->
+      <div class="release-item fade-in-element" style="transition-delay: 0.1s;">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">STEEL, GRATIFY</div>
+          <h3 class="release-title">Waterfalls (feat. Amanda Wilson)</h3>
+          <div class="release-meta">
+            <span class="release-year">2025</span>
+            <span class="release-label">Virgin Records (Universal)</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="1pY17VJbj2DHfT0NoAoyXk">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <!-- Spotify-Icon wurde entfernt, dafür alle anderen Icons hinzugefügt -->
+          <a href="https://music.apple.com/de/album/waterfalls-feat-amanda-wilson/1787470933" target="_blank" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="https://www.deezer.com/en/album/695319001" target="_blank" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="https://music.amazon.de/albums/B0DS46Y6QF" target="_blank" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="https://tidal.com/browse/track/410639647" target="_blank" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steel-official/waterfalls-feat-amanda-wilson" target="_blank" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="https://www.youtube.com/watch?v=gy8eO60aYuw" target="_blank" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Release Item 2 -->
+      <div class="release-item fade-in-element" style="transition-delay: 0.2s;">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">STEEL, FSDW, Gordon & Doyle</div>
+          <h3 class="release-title">Stand by Me</h3>
+          <div class="release-meta">
+            <span class="release-year">2021</span>
+            <span class="release-label">Golden Chocolate Records</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="7HiL5RWBUnw5FPpCP1U3IP">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <!-- Gleicher Aufbau wie bei Item 1 -->
+          <a href="https://music.apple.com/de/song/stand-by-me/1546720094" target="_blank" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="https://www.deezer.com/de/album/196042952" target="_blank" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="https://music.amazon.de/tracks/B08RDWR3T4" target="_blank" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="https://tidal.com/album/167531786" target="_blank" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steel43/stand-by-me" target="_blank" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="https://www.youtube.com/watch?v=A_QcV6wZo_0" target="_blank" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Release Item 3 -->
+      <div class="release-item fade-in-element" style="transition-delay: 0.3s;">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">Felix Harrer, STEEL, LEZA</div>
+          <h3 class="release-title">Strobo Oder Mondlicht</h3>
+          <div class="release-meta">
+            <span class="release-year">2024</span>
+            <span class="release-label">Kontor Records</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="14oFOeznVecHwRFHFxOgVU">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <!-- Gleicher Aufbau wie bei Item 1 und 2 -->
+          <a href="https://music.apple.com/de/album/1761612712" target="_blank" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="https://www.deezer.com/album/626334211" target="_blank" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="https://amazon.de/music/player/albums/B0DCGMMWML" target="_blank" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="https://tidal.com/browse/track/379896085" target="_blank" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/felixharrer" target="_blank" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="https://www.youtube.com/watch?v=o3Rl9GmG1YQ" target="_blank" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Release Item 4 -->
+      <div class="release-item fade-in-element" style="transition-delay: 0.4s;">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">STEEL, HALO</div>
+          <h3 class="release-title">Bubbly</h3>
+          <div class="release-meta">
+            <span class="release-year">2024</span>
+            <span class="release-label">Playbox / Kontor</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="5LkyJQQVqmF8TPuTtEUyxF">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <!-- Gleicher Aufbau wie bei den vorherigen Items -->
+          <a href="https://music.apple.com/gb/album/bubbly-single/1724179839" target="_blank" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="https://www.deezer.com/en/album/531047712" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="https://music.amazon.de/tracks/B0CPJSXGQ5" target="_blank" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="https://tidal.com/album/333409347/track/333409348" target="_blank" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steel-official/bubbly" target="_blank" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="https://www.youtube.com/watch?v=36zWzDcY0vs" target="_blank" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Versteckte Release-Items (werden erst nach Klick auf "Mehr" angezeigt) -->
+      <!-- Diese sollten ebenfalls mit dem gleichen Muster aktualisiert werden -->
+      <div class="release-item hidden-release fade-in-element">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">Calmani & Grey, Chad Clemens</div>
+          <h3 class="release-title">To the Moon and Back (STEEL Remix)</h3>
+          <div class="release-meta">
+            <span class="release-year">2020</span>
+            <span class="release-label">WEPLAY Music</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="1fpyRCvG4IvggZabVfpVn7">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <!-- Gleicher Aufbau wie bei den sichtbaren Items -->
+          <a href="https://music.apple.com/song/to-the-moon-and-back-feat-chad-clemens-steel-remix/1509486101" target="_blank" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="https://www.deezer.com/en/album/143367572" target="_blank" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="https://www.amazon.de/Moon-Back-Steel-Remix/dp/B087D8PT5H" target="_blank" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="https://tidal.com/album/138384319" target="_blank" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/calmani-grey/to-the-moon-and-back-steel" target="_blank" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="https://www.youtube.com/watch?v=Yz3s_cGvcl4" target="_blank" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Weitere versteckte Items mit gleichem Schema -->
+      <div class="release-item hidden-release fade-in-element">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">MICAR, STEEL</div>
+          <h3 class="release-title">Runaway Train</h3>
+          <div class="release-meta">
+            <span class="release-year">2022</span>
+            <span class="release-label">LoudKult</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="5qVHAQFaXHpjZ8qExtaRPC">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <a href="https://music.apple.com/album/runaway-train/1610777881" target="_blank" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="https://www.deezer.com/en/album/296899222" target="_blank" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="https://www.amazon.de/music/player/albums/B09SVRF2PJ" target="_blank" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="https://tidal.com/album/217313276/track/217313284" target="_blank" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/loudkult/micar-x-steel-runaway-train" target="_blank" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="https://www.youtube.com/watch?v=aSFYA_1VbFA" target="_blank" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="release-item hidden-release fade-in-element">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">STEEL</div>
+          <h3 class="release-title">Cry (Just A Little) (feat. Amanda Wilson)</h3>
+          <div class="release-meta">
+            <span class="release-year">2022</span>
+            <span class="release-label">Golden Chocolate Records</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="2yyIOMSLxgGHuOqTTdKpJV">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <a href="https://music.apple.com/us/album/cry-just-a-little-feat-amanda-wilson/1646767050" target="_blank" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="https://www.deezer.com/en/album/359261937" target="_blank" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="https://www.amazon.de/music/player/albums/B0BG66F3BC" target="_blank" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="https://tidal.com/album/249928816/track/249928817" target="_blank" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/steelfeatamandawilson/cry-just-a-little" target="_blank" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="https://www.youtube.com/watch?v=mJ3Es5efLvY" target="_blank" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="release-item hidden-release fade-in-element">
+        <div class="release-accent"></div>
+        <div class="release-info">
+          <div class="release-artist">STEEL, GRATIFY</div>
+          <h3 class="release-title">That Don't Impress Me Much</h3>
+          <div class="release-meta">
+            <span class="release-year">2025</span>
+            <span class="release-label">WEPLAY Music</span>
+          </div>
+          <div class="spotify-embed-container">
+            <div class="spotify-placeholder" data-spotify-id="61Jy7o9qCRHB81eKMcH1UI">
+              <div class="spotify-loading">
+                <div class="spotify-loading-icon"></div>
+                <span>Loading track...</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="release-links">
+          <a href="https://music.apple.com/us/album/that-dont-impress-me-much/1839009273" target="_blank" class="platform-link" aria-label="Apple Music">
+            <i class="fab fa-apple"></i>
+          </a>
+          <a href="https://www.deezer.com/en/album/818734301" target="_blank" class="platform-link deezer-icon" aria-label="STEEL auf Deezer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                   2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                   18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </a>
+          <a href="https://www.amazon.de/music/player/albums/B0FQD35G6M" target="_blank" class="platform-link" aria-label="STEEL auf Amazon Music">
+            <i class="fab fa-amazon"></i>
+          </a>
+          <a href="https://tidal.com/album/459527473/track/459527474" target="_blank" class="platform-link tidal-icon" aria-label="STEEL auf TIDAL">
+            <svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+              <text 
+                x="50%" 
+                y="50%" 
+                text-anchor="middle" 
+                dominant-baseline="middle"
+                fill="currentColor" 
+                font-family="Arial, sans-serif" 
+                font-size="12" 
+                font-weight="bold">
+                TIDAL
+              </text>
+            </svg>
+          </a>
+          <a href="https://soundcloud.com/weplaymusiccgn/steel-x-gratify-that-dont" target="_blank" class="platform-link" aria-label="SoundCloud">
+            <i class="fab fa-soundcloud"></i>
+          </a>
+          <a href="https://www.youtube.com/watch?v=iWjJFKWnOPk" target="_blank" class="platform-link" aria-label="STEEL auf YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <a href="#" class="view-all-releases fade-in-element" id="load-more-releases">Mehr</a>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <!-- Hero-Sektion des Footers -->
+      <div class="footer-hero fade-in-element">
+        <!-- STEEL Logo -->
+        <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.58 91.64">
+          <defs>
+            <linearGradient id="footer-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f8a838" />
+              <stop offset="100%" stop-color="#d57c0a" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#footer-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+        </svg>
+      
+              <!-- Stats/Erfolge -->
+      <div class="footer-stats">
+        <div class="footer-stat fade-in-element" style="transition-delay: 0.1s;">
+          <span class="footer-stat-number">40M+</span>
+          <span class="footer-stat-label">Streams</span>
+        </div>
+        <div class="footer-stat fade-in-element" style="transition-delay: 0.2s;">
+          <span class="footer-stat-number">Universal Music</span>
+          <span class="footer-stat-label">Artist</span>
+        </div>
+        <div class="footer-stat fade-in-element" style="transition-delay: 0.3s;">
+          <span class="footer-stat-number">Worldwide</span>
+          <span class="footer-stat-label">Bookings</span>
+        </div>
+      </div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+          <a href="https://instagram.com/steelofficial" target="_blank" class="footer-social-link">
+            <i class="fab fa-instagram"></i>
+            <span>@steelofficial</span>
+          </a>
+          <a href="https://tiktok.com/@steel.official" target="_blank" class="footer-social-link">
+            <i class="fab fa-tiktok"></i>
+            <span>@steel.official</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-streaming">
+        <a href="https://open.spotify.com/intl-de/artist/1Ecl9uVEThgbEiJWaPwF7B" target="_blank" class="footer-platform-link" aria-label="Spotify">
+          <i class="fab fa-spotify"></i>
+        </a>
+        
+        <a href="https://music.apple.com/de/artist/steel/4075018" target="_blank" class="footer-platform-link" aria-label="Apple Music">
+          <i class="fab fa-apple"></i>
+        </a>
+        
+        <a href="https://www.deezer.com/artist/63317" target="_blank" class="footer-platform-link deezer-icon" aria-label="Deezer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                 2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                 18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </a>
+        
+        <a href="https://music.amazon.de/artists/B001Q99BH2/steel" target="_blank" class="footer-platform-link" aria-label="Amazon Music">
+          <i class="fab fa-amazon"></i>
+        </a>
+        
+        <a href="https://tidal.com/artist/46648379" target="_blank" class="footer-platform-link tidal-icon" aria-label="TIDAL">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+             <g transform="translate(0, 5)">
+               <path d="M5.4 1.2L1.8 4.8l3.6 3.6 3.6-3.6zM12 1.2L8.4 4.8l3.6 3.6 3.6-3.6zM18.6 1.2L15 4.8l3.6 3.6 3.6-3.6z"/>
+               <path d="M12 7.8L8.4 11.4l3.6 3.6 3.6-3.6z"/>
+             </g>
+          </svg>
+        </a>
+        
+        <a href="https://soundcloud.com/steel-official" target="_blank" class="footer-platform-link" aria-label="SoundCloud">
+          <i class="fab fa-soundcloud"></i>
+        </a>
+        
+        <a href="https://www.youtube.com/@steel.official" target="_blank" class="footer-platform-link" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+      
+      <!-- Navigation -->
+      <div class="footer-nav fade-in-element">
+        <div class="footer-nav-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="live.html">Live</a></li>
+            <li><a href="weddings.html">Hochzeiten</a></li>
+            <li><a href="corporate.html">Corporate</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-section">
+          <h4>STEEL</h4>
+          <ul>
+            <li><a href="about.html">Über</a></li>
+            <li><a href="#releases">Releases</a></li>
+          </ul>
+        </div>
+  
+      </div>
+
+      <!-- Kontakt -->
+      <div class="footer-contact fade-in-element">
+        <div class="footer-contact-title">Reach Out</div>
+        <a href="mailto:info@steelmusic.net" class="footer-contact-email">info@steelmusic.net</a>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <div class="footer-legal">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          © 2025 STEELmusic. Alle Rechte vorbehalten.
+        </div>
+      </div>
+    </div>
+
+    
+  </footer>
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="back-to-top" aria-label="Nach oben">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+  <!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-content">
+      <div class="cookie-title">
+          <i class="fas fa-cookie-bite cookie-icon"></i>
+          <span id="cookieBannerTitle">Cookies</span>
+      </div>
+      <div class="cookie-text">
+          <span id="cookieBannerText">Wir verwenden Cookies für die beste Nutzererfahrung. </span>
+          <a href="datenschutz.html" id="cookieBannerLink">Mehr erfahren</a>
+      </div>
+  </div>
+  <div class="cookie-buttons">
+      <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">
+          <span id="cookieAcceptAll">Alle akzeptieren</span>
+      </button>
+      <button class="cookie-btn cookie-btn-settings" onclick="openCookieSettings()">
+          <span id="cookieSettings">Einstellungen</span>
+      </button>
+      <button class="cookie-btn cookie-btn-necessary" onclick="acceptNecessaryCookies()">
+          <span id="cookieNecessary">Nur notwendige</span>
+      </button>
+  </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div class="cookie-modal" id="cookieModal">
+  <div class="cookie-modal-content">
+      <div class="cookie-modal-header">
+          <h3 class="cookie-modal-title" id="cookieModalTitle">Cookie-Einstellungen</h3>
+          <button class="cookie-modal-close" onclick="closeCookieSettings()">
+              <i class="fas fa-times"></i>
+          </button>
+      </div>
+
+      <div class="cookie-category">
+          <div class="cookie-category-header">
+              <h4 class="cookie-category-title" id="cookieNecessaryTitle">Notwendige Cookies</h4>
+              <label class="cookie-toggle">
+                  <input type="checkbox" checked disabled>
+                  <span class="cookie-toggle-slider"></span>
+              </label>
+          </div>
+          <p class="cookie-category-description" id="cookieNecessaryDesc">
+              Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden.
+          </p>
+      </div>
+
+      <div class="cookie-category">
+          <div class="cookie-category-header">
+              <h4 class="cookie-category-title" id="cookieAnalyticsTitle">Analytik Cookies</h4>
+              <label class="cookie-toggle">
+                  <input type="checkbox" id="analyticsCookies">
+                  <span class="cookie-toggle-slider"></span>
+              </label>
+          </div>
+          <p class="cookie-category-description" id="cookieAnalyticsDesc">
+              Diese Cookies helfen uns zu verstehen, wie Sie mit der Website interagieren, um unsere Dienste zu verbessern.
+          </p>
+      </div>
+
+      <div class="cookie-category">
+          <div class="cookie-category-header">
+              <h4 class="cookie-category-title" id="cookieMarketingTitle">Marketing Cookies</h4>
+              <label class="cookie-toggle">
+                  <input type="checkbox" id="marketingCookies">
+                  <span class="cookie-toggle-slider"></span>
+              </label>
+          </div>
+          <p class="cookie-category-description" id="cookieMarketingDesc">
+              Diese Cookies werden verwendet, um Ihnen relevante Werbung und personalisierte Inhalte zu zeigen.
+          </p>
+      </div>
+
+      <div class="cookie-modal-buttons">
+          <button class="cookie-btn cookie-btn-save" onclick="saveCookieSettings()">
+              <span id="cookieSave">Einstellungen speichern</span>
+          </button>
+          <button class="cookie-btn cookie-btn-decline" onclick="declineAllCookies()">
+              <span id="cookieDeclineAll">Alle ablehnen</span>
+          </button>
+      </div>
+  </div>
+</div>
+          <!-- Cookie Banner JavaScript -->
+          <script src="assets/js/cookie-banner.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Lazy-loading für Spotify iFrames
+      const spotifyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const placeholder = entry.target;
+            const trackId = placeholder.dataset.spotifyId;
+            
+            if (trackId) {
+              // Erstelle das iframe-Element
+              const iframe = document.createElement('iframe');
+              iframe.src = `https://open.spotify.com/embed/track/${trackId}?utm_source=generator&theme=0`;
+              iframe.width = '100%';
+              iframe.height = '80';
+              iframe.frameBorder = '0';
+              iframe.allowTransparency = 'true';
+              iframe.allow = 'encrypted-media';
+              iframe.className = 'spotify-iframe';
+              
+              // Ersetze den Platzhalter mit dem iframe
+              placeholder.parentNode.replaceChild(iframe, placeholder);
+              
+              // Beobachtung für dieses Element beenden
+              spotifyObserver.unobserve(placeholder);
+            }
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '200px 0px', // Lädt den iFrame schon 200px bevor er sichtbar wird
+        threshold: 0.1
+      });
+    
+      // Alle Spotify-Platzhalter beobachten
+      document.querySelectorAll('.spotify-placeholder').forEach(placeholder => {
+        spotifyObserver.observe(placeholder);
+      });
+    
+      // ===== BIDIREKTIONALE SCROLL-ANIMATIONEN FÜR INDEX.HTML =====
+    
+      // Einheitlicher bidirektionaler Observer für ALLE Elemente
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          } else {
+            entry.target.classList.remove('visible');
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '-50px', 
+        threshold: 0.15
+      });
+    
+      // Apple-Style Observer für Releases-Titel (einmalige Animation)
+      const createAppleStyleObserver = () => {
+        const observerOptions = {
+          root: null,
+          rootMargin: '-10% 0px -10% 0px',
+          threshold: 0.3
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                entry.target.classList.add('visible');
+              }, 100);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+    
+        return observer;
+      };
+    
+      const appleObserver = createAppleStyleObserver();
+      const releasesHeading = document.querySelector('.releases-heading');
+      if (releasesHeading) {
+        appleObserver.observe(releasesHeading);
+      }
+    
+      // ALLE Elemente mit bidirektionaler Animation
+      document.querySelectorAll('.fade-in-element:not(.releases-heading), .release-item, .service-card, .view-all-releases, .footer-hero, .footer-stat, .footer-nav, .footer-contact').forEach(elem => {
+        scrollObserver.observe(elem);
+      });
+    
+      // Streaming Icons (einmalige Animation)
+      const streamingIcons = document.querySelectorAll('.platform-icon');
+      const streamingObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            streamingIcons.forEach(icon => {
+              icon.classList.add('visible');
+            });
+            streamingObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+      });
+    
+      const streamingContainer = document.querySelector('.streaming-platforms');
+      if (streamingContainer) {
+        streamingObserver.observe(streamingContainer);
+      }
+            
+      // Hero-Effekte
+      const heroSection = document.querySelector('.hero');
+      const heroContent = document.querySelector('.hero-content');
+      const heroBackground = document.querySelector('.hero-background');
+      
+      // Hero-Content einblenden
+      setTimeout(() => {
+        heroContent.classList.add('visible');
+      }, 300);
+      
+      // Hintergrund-Parallax beim Scrollen
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const heroHeight = heroSection.offsetHeight;
+        const scrollProgress = Math.min(scrollTop / heroHeight, 1);
+        
+        // Basics for header and hero effect
+        if (scrollTop > 50) {
+          document.body.classList.add('scrolled');
+          
+          // Hero-Content ausblenden beim Scrollen
+          if (scrollProgress > 0.2) {
+            heroContent.classList.add('hidden');
+            heroContent.classList.remove('visible');
+          }
+        } else {
+          document.body.classList.remove('scrolled');
+          
+          // Hero-Content einblenden beim Zurückscrollen
+          heroContent.classList.remove('hidden');
+          heroContent.classList.add('visible');
+        }
+      
+      });
+    
+      // Headerstil beim Scrollen anpassen
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.95)';
+          header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+        } else {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.8)';
+          header.style.boxShadow = 'none';
+        }
+      });
+    
+      // Apple-Style booking dropdown
+      const bookingToggle = document.getElementById('booking-toggle');
+      const bookingDropdown = document.getElementById('booking-dropdown');
+      
+      if (bookingToggle && bookingDropdown) {
+        bookingToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Toggle mit Animation
+          if (bookingDropdown.classList.contains('open')) {
+            bookingDropdown.classList.remove('open');
+          } else {
+            bookingDropdown.classList.add('open');
+          }
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!bookingDropdown.contains(event.target)) {
+            bookingDropdown.classList.remove('open');
+          }
+        });
+        
+        // Prevent clicks inside dropdown from closing it
+        const bookingOptions = document.querySelector('.booking-options');
+        if (bookingOptions) {
+          bookingOptions.addEventListener('click', function(e) {
+            // Nur Links durchlassen, andere Klicks stoppen
+            if (e.target.tagName !== 'A') {
+              e.stopPropagation();
+            }
+          });
+        }
+      }
+   // --- LANGUAGE SWITCHER IMPLEMENTATION (INDEX - FINAL) ---
+   const languageToggle = document.getElementById('language-toggle');
+      const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
+      
+      // Sprache aus Speicher laden oder Standard 'de'
+      let currentLanguage = localStorage.getItem('preferredLanguage') || 'de';
+
+      const translations = {
+        de: {
+          'nav-about': 'Über', 'nav-live': 'Live', 'nav-weddings': 'Hochzeiten', 'nav-corporate': 'Corporate',
+          'lang-switch': 'EN',
+          
+          'hero-title': 'DJ & ARTIST', 
+'hero-line1': 'Live • Hochzeiten • Corporate',
+    'hero-line2': 'Ruhrgebiet, NRW & weltweit',
+          
+          'booking-btn-main': 'Jetzt buchen',
+          'booking-opt-live': 'Live', 'booking-opt-wed': 'Hochzeiten', 'booking-opt-corp': 'Corporate',
+          
+          'services-heading': 'Deine Vision. <span class="services-highlight">Meine Musik.</span>',
+          'services-sub': 'In Deutschland und auf der ganzen Welt.',
+          
+          'serv-live-title': 'Live', 'serv-live-desc': 'Club • Festival • Open-Air',
+          'serv-wed-title': 'Hochzeiten', 'serv-wed-desc': 'Heiraten mit Stil. Und STEEL.',
+          'serv-corp-title': 'Corporate', 'serv-corp-desc': 'Firmenfeier • Messe • Business-Event',
+          'serv-cta': 'Erfahre mehr',
+          
+          'releases-heading': 'So klingt', 
+          'view-releases': 'Mehr',
+          'gossip': 'All the gossip »',
+          
+          // FOOTER
+          'footer-services': 'Services', 
+          'footer-about': 'STEEL', 
+          'footer-contact-title': 'Kontakt',
+          'footer-imprint': 'Impressum', 'footer-privacy': 'Datenschutz',
+          'footer-copyright': `© ${new Date().getFullYear()} STEELmusic. Alle Rechte vorbehalten.`
+        },
+        en: {
+          'nav-about': 'About', 'nav-live': 'Live', 'nav-weddings': 'Weddings', 'nav-corporate': 'Corporate',
+          'lang-switch': 'DE',
+          
+          'hero-title': 'DJ & ARTIST', 
+'hero-line1': 'Live • Weddings • Corporate',
+    'hero-line2': 'Ruhr Area, NRW & Worldwide',
+          
+          'booking-btn-main': 'Book now',
+          'booking-opt-live': 'Live', 'booking-opt-wed': 'Weddings', 'booking-opt-corp': 'Corporate',
+          
+          'services-heading': 'Your Vision. <span class="services-highlight">My Music.</span>',
+          'services-sub': 'In Germany and around the world.',
+          
+          'serv-live-title': 'Live', 'serv-live-desc': 'Club • Festival • Open-Air',
+          'serv-wed-title': 'Weddings', 'serv-wed-desc': 'Weddings with style. And STEEL.',
+          'serv-corp-title': 'Corporate', 'serv-corp-desc': 'Corporate Party • Trade Fair • Business Event',
+          'serv-cta': 'Learn more',
+          
+          'releases-heading': 'This is how', 
+          'view-releases': 'More',
+          'gossip': 'All the gossip »',
+          
+          // FOOTER
+          'footer-services': 'Services', 
+          'footer-about': 'STEEL', 
+          'footer-contact-title': 'Reach Out',
+          'footer-imprint': 'Legal Notice', 'footer-privacy': 'Privacy Policy',
+          'footer-copyright': `© ${new Date().getFullYear()} STEELmusic. All rights reserved.`
+        }
+      };
+
+      const applyLanguage = function(lang) {
+        currentLanguage = lang;
+        document.documentElement.lang = lang;
+        localStorage.setItem('preferredLanguage', lang);
+        
+        // Cookie Banner Sync
+        if (typeof setCookieBannerLanguage === 'function') setCookieBannerLanguage(lang);
+
+        const texts = translations[lang];
+
+        // Buttons aktualisieren
+        if (languageToggle) languageToggle.textContent = texts['lang-switch'];
+        if (mobileLanguageToggle) mobileLanguageToggle.textContent = texts['lang-switch'];
+
+        // Navigation
+        document.querySelectorAll('.about-link').forEach(el => el.textContent = texts['nav-about']);
+        document.querySelectorAll('.live-link').forEach(el => el.textContent = texts['nav-live']);
+        
+        // Navigation: Mapping für Links, die keine eindeutige Klasse haben
+        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.includes('weddings.html')) link.textContent = texts['nav-weddings'];
+            if (href && href.includes('corporate.html')) link.textContent = texts['nav-corporate'];
+        });
+
+// Hero
+const heroH1 = document.querySelector('.hero h1'); if(heroH1) heroH1.textContent = texts['hero-title'];
+        
+        // FIX: Beide Zeilen gezielt ansprechen
+        const line1 = document.querySelector('[data-i18n="hero-line1"]');
+        if(line1) line1.textContent = texts['hero-line1'];
+
+        const line2 = document.querySelector('[data-i18n="hero-line2"]');
+        if(line2) line2.textContent = texts['hero-line2'];
+        
+        // Booking Dropdown
+        const bookingBtn = document.getElementById('booking-toggle'); 
+        if(bookingBtn) bookingBtn.innerHTML = `${texts['booking-btn-main']} <i class="fas fa-chevron-down"></i>`;
+        
+        const opts = document.querySelectorAll('.booking-option-content h4');
+        if(opts.length >= 3) {
+            opts[0].textContent = texts['booking-opt-live'];
+            opts[1].textContent = texts['booking-opt-wed'];
+            opts[2].textContent = texts['booking-opt-corp'];
+        }
+
+        // Services Section
+        const servHead = document.querySelector('.services-heading h2'); if(servHead) servHead.innerHTML = texts['services-heading'];
+        const servSub = document.querySelector('.services-heading p'); if(servSub) servSub.textContent = texts['services-sub'];
+        
+        const cards = document.querySelectorAll('.service-card');
+        if(cards.length >= 3) {
+             // Live Card (Index 0)
+             if(cards[0].querySelector('h3')) cards[0].querySelector('h3').textContent = texts['serv-live-title'];
+             if(cards[0].querySelector('p')) cards[0].querySelector('p').textContent = texts['serv-live-desc'];
+             // Weddings Card (Index 1)
+             if(cards[1].querySelector('h3')) cards[1].querySelector('h3').textContent = texts['serv-wed-title'];
+             if(cards[1].querySelector('p')) cards[1].querySelector('p').textContent = texts['serv-wed-desc'];
+             // Corporate Card (Index 2)
+             if(cards[2].querySelector('h3')) cards[2].querySelector('h3').textContent = texts['serv-corp-title'];
+             if(cards[2].querySelector('p')) cards[2].querySelector('p').textContent = texts['serv-corp-desc'];
+             
+             cards.forEach(c => {
+                 const cta = c.querySelector('.service-cta span');
+                 if(cta) cta.textContent = texts['serv-cta'];
+             });
+        }
+
+        // Releases Heading (mit Logo-Erhaltung)
+        const relHead = document.querySelector('.releases-heading h2'); 
+        if(relHead) {
+            const logoHTML = '<span class="releases-title-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.58 91.64"><defs><linearGradient id="title-gradient" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f8a838"></stop><stop offset="100%" stop-color="#d57c0a"></stop></linearGradient></defs><path fill="url(#title-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/></svg></span>';
+            const textPart = texts['releases-heading'];
+            relHead.innerHTML = lang === 'de' ? `${textPart} ${logoHTML}` : `${textPart} ${logoHTML} sounds`;
+        }
+        
+        const moreBtn = document.getElementById('load-more-releases'); 
+        if(moreBtn) moreBtn.textContent = texts['view-releases'];
+        
+        const gossip = document.querySelector('.short-fact-highlight'); 
+        if(gossip) gossip.textContent = texts['gossip'];
+
+        // --- FOOTER UPDATE ---
+        // Überschriften
+        const fServices = document.querySelectorAll('.footer-nav-section h4')[0]; if(fServices) fServices.textContent = texts['footer-services'];
+        const fAbout = document.querySelectorAll('.footer-nav-section h4')[1]; if(fAbout) fAbout.textContent = texts['footer-about'];
+        const fContact = document.querySelector('.footer-contact-title'); if(fContact) fContact.textContent = texts['footer-contact-title'];
+        
+        // Links im Footer
+        // Wir suchen spezifisch im Footer-Container
+        const footerLinks = document.querySelectorAll('.footer-nav-section ul li a');
+        footerLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href) {
+                if(href.includes('live')) link.textContent = texts['nav-live'];
+                if(href.includes('weddings')) link.textContent = texts['nav-weddings'];
+                if(href.includes('corporate')) link.textContent = texts['nav-corporate'];
+                if(href.includes('about')) link.textContent = texts['nav-about'];
+            }
+        });
+
+        // Rechtstexte
+        const fLegal = document.querySelectorAll('.footer-legal a');
+        if(fLegal.length >= 2) {
+            fLegal[0].textContent = texts['footer-imprint'];
+            fLegal[1].textContent = texts['footer-privacy'];
+        }
+        const fCopyright = document.querySelector('.footer-copyright');
+        if(fCopyright) fCopyright.textContent = texts['footer-copyright'];
+      };
+
+      // Handler für Klicks
+      const handleSwitch = function(e) {
+        e.preventDefault(); // WICHTIG: Verhindert Neuladen!
+        const newLang = currentLanguage === 'de' ? 'en' : 'de';
+        applyLanguage(newLang);
+      };
+
+      if (languageToggle) languageToggle.addEventListener('click', handleSwitch);
+      if (mobileLanguageToggle) mobileLanguageToggle.addEventListener('click', handleSwitch);
+      
+      // Initiale Sprache anwenden
+      applyLanguage(currentLanguage);
+            
+      // "Mehr"-Button Funktionalität mit verbesserter Animation
+      const loadMoreButton = document.getElementById('load-more-releases');
+      const hiddenReleases = document.querySelectorAll('.hidden-release');
+      
+      if (loadMoreButton && hiddenReleases.length > 0) {
+        loadMoreButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          // Zeige versteckte Releases an mit verzögerter Animation
+          hiddenReleases.forEach((item, index) => {
+            setTimeout(() => {
+              item.style.display = 'flex';
+              item.style.opacity = '0';
+              item.style.transform = 'translateY(20px)';
+              
+              // Animation zum sanften Einblenden
+              setTimeout(() => {
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+              }, 50);
+            }, index * 100); // Gestaffelte Animation
+          });
+          
+          // "Mehr"-Button mit Animation ausblenden
+          this.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+          this.style.opacity = '0';
+          this.style.transform = 'translateY(-10px)';
+          
+          setTimeout(() => {
+            this.style.display = 'none';
+          }, 400);
+        });
+      }
+    
+      // JavaScript für schwebende Lichter mit Scroll-Reaktion
+      const floatingLights = document.querySelectorAll('.floating-light');
+      let lastScrollY = window.scrollY;
+      
+      const handleLightScroll = () => {
+        const scrollY = window.scrollY;
+        const scrollDelta = scrollY - lastScrollY;
+        const sections = document.querySelector('.releases-section');
+        
+        if (sections) {
+          const sectionRect = sections.getBoundingClientRect();
+          
+          // Nur wenn die Section im Viewport ist
+          if (sectionRect.top < window.innerHeight && sectionRect.bottom > 0) {
+            floatingLights.forEach((light, index) => {
+              const baseSpeed = 1;
+              const speedModifier = (index + 1) * 0.1; // Jedes Licht hat eine leicht andere Geschwindigkeit
+              const movement = scrollDelta * baseSpeed * speedModifier;
+              
+              // Dynamische Anpassung der Lichtbewegung beim Scrollen
+              const currentTransform = light.style.transform || 'translateY(0)';
+              const currentY = parseFloat(currentTransform.match(/translateY\(([^)]+)\)/)?.[1] || '0');
+              
+              // Berechne neue Position basierend auf Scroll-Richtung
+              let newY = currentY + movement;
+              
+              // Sanfte Begrenzung des Bewegungsbereichs
+              if (newY > 100) newY = 100;
+              if (newY < -100) newY = -100;
+              
+              // Anwendung der neuen Transformation mit Transition für sanfte Bewegung
+              light.style.transition = 'transform 0.5s ease-out';
+              light.style.transform = `translateY(${newY}px)`;
+              
+              // Opacity-Änderung basierend auf Scroll-Richtung
+              if (scrollDelta > 0) {
+                // Nach unten scrollen - Lichter werden leicht transparenter
+                light.style.opacity = Math.max(0.2, 0.8 - Math.abs(scrollDelta) * 0.01);
+              } else {
+                // Nach oben scrollen - Lichter werden sichtbarer
+                light.style.opacity = Math.min(1, 0.5 + Math.abs(scrollDelta) * 0.01);
+              }
+            });
+          }
+        }
+        
+        lastScrollY = scrollY;
+      };
+      
+      // Event-Listener für Scroll-Ereignisse
+      window.addEventListener('scroll', () => {
+        window.requestAnimationFrame(handleLightScroll);
+      }, { passive: true });
+      
+      // Initialisiere Lichter
+      floatingLights.forEach(light => {
+        light.style.opacity = '0.8';
+      });
+    
+      // Preload Spotify-Verbindung für schnelleres Laden
+      const link = document.createElement('link');
+      link.rel = 'preconnect';
+      link.href = 'https://open.spotify.com';
+      document.head.appendChild(link);
+    });
+    
+    // Verbessertes mobiles Menü mit Animation
+    document.getElementById('mobile-menu-toggle').onclick = function() {
+      var menu = document.getElementById('mobile-menu');
+      var toggle = document.getElementById('mobile-menu-toggle');
+      
+      toggle.classList.toggle('active');
+      
+      if (menu.style.display === 'block') {
+        // Animation zum Ausblenden
+        menu.style.opacity = '0';
+        
+        setTimeout(function() {
+          menu.style.display = 'none';
+          // Reset Menüpunkt-Animationen
+          document.querySelectorAll('#mobile-menu li').forEach(function(item) {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(-10px)';
+          });
+        }, 300);
+      } else {
+        // Menü einblenden
+        menu.style.display = 'block';
+        
+        // Kurze Verzögerung für CSS-Transition
+        setTimeout(function() {
+          menu.style.opacity = '1';
+          
+          // Menüpunkte animieren
+          document.querySelectorAll('#mobile-menu li').forEach(function(item, index) {
+            setTimeout(function() {
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            }, 100 + (index * 50));
+          });
+        }, 10);
+      }
+      
+      return false;
+    };
+    
+    // Schließen bei Klick auf Menüpunkte
+    document.querySelectorAll('#mobile-menu a:not(#mobile-language-toggle)').forEach(function(link) {
+      link.onclick = function() {
+        // Nach kurzem Delay schließen (für Feedback)
+        setTimeout(function() {
+          document.getElementById('mobile-menu-toggle').classList.remove('active');
+          document.getElementById('mobile-menu').style.opacity = '0';
+          
+          setTimeout(function() {
+            document.getElementById('mobile-menu').style.display = 'none';
+          }, 300);
+        }, 100);
+      };
+    });
+    
+    // Schließen bei Klick außerhalb des Menüs
+    document.addEventListener('click', function(event) {
+      var menu = document.getElementById('mobile-menu');
+      var toggle = document.getElementById('mobile-menu-toggle');
+      
+      if (menu.style.display === 'block' && 
+          !menu.contains(event.target) && 
+          !toggle.contains(event.target)) {
+        toggle.classList.remove('active');
+        menu.style.opacity = '0';
+        
+        setTimeout(function() {
+          menu.style.display = 'none';
+        }, 300);
+      }
+    });
+    
+    // Back to Top Button
+    const backToTop = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
+    });
+    
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Scroll Progress
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        document.querySelector('.scroll-progress-bar').style.width = scrollPercent + '%';
+    });
+/* =========================================
+       NEUE SCROLL-LOGIK (Hero & Cards)
+       ========================================= */
+
+    // 1. HERO: Butterweiches Faden basierend auf Pixeln
+    window.addEventListener('scroll', () => {
+        const hero = document.querySelector('.hero-content');
+        if (!hero) return;
+
+        const scrollPos = window.scrollY;
+        const fadeStart = 0; // Ab wann beginnt das Faden (0px)
+        const fadeUntil = 500; // Bei 500px Scroll ist es komplett weg
+        
+        // Berechne Deckkraft (von 1 bis 0)
+        let opacity = 1 - (scrollPos / fadeUntil);
+        
+        // Berechne leichte Bewegung nach oben (Parallax)
+        let translateY = scrollPos / 4; 
+
+        // Begrenzen, damit es nicht negativ wird
+        if (opacity < 0) opacity = 0;
+        if (opacity > 1) opacity = 1;
+
+        // Anwenden
+        hero.style.opacity = opacity;
+        hero.style.transform = `translateY(-${translateY}px)`; // Bewegt sich leicht mit nach oben
+        
+        // Performance-Trick: Wenn unsichtbar, Klicks deaktivieren
+        if (opacity <= 0) {
+            hero.style.pointerEvents = 'none';
+        } else {
+            hero.style.pointerEvents = 'auto';
+        }
+    });
+
+
+    // 2. CARDS: Rein- und Rausfaden beim Scrollen
+    // Wir nutzen einen "Observer", der prüft, ob die Karte im Bild ist
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Wenn die Karte im Bild ist:
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            } 
+            // Wenn die Karte das Bild verlässt (nach oben oder unten):
+            else {
+                entry.target.classList.remove('is-visible'); 
+                // Das Entfernen sorgt dafür, dass die Animation beim 
+                // nächsten Mal wieder von vorne startet!
+            }
+        });
+    }, {
+        threshold: 0.15, // Reagiert, sobald 15% der Karte zu sehen sind
+        rootMargin: "0px 0px -50px 0px" // Kleiner Puffer unten
+    });
+
+    // Den Observer auf alle Service-Cards ansetzen
+    document.querySelectorAll('.service-card').forEach(card => {
+        cardObserver.observe(card);
+    });
+/* --- DYNAMIC HEADER IMAGE SCRIPT (FIXED) --- */
+document.addEventListener("DOMContentLoaded", function() {
+    const dynamicBg = document.querySelector('.hero-background-dynamic');
+    const triggers = document.querySelectorAll('.marquee-content span[data-bg]');
+
+    // HIER fehlte vorher die Schleife "forEach"!
+    triggers.forEach(trigger => {
+        trigger.addEventListener('mouseenter', function() {
+            const newImage = this.getAttribute('data-bg');
+            
+            // Lese die Wunsch-Position aus (oder nimm Standard center 30%)
+            const newPos = this.getAttribute('data-pos') || 'center 30%';
+
+            if(newImage && dynamicBg) {
+                dynamicBg.style.backgroundImage = `url('${newImage}')`;
+                dynamicBg.style.backgroundPosition = newPos; // Position anwenden
+                dynamicBg.style.opacity = '1';
+            }
+        });
+
+        trigger.addEventListener('mouseleave', function() {
+            if(dynamicBg) {
+                dynamicBg.style.opacity = '0';
+            }
+        });
+    });
+});
+    </script>
+</body>
+</html>

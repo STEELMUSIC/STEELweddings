@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Cookie Banner CSS -->
+<link rel="stylesheet" href="assets/css/cookie-banner.css">
+<link rel="canonical" href="https://www.steelmusic.net/about.html">
+<link rel="icon" type="image/png" href="images/favicon.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEEL | Über STEEL aka Alexander Stahl</title>
+    <meta name="description" content="Die Crowd lesen. Den Vibe spüren. Erfahre mehr über Alexander Stahl aka STEEL – DJ, Musikproduzent und Live-Act aus dem Ruhrgebiet.">
+    <meta name="keywords" content="DJ STEEL, Alexander Stahl, DJ Ruhrgebiet, DJ Herne, EDM DJ, Open Format DJ, DJ Werdegang, Musikproduzent, Resident DJ Dortmund">
+    <meta name="author" content="STEEL">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preload" as="image" href="images/about/dj-portrait-ruhrgebiet-essen-bochum-dortmund-düsseldorf.webp">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.steelmusic.net/about.html">
+    <meta property="og:title" content="STEEL | Die Geschichte hinter dem DJ">
+    <meta property="og:description" content="Die Crowd lesen. Den Vibe spüren. Erfahre mehr über den Werdegang von Alexander Stahl aka STEEL.">
+    <meta property="og:image" content="https://www.steelmusic.net/images/about/dj-portrait-ruhrgebiet-essen-bochum-dortmund-düsseldorf.webp">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.steelmusic.net/about.html">
+    <meta property="twitter:title" content="STEEL | Die Geschichte hinter dem DJ">
+    <meta property="twitter:description" content="Die Crowd lesen. Den Vibe spüren. Erfahre mehr über den Werdegang von Alexander Stahl aka STEEL.">
+    <meta property="twitter:image" content="https://www.steelmusic.net/images/about/dj-portrait-ruhrgebiet-essen-bochum-dortmund-düsseldorf.webp">
+    <style>
+      :root {
+          --primary-color: #ff6b6b;
+          --secondary-color: #ff9e7d;
+          --steel-color: #f3930d;
+          --steel-secondary: #e67e22;
+          --weddings-color: #a044ff;
+          --weddings-secondary: #6441a5;
+          --live-color: #4facfe;
+          --live-secondary: #00f2fe;
+          --corporate-color: #43e97b;
+          --corporate-secondary: #38f9d7;
+          --gradient-light: #ff6b6b;
+          --gradient-dark: #ff9e7d;
+          --light-bg: #1e1e20;
+          --dark-bg: #121214;
+          --darker-bg: #0c0c0e;
+          --dark-text: #f5f5f7;
+          --light-text: #f5f5f7;
+          --text-secondary: #bbbbbb;
+          --transition: all 0.4s ease;
+      }
+
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      
+      body {
+          overflow-x: hidden;
+          color: var(--light-text);
+          background-color: var(--dark-bg);
+      }
+      
+      strong {
+          font-weight: 600;
+          color: var(--primary-color);
+      }
+      
+      em {
+          font-style: normal;
+          font-weight: 500;
+          color: var(--primary-color);
+      }
+      
+      p {
+          color: var(--text-secondary);
+          line-height: 1.8;
+          letter-spacing: 0.01rem;
+          margin-bottom: 1.5rem;
+          font-size: 1.05rem;
+      }
+
+      /* Styles für Links im Fließtext */
+      p a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary-color);
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        p a:hover {
+            color: var(--secondary-color);
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+      /* Header Styles from Index */
+      header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+          background-color: rgba(30, 30, 32, 0.8);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          transition: var(--transition);
+      }
+      
+      .nav-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 2rem;
+          height: 60px;
+      }
+
+      .logo {
+          width: 120px;
+          height: 34px;
+          display: block;
+          position: relative;
+      }
+
+      #steel-logo path {
+          transition: fill 0.6s ease;
+          fill: url(#logo-gradient);
+      }
+
+      /* Navigation Links */
+      .nav-links {
+          display: flex;
+          list-style: none;
+          align-items: center;
+      }
+      
+      .nav-links li {
+          margin-left: 0.75rem;
+          font-size: 0.9rem;
+      }
+      
+      .nav-links a {
+          position: relative;
+          text-decoration: none;
+          color: var(--light-text);
+          transition: color 0.3s ease;
+          font-size: 0.9rem;
+          padding: 6px 12px;
+          border-radius: 6px;
+      }
+
+      .nav-links a::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 12px;
+          right: 12px;
+          height: 2px;
+          background: var(--primary-color);
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+          transform: scaleX(1);
+          transform-origin: left;
+      }
+
+      .nav-links a:hover {
+          color: var(--primary-color);
+          background-color: transparent;
+      }
+
+      /* About-specific active link */
+      .nav-links a.about {
+          color: var(--primary-color);
+          background-color: rgba(255, 107, 107, 0.1);
+      }
+
+      .nav-links a.about::after {
+          background: var(--primary-color);
+      }
+
+      .nav-links a.about:hover {
+          color: var(--primary-color);
+          background-color: rgba(255, 107, 107, 0.2);
+      }
+
+      .nav-links a.live:hover,
+      .nav-links a.weddings:hover,
+      .nav-links a.corporate:hover {
+          color: var(--primary-color);
+          background-color: rgba(255, 107, 107, 0.1);
+      }
+
+      /* Service-Links */
+      .nav-links .service-link {
+          font-weight: 500;
+      }
+      
+      /* Service dividers */
+      .service-divider {
+          display: inline-block;
+          width: 1px;
+          height: 16px;
+          background-color: rgba(255, 255, 255, 0.2);
+          margin: 0 0.1rem 0 0.1rem;
+      }
+      
+      /* Language Switch */
+      .language-switch {
+          margin-left: 0.5rem;
+          padding-left: 0.75rem;
+      }
+      
+      .language-switch a {
+          background-color: rgba(255, 107, 107, 0.2);
+          padding: 0.3rem 0.6rem;
+          border-radius: 4px;
+          font-size: 0.8rem;
+          font-weight: 600;
+          transition: var(--transition);
+          cursor: pointer;
+          color: var(--primary-color);
+          text-decoration: none;
+      }
+      
+      .language-switch a:hover {
+          background-color: rgba(255, 107, 107, 0.4);
+          border-color: rgba(255, 107, 107, 0.6);
+      }
+
+      /* Progress Bar */
+      .scroll-progress-bar {
+          position: fixed;
+          top: 60px;
+          left: 0;
+          height: 3px;
+          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+          z-index: 999;
+          transition: width 0.2s ease;
+          width: 0%;
+      }
+
+      /* Mobile Menu */
+      .mobile-menu-toggle {
+          display: none;
+          cursor: pointer;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          z-index: 2002;
+          width: 30px;
+          height: 30px;
+      }
+
+      .mobile-menu-toggle span {
+          display: block;
+          width: 24px;
+          height: 2px;
+          margin: 3px 0;
+          background-color: white;
+          transition: all 0.3s ease;
+          border-radius: 1px;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px) !important;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(2) {
+          opacity: 0 !important;
+      }
+
+      .mobile-menu-toggle.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px) !important;
+      }
+
+      .mobile-menu {
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          display: none;
+          position: fixed;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          height: auto;
+          background-color: rgba(18, 18, 20, 0.95);
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+          z-index: 1999;
+          padding: 20px 0 30px;
+          text-align: center;
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .mobile-menu li {
+          margin: 15px 0;
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: all 0.3s ease;
+      }
+
+      .mobile-menu li:nth-child(1) { transition-delay: 0.05s; }
+      .mobile-menu li:nth-child(2) { transition-delay: 0.1s; }
+      .mobile-menu li:nth-child(3) { transition-delay: 0.15s; }
+      .mobile-menu li:nth-child(4) { transition-delay: 0.2s; }
+      .mobile-menu li:nth-child(5) { transition-delay: 0.25s; }
+      .mobile-menu li:nth-child(6) { transition-delay: 0.3s; }
+
+      .mobile-menu-divider {
+          position: relative;
+          text-align: center;
+          padding: 10px 0;
+          margin: 15px 0 5px;
+          opacity: 0.5;
+      }
+
+      .mobile-menu-divider span {
+          display: inline-block;
+          position: relative;
+          padding: 0 10px;
+          background-color: rgba(18, 18, 20, 0.95);
+          font-size: 0.85rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          z-index: 1;
+      }
+
+      .mobile-menu-divider:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 10%;
+          right: 10%;
+          height: 1px;
+          background-color: rgba(255, 255, 255, 0.15);
+          z-index: 0;
+      }
+
+      .mobile-menu a {
+          font-size: 1.2rem;
+          color: white;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          padding: 8px 20px;
+          border-radius: 8px;
+          display: inline-block;
+          width: 80%;
+      }
+
+      #mobile-language-toggle {
+          background-color: rgba(255, 107, 107, 0.2);
+          padding: 0.3rem 0.8rem;
+          border-radius: 4px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          border: 1px solid rgba(255, 107, 107, 0.3);
+          width: auto;
+          display: inline-block;
+          margin-top: 15px;
+      }
+
+      #mobile-language-toggle:hover {
+          background-color: rgba(255, 107, 107, 0.4);
+          border-color: rgba(255, 107, 107, 0.6);
+      }
+
+      .mobile-menu li:last-child {
+          position: relative;
+          margin-top: 30px;
+      }
+
+      .mobile-menu li:last-child:before {
+          content: '';
+          position: absolute;
+          top: -15px;
+          left: 35%;
+          right: 35%;
+          height: 1px;
+          background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .mobile-menu .about-link {
+          font-weight: 400;
+          color: var(--primary-color);
+          font-size: 1.2rem;
+      }
+
+      .mobile-menu .service-link {
+          font-weight: 500;
+      }
+
+      .mobile-menu a:hover {
+          color: var(--primary-color);
+          background-color: rgba(255, 107, 107, 0.1);
+          text-decoration: none;
+      }
+
+      /* Hero Section */
+      .hero {
+          min-height: 100vh;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-start;
+          background-color: #000;
+          overflow: hidden;
+          position: relative;
+      }
+      
+      .hero::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background: linear-gradient(to bottom, 
+              rgba(0, 0, 0, 0) 0%, 
+              rgba(0, 0, 0, 0.2) 50%, 
+              rgba(0, 0, 0, 0.8) 100%);
+          z-index: 1;
+      }
+      
+      .hero-background {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0;
+          background-image: url('images/about/dj-portrait-ruhrgebiet-essen-bochum-dortmund-düsseldorf.webp');
+          background-size: cover;
+          background-position: center 10%;
+          animation: slowZoom 20s ease-in-out infinite alternate;
+      }
+      
+      @keyframes slowZoom {
+          0% {
+              transform: scale(1);
+          }
+          100% {
+              transform: scale(1.05);
+          }
+      }
+      
+      .hero-content {
+          max-width: 800px;
+          z-index: 2;
+          padding: 3rem;
+          position: relative;
+          margin-bottom: 5rem;
+          opacity: 0;
+          transform: translateY(40px);
+          transition: opacity 1.2s ease, transform 1.2s ease;
+          will-change: opacity, transform;
+      }
+      
+      .hero-content.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      
+      .hero h1 {
+          font-size: 4rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          line-height: 1.1;
+      }
+      
+      .hero p {
+          font-size: 1.5rem;
+          color: var(--light-text);
+          max-width: 600px;
+          margin-bottom: 2rem;
+          line-height: 1.5;
+      }
+
+      /* Main Content */
+      .about-section {
+          padding: 6rem 2rem;
+          background-color: var(--light-bg);
+          position: relative;
+          z-index: 5;
+      }
+      
+      .about-container {
+          max-width: 1000px;
+          margin: 0 auto;
+      }
+      
+      .about-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+          margin-bottom: 4rem;
+      }
+      
+      .about-text {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 1s ease, transform 1s ease;
+      }
+      
+      .about-text.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      
+      /* Variable entrance effects for about sections */
+      .about-text:nth-child(1) {
+          transform: translateX(-40px) translateY(20px);
+      }
+      
+      .about-text.visible:nth-child(1) {
+          transform: translateX(0) translateY(0);
+      }
+      
+      .about-image {
+          overflow: hidden;
+          border-radius: 12px;
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+          position: relative;
+          opacity: 0;
+          transform: translateX(40px) scale(0.95);
+          transition: opacity 1s ease, transform 1s ease;
+          max-height: 60vh;
+          aspect-ratio: 4/5;
+      }
+      
+      .about-image.visible {
+          opacity: 1;
+          transform: translateX(0) scale(1);
+      }
+      
+      .about-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      
+      .about-image:hover img {
+          transform: scale(1.03);
+      }
+      
+      /* Erstes Bild */
+      .about-grid:first-child .about-image img {
+          object-position: center 10%; /* Kopf weiter oben */
+      }
+
+      /* Zweites Bild */
+      .about-grid:last-child .about-image img {
+          object-position: center 100%; /* Kopf weiter unten */
+      }
+
+      /* Jahresangabe auf Bild */
+      .image-year {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: var(--light-text);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        z-index: 10;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        opacity: 0.9;
+      }
+
+      .about-heading {
+          font-size: 2.2rem;
+          margin-bottom: 1.5rem;
+          /* Farbverlauf hinzufügen */
+          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+      }
+      
+      .about-subheading {
+          font-size: 1.8rem;
+          margin-bottom: 1.5rem;
+          color: var(--primary-color);
+          opacity: 0.9;
+      }
+      
+      .about-quote {
+          font-size: 1.6rem;
+          line-height: 1.6;
+          margin: 3rem 0;
+          padding: 2rem;
+          border-left: 4px solid var(--primary-color);
+          background-color: rgba(255, 107, 107, 0.05);
+          border-radius: 0 12px 12px 0;
+          color: var(--light-text);
+          opacity: 0;
+          transform: translateY(40px) scale(0.98);
+          transition: opacity 1s ease, transform 1s ease;
+      }
+      
+      .about-quote.visible {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+      }
+      
+      /* Typewriter Effect */
+      #cursor {
+          animation: blink 1s infinite;
+          color: var(--primary-color);
+          font-weight: 100;
+      }
+      
+      @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+      }
+      
+      #typewriter-text {
+          display: inline;
+      }
+      
+      .about-quote cite {
+          display: block;
+          margin-top: 1rem;
+          font-size: 1.1rem;
+          font-style: normal;
+          color: var(--primary-color);
+      }
+      
+      .skills-section {
+          padding: 6rem 2rem;
+          background-color: var(--dark-bg);
+          position: relative;
+          z-index: 5;
+      }
+      
+      .skills-container {
+          max-width: 1000px;
+          margin: 0 auto;
+      }
+      
+      .skills-heading {
+          font-size: 2.5rem;
+          margin-bottom: 3rem;
+          text-align: center;
+          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 1s ease, transform 1s ease;
+      }
+      
+      .skills-heading.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      
+      .skills-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          gap: 2rem;
+      }
+      
+      .skill-item {
+          background-color: var(--light-bg);
+          padding: 2rem;
+          border-radius: 12px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          text-align: center;
+          transition: transform 0.4s ease;
+          opacity: 0;
+          transition: opacity 1s ease, transform 1s ease, box-shadow 0.3s ease;
+      }
+      
+      /* Variable entrance effects for skills */
+      .skill-item:nth-child(1) {
+          transform: translateX(-40px) translateY(20px) scale(0.95);
+      }
+      
+      .skill-item:nth-child(2) {
+          transform: translateY(40px) scale(0.95);
+      }
+      
+      .skill-item:nth-child(3) {
+          transform: translateX(40px) translateY(20px) scale(0.95);
+      }
+      
+      .skill-item.visible {
+          opacity: 1;
+          transform: translateX(0) translateY(0) scale(1);
+      }
+      
+      .skill-item:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+      
+      .skill-icon {
+          font-size: 3rem;
+          margin-bottom: 1.5rem;
+          color: var(--primary-color);
+      }
+      
+      .skill-title {
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+          color: var(--primary-color);
+      }
+      
+      .skill-description {
+          font-size: 1rem;
+          color: var(--text-secondary);
+      }
+
+      .timeline-section {
+          padding: 6rem 2rem;
+          background-color: var(--light-bg);
+          position: relative;
+          z-index: 5;
+      }
+      
+      .timeline-container {
+          max-width: 800px;
+          margin: 0 auto;
+      }
+      
+      .timeline-heading {
+          font-size: 2.5rem;
+          margin-bottom: 3rem;
+          text-align: center;
+          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 1s ease, transform 1s ease;
+      }
+      
+      .timeline-heading.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      
+      /* ===== TIMELINE CSS - DESKTOP VERSION ===== */
+      .timeline {
+          position: relative;
+          padding: 2rem 0;
+      }
+
+      .timeline::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(to bottom, 
+              rgba(255, 107, 107, 0.2), 
+              rgba(255, 107, 107, 0.6),
+              rgba(255, 107, 107, 0.2));
+          transform: translateX(-50%);
+      }
+
+      .timeline-item {
+          position: relative;
+          margin-bottom: 4rem;
+          width: 100%;
+          opacity: 0;
+          transition: opacity 1s ease, transform 1s ease;
+      }
+
+      .timeline-item.visible {
+          opacity: 1;
+      }
+
+      .timeline-item:last-child {
+          margin-bottom: 0;
+      }
+
+      .timeline-item::after {
+          content: '';
+          display: table;
+          clear: both;
+      }
+
+      /* Variable entrance effects for timeline items */
+      .timeline-item:nth-child(odd) {
+          transform: translateX(-60px) rotateY(-5deg);
+      }
+
+      .timeline-item:nth-child(even) {
+          transform: translateX(60px) rotateY(5deg);
+      }
+
+      .timeline-item.visible:nth-child(odd),
+      .timeline-item.visible:nth-child(even) {
+          transform: translateX(0) rotateY(0deg);
+      }
+
+      .timeline-content {
+          position: relative;
+          width: calc(50% - 40px);
+          padding: 1.5rem;
+          border-radius: 12px;
+          background-color: var(--dark-bg);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content {
+          float: left;
+          text-align: right;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content {
+          float: right;
+      }
+
+      .timeline-content::before {
+          content: '';
+          position: absolute;
+          top: 20px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content::before {
+          right: -15px;
+          border-width: 10px 0 10px 15px;
+          border-color: transparent transparent transparent var(--dark-bg);
+      }
+
+      .timeline-item:nth-child(even) .timeline-content::before {
+          left: -15px;
+          border-width: 10px 15px 10px 0;
+          border-color: transparent var(--dark-bg) transparent transparent;
+      }
+
+      .timeline-date {
+          position: absolute;
+          width: 70px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 10px;
+          background-color: var(--primary-color);
+          color: white;
+          border-radius: 20px;
+          font-weight: 600;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .timeline-item:nth-child(odd) .timeline-date {
+          right: -105px;
+      }
+
+      .timeline-item:nth-child(even) .timeline-date {
+          left: -105px;
+      }
+
+      .timeline-title {
+          margin-bottom: 0.5rem;
+          font-size: 1.3rem;
+          color: var(--primary-color);
+      }
+
+      .timeline-description {
+          margin-bottom: 0;
+          font-size: 0.95rem;
+      }
+
+      /* Contact Section */
+      .contact-section {
+          padding: 6rem 2rem;
+          background-color: var(--dark-bg);
+          position: relative;
+          z-index: 5;
+      }
+      
+      .contact-container {
+          max-width: 1000px;
+          margin: 0 auto;
+          text-align: center;
+      }
+      
+      .contact-heading {
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 1s ease, transform 1s ease;
+      }
+      
+      .contact-heading.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      
+      .contact-text {
+          max-width: 600px;
+          margin: 0 auto 3rem;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 1s ease, transform 1s ease;
+      }
+      
+      .contact-text.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      
+      .contact-links {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          margin-bottom: 3rem;
+          flex-wrap: wrap;
+      }
+      
+      .contact-link {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 1rem 1.5rem;
+          background-color: rgba(255, 107, 107, 0.1);
+          border-radius: 8px;
+          color: var(--primary-color);
+          text-decoration: none;
+          transition: all 0.3s ease;
+          border-bottom: none;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 1s ease, transform 1s ease, background-color 0.3s ease;
+      }
+      
+      .contact-link.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+      
+      .contact-link:hover {
+          background-color: rgba(255, 107, 107, 0.2);
+          transform: translateY(-5px);
+      }
+      
+      .contact-link i {
+          font-size: 1.5rem;
+      }
+      /* Footer from Index */
+      footer {
+          background-color: var(--darker-bg);
+          position: relative;
+          overflow: hidden;
+          z-index: 10;
+          border-top-left-radius: 30px;
+          border-top-right-radius: 30px;
+          box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+          margin-top: -40px;
+      }
+
+      footer::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: 
+              radial-gradient(at 20% 30%, rgba(255, 107, 107, 0.02), transparent 60%),
+              radial-gradient(at 80% 70%, rgba(255, 158, 125, 0.02), transparent 60%);
+          z-index: 0;
+      }
+
+      .footer-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 4rem 2rem 0;
+          position: relative;
+          z-index: 10;
+      }
+
+      .footer-hero {
+          text-align: center;
+          margin-bottom: 2rem;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .footer-hero.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+      .footer-logo {
+          width: 180px;
+          height: auto;
+          margin: 0 auto 1.5rem;
+          opacity: 0.9;
+          transition: opacity 0.3s ease;
+      }
+
+      .footer-logo:hover {
+          opacity: 1;
+      }
+
+      .footer-tagline {
+          font-size: 1.1rem;
+          color: var(--text-secondary);
+          margin-bottom: 2rem;
+          font-weight: 300;
+      }
+
+      .footer-stats {
+          display: flex;
+          justify-content: center;
+          gap: 3rem;
+          flex-wrap: wrap;
+          margin-bottom: 2rem;
+      }
+
+      .footer-stat {
+          text-align: center;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .footer-stat.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+      .footer-stat-number {
+          font-size: 1.5rem;
+          font-weight: 700;
+          background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+          display: block;
+          margin-bottom: 0.2rem;
+      }
+
+      .footer-stat-label {
+          font-size: 0.8rem;
+          color: var(--text-secondary);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+      }
+
+      .footer-social {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          margin-bottom: 2rem;
+      }
+
+      .footer-social-link {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.7rem 1.2rem;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 25px;
+          color: var(--light-text);
+          text-decoration: none;
+          transition: all 0.3s ease;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          font-size: 0.9rem;
+      }
+
+      .footer-social-link:hover {
+          background: rgba(255, 255, 255, 0.1);
+          transform: translateY(-2px);
+          border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .footer-social-link i {
+          font-size: 1.1rem;
+      }
+
+      .footer-social-link:hover .fa-instagram {
+          background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+      }
+
+      .footer-social-link:hover .fa-tiktok {
+          color: #000;
+      }
+
+      .footer-streaming {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          margin-bottom: 2rem;
+          flex-wrap: wrap;
+      }
+
+      .footer-platform-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 45px;
+          height: 45px;
+          border-radius: 12px;
+          background: rgba(30, 30, 34, 0.6);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: var(--text-secondary);
+          font-size: 1.2rem;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          text-decoration: none;
+      }
+
+      .footer-platform-link:hover {
+          transform: translateY(-3px);
+          background: rgba(255, 255, 255, 0.1);
+          border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .footer-platform-link:hover .fa-spotify { color: #1DB954; }
+      .footer-platform-link:hover .fa-apple { color: #FC3C44; }
+      .footer-platform-link:hover .fa-amazon { color: #FF9900; }
+      .footer-platform-link:hover .fa-soundcloud { color: #FF5500; }
+      .footer-platform-link:hover .fa-youtube { color: #FF0000; }
+
+      .footer-platform-link.deezer-icon svg {
+          width: 1.2rem;
+          height: 1.2rem;
+          fill: currentColor;
+      }
+
+      .footer-platform-link:hover.deezer-icon svg {
+          fill: #A238FF;
+      }
+
+      .footer-platform-link.tidal-icon svg {
+          width: 2.5rem;
+          height: 0.8rem;
+          fill: currentColor;
+      }
+
+      .footer-platform-link:hover.tidal-icon svg {
+          fill: #FFFFFF;
+      }
+
+      .footer-nav {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          margin-bottom: 2rem;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+          max-width: 300px;
+          margin: 0 auto 2rem auto;
+      }
+
+      .footer-nav.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+      .footer-nav-section {
+          text-align: center;
+      }
+
+      .footer-nav-section h4 {
+          font-size: 0.9rem;
+          color: var(--light-text);
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+      }
+
+      .footer-nav-section ul {
+          list-style: none;
+      }
+
+      .footer-nav-section ul li {
+          margin-bottom: 0.5rem;
+      }
+
+      .footer-nav-section a {
+          color: var(--text-secondary);
+          text-decoration: none;
+          font-size: 0.9rem;
+          transition: color 0.3s ease;
+      }
+
+      .footer-nav-section a:hover {
+          color: var(--primary-color);
+      }
+
+      .footer-contact {
+          text-align: center;
+          margin-bottom: 2rem;
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .footer-contact.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+
+      .footer-contact-title {
+          font-size: 0.9rem;
+          color: var(--text-secondary);
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+      }
+
+      .footer-contact-email {
+          font-size: 1.1rem;
+          color: var(--light-text);
+          text-decoration: none;
+          font-weight: 500;
+          transition: color 0.3s ease;
+      }
+
+      .footer-contact-email:hover {
+          color: var(--primary-color);
+      }
+
+      .footer-bottom {
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          padding: 2rem 0;
+          text-align: center;
+      }
+
+      .footer-bottom-content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+          margin-bottom: 1rem;
+      }
+
+      .footer-legal {
+          display: flex;
+          gap: 2rem;
+          font-size: 0.85rem;
+      }
+
+      .footer-legal a {
+          color: var(--text-secondary);
+          text-decoration: none;
+          transition: color 0.3s ease;
+      }
+
+      .footer-legal a:hover {
+          color: var(--primary-color);
+      }
+
+      .footer-copyright {
+          font-size: 0.8rem;
+          color: var(--text-secondary);
+          opacity: 0.7;
+      }
+
+      .back-to-top {
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          width: 50px;
+          height: 50px;
+          background: var(--primary-color);
+          color: white;
+          border: none;
+          border-radius: 50%;
+          cursor: pointer;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          z-index: 100;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .back-to-top.visible {
+          opacity: 1;
+          visibility: visible;
+      }
+
+      .back-to-top:hover {
+          background: var(--secondary-color);
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .back-to-top i {
+          font-size: 1.2rem;
+      }
+
+      @keyframes bounceUp {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0); }
+      }
+
+      .back-to-top:active {
+          animation: bounceUp 0.5s ease;
+      }
+
+      /* Titan-Effekt für "Meine Fähigkeiten" - Angepasst an Index-Version */
+      .skills-highlight {
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        
+        /* Gleiche Struktur wie in index.html - mit text-shadow UND filter */
+        position: relative;
+        display: inline-block;
+        text-shadow: 
+          0 0 8px rgba(255, 107, 107, 0.4),
+          0 0 15px rgba(255, 107, 107, 0.3),
+          0 0 25px rgba(255, 107, 107, 0.2);
+        filter: 
+          drop-shadow(0 0 10px rgba(255, 107, 107, 0.4))
+          drop-shadow(0 0 18px rgba(255, 158, 125, 0.3));
+          
+        /* Apple-Style Animation */
+        animation: titanGlow 4s ease-in-out infinite alternate;
+      }
+
+      @keyframes titanGlow {
+        0% {
+          text-shadow: 
+            0 0 8px rgba(255, 107, 107, 0.4),
+            0 0 15px rgba(255, 107, 107, 0.3),
+            0 0 25px rgba(255, 107, 107, 0.2);
+          filter: 
+            drop-shadow(0 0 10px rgba(255, 107, 107, 0.4))
+            drop-shadow(0 0 18px rgba(255, 158, 125, 0.3));
+        }
+        100% {
+          text-shadow: 
+            0 0 12px rgba(255, 107, 107, 0.6),
+            0 0 20px rgba(255, 107, 107, 0.4),
+            0 0 30px rgba(255, 107, 107, 0.3);
+          filter: 
+            drop-shadow(0 0 15px rgba(255, 107, 107, 0.6))
+            drop-shadow(0 0 25px rgba(255, 158, 125, 0.4));
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+          .nav-links {
+              display: none;
+          }
+          
+          .mobile-menu-toggle {
+              display: flex;
+          }
+          
+          .nav-container {
+              padding: 1rem;
+              position: relative;
+              z-index: 2001;
+          }
+          
+          .footer-nav {
+              grid-template-columns: repeat(2, 1fr);
+              gap: 2rem;
+          }
+          
+          .footer-stats {
+              gap: 1.5rem;
+          }
+      }
+
+      @media (max-width: 768px) {
+        .timeline-date {
+          top: -40px; /* Mobile Timeline-Datum höher platzieren */
+        }
+        
+        .footer-container {
+          padding: 3rem 1.5rem 0;
+        }
+        
+        .footer-nav {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        
+        .footer-stats {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        
+        .footer-streaming {
+          gap: 0.8rem;
+        }
+        
+        .footer-platform-link {
+          width: 40px;
+          height: 40px;
+          font-size: 1rem;
+        }
+        
+        .footer-bottom-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .footer-legal {
+          justify-content: center;
+        }
+        
+        .hero h1 {
+          font-size: 3rem;
+        }
+        
+        .hero-content {
+          padding: 2rem;
+          margin-bottom: 3rem;
+        }
+        
+        /* About Grid - Alle Grids auf eine Spalte */
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        
+        /* Zweites Grid: Text über Bild */
+        .about-grid:last-of-type {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+        
+        .about-grid:last-of-type .about-text {
+          order: 1;
+          grid-row: 1;
+        }
+        
+        .about-grid:last-of-type .about-image {
+          order: 2;
+          grid-row: 2;
+        }
+        
+        .skills-grid {
+          grid-template-columns: 1fr;
+        }
+        
+        /* Timeline Mobile Fixes */
+        .timeline::before {
+          left: 30px;
+        }
+        
+        .timeline-content {
+          width: calc(100% - 80px);
+          float: right;
+          margin-left: 60px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content,
+        .timeline-item:nth-child(even) .timeline-content {
+          float: right;
+          text-align: left;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content::before,
+        .timeline-item:nth-child(even) .timeline-content::before {
+          left: -15px;
+          right: auto;
+          border-width: 10px 15px 10px 0;
+          border-color: transparent var(--dark-bg) transparent transparent;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-date,
+        .timeline-item:nth-child(even) .timeline-date {
+          left: -70px;
+          right: auto;
+        }
+        
+        .timeline-item:nth-child(odd),
+        .timeline-item:nth-child(even) {
+          transform: translateX(0);
+        }
+      }
+   /* --- CSS für das Kontakt-Portrait (MIT SCROLL-EFFEKT) --- */
+
+   .contact-section {
+        position: relative;
+        overflow: hidden; 
+        padding: 0; 
+        min-height: 600px;
+    }
+
+    /* 1. Der Container für den Text */
+    .contact-container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 280px; 
+        padding-bottom: 4rem;
+        
+        /* STARTZUSTAND: Unsichtbar & tiefer */
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    /* WENN SICHTBAR (durch Javascript) */
+    .contact-container.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* 2. Der Wrapper für das Bild */
+    .contact-portrait-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 100%;
+        max-width: 800px; 
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        
+        /* STARTZUSTAND: Unsichtbar & nach unten verschoben */
+        opacity: 0;
+        transform: translate(-50%, 50px); 
+        transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    /* WENN SICHTBAR (durch Javascript) */
+    .contact-portrait-wrapper.visible {
+        opacity: 1;
+        /* Zurück zur perfekten Mitte */
+        transform: translate(-50%, 0); 
+    }
+
+    /* 3. Das Bild selbst */
+    .contact-portrait-img {
+        width: auto; 
+        height: auto;
+        max-width: 100%; 
+        max-height: 95%; 
+        object-fit: contain;
+        object-position: bottom center;
+        
+        opacity: 0.6; 
+        
+        -webkit-mask-image: linear-gradient(to bottom, 
+            rgba(0,0,0,1) 0%, 
+            rgba(0,0,0,1) 20%, 
+            rgba(0,0,0,1) 50%, 
+            rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, 
+            rgba(0,0,0,1) 0%, 
+            rgba(0,0,0,1) 20%, 
+            rgba(0,0,0,1) 50%, 
+            rgba(0,0,0,0) 100%);
+            
+        filter: grayscale(0%) contrast(1.1);
+        transition: all 0.5s ease;
+    }
+
+    /* --- MOBILE ANPASSUNG --- */
+    @media (max-width: 768px) {
+        .contact-container {
+            padding-top: 250px; 
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        /* Wrapper Mobil: Startzustand */
+        .contact-portrait-wrapper {
+            width: 100%; 
+            max-width: 100%;
+            left: 50%;
+            /* Mobil auch verschoben starten */
+            transform: translate(-50%, 50px); 
+        }
+        
+        /* Wrapper Mobil: Sichtbar */
+        .contact-portrait-wrapper.visible {
+             /* WICHTIG: !important, damit es sicher in die Mitte springt */
+            transform: translate(-50%, 0) !important;
+        }
+
+        .contact-portrait-img {
+            max-height: 95%;
+            width: 100%; 
+            opacity: 0.6;
+        }
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+  <!-- about.html -->
+<body class="page-about">
+  <!-- Header with Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <svg id="steel-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.58 91.64" width="120" height="34">
+          <defs>
+            <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ff6b6b" />
+              <stop offset="100%" stop-color="#ff9e7d" />
+            </linearGradient>
+          </defs>
+          <path class="logo-path" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+        </svg>
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html" class="about about-link">Über</a></li>
+        <li class="service-divider"></li>
+        <li><a href="live.html" class="live service-link">Live</a></li>
+        <li><a href="weddings.html" class="weddings service-link">Hochzeiten</a></li>
+        <li><a href="corporate.html" class="corporate service-link">Corporate</a></li>
+        <li class="service-divider"></li>
+        <li class="language-switch">
+          <a href="#" id="language-toggle">EN</a>
+        </li>
+      </ul>
+      
+      <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="scroll-progress-bar"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="about.html" id="mobile-nav-about" class="about-link">Über</a></li>
+      <li class="mobile-menu-divider"><span>Services</span></li>
+      <li><a href="live.html" id="mobile-nav-live" class="service-link">Live</a></li>
+      <li><a href="weddings.html" id="mobile-nav-weddings" class="service-link">Hochzeiten</a></li>
+      <li><a href="corporate.html" id="mobile-nav-corporate" class="service-link">Corporate</a></li>
+      <li><a href="#" id="mobile-language-toggle">EN</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+      <h1>Die Geschichte hinter STEEL</h1>
+      <p>Straight outta Ruhrpott mit Beats für die ganze Welt.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2 class="about-heading">Alexander Stahl aka STEEL</h2>
+          <p>Wie ich zu meinem DJ-Namen gekommen bin, könnt ihr euch wahrscheinlich schon denken. Um das Jahr 2010 habe ich angefangen, mich für <strong>elektronische Musik</strong> und das Auflegen zu interessieren. Das sprach sich schnell herum. Ich bekam erste Anfragen, auf Geburtstagspartys für Stimmung zu sorgen.</p>
+          <p>So ging es los und mit den anfänglichen Auftritten etablierte sich in meinem Freundeskreis der Name, den ich bis heute trage: <strong>STEEL</strong> – englisch für meinen Nachnamen Stahl. Auf die Frage „Wer macht die Musik?!" hieß es dann stets: „DJ STEEL!" Auf das „DJ" verzichte ich mittlerweile. Es heißt ja auch nicht DJ Avicii, oder? <strong>;-)</strong></p>
+        </div>
+        <div class="about-image">
+          <img src="images/about/alexander-stahl-steel-dj-herne-portrait.webp" alt="Alexander Stahl aka STEEL nachdenklich im Portrait. Foto: Sven Luppus">
+        </div>
+      </div>
+      
+      <blockquote class="about-quote">
+        "<span id="typewriter-text"></span><span id="cursor">|</span>"
+        <cite>- STEEL</cite>
+      </blockquote>
+      
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="images/about/timo-maiwald-gitarre-dj-meets-guitar-herne.webp" alt="STEEL im Jahr 2015 zusammen mit dem Gitarristen Timo Maiwald">
+          <div class="image-year">2015</div>
+        </div>
+        <div class="about-text">
+          <h2 class="about-heading">So gings los</h2>
+          <p>Meine Liebe zur Musik kam nicht erst als DJ auf. Bereits drei Jahre vorher habe ich angefangen, Gitarre zu spielen. Fünf Jahre lang hatte ich Musikunterricht bei <a href="https://www.timosmusikschule.com" target="_blank" rel="noopener">Timo Maiwald</a>.</p>
+          <p>Einige Jahre und unzählige zerissene Saiten später lernte ich das Klavierspielen in seiner Musikschule. Timo war es auch, der mich neben den <strong>Club- und Bar-Gigs</strong> dazu animierte, mein Angebot auf private Veranstaltungen wie <strong>Hochzeiten oder Firmenfeiern</strong> zu erweitern.</p>
+          <p>Zu dieser Zeit entstand <strong>DJ meets Guitar</strong>. Ein Projekt, bei dem Timo und ich als Duo zusammenspielen: Er improvisiert mit seiner Gitarre zu meinen freshen, elektronischen Beats. Mal laut, mal leise – aber immer live!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section" id="skills">
+    <div class="skills-container">
+      <h2 class="skills-heading"><span class="skills-highlight">Meine Fähigkeiten</span></h2>
+      <div class="skills-grid">
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-headphones"></i>
+          </div>
+          <h3 class="skill-title">Mixing und Mashups</h3>
+          <p class="skill-description">Mixes, die es nicht bei Spotify gibt ... Klar, wofür gibts denn sonst einen DJ? Darauf bin ich spezialisiert.</p>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-music"></i>
+          </div>
+          <h3 class="skill-title">Open Format vs. EDM</h3>
+          <p class="skill-description">Ich spiele alles – über Jahre und Genres hinweg. Im Club gerne groovy, auf dem Festival meist nur EDM!</p>
+        </div>
+        <div class="skill-item">
+          <div class="skill-icon">
+            <i class="fas fa-sliders-h"></i>
+          </div>
+          <h3 class="skill-title">Eigene Musik</h3>
+          <p class="skill-description">Songs bei internationalen Labels wie Universal oder Kontor Records veröffentlichen? Check! </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline-section" id="timeline">
+    <div class="timeline-container">
+      <h2 class="timeline-heading">Das hat mich geprägt</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2010</div>
+            <h3 class="timeline-title">Die ersten Schritte</h3>
+            <p class="timeline-description">Sweet 16 – Ich setze mich an den Laptop und spiele Musik bei kleinen Partys ab. Wir haben doch alle mal mit Virtual DJ angefangen.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2011</div>
+            <h3 class="timeline-title">Avicii baut nen Bootleg</h3>
+            <p class="timeline-description">Monatelang kursierte "Levels" durchs Internet und die Clubs der Umgebung – ohne Release. Der Sound hat mich bis heute gefesselt. Rest in Peace!</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2013</div>
+            <h3 class="timeline-title">Mühsam ernährt sich der Alex</h3>
+            <p class="timeline-description">Abi in der Tasche – war knapp – und erste Gigs im MuCa (Museumscafé) in Herne für 70,- € die Nacht und 50 % Rabatt auf die Speisekarte. Der Start meiner Selbstständigkeit.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2014</div>
+            <h3 class="timeline-title">Heiraten mit Stil. Und STEEL.</h3>
+            <p class="timeline-description">Judith & Martin – so heißt mein erstes Brautpaar. Getroffen im MuCa und laut Profilbild noch immer verheiratet! Fun Fact: Martin war während des Studiums mit Deniz Koyu befreundet.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2018</div>
+            <h3 class="timeline-title">Erste Single, erste Residency</h3>
+            <p class="timeline-description">"Try", gesungen von meiner Freundin, wird veröffentlicht. Und ich spiele zum ersten Mal im Weinkeller Dortmund. Die Freundin und die Residency halten bis heute.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2025</div>
+            <h3 class="timeline-title">Release bei Major-Label</h3>
+            <p class="timeline-description">7 Jahre später: Ich veröffentliche meine Coverversion von "Waterfalls" bei Virgin Records (Universal), der größten Plattenfirma der Welt. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    
+    <div class="contact-portrait-wrapper">
+        <img src="images/about/dj-kontakt-herne-bochum-dortmund-essen.webp" alt="STEEL steht als DJ für eine Portraitaufnahme bereit" class="contact-portrait-img">
+    </div>
+
+    <div class="contact-container">
+      <h2 class="contact-heading">Lass quatschen</h2>
+      <p class="contact-text">Du hast Interesse an meiner Geschichte oder möchtest mit mir zusammenarbeiten? Komm ran, wir reden!</p>
+      <div class="contact-links">
+        <a href="mailto:info@steelmusic.net" class="contact-link">
+          <i class="fas fa-envelope"></i>
+          <span>info@steelmusic.net</span>
+        </a>
+        <a href="https://instagram.com/steelofficial" target="_blank" class="contact-link">
+          <i class="fab fa-instagram"></i>
+          <span>@steelofficial</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <!-- Hero-Sektion des Footers -->
+      <div class="footer-hero fade-in-element">
+        <!-- STEEL Logo -->
+        <svg class="footer-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.58 91.64">
+          <defs>
+            <linearGradient id="footer-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ff6b6b" />
+              <stop offset="100%" stop-color="#ff9e7d" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#footer-gradient)" d="m68.72,0l-20.09,20.82h-18.89V0h38.98ZM28.13,0L8.17,20.82v16.48l12.06,12.57h28.26l-20.36-21.23V0h0Zm20.36,49.87l19.96,20.82v.14h0l-19.96,20.82h-28.4L0,70.83l20.09-20.96v20.96h28.4v-20.96h0Zm40.33,20.82v-28.92l19.96-20.96v70.83l-19.96-20.96h0Zm0-31.29l19.96-20.96V0h-31.08l-20.09,20.82h31.21v18.58h0ZM128.87,0l-20.09,20.82h30.54V0h-10.45Zm70.9,20.82h-32.55L147.26,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L144.85,0v49.73l20.09,20.82v-16.35h32.95Zm67.92-33.39h-32.55L213.31,0h32.42l20.09,20.82h0Zm-34.83,49.73h37.78v21.1h-17.68l-20.09-21.1h0Zm32.95-16.35l-19.96-20.82h-12.99v-12.43L210.89,0v49.73l20.09,20.82v-16.35h32.95Zm74.21,16.48h0l-19.96,20.96h-38.98l19.96-20.96h38.98ZM296.89,0l-19.96,20.82v70.83l19.96-20.96V0Z"/>
+        </svg>
+      
+        <!-- Stats/Erfolge -->
+        <div class="footer-stats">
+          <div class="footer-stat fade-in-element" style="transition-delay: 0.1s;">
+            <span class="footer-stat-number">40M+</span>
+            <span class="footer-stat-label">Streams</span>
+          </div>
+          <div class="footer-stat fade-in-element" style="transition-delay: 0.2s;">
+            <span class="footer-stat-number">Universal Music</span>
+            <span class="footer-stat-label">Artist</span>
+          </div>
+          <div class="footer-stat fade-in-element" style="transition-delay: 0.3s;">
+            <span class="footer-stat-number">Worldwide</span>
+            <span class="footer-stat-label">Bookings</span>
+          </div>
+        </div>
+          
+        <!-- Social Media -->
+        <div class="footer-social">
+          <a href="https://instagram.com/steelofficial" target="_blank" class="footer-social-link">
+            <i class="fab fa-instagram"></i>
+            <span>@steelofficial</span>
+          </a>
+          <a href="https://tiktok.com/@steel.official" target="_blank" class="footer-social-link">
+            <i class="fab fa-tiktok"></i>
+            <span>@steel.official</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-streaming">
+        <a href="https://open.spotify.com/intl-de/artist/1Ecl9uVEThgbEiJWaPwF7B" target="_blank" class="footer-platform-link" aria-label="Spotify">
+          <i class="fab fa-spotify"></i>
+        </a>
+        <a href="https://music.apple.com/de/artist/steel/4075018" target="_blank" class="footer-platform-link" aria-label="Apple Music">
+          <i class="fab fa-apple"></i>
+        </a>
+        <a href="https://www.deezer.com/artist/63317" target="_blank" class="footer-platform-link deezer-icon" aria-label="Deezer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                 2 6.01 4.01 4 6.5 4c1.74 0 3.41 1.01 4.13 2.44h0.74C13.09 5.01 14.76 4 16.5 4
+                 18.99 4 21 6.01 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </a>
+        <a href="https://music.amazon.de/artists/B001Q99BH2/steel" target="_blank" class="footer-platform-link" aria-label="Amazon Music">
+          <i class="fab fa-amazon"></i>
+        </a>
+        <a href="https://tidal.com/artist/46648379" target="_blank" class="footer-platform-link tidal-icon" aria-label="TIDAL">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 24px; height: 24px;">
+             <g transform="translate(0, 5)">
+               <path d="M5.4 1.2L1.8 4.8l3.6 3.6 3.6-3.6zM12 1.2L8.4 4.8l3.6 3.6 3.6-3.6zM18.6 1.2L15 4.8l3.6 3.6 3.6-3.6z"/>
+               <path d="M12 7.8L8.4 11.4l3.6 3.6 3.6-3.6z"/>
+             </g>
+          </svg>
+        </a>
+        <a href="https://soundcloud.com/steel-official" target="_blank" class="footer-platform-link" aria-label="SoundCloud">
+          <i class="fab fa-soundcloud"></i>
+        </a>
+        <a href="https://www.youtube.com/@steel.official" target="_blank" class="footer-platform-link" aria-label="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    
+      <!-- Navigation -->
+      <div class="footer-nav fade-in-element">
+        <div class="footer-nav-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="live.html">Live</a></li>
+            <li><a href="weddings.html">Hochzeiten</a></li>
+            <li><a href="corporate.html">Corporate</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-section">
+          <h4>STEEL</h4>
+          <ul>
+            <li><a href="about.html">Über</a></li>
+            <li><a href="index.html#releases">Releases</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Kontakt -->
+      <div class="footer-contact fade-in-element">
+        <div class="footer-contact-title">Reach Out</div>
+        <a href="mailto:info@steelmusic.net" class="footer-contact-email">info@steelmusic.net</a>
+      </div>
+
+      <!-- Bottom Section -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <div class="footer-legal">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          © 2025 STEELmusic. Alle Rechte vorbehalten.
+        </div>
+      </div>
+    </div>
+  </footer>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Nach oben">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <!-- Cookie Banner -->
+<div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-content">
+      <div class="cookie-title">
+          <i class="fas fa-cookie-bite cookie-icon"></i>
+          <span id="cookieBannerTitle">Cookies</span>
+      </div>
+      <div class="cookie-text">
+          <span id="cookieBannerText">Wir verwenden Cookies für die beste Nutzererfahrung. </span>
+          <a href="datenschutz.html" id="cookieBannerLink">Mehr erfahren</a>
+      </div>
+  </div>
+  <div class="cookie-buttons">
+      <button class="cookie-btn cookie-btn-accept" onclick="acceptAllCookies()">
+          <span id="cookieAcceptAll">Alle akzeptieren</span>
+      </button>
+      <button class="cookie-btn cookie-btn-settings" onclick="openCookieSettings()">
+          <span id="cookieSettings">Einstellungen</span>
+      </button>
+      <button class="cookie-btn cookie-btn-necessary" onclick="acceptNecessaryCookies()">
+          <span id="cookieNecessary">Nur notwendige</span>
+      </button>
+  </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div class="cookie-modal" id="cookieModal">
+  <div class="cookie-modal-content">
+      <div class="cookie-modal-header">
+          <h3 class="cookie-modal-title" id="cookieModalTitle">Cookie-Einstellungen</h3>
+          <button class="cookie-modal-close" onclick="closeCookieSettings()">
+              <i class="fas fa-times"></i>
+          </button>
+      </div>
+
+      <div class="cookie-category">
+          <div class="cookie-category-header">
+              <h4 class="cookie-category-title" id="cookieNecessaryTitle">Notwendige Cookies</h4>
+              <label class="cookie-toggle">
+                  <input type="checkbox" checked disabled>
+                  <span class="cookie-toggle-slider"></span>
+              </label>
+          </div>
+          <p class="cookie-category-description" id="cookieNecessaryDesc">
+              Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden.
+          </p>
+      </div>
+
+      <div class="cookie-category">
+          <div class="cookie-category-header">
+              <h4 class="cookie-category-title" id="cookieAnalyticsTitle">Analytik Cookies</h4>
+              <label class="cookie-toggle">
+                  <input type="checkbox" id="analyticsCookies">
+                  <span class="cookie-toggle-slider"></span>
+              </label>
+          </div>
+          <p class="cookie-category-description" id="cookieAnalyticsDesc">
+              Diese Cookies helfen uns zu verstehen, wie Sie mit der Website interagieren, um unsere Dienste zu verbessern.
+          </p>
+      </div>
+
+      <div class="cookie-category">
+          <div class="cookie-category-header">
+              <h4 class="cookie-category-title" id="cookieMarketingTitle">Marketing Cookies</h4>
+              <label class="cookie-toggle">
+                  <input type="checkbox" id="marketingCookies">
+                  <span class="cookie-toggle-slider"></span>
+              </label>
+          </div>
+          <p class="cookie-category-description" id="cookieMarketingDesc">
+              Diese Cookies werden verwendet, um Ihnen relevante Werbung und personalisierte Inhalte zu zeigen.
+          </p>
+      </div>
+
+      <div class="cookie-modal-buttons">
+          <button class="cookie-btn cookie-btn-save" onclick="saveCookieSettings()">
+              <span id="cookieSave">Einstellungen speichern</span>
+          </button>
+          <button class="cookie-btn cookie-btn-decline" onclick="declineAllCookies()">
+              <span id="cookieDeclineAll">Alle ablehnen</span>
+          </button>
+      </div>
+  </div>
+</div>
+    <!-- Cookie Banner JavaScript -->
+<script src="assets/js/cookie-banner.js"></script>
+  /Users/alexanderstahl/Desktop/Claude Website-Projekt/20260115/about.html
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // --- 1. GLOBALE VARIABLEN & ÜBERSETZUNGEN (Ganz nach oben!) ---
+      const languageToggle = document.getElementById('language-toggle');
+      const mobileLanguageToggle = document.getElementById('mobile-language-toggle');
+      let currentLanguage = localStorage.getItem('preferredLanguage') || 'de';
+      
+      const typewriterElement = document.getElementById('typewriter-text');
+      const cursor = document.getElementById('cursor');
+      let typewriterStarted = false;
+      let typewriterTimeout; 
+
+      const translations = {
+        de: {
+          'nav-about': 'Über', 'nav-live': 'Live', 'nav-weddings': 'Hochzeiten', 'nav-corporate': 'Corporate',
+          'lang-switch': 'EN',
+          'hero-title': 'Die Geschichte hinter STEEL',
+          'hero-subtitle': 'Straight outta Ruhrpott mit Beats für die ganze Welt.',
+          'bio-h2-1': 'Alexander Stahl aka STEEL',
+          'bio-p1': 'Wie ich zu meinem DJ-Namen gekommen bin, könnt ihr euch wahrscheinlich schon denken. Um das Jahr 2010 habe ich angefangen, mich für <strong>elektronische Musik</strong> und das Auflegen zu interessieren. Das sprach sich schnell herum. Ich bekam erste Anfragen, auf Geburtstagspartys für Stimmung zu sorgen.',
+          'bio-p2': 'So ging es los und mit den anfänglichen Auftritten etablierte sich in meinem Freundeskreis der Name, den ich bis heute trage: <strong>STEEL</strong> – englisch für meinen Nachnamen Stahl. Auf die Frage „Wer macht die Musik?!" hieß es dann stets: „DJ STEEL!" Auf das „DJ" verzichte ich mittlerweile. Es heißt ja auch nicht DJ Avicii, oder? <strong>;-)</strong>',
+          
+          'quote-text': 'Die Crowd lesen. Den Vibe spüren. Für genau diese Gänsehaut-Momente lebe ich.',
+          
+          'bio-h2-2': 'So gings los',
+          'bio-p3': 'Meine Liebe zur Musik kam nicht erst als DJ auf. Bereits drei Jahre vorher habe ich angefangen, Gitarre zu spielen. Fünf Jahre lang hatte ich Musikunterricht bei <a href="https://www.timosmusikschule.com" target="_blank" rel="noopener">Timo Maiwald</a>.',
+          'bio-p4': 'Einige Jahre und unzählige zerissene Saiten später lernte ich das Klavierspielen in seiner Musikschule. Timo war es auch, der mich neben den <strong>Club- und Bar-Gigs</strong> dazu animierte, mein Angebot auf private Veranstaltungen wie <strong>Hochzeiten oder Firmenfeiern</strong> zu erweitern.',
+          'bio-p5': 'Zu dieser Zeit entstand <strong>DJ meets Guitar</strong>. Ein Projekt, bei dem Timo und ich als Duo zusammenspielen: Er improvisiert mit seiner Gitarre zu meinen freshen, elektronischen Beats. Mal laut, mal leise – aber immer live!',
+          'skills-heading': '<span class="skills-highlight">Meine Fähigkeiten</span>',
+          'skill-1-title': 'Mixing und Mashups', 'skill-1-desc': 'Mixes, die es nicht bei Spotify gibt ... Klar, wofür gibts denn sonst einen DJ? Darauf bin ich spezialisiert.',
+          'skill-2-title': 'Open Format vs. EDM', 'skill-2-desc': 'Ich spiele alles – über Jahre und Genres hinweg. Im Club gerne groovy, auf dem Festival meist nur EDM!',
+          'skill-3-title': 'Eigene Musik', 'skill-3-desc': 'Songs bei internationalen Labels wie Universal oder Kontor Records veröffentlichen? Check!',
+          'timeline-heading': 'Das hat mich geprägt',
+          'tl-1-title': 'Die ersten Schritte', 'tl-1-desc': 'Sweet 16 – Ich setze mich an den Laptop und spiele Musik bei kleinen Partys ab. Wir haben doch alle mal mit Virtual DJ angefangen.',
+          'tl-2-title': 'Avicii baut nen Bootleg', 'tl-2-desc': 'Monatelang kursierte "Levels" durchs Internet und die Clubs der Umgebung – ohne Release. Der Sound hat mich bis heute gefesselt. Rest in Peace!',
+          'tl-3-title': 'Mühsam ernährt sich der Alex', 'tl-3-desc': 'Abi in der Tasche – war knapp – und erste Gigs im MuCa (Museumscafé) in Herne für 70,- € die Nacht und 50 % Rabatt auf die Speisekarte. Der Start meiner Selbstständigkeit.',
+          'tl-4-title': 'Heiraten mit Stil. Und STEEL.', 'tl-4-desc': 'Judith & Martin – so heißt mein erstes Brautpaar. Getroffen im MuCa und laut Profilbild noch immer verheiratet! Fun Fact: Martin war während des Studiums mit Deniz Koyu befreundet.',
+          'tl-5-title': 'Erste Single, erste Residency', 'tl-5-desc': '"Try", gesungen von meiner Freundin, wird veröffentlicht. Und ich spiele zum ersten Mal im Weinkeller Dortmund. Die Freundin und die Residency halten bis heute.',
+          'tl-6-title': 'Release bei Major-Label', 'tl-6-desc': '7 Jahre später: Ich veröffentliche meine Coverversion von "Waterfalls" bei Virgin Records (Universal), der größten Plattenfirma der Welt.',
+          'contact-heading': 'Lass quatschen',
+          'contact-text': 'Du hast Interesse an meiner Geschichte oder möchtest mit mir zusammenarbeiten? Komm ran, wir reden!',
+          'contact-link': 'Schreib mir ne Mail',
+          'footer-services': 'Services', 'footer-about': 'STEEL', 'footer-contact-title': 'Kontakt', 
+          'footer-imprint': 'Impressum', 'footer-privacy': 'Datenschutz',
+          'footer-copyright': `© ${new Date().getFullYear()} STEELmusic. Alle Rechte vorbehalten.`
+        },
+        en: {
+          'nav-about': 'About', 'nav-live': 'Live', 'nav-weddings': 'Weddings', 'nav-corporate': 'Corporate',
+          'lang-switch': 'DE',
+          'hero-title': 'The Story Behind STEEL',
+          'hero-subtitle': 'Straight outta Ruhrpott with beats for the whole world.',
+          'bio-h2-1': 'Alexander Stahl aka STEEL',
+          'bio-p1': 'You can probably guess how I got my DJ name. Around 2010, I started getting interested in <strong>electronic music</strong> and DJing. Word got around quickly, and I got my first requests to provide the vibe at birthday parties.',
+          'bio-p2': 'That\'s how it started, and with those early gigs, the name I carry to this day established itself among my friends: <strong>STEEL</strong> – the English translation of my last name, Stahl. When asked "Who\'s playing the music?!", the answer was always: "DJ STEEL!" I\'ve dropped the "DJ" by now. It\'s not DJ Avicii either, right? <strong>;-)</strong>',
+         'quote-text': 'Read the crowd. Feel the vibe. These goosebump moments are exactly what I live for.',
+          'bio-h2-2': 'How it all started',
+          'bio-p3': 'My love for music didn\'t just start with DJing. Three years earlier, I began playing the guitar. I took music lessons with <a href="https://www.timosmusikschule.com" target="_blank" rel="noopener">Timo Maiwald</a> for five years.',
+          'bio-p4': 'Several years and countless broken strings later, I learned to play the piano at his music school. It was also Timo who encouraged me to expand my services beyond <strong>club and bar gigs</strong> to private events like <strong>weddings or corporate parties</strong>.',
+          'bio-p5': 'During this time, <strong>DJ meets Guitar</strong> was born. A project where Timo and I play together as a duo: He improvises with his guitar to my fresh electronic beats. Sometimes loud, sometimes quiet – but always live!',
+          'skills-heading': '<span class="skills-highlight">My Skills</span>',
+          'skill-1-title': 'Mixing and Mashups', 'skill-1-desc': 'Mixes you won\'t find on Spotify... Well, why else book a DJ? That\'s what I specialize in.',
+          'skill-2-title': 'Open Format vs. EDM', 'skill-2-desc': 'I play everything – across years and genres. Groovy in the club, mostly just EDM at festivals!',
+          'skill-3-title': 'Own Music', 'skill-3-desc': 'Releasing songs on international labels like Universal or Kontor Records? Check!',
+          'timeline-heading': 'Defining Moments',
+          'tl-1-title': 'The First Steps', 'tl-1-desc': 'Sweet 16 – I sit down at my laptop and play music at small parties. We all started with Virtual DJ, didn\'t we?',
+          'tl-2-title': 'Avicii builds a bootleg', 'tl-2-desc': 'For months, "Levels" circulated through the internet and local clubs – without a release. That sound has captivated me to this day. Rest in Peace!',
+          'tl-3-title': 'Humble Beginnings', 'tl-3-desc': 'High school diploma in the bag – it was close – and first gigs at MuCa (Museum Café) in Herne for €70 a night and 50% off the menu. The start of my self-employment.',
+          'tl-4-title': 'Weddings with Style. And STEEL.', 'tl-4-desc': 'Judith & Martin – that\'s the name of my first wedding couple. Met at MuCa and according to their profile picture, still married! Fun Fact: Martin was friends with Deniz Koyu during his studies.',
+          'tl-5-title': 'First Single, First Residency', 'tl-5-desc': '"Try", sung by my girlfriend, is released. And I play at Weinkeller Dortmund for the first time. Both the girlfriend and the residency are still with me today.',
+          'tl-6-title': 'Major Label Release', 'tl-6-desc': '7 years later: I release my cover version of "Waterfalls" with Virgin Records (Universal), the largest record label in the world.',
+          'contact-heading': 'Let\'s talk',
+          'contact-text': 'Interested in my story or want to work with me? Reach out, let\'s chat!',
+          'contact-link': 'Send me an email',
+          'footer-services': 'Services', 'footer-about': 'STEEL', 'footer-contact-title': 'Reach Out', 
+          'footer-imprint': 'Legal Notice', 'footer-privacy': 'Privacy Policy',
+          'footer-copyright': `© ${new Date().getFullYear()} STEELmusic. All rights reserved.`
+        }
+      };
+
+
+      // --- 2. DIE GUTE FUNKTION (TYPEWRITER) ---
+      const startTypewriter = function(text) {
+          if (!typewriterElement) return;
+
+          // NOTBREMSE: Laufende Animation stoppen
+          if (typewriterTimeout) clearTimeout(typewriterTimeout);
+          
+          // Wir merken uns, dass wir gestartet sind, damit der Observer nicht dazwischenfunkt
+          typewriterStarted = true;
+
+          // Text leeren & Cursor zeigen
+          typewriterElement.innerHTML = '';
+          if(cursor) cursor.style.display = 'inline';
+          
+          let i = 0;
+          function type() {
+              if (i < text.length) {
+                  typewriterElement.innerHTML += text.charAt(i);
+                  i++;
+                  typewriterTimeout = setTimeout(type, 30 + Math.random() * 20); 
+              } else {
+                  // Cursor nach Ende ausblenden
+                  typewriterTimeout = setTimeout(() => {
+                    if(cursor) cursor.style.display = 'none';
+                  }, 2000);
+              }
+          }
+          type();
+      };
+
+
+      // --- 3. DER OBSERVER (Startet die Animation beim Scrollen) ---
+      const typewriterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // WICHTIG: Nur starten, wenn er noch NICHT läuft!
+          if (entry.isIntersecting && !typewriterStarted) {
+            entry.target.classList.add('visible');
+            
+            // Text direkt aus den Übersetzungen holen (sicherste Methode)
+            // Falls currentLanguage noch nicht gesetzt, Fallback auf DE
+            let lang = localStorage.getItem('preferredLanguage') || 'de';
+            let txt = translations[lang]['quote-text'];
+
+            setTimeout(() => {
+              startTypewriter(txt);
+            }, 500);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      const aboutQuote = document.querySelector('.about-quote');
+      if (aboutQuote) typewriterObserver.observe(aboutQuote);
+
+
+      // --- 4. SPRACH-FUNKTION (ApplyLanguage) ---
+      const applyLanguage = function(lang) {
+        currentLanguage = lang;
+        document.documentElement.lang = lang;
+        localStorage.setItem('preferredLanguage', lang);
+        
+        if (typeof setCookieBannerLanguage === 'function') setCookieBannerLanguage(lang);
+
+        const texts = translations[lang];
+
+        // Buttons
+        if (languageToggle) languageToggle.textContent = texts['lang-switch'];
+        if (mobileLanguageToggle) mobileLanguageToggle.textContent = texts['lang-switch'];
+
+        // Helper
+        const setTxt = (sel, key) => { const el = document.querySelector(sel); if(el && texts[key]) el.textContent = texts[key]; };
+        const setHTML = (sel, key) => { const el = document.querySelector(sel); if(el && texts[key]) el.innerHTML = texts[key]; };
+
+        // Navigation
+        document.querySelectorAll('.about-link').forEach(el => el.textContent = texts['nav-about']);
+        document.querySelectorAll('.live-link').forEach(el => el.textContent = texts['nav-live']);
+        document.querySelectorAll('a[href="weddings.html"]').forEach(el => { if(el.parentElement.tagName === 'LI') el.textContent = texts['nav-weddings']; });
+        document.querySelectorAll('a[href="corporate.html"]').forEach(el => { if(el.parentElement.tagName === 'LI') el.textContent = texts['nav-corporate']; });
+
+        setTxt('.hero h1', 'hero-title');
+        setTxt('.hero p', 'hero-subtitle');
+        setTxt('.about-grid:first-child .about-heading', 'bio-h2-1');
+        const p1 = document.querySelector('.about-grid:first-child .about-text p:nth-of-type(1)'); if(p1) p1.innerHTML = texts['bio-p1'];
+        const p2 = document.querySelector('.about-grid:first-child .about-text p:nth-of-type(2)'); if(p2) p2.innerHTML = texts['bio-p2'];
+
+        // WICHTIG: Typewriter NUR neustarten, wenn er schon mal lief (also beim manuellen Umschalten).
+        // Beim ersten Laden der Seite lassen wir den Observer den Vortritt!
+        if (typewriterStarted) {
+           startTypewriter(texts['quote-text']);
+        }
+
+        setTxt('.about-grid:last-of-type .about-heading', 'bio-h2-2');
+        const p3 = document.querySelector('.about-grid:last-of-type .about-text p:nth-of-type(1)'); if(p3) p3.innerHTML = texts['bio-p3'];
+        const p4 = document.querySelector('.about-grid:last-of-type .about-text p:nth-of-type(2)'); if(p4) p4.innerHTML = texts['bio-p4'];
+        const p5 = document.querySelector('.about-grid:last-of-type .about-text p:nth-of-type(3)'); if(p5) p5.innerHTML = texts['bio-p5'];
+
+        setHTML('.skills-heading', 'skills-heading');
+        const skills = document.querySelectorAll('.skill-item');
+        if(skills.length >= 3) {
+            skills[0].querySelector('.skill-title').textContent = texts['skill-1-title'];
+            skills[0].querySelector('.skill-description').textContent = texts['skill-1-desc'];
+            skills[1].querySelector('.skill-title').textContent = texts['skill-2-title'];
+            skills[1].querySelector('.skill-description').textContent = texts['skill-2-desc'];
+            skills[2].querySelector('.skill-title').textContent = texts['skill-3-title'];
+            skills[2].querySelector('.skill-description').textContent = texts['skill-3-desc'];
+        }
+
+        setTxt('.timeline-heading', 'timeline-heading');
+        const tlItems = document.querySelectorAll('.timeline-item');
+        if(tlItems.length >= 6) {
+            tlItems[0].querySelector('.timeline-title').textContent = texts['tl-1-title'];
+            tlItems[0].querySelector('.timeline-description').textContent = texts['tl-1-desc'];
+            tlItems[1].querySelector('.timeline-title').textContent = texts['tl-2-title'];
+            tlItems[1].querySelector('.timeline-description').textContent = texts['tl-2-desc'];
+            tlItems[2].querySelector('.timeline-title').textContent = texts['tl-3-title'];
+            tlItems[2].querySelector('.timeline-description').textContent = texts['tl-3-desc'];
+            tlItems[3].querySelector('.timeline-title').textContent = texts['tl-4-title'];
+            tlItems[3].querySelector('.timeline-description').textContent = texts['tl-4-desc'];
+            tlItems[4].querySelector('.timeline-title').textContent = texts['tl-5-title'];
+            tlItems[4].querySelector('.timeline-description').textContent = texts['tl-5-desc'];
+            tlItems[5].querySelector('.timeline-title').textContent = texts['tl-6-title'];
+            tlItems[5].querySelector('.timeline-description').textContent = texts['tl-6-desc'];
+        }
+
+        setTxt('.contact-heading', 'contact-heading');
+        setTxt('.contact-text', 'contact-text');
+        const contactLink = document.querySelector('.contact-link span');
+        if(contactLink) contactLink.textContent = texts['contact-link'];
+
+        const fHeadings = document.querySelectorAll('.footer-nav-section h4');
+        if(fHeadings.length > 0) fHeadings[0].textContent = texts['footer-services'];
+        if(fHeadings.length > 1) fHeadings[1].textContent = texts['footer-about'];
+        
+        const fContact = document.querySelector('.footer-contact-title'); 
+        if(fContact) fContact.textContent = texts['footer-contact-title'];
+        
+        const footerLinks = document.querySelectorAll('.footer-nav-section ul li a');
+        footerLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href) {
+                if(href.includes('live')) link.textContent = texts['nav-live'];
+                if(href.includes('weddings')) link.textContent = texts['nav-weddings'];
+                if(href.includes('corporate')) link.textContent = texts['nav-corporate'];
+                if(href.includes('about')) link.textContent = texts['nav-about'];
+            }
+        });
+        
+        const fLegal = document.querySelectorAll('.footer-legal a');
+        if(fLegal.length >= 2) {
+            fLegal[0].textContent = texts['footer-imprint'];
+            fLegal[1].textContent = texts['footer-privacy'];
+        }
+        
+        const fCopyright = document.querySelector('.footer-copyright');
+        if(fCopyright) fCopyright.textContent = texts['footer-copyright'];
+      };
+
+      const handleSwitch = function(e) {
+        e.preventDefault();
+        const newLang = currentLanguage === 'de' ? 'en' : 'de';
+        applyLanguage(newLang);
+      };
+
+      if (languageToggle) languageToggle.addEventListener('click', handleSwitch);
+      if (mobileLanguageToggle) mobileLanguageToggle.addEventListener('click', handleSwitch);
+
+
+      // --- 5. INITIALISIERUNG & REST ---
+      applyLanguage(currentLanguage);
+
+      // Animationen und Header
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) setTimeout(() => { heroContent.classList.add('visible'); }, 300);
+
+// --- OBSERVER SETUP (Finaler Fix für About-Page) ---
+
+      // 1. Der Haupt-Beobachter (Macht ALLES sichtbar und unsichtbar)
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Wenn im Bild: Einblenden
+            entry.target.classList.add('visible');
+          } else {
+            // Wenn aus dem Bild: Ausblenden (Reset)
+            entry.target.classList.remove('visible');
+          }
+        });
+      }, { 
+        rootMargin: '-50px', // Etwas Puffer, damit es nicht flackert
+        threshold: 0.15      // 15% müssen sichtbar sein
+      });
+
+      // 2. Spezial-Beobachter für Skills (Kaskaden-Effekt bleibt)
+      const skillsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.skill-item').forEach((item, index) => {
+              setTimeout(() => { item.classList.add('visible'); }, index * 200);
+            });
+          } else {
+            entry.target.querySelectorAll('.skill-item').forEach(item => item.classList.remove('visible'));
+          }
+        });
+      }, { threshold: 0.2 });
+      
+      const skillsSection = document.querySelector('.skills-section');
+      if (skillsSection) skillsObserver.observe(skillsSection);
+
+      // 3. Spezial-Beobachter für Timeline
+      const timelineItemObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+          else entry.target.classList.remove('visible');
+        });
+      }, { rootMargin: '-80px', threshold: 0.3 });
+      document.querySelectorAll('.timeline-item').forEach(item => timelineItemObserver.observe(item));
+
+     // --- ZUWEISUNG DER ELEMENTE ---
+
+      // Hier packen wir ALLE Elemente rein, auch den Footer und dein neues Portrait.
+      document.querySelectorAll('.about-text, .about-image, .about-heading, .skills-heading, .timeline-heading, .contact-heading, .contact-text, .contact-link, .contact-container, .contact-portrait-wrapper, .footer-hero, .footer-stat, .footer-nav, .footer-contact').forEach(elem => {
+        scrollObserver.observe(elem);
+      });
+
+      // --- WICHTIG: DIE FEHLENDEN FUNKTIONEN WIEDERHERSTELLEN ---
+
+      // 1. Header & Scroll Effects
+      const header = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 50) {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.95)';
+          header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+        } else {
+          header.style.backgroundColor = 'rgba(30, 30, 32, 0.8)';
+          header.style.boxShadow = 'none';
+        }
+      });
+
+      // 2. Mobile Menu
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      let menuOpen = false;
+
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.onclick = function() {
+          if (menuOpen) {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.style.opacity = '0';
+            mobileMenu.querySelectorAll('li').forEach(item => { item.style.opacity = '0'; item.style.transform = 'translateY(-10px)'; });
+            setTimeout(() => { mobileMenu.style.display = 'none'; menuOpen = false; }, 300);
+          } else {
+            mobileMenu.style.display = 'block';
+            mobileMenuToggle.classList.add('active');
+            setTimeout(() => {
+              mobileMenu.style.opacity = '1';
+              mobileMenu.querySelectorAll('li').forEach(item => { item.style.opacity = '1'; item.style.transform = 'translateY(0)'; });
+              menuOpen = true;
+            }, 10);
+          }
+          return false;
+        };
+        // Klick außerhalb schließt Menü
+        document.addEventListener('click', function(event) {
+          if (menuOpen && mobileMenu && !mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+            mobileMenuToggle.click();
+          }
+        });
+        // Links schließen Menü
+        document.querySelectorAll('#mobile-menu a:not(#mobile-language-toggle)').forEach(function(link) {
+          link.onclick = function() { setTimeout(function() { if (menuOpen) mobileMenuToggle.click(); }, 100); };
+        });
+      }
+
+      // 3. Back to Top Button
+      const backToTop = document.getElementById('back-to-top');
+      if (backToTop) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) backToTop.classList.add('visible');
+            else backToTop.classList.remove('visible');
+        });
+        backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+      }
+
+      // 4. Scroll Progress Bar
+      window.addEventListener('scroll', () => {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercent = (scrollTop / docHeight) * 100;
+          const progressBar = document.querySelector('.scroll-progress-bar');
+          if(progressBar) progressBar.style.width = scrollPercent + '%';
+      });
+
+    }); // <--- HIER WAR DER FEHLER: Diese Klammer hatte gefehlt!
+  </script>
+</body>
+</html>
