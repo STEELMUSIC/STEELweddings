@@ -3,6 +3,7 @@
 <head>
   <link rel="canonical" href="https://www.steelmusic.net/">
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -975,8 +976,19 @@
   .instagram-link {
     padding: 0.45rem 0.8rem;
   }
-}
 
+
+/* Footer Social Icons auf einer Linie halten */
+.social-links {
+        gap: 0.8rem; /* Reduziert den Abstand zwischen den Icons leicht */
+        flex-wrap: nowrap; /* Zwingt sie (wenn möglich) auf eine Zeile */
+        justify-content: center;
+    }
+    
+    .social-links a {
+        font-size: 1.3rem; /* Macht die Icons auf dem Handy minimal kleiner, damit alle passen */
+    }
+  }
 /* Services Section - Kompakter Stil */
 .services-section {
   background-color: var(--darker-bg);

@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="assets/css/cookie-banner.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
   <link rel="canonical" href="https://www.steelmusic.net/live.html">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta charset="utf-8">
@@ -703,8 +704,18 @@
             .club-notepad { transform: translateX(0) rotate(-1deg); }
             .club-notepad.visible { transform: translateX(0) rotate(-1deg); }
             .notepad { margin-left: 0; transform: rotate(0deg); }
-        }
-        
+        /* Footer Social Icons auf einer Linie halten */
+.social-links {
+        gap: 0.8rem; /* Reduziert den Abstand zwischen den Icons leicht */
+        flex-wrap: nowrap; /* Zwingt sie (wenn möglich) auf eine Zeile */
+        justify-content: center;
+    }
+    
+    .social-links a {
+        font-size: 1.3rem; /* Macht die Icons auf dem Handy minimal kleiner, damit alle passen */
+    }
+  }
+    
         /* Events Section */
         .events-section {
             padding: 3rem 2rem;
@@ -1737,22 +1748,25 @@
       </div>
       <div class="booking-form">
         <h3 id="form-heading">Jetzt anfragen</h3>
-        <form>
+        <form class="contact-form">
+          <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="source" value="Live">
+        
           <div class="form-group">
             <label for="name" id="label-name">Festival/Club/Open Air</label>
-            <input type="text" id="name" placeholder="Name" required>
+            <input type="text" id="name" name="name" placeholder="Name" required>
           </div>
           <div class="form-group">
             <label for="email" id="label-email">E-Mail</label>
-            <input type="email" id="email" placeholder="E-Mail-Adresse" required>
+            <input type="email" id="email" name="email" placeholder="E-Mail-Adresse" required>
           </div>
           <div class="form-group">
             <label for="phone" id="label-phone">Telefon</label>
-            <input type="tel" id="phone" placeholder="Telefonnummer">
+            <input type="tel" id="phone" name="phone" placeholder="Telefonnummer">
           </div>
           <div class="form-group">
             <label for="event-type" id="label-type">Event-Typ</label>
-            <select id="event-type" required>
+            <select id="event-type" name="event_type" required>
               <option value="">Bitte wählen</option>
               <option value="club">Club</option>
               <option value="festival">Festival/Open Air</option>
@@ -1761,15 +1775,15 @@
           </div>
           <div class="form-group">
             <label for="event-date" id="label-date">Event-Datum</label>
-            <input type="date" id="event-date" required>
+            <input type="date" id="event-date" name="date" required>
           </div>
           <div class="form-group">
             <label for="location" id="label-location">Ort</label>
-            <input type="text" id="location" placeholder="Wo gehts ab?" required>
+            <input type="text" id="location" name="location" placeholder="Wo gehts ab?" required>
           </div>
           <div class="form-group">
             <label for="message" id="label-message">Details</label>
-            <textarea id="message" rows="5" placeholder="Infos zum Timetable, Line-up etc." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Infos zum Timetable, Line-up etc." required></textarea>
           </div>
           <button type="submit" class="submit-btn" id="form-submit">Raus damit</button>
           <div id="form-status" class="form-status" style="display: none;"></div>
@@ -2514,27 +2528,46 @@ const scrollObserver = new IntersectionObserver((entries) => {
         link.onclick = function() { setTimeout(function() { if (menuOpen) mobileMenuToggle.click(); }, 100); };
       });
     
-      // Contact Form (Visual only for now)
-      const contactForm = document.querySelector('.booking-form form');
-      const formStatus = document.getElementById('form-status');
-      if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const btn = contactForm.querySelector('.submit-btn');
-          const originalText = btn.textContent;
-          btn.textContent = currentLanguage === 'de' ? 'Wird gesendet...' : 'Sending...';
-          btn.disabled = true;
-          setTimeout(() => {
-            formStatus.textContent = currentLanguage === 'de' ? 'Vielen Dank für deine Anfrage! Wir melden uns in Kürze bei dir.' : 'Thank you for your inquiry! We will get back to you soon.';
-            formStatus.className = 'form-status success';
+// ECHTES CONTACT FORM LOGIC
+const contactForm = document.querySelector('.contact-form');
+    const formStatus = document.getElementById('form-status');
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = contactForm.querySelector('.submit-btn');
+        const originalText = btn.textContent;
+        
+        btn.textContent = document.documentElement.lang === 'de' ? 'Wird gesendet...' : 'Sending...';
+        btn.disabled = true;
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch('mailer.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                formStatus.textContent = document.documentElement.lang === 'de' ? 'Vielen Dank für deine Anfrage! Ich melde mich in Kürze bei dir.' : 'Thank you for your inquiry! I will get back to you soon.';
+                formStatus.className = 'form-status success';
+                formStatus.style.display = 'block';
+                contactForm.reset();
+            } else {
+                throw new Error();
+            }
+        } catch (error) {
+            formStatus.textContent = document.documentElement.lang === 'de' ? 'Fehler beim Senden. Bitte versuche es später nochmal.' : 'Error sending. Please try again later.';
+            formStatus.className = 'form-status error';
             formStatus.style.display = 'block';
-            contactForm.reset();
-            btn.textContent = originalText;
-            btn.disabled = false;
-            setTimeout(() => { formStatus.style.display = 'none'; }, 5000);
-          }, 1500);
-        });
-      }
+        }
+
+        btn.textContent = originalText;
+        btn.disabled = false;
+        setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
+      });
+    }
 
       // Back to Top Button
       const backToTop = document.getElementById('back-to-top');
