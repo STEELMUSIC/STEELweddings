@@ -880,7 +880,20 @@
 .release-info {
   flex: 1;
   width: 100%;
-  padding-right: 3rem; /* Make space for the icons */
+  padding-right: 0; /* Padding entfernt, damit der Spotify Player 100% Breite nutzen kann! */
+}
+
+/* Padding NUR auf den Text anwenden, damit sie den Icons ausweichen */
+.release-artist, .release-title, .release-meta {
+  padding-right: 4rem; 
+  word-wrap: break-word; /* Zwingt extrem lange Namen wie "Felix Harrer..." zum Umbruch */
+}
+
+/* Zwingt den Spotify-Player, rechts nicht aus dem Rahmen zu brechen */
+.spotify-embed-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Specific adjustment for the TIDAL icon */
@@ -2023,8 +2036,19 @@ footer::before {
     .release-links {
         top: 0.75rem;
         right: 1rem;
-        max-width: 100px;
-        gap: 0.5rem;
+        max-width: 85px; /* Etwas kompakter, damit sie sauber in ein Grid fallen */
+        gap: 0.4rem;
+    }
+    
+    /* WICHTIG: Gibt dem Text auf dem Handy extra viel Abstand nach rechts (ca. 95px),
+       damit er auf keinen Fall in den Icon-Block reinfährt! */
+    .release-artist, .release-title, .release-meta {
+        padding-right: 95px; 
+    }
+    
+    /* Minimal kleinere Schrift für die Artists auf dem Handy */
+    .release-artist {
+        font-size: 0.8rem;
     }
     
     .platform-link {

@@ -4,6 +4,7 @@
   <!-- Cookie Banner CSS -->
 <link rel="stylesheet" href="assets/css/cookie-banner.css">
 <link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
 <link rel="canonical" href="https://www.steelmusic.net/weddings.html">
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1324,7 +1325,18 @@ filter: drop-shadow(1.5px 1.5px 0px #1e1e20)
             /* DEIN WUNSCH: 30% für Mobil */
             object-position: 30% center !important; 
         }
-    }
+        /* Footer Social Icons auf einer Linie halten */
+  .social-links {
+    gap: 0.8rem; /* Reduziert den Abstand zwischen den Icons leicht */
+    flex-wrap: nowrap; /* Zwingt sie (wenn möglich) auf eine Zeile */
+    justify-content: center;
+  }
+    
+  .social-links a {
+    font-size: 1.3rem; /* Macht die Icons auf dem Handy minimal kleiner, damit alle passen */
+  }
+
+}
         .fade-in-element {
             opacity: 0;
             transform: translateY(40px);
@@ -1606,29 +1618,32 @@ filter: drop-shadow(1.5px 1.5px 0px #1e1e20)
         <p id="contact-p2">Meine Preise starten für 7 Stunden bei <span class="highlight">2000,- €</span> (inkl. MwSt.) und sind davon abhängig, um wie viel Uhr ich loslegen soll. Ich spiele immer bis mindestens 3 Uhr. Auf Wunsch auch open end!</p>
       </div>
       <form class="contact-form">
+        <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="source" value="Hochzeits">
+      
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Wer heiratet? :)" required>
+          <input type="text" id="name" name="name" placeholder="Wer heiratet? :)" required>
         </div>
         <div class="form-group">
           <label for="email">E-Mail</label>
-          <input type="email" id="email" placeholder="traumpaar@email.com" required>
+          <input type="email" id="email" name="email" placeholder="traumpaar@email.com" required>
         </div>
         <div class="form-group">
           <label for="phone">Telefon/Handy</label>
-          <input type="tel" id="phone" placeholder="I call you maybe">
+          <input type="tel" id="phone" name="phone" placeholder="I call you maybe">
         </div>
         <div class="form-group">
           <label for="date">Hochzeitsdatum</label>
-          <input type="date" id="date" required>
+          <input type="date" id="date" name="date" required>
         </div>
         <div class="form-group">
           <label for="location">Ort</label>
-          <input type="text" id="location" placeholder="Wo steigt die Party?" required>
+          <input type="text" id="location" name="location" placeholder="Wo steigt die Party?" required>
         </div>
         <div class="form-group">
           <label for="message">Details</label>
-          <textarea id="message" rows="5" placeholder="z. B. Ablauf, Beginn, Gästeanzahl, Musik" required></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="z. B. Ablauf, Beginn, Gästeanzahl, Musik" required></textarea>
         </div>
         <button type="submit" class="submit-btn">Anfrage senden</button>
         <div id="form-status" class="form-status" style="display: none;"></div>
@@ -2140,30 +2155,44 @@ const languageToggle = document.getElementById('language-toggle');
 
     applyLanguage(currentLanguage);
     
+    // ECHTES CONTACT FORM LOGIC
     const contactForm = document.querySelector('.contact-form');
     const formStatus = document.getElementById('form-status');
     
     if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
+      contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const date = document.getElementById('date').value;
-        const location = document.getElementById('location').value;
-        const message = document.getElementById('message').value;
+        const btn = contactForm.querySelector('.submit-btn');
+        const originalText = btn.textContent;
         
-        if (!name || !email || !date || !location || !message) {
-          formStatus.textContent = document.documentElement.lang === 'de' ? 'Bitte fülle alle Pflichtfelder aus.' : 'Please fill in all required fields.';
-          formStatus.className = 'form-status error';
-          formStatus.style.display = 'block';
-          return;
+        btn.textContent = document.documentElement.lang === 'de' ? 'Wird gesendet...' : 'Sending...';
+        btn.disabled = true;
+
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch('mailer.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                formStatus.textContent = document.documentElement.lang === 'de' ? 'Vielen Dank für deine Anfrage! Ich melde mich in Kürze bei dir.' : 'Thank you for your inquiry! I will get back to you soon.';
+                formStatus.className = 'form-status success';
+                formStatus.style.display = 'block';
+                contactForm.reset();
+            } else {
+                throw new Error();
+            }
+        } catch (error) {
+            formStatus.textContent = document.documentElement.lang === 'de' ? 'Fehler beim Senden. Bitte versuche es später nochmal.' : 'Error sending. Please try again later.';
+            formStatus.className = 'form-status error';
+            formStatus.style.display = 'block';
         }
-        
-        formStatus.textContent = document.documentElement.lang === 'de' ? 'Vielen Dank für deine Anfrage! Wir melden uns in Kürze bei dir.' : 'Thank you for your inquiry! We will get back to you soon.';
-        formStatus.className = 'form-status success';
-        formStatus.style.display = 'block';
-        contactForm.reset();
-        setTimeout(() => { formStatus.style.display = 'none'; }, 5000);
+
+        btn.textContent = originalText;
+        btn.disabled = false;
+        setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
       });
     }
 
