@@ -2389,14 +2389,14 @@ footer::before {
    ========================================= */
    @media (max-width: 768px) {
     
-    /* 1. KARTEN-LAYOUT: Alles sauber untereinander */
-    .release-item {
+    /* 1. KARTEN-LAYOUT: Alles sauber untereinander (JETZT MIT .release-card!) */
+    .release-card {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        padding: 1rem !important; /* Etwas weniger Padding für maximale Player-Breite */
-        align-items: flex-start !important; /* WICHTIG: Alles strikt linksbündig! */
+        padding: 1rem !important; 
+        align-items: flex-start !important; /* Alles strikt linksbündig! */
     }
 
     /* Das Cover-Bild oben */
@@ -2404,11 +2404,11 @@ footer::before {
         width: 100% !important;
         max-width: 100% !important;
         height: auto !important;
-        margin: 0 0 1rem 0 !important; /* Nur Abstand nach unten zum Text */
+        margin: 0 0 1rem 0 !important; 
         border-radius: 8px !important;
     }
 
-    /* Zwingt den Text/Player-Container, altes Desktop-Padding zu vergessen */
+    /* Container für Text und Player */
     .release-info {
         width: 100% !important;
         padding: 0 !important;
@@ -2419,7 +2419,7 @@ footer::before {
     /* Text und Icons sicher voneinander trennen */
     .release-header {
         display: flex !important;
-        flex-direction: column !important; /* Text oben, Icons darunter */
+        flex-direction: column !important; 
         align-items: flex-start !important;
         width: 100% !important;
         margin-bottom: 1rem !important;
@@ -2440,10 +2440,10 @@ footer::before {
 
     /* Streaming-Icons: Kompakt und linksbündig unter dem Text */
     .release-links {
-        position: static !important; /* Holt sie aus der "absoluten" rechten oberen Ecke raus */
+        position: static !important; 
         display: flex !important;
         flex-direction: row !important;
-        justify-content: flex-start !important; /* Schön links anordnen */
+        justify-content: flex-start !important; 
         width: 100% !important;
         gap: 12px !important;
         padding: 0 !important;
@@ -2456,11 +2456,12 @@ footer::before {
         max-width: 100% !important;
         margin: 0 !important;
         padding: 0 !important;
-        overflow: hidden !important; /* Schneidet alles ab, was ausbrechen will */
+        overflow: hidden !important; 
         box-sizing: border-box !important;
     }
 
-    .spotify-embed-container iframe {
+    .spotify-embed-container iframe,
+    .release-card iframe {
         width: 100% !important;
         max-width: 100% !important;
         min-width: 100% !important; 
@@ -2470,8 +2471,8 @@ footer::before {
         box-sizing: border-box !important;
     }
 
-    /* 3. FOOTER YOUTUBE FIX (Bleibt wie beim letzten Mal, da er funktioniert) */
-    .footer-streaming {
+    /* 3. FOOTER YOUTUBE FIX (Doppelt gemoppelt hält besser) */
+    .social-links, .footer-streaming {
         display: flex !important;
         flex-wrap: nowrap !important;
         justify-content: center !important;
@@ -2481,13 +2482,16 @@ footer::before {
         box-sizing: border-box !important;
     }
 
-    .footer-platform-link {
+    .social-links a, .footer-platform-link {
         width: 36px !important;
         height: 36px !important;
         font-size: 1rem !important;
         min-width: 36px !important;
         padding: 0 !important;
         margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
 }
     </style>
