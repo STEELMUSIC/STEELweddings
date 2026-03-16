@@ -2384,6 +2384,87 @@ footer::before {
             animation-duration: 20s !important;
         }
     }
+/* =========================================
+   KORRIGIERTE NOTFALL-FIXES FÜR MOBILE 
+   ========================================= */
+   @media (max-width: 768px) {
+    
+    /* 1. SPOTIFY PLAYER FIX (Jetzt mit der richtigen Klasse: release-item) */
+    .release-item {
+        display: flex !important;
+        flex-direction: column !important; /* Stapelt Text und Player sauber untereinander */
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 1.5rem 1rem !important;
+        align-items: center !important;
+    }
+
+    .release-info {
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Zwingt den Spotify-Player, sich an das Handy anzupassen */
+    .spotify-embed-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-top: 1rem !important;
+    }
+
+    .spotify-placeholder, .spotify-iframe {
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Schiebt die vielen kleinen Icons (Apple, Deezer etc.) unter den Player */
+    .release-links {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: center !important;
+        margin-top: 1.5rem !important;
+        gap: 12px !important;
+        padding: 0 !important;
+    }
+
+    .release-artist, .release-title, .release-meta {
+        padding-right: 0 !important;
+        text-align: center !important;
+    }
+
+    /* 2. FOOTER YOUTUBE FIX (Jetzt mit der richtigen Klasse: footer-streaming) */
+    .footer-streaming {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* Absolutes Verbot für neue Zeilen! */
+        justify-content: center !important;
+        gap: 5px !important; /* Sehr enger Abstand, damit alle 7 Icons passen */
+        width: 100% !important;
+        padding: 0 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    .footer-platform-link {
+        width: 36px !important; /* Etwas kleiner für Handy-Displays */
+        height: 36px !important;
+        font-size: 1rem !important;
+        min-width: 36px !important; /* Verhindert, dass Safari die Icons zerquetscht */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Spezifische Anpassung für Tidal und Deezer auf der neuen, kleinen Größe */
+    .footer-platform-link.tidal-icon svg {
+        width: 1.8rem !important;
+    }
+    .footer-platform-link.deezer-icon svg {
+        width: 1rem !important;
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Cookie Banner CSS -->
