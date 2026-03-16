@@ -1601,18 +1601,24 @@
 /* --- MOBILE ANPASSUNG --- */
 @media (max-width: 768px) {
         .contact-container {
-            padding-top: 340px !important; /* Drückt den "Lass quatschen"-Text deutlich weiter nach unten */
+            /* Schiebt den Text "Lass quatschen" weit nach unten (Richtung Brust/Bauch) */
+            padding-top: 380px !important; 
             padding-left: 1.5rem;
             padding-right: 1.5rem;
         }
 
         /* Wrapper Mobil: Startzustand */
         .contact-portrait-wrapper {
-            width: 100%; 
-            max-width: 100%;
-            top: 0px;
-            left: 50%;
+            width: 100% !important; 
+            max-width: 100% !important;
+            top: 0px !important; /* Container fängt ganz oben an */
+            bottom: auto !important; /* Löst die Desktop-Verankerung am Boden! */
+            left: 50% !important;
+            height: 100% !important;
             transform: translate(-50%, 50px); 
+            
+            /* HIER IST DER FIX: Zwingt das Bild an den oberen Rand des Containers! */
+            align-items: flex-start !important; 
         }
         
         /* Wrapper Mobil: Sichtbar */
@@ -1621,10 +1627,10 @@
         }
 
         .contact-portrait-img {
-            max-height: 95%;
-            width: 100%; 
-            opacity: 0.6;
-            object-position: top center !important; /* HIER IST DER FIX: Zieht dein Gesicht ganz nach oben! */
+            max-height: 90% !important;
+            width: 100% !important; 
+            opacity: 0.6 !important;
+            object-position: top center !important; 
         }
     }
     </style>
