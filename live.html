@@ -1501,6 +1501,9 @@
         box-sizing: border-box !important;
     }
 }
+#dates {
+    scroll-margin-top: 200px; /* Schiebt den Brems-Punkt um 120 Pixel nach oben */
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -1644,7 +1647,7 @@
       <h2 class="events-heading">
         <span class="events-highlight" id="events-heading-text">Upcoming Events</span>
       </h2>
-      <div class="events-list">
+      <div id="dates" class="events-list">
         
         <div class="event-item">
           <div class="event-date">
@@ -1830,7 +1833,7 @@
           </div>
           <div class="form-group">
             <label for="event-date" id="label-date">Event-Datum</label>
-            <input type="date" id="event-date" name="date" required>
+            <input type="text" id="date" name="date" placeholder="TT.MM.JJJJ" required>
           </div>
           <div class="form-group">
             <label for="location" id="label-location">Ort</label>
@@ -2093,7 +2096,7 @@
         'option-club': 'Club', 
         'option-festival': 'Festival/Open Air', 
         'option-other': 'Was anderes',
-        'label-date': 'Event-Datum', 
+        'label-date': 'Event-Datum', 'placeholder-date': 'TT.MM.JJJJ',
         'label-location': 'Ort', 
         'placeholder-location': 'Wo gehts ab?',
         'label-message': 'Details', 
@@ -2147,7 +2150,7 @@
         'option-club': 'Club', 
         'option-festival': 'Festival/Open Air', 
         'option-other': 'Something else',
-        'label-date': 'Event Date', 
+        'label-date': 'Event Date', 'placeholder-date': 'DD/MM/YYYY',
         'label-location': 'Location', 
         'placeholder-location': 'Where is it going down?',
         'label-message': 'Details', 
@@ -2330,7 +2333,7 @@ document.querySelectorAll('.event-item').forEach(item => {
             select.options[3].text = texts['option-other'];
         }
 
-        setText('label-date', 'label-date');
+        setText('label-date', 'label-date'); setPlaceholder('date', 'placeholder-date');
         setText('label-location', 'label-location'); setPlaceholder('location', 'placeholder-location');
         setText('label-message', 'label-message'); setPlaceholder('message', 'placeholder-message');
         setText('form-submit', 'form-submit');

@@ -1325,6 +1325,34 @@
             margin-bottom: 0.5rem; 
         }
     }
+    /* =========================================
+   FOOTER FIX FÜR MOBILE (YOUTUBE LOGO)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Hält die Container streng in einer Zeile */
+    .social-links, .footer-streaming {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        width: 100% !important;
+        padding: 0 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Macht die einzelnen Icons minimal kleiner, damit alle nebeneinander passen */
+    .social-links a, .footer-platform-link {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1rem !important;
+        min-width: 36px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -1469,7 +1497,7 @@
           </div>
           <div class="form-group">
             <label for="event-date">Datum der Veranstaltung</label>
-            <input type="date" id="event-date" name="date" required>
+            <input type="text" id="event-date" name="date" placeholder="TT.MM.JJJJ" required>
           </div>
           <div class="form-group">
             <label for="location">Location / Stadt</label>
@@ -1826,7 +1854,7 @@ const languageToggle = document.getElementById('language-toggle');
           'label-phone': 'Telefon', 'ph-phone': 'Telefonnummer',
           'label-type': 'Art der Veranstaltung', 
           'opt-default': 'Bitte wählen', 'opt-company': 'Firmenfeier / Jubiläum', 'opt-fair': 'Messe / Kongress', 'opt-after': 'After-Work-Event', 'opt-other': 'Was anderes',
-          'label-date': 'Datum der Veranstaltung',
+          'label-date': 'Datum der Veranstaltung', 'placeholder-date': 'TT.MM.JJJJ',
           'label-location': 'Location / Stadt', 'ph-location': 'Wo?',
           'label-message': 'Details & Wünsche', 'ph-message': 'Lass gern ein paar Details und Vorstellungen da',
           'submit-btn': 'Anfrage senden',
@@ -1878,7 +1906,7 @@ const languageToggle = document.getElementById('language-toggle');
           'label-phone': 'Phone', 'ph-phone': 'Phone Number',
           'label-type': 'Type of Event', 
           'opt-default': 'Please choose', 'opt-company': 'Company Party / Anniversary', 'opt-fair': 'Trade Fair / Congress', 'opt-after': 'After-Work Event', 'opt-other': 'Something else',
-          'label-date': 'Date of Event',
+          'label-date': 'Date of Event', 'placeholder-date': 'DD/MM/YYYY',
           'label-location': 'Location / City', 'ph-location': 'Where?',
           'label-message': 'Details & Wishes', 'ph-message': 'Feel free to leave some details and ideas',
           'submit-btn': 'Send Request',
@@ -1963,7 +1991,7 @@ const languageToggle = document.getElementById('language-toggle');
             select.options[4].text = texts['opt-other'];
         }
 
-        setTxt('label[for="event-date"]', 'label-date');
+        setTxt('label[for="event-date"]', 'label-date'); setPH('#event-date', 'placeholder-date');
         setTxt('label[for="location"]', 'label-location'); setPH('#location', 'ph-location');
         setTxt('label[for="message"]', 'label-message'); setPH('#message', 'ph-message');
         setTxt('.submit-btn', 'submit-btn');
