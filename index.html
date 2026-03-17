@@ -2385,22 +2385,32 @@ footer::before {
         }
     }
 /* =========================================
-   FINALES MOBILE LAYOUT FÜR RELEASES & FOOTER
+   MAXIMALE BREITE FÜR SPOTIFY & ICON-FIX (MOBILE)
    ========================================= */
    @media (max-width: 768px) {
     
-    /* 1. KARTEN-LAYOUT: Alles als Spalte stapeln (Mit der RICHTIGEN Klasse: .release-item) */
+    /* 1. Äußere Ränder radikal minimieren */
+    .releases-section {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    .releases-container {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    /* 2. Karten-Padding: Rechts/Links ultra-kompakt (0.5rem) für Spotify-Breite */
     .releases-list .release-item {
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        padding: 1.5rem 1rem !important; 
+        padding: 1.2rem 0.5rem !important; 
         height: auto !important;
     }
 
-    /* 2. Container für Text und Player */
     .releases-list .release-info {
         width: 100% !important;
         padding: 0 !important;
@@ -2409,17 +2419,19 @@ footer::before {
         flex-direction: column !important;
     }
 
-    /* 3. PLATZVERSCHWENDUNG BEENDEN: Die alte, unsichtbare 95px-Wand einreißen! */
+    /* 3. Text rückt etwas vom orangenen Rand weg (Player bleibt breit!) */
     .releases-list .release-artist, 
     .releases-list .release-title, 
     .releases-list .release-meta {
         padding-right: 0 !important;
+        padding-left: 0.8rem !important; /* NEU: Sorgt für den sauberen Abstand zum Rand */
         text-align: left !important;
         width: 100% !important;
         word-wrap: break-word !important;
+        box-sizing: border-box !important;
     }
 
-    /* 4. STREAMING-ICONS: Aus der Ecke holen und als normale Reihe einfügen */
+    /* 4. Icons sicher auf eine perfekte Linie zwingen */
     .releases-list .release-links {
         position: relative !important; 
         top: auto !important;
@@ -2427,19 +2439,30 @@ footer::before {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: wrap !important;
-        justify-content: flex-start !important; 
+        justify-content: flex-start !important;
+        align-items: center !important; /* NEU: Vertikal auf einer Linie zentrieren */
         width: 100% !important;
         max-width: 100% !important;
-        gap: 12px !important;
-        padding: 1.5rem 0 0.5rem 0 !important; 
+        gap: 15px !important; /* Einheitlicher Abstand zwischen ALLEN Icons */
+        padding: 1.5rem 0 1rem 0.8rem !important; /* NEU: Oben/Unten Luft, Links bündig mit Text */
         margin: 0 !important;
+        box-sizing: border-box !important;
     }
 
-    /* 5. SPOTIFY PLAYER: Volle Breite nutzen (Play-Button ist wieder da) */
+    /* Lücke bei Tidal killen und exakt auf einer Höhe ausrichten */
+    .releases-list .platform-link {
+        margin: 0 !important; /* Löscht den fehlerhaften TIDAL-Abstand aus dem alten CSS */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 24px !important; /* Feste Höhe zwingt alle Icons exakt auf eine Linie */
+    }
+
+    /* 5. Spotify-Player füllt weiterhin den gesamten Platz */
     .releases-list .spotify-embed-container {
         width: 100% !important;
         max-width: 100% !important;
-        margin: 1rem 0 0 0 !important;
+        margin: 0 !important;
         padding: 0 !important;
         box-sizing: border-box !important;
     }
