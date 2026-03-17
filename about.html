@@ -1633,6 +1633,34 @@
             object-position: top center !important; 
         }
     }
+    /* =========================================
+   FOOTER FIX FÜR MOBILE (YOUTUBE LOGO)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Hält die Container streng in einer Zeile */
+    .social-links, .footer-streaming {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        width: 100% !important;
+        padding: 0 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Macht die einzelnen Icons minimal kleiner, damit alle nebeneinander passen */
+    .social-links a, .footer-platform-link {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1rem !important;
+        min-width: 36px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
