@@ -2449,13 +2449,27 @@ footer::before {
         box-sizing: border-box !important;
     }
 
-    /* Lücke bei Tidal killen und exakt auf einer Höhe ausrichten */
-    .releases-list .platform-link {
-        margin: 0 !important; /* Löscht den fehlerhaften TIDAL-Abstand aus dem alten CSS */
+/* Streaming-Icons unter den Releases VERDOPPELN */
+.releases-list .platform-link {
+        margin: 0 !important; 
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        height: 24px !important; /* Feste Höhe zwingt alle Icons exakt auf eine Linie */
+        height: 36px !important; /* Etwas mehr Höhe für die großen Icons */
+        font-size: 1.6rem !important; /* Verdoppelt! (Vorher 0.8rem) */
+    }
+
+    /* Alle SVG-Icons (Apple, Deezer, etc.) ebenfalls verdoppeln */
+    .releases-list .platform-link svg,
+    .releases-list .platform-link.deezer-icon svg {
+        width: 1.6rem !important;
+        height: 1.6rem !important;
+    }
+
+    /* Tidal braucht spezielle Proportionen */
+    .releases-list .platform-link.tidal-icon svg {
+        width: 3.2rem !important; /* Verdoppelt! */
+        height: 1.1rem !important; /* Verdoppelt! */
     }
 
     /* 5. Spotify-Player füllt weiterhin den gesamten Platz */
@@ -2495,7 +2509,11 @@ footer::before {
         align-items: center !important;
         justify-content: center !important;
     }
-}
+/* "Mehr"-Button für Releases auf dem Handy ausblenden */
+#load-more-releases {
+        display: none !important;
+    }
+  }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Cookie Banner CSS -->
@@ -4123,22 +4141,30 @@ const heroH1 = document.querySelector('.hero h1'); if(heroH1) heroH1.textContent
     document.querySelectorAll('.service-card').forEach(card => {
         cardObserver.observe(card);
     });
-/* --- DYNAMIC HEADER IMAGE SCRIPT (FIXED) --- */
+/* --- DYNAMIC HEADER IMAGE SCRIPT (FIXED & MOBILE OPTIMIZED) --- */
 document.addEventListener("DOMContentLoaded", function() {
     const dynamicBg = document.querySelector('.hero-background-dynamic');
     const triggers = document.querySelectorAll('.marquee-content span[data-bg]');
 
-    // HIER fehlte vorher die Schleife "forEach"!
     triggers.forEach(trigger => {
         trigger.addEventListener('mouseenter', function() {
             const newImage = this.getAttribute('data-bg');
-            
-            // Lese die Wunsch-Position aus (oder nimm Standard center 30%)
-            const newPos = this.getAttribute('data-pos') || 'center 30%';
+            let newPos = this.getAttribute('data-pos') || 'center 30%'; // Standard für Desktop
+
+            // MOBILE WEICHE: Bildausschnitte gezielt auf dem Handy verschieben
+            if (window.innerWidth <= 768 && newImage) {
+                if (newImage.includes('hochzeits')) {
+                    newPos = '90% 30%'; // Wedding: Bildausschnitt weiter nach links
+                } else if (newImage.includes('dj-artist')) {
+                    newPos = '20% 20%';  // DJ & Artist: Bildausschnitt weiter nach rechts
+                } else if (newImage.includes('open-air')) {
+                    newPos = '80% 30%'; // Open Air: Bildausschnitt weiter nach links
+                }
+            }
 
             if(newImage && dynamicBg) {
                 dynamicBg.style.backgroundImage = `url('${newImage}')`;
-                dynamicBg.style.backgroundPosition = newPos; // Position anwenden
+                dynamicBg.style.backgroundPosition = newPos; 
                 dynamicBg.style.opacity = '1';
             }
         });
