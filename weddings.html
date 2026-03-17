@@ -1423,7 +1423,7 @@ filter: drop-shadow(1.5px 1.5px 0px #1e1e20)
             }
             
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2rem;
             }
             
             .hero-content {
@@ -1459,6 +1459,34 @@ filter: drop-shadow(1.5px 1.5px 0px #1e1e20)
                 padding: 4rem 1rem !important;
             }
         }
+        /* =========================================
+   FOOTER FIX FÜR MOBILE (YOUTUBE LOGO)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Hält die Container streng in einer Zeile */
+    .social-links, .footer-streaming {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        width: 100% !important;
+        padding: 0 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Macht die einzelnen Icons minimal kleiner, damit alle nebeneinander passen */
+    .social-links a, .footer-platform-link {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1rem !important;
+        min-width: 36px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -2059,7 +2087,7 @@ const languageToggle = document.getElementById('language-toggle');
       en: {
         'nav-about': 'About', 'nav-live': 'Live', 'nav-weddings': 'Weddings', 'nav-corporate': 'Corporate',
         'lang-switch': 'DE',
-        'hero-title': 'Getting married <br>with style. And STEEL.', 'hero-subtitle': "Wedding with a club feeling? In NRW or as a Destination Wedding worldwide. Let's go.", 'hero-cta': 'Request now',
+        'hero-title': 'Marry with style.<br>And STEEL.', 'hero-subtitle': "Wedding with a club feeling? In NRW or as a Destination Wedding worldwide. Let's go.", 'hero-cta': 'Request now',
         'about-title': 'Your day is approaching. Now what?', 'about-p1': 'Your wedding is <strong>exciting</strong> – especially for you. But your loved ones are also dressing up and want to celebrate properly. This is where I come in. Because I think: You shouldn\'t have to <em>worry about the music</em>. I\'ll make sure your party is a complete success!', 'about-p2': 'The guests at your wedding are young and old. To appeal to them, music should be played that everyone knows (<strong>Hits only!</strong>). Sometimes it\'s something from the 60s to twist to, other times from the 90s to trash to. Current charts and <strong>electronic beats</strong> are of course a must. Everything packed into a mix that won\'t scare anyone away and still feels like you\'re in a club.', 'about-p3': 'Songs that connect you and your guests also play an important role here. <strong>#BachelorParty</strong>',
         'services-title': '<span class="services-highlight">Your Wedding Party</span>', 'service1-title': 'Finally it starts.', 'service1-p1': 'To open the dance floor, you are in demand: Whether a <strong>Viennese Waltz</strong> or a <strong>Discofox</strong>, sometimes just a cozy sway: Your song selection starts the party and an unforgettable night. Choose wisely – gladly with my support.', 'service1-p2': 'You <strong>don\'t want an opening dance</strong>? No problem. It\'s your wedding and we design it the way you want it.',
         'service2-title': "Let's party.", 'service2-p1': 'Once the party is in full swing, there\'s no stopping it. <strong>Live Mashups</strong> transport your guests into another sound world – far away from the usual radio doodle. I\'m happy to incorporate music requests at the appropriate place in the mix.', 'service2-p2': 'At the latest when <strong>Beyoncé</strong> asks the next lucky ones to catch the bridal bouquet with her Single Ladies, the dance floor is no longer safe from any hit (or guest)!',
