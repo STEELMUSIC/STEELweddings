@@ -1446,6 +1446,61 @@
         line-height: 1.2 !important; /* Verringert den Abstand zwischen den Zeilen */
         margin-bottom: 0.8rem; /* Sorgt dafür, dass die Liste danach nicht zu sehr klebt */
     }
+    /* =========================================
+   FOOTER FIX FÜR MOBILE (YOUTUBE LOGO)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Hält die Container streng in einer Zeile */
+    .social-links, .footer-streaming {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        width: 100% !important;
+        padding: 0 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Macht die einzelnen Icons minimal kleiner, damit alle nebeneinander passen */
+    .social-links a, .footer-platform-link {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 1rem !important;
+        min-width: 36px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+  }
+    /* =========================================
+   FORMULAR-FIX FÜR MOBILE (DATUMS-FELD)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Container und Reihen strikt auf 100% begrenzen */
+    #contact-form, 
+    .contact-form-container,
+    .form-row, 
+    .form-group {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Alle Eingabefelder (besonders das bockige Datum) einsperren */
+    .form-group input, 
+    .form-group select, 
+    .form-group textarea,
+    input[type="date"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important; /* Hebt die iOS-Mindestbreite auf! */
+        box-sizing: border-box !important;
+    }
+}
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -2409,7 +2464,62 @@ function removeExpiredEvents() {
             updateViewMoreButton();
         }
     }
-    
+    // --- AUTOMATISCHE SORTIERUNG DER EVENTS NACH DATUM ---
+function sortEvents() {
+    const eventsList = document.querySelector('.events-list');
+    if (!eventsList) return;
+
+    // Alle Event-Blöcke in ein Array packen
+    const events = Array.from(eventsList.querySelectorAll('.event-item'));
+
+    const monthMap = {
+        'januar': 0, 'jan': 0, 'january': 0,
+        'februar': 1, 'feb': 1, 'february': 1,
+        'märz': 2, 'mär': 2, 'mar': 2, 'march': 2,
+        'april': 3, 'apr': 3,
+        'mai': 4, 'may': 4,
+        'juni': 5, 'jun': 5, 'june': 5,
+        'juli': 6, 'jul': 6, 'july': 6,
+        'august': 7, 'aug': 7,
+        'september': 8, 'sep': 8,
+        'oktober': 9, 'okt': 9, 'oct': 9, 'october': 9,
+        'november': 10, 'nov': 10,
+        'dezember': 11, 'dez': 11, 'dec': 11, 'december': 11
+    };
+
+    function getEventDate(item) {
+        const dayEl = item.querySelector('.day');
+        const monthEl = item.querySelector('.month');
+        const yearEl = item.querySelector('.year');
+
+        // Falls ein Datum fehlt, packen wir es ans Ende
+        if (!dayEl || !monthEl || !yearEl) return new Date(2999, 0, 1); 
+
+        const day = parseInt(dayEl.textContent.trim());
+        const year = parseInt(yearEl.textContent.trim());
+        const monthText = monthEl.textContent.trim().toLowerCase().replace('.', '');
+        
+        let monthIndex = 0;
+        for (const key in monthMap) {
+            if (monthText.startsWith(key)) {
+                monthIndex = monthMap[key];
+                break;
+            }
+        }
+        return new Date(year, monthIndex, day);
+    }
+
+    // Array chronologisch sortieren
+    events.sort((a, b) => {
+        return getEventDate(a) - getEventDate(b);
+    });
+
+    // Die sortierten Elemente wieder auf die Seite setzen
+    events.forEach(event => eventsList.appendChild(event));
+}
+
+// Sortierung aufrufen, BEVOR animiert oder gelöscht wird
+sortEvents();
       initializeEventAnimations();
       removeExpiredEvents();
       setInterval(removeExpiredEvents, 60 * 60 * 1000);
